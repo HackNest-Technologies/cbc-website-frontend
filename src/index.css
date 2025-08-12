@@ -9,19 +9,27 @@
 @import "tailwindcss";
 
 
-
-
-
-
 @theme{
   --font-inter: Inter, "sans-serif";
   --font-satoshi: satoshi, "sans-serif";
   /* --font-proxima: Proxima Nova, "sans-serif"; */
 }
 
+
+
+
+.stroke-white {
+  -webkit-text-stroke-width: 3.92px;
+  -webkit-text-stroke-color: #fff;
+}
+
+
 /* For equal space for  both left and right  */
 @media (min-width: 1024px) {
   .container {
     max-width: 87%;
   }
+
+
+
 }

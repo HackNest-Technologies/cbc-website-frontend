@@ -20,7 +20,7 @@ const DesktopFooter = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1630 1004"
             preserveAspectRatio="none"
-            className="w-full mt-[100px] h-[1100px]"
+            className="w-full mt-[100px] h-[1104px]"
           >
             {/* Black background */}
             <path

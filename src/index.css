@@ -22,29 +22,11 @@
   -webkit-text-stroke-width: 3.92px;
   -webkit-text-stroke-color: #fff;
 }
-
-
-/* ---------- globals.css ---------- */
-
-
-/* .stroke-white {
-  -webkit-text-stroke-width: 3.92px;
+.stroke-white-mobile {
+  -webkit-text-stroke-width: 0.95px;
   -webkit-text-stroke-color: #fff;
-  -webkit-text-fill-color: transparent; 
-  color: transparent; 
-} */
+}
 
-/* .footer-clip {
-  -webkit-clip-path: path("M648.121 0 C664.643 0 677.661 13.5972 682.065 29.5215 C696.957 83.3578 751.049 123.251 815.5 123.251 C879.951 123.251 934.043 83.3578 948.935 29.5215 C953.339 13.5972 966.357 0 982.879 0 H1630 V10000 H0 V0 H648.121 Z");
-  clip-path: path("M648.121 0 C664.643 0 677.661 13.5972 682.065 29.5215 C696.957 83.3578 751.049 123.251 815.5 123.251 C879.951 123.251 934.043 83.3578 948.935 29.5215 C953.339 13.5972 966.357 0 982.879 0 H1630 V10000 H0 V0 H648.121 Z");
-
-  -webkit-clip-path-box: border-box;
-  clip-path-box: border-box;
-} */
-
-/* .footer-clip-fallback {
-  background: black;
-} */
 
 
 /* For equal space for  both left and right  */

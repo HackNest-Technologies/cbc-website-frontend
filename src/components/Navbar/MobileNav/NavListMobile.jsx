@@ -138,7 +138,7 @@ const NavListMobile = () => {
 
       {/* icon list */}
 
-      <div className="flex justify-center  gap-4 py-10">
+      <div className="flex px-6 gap-4 py-10">
         <a href="" className="bg-[#FD9F2B] rounded-full p-[12px]">
           <img src={instagram} alt="" className="w-[24px] h-[24px]" />
         </a>

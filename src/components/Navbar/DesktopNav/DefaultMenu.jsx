@@ -15,29 +15,29 @@ const DefaultMenu = ({ classLink, toggleMenu }) => {
             />
           </Link>
         </div>
-          <ul className="list-none flex justify-between items-center h-[50px] w-[732px] bg-white rounded-[50px]">
+          <ul className="list-none font-inter flex justify-between items-center h-[50px] w-[732px] bg-white rounded-[50px] pl-[45px] pr-[8px] py-[15px]">
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
             <NavLink to="/" className={classLink}>
               Home
             </NavLink>
           </li>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
-            <NavLink to="/" className={classLink}>
+            <NavLink to="/about" className={classLink}>
               About
             </NavLink>
           </li>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
-            <NavLink to="/" className={classLink}>
+            <NavLink to="/events" className={classLink}>
               EVents
             </NavLink>
           </li>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
-            <NavLink to="/" className={classLink}>
+            <NavLink to="/give" className={classLink}>
               Give
             </NavLink>
           </li>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
-            <NavLink to="/" className={classLink}>
+            <NavLink to="/store" className={classLink}>
               Store
             </NavLink>
           </li>

@@ -17,7 +17,7 @@ const DesktopNav = () => {
   };
 
   return (
-    <section className="relative hidden lg:block">
+    <section className="relative hidden md:block">
       {/* Regular Navigation (shown by default) */}
       {!isOpen && <DefaultMenu classLink={classLink} toggleMenu={toggleMenu} />}
 

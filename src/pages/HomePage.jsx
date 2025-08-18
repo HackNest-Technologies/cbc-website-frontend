@@ -4,7 +4,7 @@ import FeedbackForm from "../components/Home/FeedbackForm.jsx";
 import Hero from "../components/Home/Hero.jsx";
 import LastSermon from "../components/Home/LastSermon.jsx";
 import LearnMore from "../components/Home/LearnMore.jsx";
-import NextEventCountdown from "../components/Home/NextEventCountDown.jsx";
+import NextEventCountdown from "../components/Home/NextEventCountdown.jsx";
 import OurLeadership from "../components/Home/OurLeadership.jsx";
 import PrayerRequest from "../components/Home/PrayerRequest.jsx";
 import SneakPeek from "../components/Home/SneakPeek.jsx";

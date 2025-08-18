@@ -1,7 +1,7 @@
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import avatar from "../../assets/images/avatar.png";
-import Button from "../shared/Button";
-import DblQuote from "../shared/DblQuote";
+import Button from "../shared/Button.jsx";
+import DblQuote from "../shared/DblQuote.jsx";
 
 const _testimonies = [
 	{

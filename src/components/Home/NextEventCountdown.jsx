@@ -1,8 +1,8 @@
 import { useLayoutEffect, useState } from "react";
-import updateEventCountDown from "../../utils/Home/updateEventCountdown";
+import updateEventCountDown from "../../utils/Home/updateEventCountdown.js";
 
 const TimeUnit = ({ time }) => (
-	<span className="bg-gradient-to-b from-[#fc8d336c] to-[#0000001A] border border-zinc-200 rounded-[1.57px] p-1 inline-flex items-center justify-center font-orbitron">
+	<span className="bg-gradient-to-b from-[#fc8d336c] to-[#0000001A] border border-zinc-200 rounded-[1.57px] p-1 inline-flex items-center justify-center font-orbitron w-10 mobile-sm:w-12">
 		{time}
 	</span>
 );

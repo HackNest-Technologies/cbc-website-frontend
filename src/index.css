@@ -21,7 +21,10 @@
 	--font-orbitron: Orbitron, "sans-serif";
 	--font-satoshi: satoshi, "sans-serif";
 	/* --font-proxima: Proxima Nova, "sans-serif"; */
+	--breakpoint-mobile-sm: 480px;
 	--breakpoint-mobile: 640px;
+	--breakpoint-tablet: 960px;
+	--breakpoint-desktop: 1280px;
 	--leading-full: 100%;
 }
 

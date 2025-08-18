@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import streamIcon from "../../assets/images/stream-icon.svg";
 import turningPointImg from "../../assets/images/the-turning-point.png";
-import Button from "../shared/Button";
+import Button from "../shared/Button.jsx";
 
 const Hero = () => {
 	return (

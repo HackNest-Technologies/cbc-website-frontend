@@ -1,4 +1,4 @@
-import Button from "../shared/Button";
+import Button from "../shared/Button.jsx";
 
 const FeedbackForm = () => (
 	<section className="container p-6">

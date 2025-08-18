@@ -1,5 +1,5 @@
-import Button from "../shared/Button";
-import DblQuote from "../shared/DblQuote";
+import Button from "../shared/Button.jsx";
+import DblQuote from "../shared/DblQuote.jsx";
 
 const LearnMore = () => (
 	<section className="container mx-auto pt-16 flex p-6 gap-2">

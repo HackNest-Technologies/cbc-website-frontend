@@ -1,7 +1,7 @@
 import rectangularBg from "../../assets/images/rectangular-bg.png";
 import sermonBanner from "../../assets/images/service-banner.png";
 import streamIcon from "../../assets/images/stream-icon.svg";
-import Button from "../shared/Button";
+import Button from "../shared/Button.jsx";
 
 const serviceInfo = [
 	{

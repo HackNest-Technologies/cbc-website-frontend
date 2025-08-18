@@ -1,5 +1,5 @@
 import { LiaPraySolid } from "react-icons/lia";
-import Button from "../shared/Button";
+import Button from "../shared/Button.jsx";
 
 const PrayerRequest = () => (
 	<section className="container p-6">

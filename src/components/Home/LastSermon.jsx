@@ -44,30 +44,32 @@ const LastSermon = () => (
 				</h3>
 
 				{/* TODO: Consume API for last sermon */}
-				<div className="bg-white p-2 mobile:p-4 pb-4 space-y-[14.76px] rounded-[3.69px] max-w-[805.5px] mx-auto mobile:space-y-8">
+				<div className="bg-white p-2 mobile:p-4 space-y-[14.76px] rounded-[3.69px] mobile:max-w-[805.5px] tablet:max-w-full mx-auto mobile:space-y-8 tablet:grid grid-cols-2 gap-4 items-center">
 					<img
 						src={sermonBanner}
 						alt="Last sermon"
 						className="rounded-[11.1px]"
 					/>
 
-					<div className="space-y-2 mobile:space-y-4.5">
-						{serviceInfo.map((info) => (
-							<InfoBlock key={info.title} {...info} />
-						))}
-					</div>
+					<div className="space-y-[14.76px] mobile:space-y-8">
+						<div className="space-y-2 mobile:space-y-4.5">
+							{serviceInfo.map((info) => (
+								<InfoBlock key={info.title} {...info} />
+							))}
+						</div>
 
-					<div className="space-x-2 space-y-2 mobile:space-x-4">
-						<Button
-							variant="solid"
-							icon={<img src={streamIcon} alt="Stream live" />}
-							text="Watch Now"
-							className="mobile:w-[220px] mobile:h-[58px] justify-center mobile:text-lg"
-						/>
-						<Button
-							text="All Sermons"
-							className="mobile:w-[220px] mobile:h-[58px] justify-center mobile:text-lg"
-						/>
+						<div className="space-x-2 space-y-2 mobile:space-x-4">
+							<Button
+								variant="solid"
+								icon={<img src={streamIcon} alt="Stream live" />}
+								text="Watch Now"
+								className="mobile:w-[220px] mobile:h-[58px] justify-center mobile:text-lg"
+							/>
+							<Button
+								text="All Sermons"
+								className="mobile:w-[220px] mobile:h-[58px] justify-center mobile:text-lg"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

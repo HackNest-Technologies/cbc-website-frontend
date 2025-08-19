@@ -21,7 +21,7 @@ const events = [
 ];
 
 const EventCard = (props) => (
-	<div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px] mobile:min-w-[672px]">
+	<div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px] mobile:min-w-[672px] tablet:grid tablet:grid-cols-2 gap-4 tablet:min-w-[1227px] tablet:items-center">
 		<img
 			src={eventScene}
 			alt=""

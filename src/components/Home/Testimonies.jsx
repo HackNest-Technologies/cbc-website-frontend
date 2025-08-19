@@ -19,7 +19,7 @@ const _testimonies = [
 ];
 
 const TestimonyCard = (props) => (
-	<div className="p-4 mobile:p-6 border-4 border-dashed border-[#FD9F2B] rounded-[10px] space-y-2">
+	<div className="p-4 mobile:p-6 border-4 border-dashed border-[#FD9F2B] rounded-[10px] space-y-2 self-stretch">
 		<DblQuote height={53.65} />
 		<p>{props.testimony}</p>
 		<div className="flex gap-4 items-center">
@@ -36,9 +36,9 @@ const TestimonyCard = (props) => (
 );
 
 const Testimonies = () => (
-	<section className="container mx-auto p-6 space-y-6 mobile:mt-16">
+	<section className="container mx-auto p-6 space-y-6 mobile:mt-16 tablet:mt-24">
 		<div className="space-y-6">
-			<h3 className="font-satoshi text-2xl mobile:text-[62.32px] text-center uppercase">
+			<h3 className="font-satoshi text-2xl mobile:text-[62.32px] max-w-[655px] mx-auto text-center uppercase">
 				See what the lord is doing!
 			</h3>
 
@@ -61,7 +61,7 @@ const Testimonies = () => (
 			</div>
 		</div>
 
-		<div className="space-y-3">
+		<div className="space-y-3 tablet:grid grid-cols-2 gap-4 items-stretch">
 			{_testimonies.map((testimony) => (
 				<TestimonyCard key={testimony.testifier} {...testimony} />
 			))}

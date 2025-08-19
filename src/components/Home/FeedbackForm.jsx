@@ -49,7 +49,7 @@ const FeedbackForm = () => (
 				</form>
 			</div>
 
-			<p className="w-[219.77px] text-[32px] text-white mt-33 flex-1 mobile:flex mobile:mt-0 mobile:items-end mobile:text-[40px]">
+			<p className="w-[219.77px] text-[32px] text-white mt-33 flex-1 mobile:flex mobile:mt-0 mobile:items-end mobile:text-[40px] tablet:text-[65px] tablet:w-[462px] tablet:mx-auto">
 				We would love to hear from you!
 			</p>
 		</div>

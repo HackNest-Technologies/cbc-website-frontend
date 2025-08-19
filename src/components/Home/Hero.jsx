@@ -8,7 +8,7 @@ const Hero = () => {
 		<section className="home-hero pt-[424.88px] pb-12 space-y-4 mobile:space-y-8 relative">
 			<div className="container p-6 mx-auto mobile:space-y-8">
 				<div className="text-white space-y-2 mobile:space-y-4 mobile:w-[673px]">
-					<h1 className="font-semibold text-[32px] font-satoshi leading-full mobile:text-[64px]">
+					<h1 className="font-semibold text-[32px] font-satoshi leading-full mobile:text-[64px] tablet:text-[75px]">
 						Raising a People of Power, Purpose & Dominion
 					</h1>
 					<p className="leading-full mobile:w-[578px] mobile:text-2xl">

@@ -19,26 +19,26 @@ const _testimonies = [
 ];
 
 const TestimonyCard = (props) => (
-	<div className="p-4 border-2 border-dashed border-[#FD9F2B] rounded-[10px] space-y-2">
+	<div className="p-4 mobile:p-6 border-4 border-dashed border-[#FD9F2B] rounded-[10px] space-y-2">
 		<DblQuote height={53.65} />
 		<p>{props.testimony}</p>
 		<div className="flex gap-4 items-center">
-			<div className="border-2 border-dashed border-[#FD9F2B] rounded-full aspect-square p-1 w-fit">
+			<div className="border-4 border-dashed border-[#FD9F2B] rounded-full aspect-square p-1 w-fit">
 				<img
 					src={props.image}
 					alt={props.testifier}
-					className="aspect-square rounded-full object-cover w-[44.77px]"
+					className="aspect-square rounded-full object-cover w-[44.77px] mobile:w-[87.63px]"
 				/>
 			</div>
-			<p className="text-sm">{props.testifier}</p>
+			<p className="text-sm mobile:text-2xl">{props.testifier}</p>
 		</div>
 	</div>
 );
 
 const Testimonies = () => (
-	<section className="container p-6 space-y-6">
+	<section className="container mx-auto p-6 space-y-6 mobile:mt-16">
 		<div className="space-y-6">
-			<h3 className="font-satoshi text-2xl text-center uppercase">
+			<h3 className="font-satoshi text-2xl mobile:text-[62.32px] text-center uppercase">
 				See what the lord is doing!
 			</h3>
 
@@ -68,7 +68,11 @@ const Testimonies = () => (
 		</div>
 
 		<div className="flex justify-center">
-			<Button text="Share Your Testimony" variant="solid" />
+			<Button
+				text="Share Your Testimony"
+				variant="solid"
+				className="mobile:w-[243px] mobile:h-[58px] justify-center mobile:text-lg mobile:font-medium"
+			/>
 		</div>
 	</section>
 );

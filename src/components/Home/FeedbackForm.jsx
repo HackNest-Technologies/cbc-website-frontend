@@ -1,9 +1,9 @@
 import Button from "../shared/Button.jsx";
 
 const FeedbackForm = () => (
-	<section className="container p-6">
-		<div className="p-4 feedback-form rounded-3xl">
-			<div className="p-4 bg-[#FFFFFFF2] rounded-2xl space-y-4">
+	<section className="container p-6 mx-auto">
+		<div className="p-4 feedback-form rounded-3xl mobile:flex flex-row-reverse">
+			<div className="p-4 bg-[#FFFFFFF2] rounded-2xl space-y-4 flex-1">
 				<div>
 					<h4 className="font-satoshi">FEEDBACK FORM</h4>
 					<p className="text-sm text-[#666666]">Share your feedback</p>
@@ -49,7 +49,7 @@ const FeedbackForm = () => (
 				</form>
 			</div>
 
-			<p className="w-[219.77px] text-[32px] text-white mt-33">
+			<p className="w-[219.77px] text-[32px] text-white mt-33 flex-1 mobile:flex mobile:mt-0 mobile:items-end mobile:text-[40px]">
 				We would love to hear from you!
 			</p>
 		</div>

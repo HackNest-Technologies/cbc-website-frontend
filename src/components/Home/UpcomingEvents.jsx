@@ -21,7 +21,7 @@ const events = [
 ];
 
 const EventCard = (props) => (
-	<div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px]">
+	<div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px] mobile:min-w-[672px]">
 		<img
 			src={eventScene}
 			alt=""
@@ -29,7 +29,7 @@ const EventCard = (props) => (
 		/>
 
 		<div className="space-y-2">
-			<h4 className="border-b-[0.5px] border-b-[#565656] font-satoshi uppercase">
+			<h4 className="border-b-[0.5px] border-b-[#565656] font-satoshi uppercase mobile:text-[32px]">
 				{props.theme}
 			</h4>
 			<div className="space-y-[7.88px] italic text-[#777777]">
@@ -47,14 +47,21 @@ const EventCard = (props) => (
 );
 
 const UpcomingEvents = () => (
-	<section className="container mx-auto p-6 space-y-4">
-		<h2 className="font-satoshi">UPCOMING EVENTS</h2>
+	<section className="container mx-auto p-6 space-y-4 mobile:mt-8">
+		<div className="flex justify-between">
+			<h2 className="font-satoshi mobile;text-[40px]">UPCOMING EVENTS</h2>
+			<p className="max-mobile:hidden">
+				<Link className="flex items-center gap-2 underline" href="/events">
+					View All Events <BsArrowRight size={24} />
+				</Link>
+			</p>
+		</div>
 
-		<div className="space-y-4">
+		<div className="space-y-4 mobile:flex mobile:flex-nowrap mobile:overflow-auto mobile:max-w-full mobile:gap-2">
 			{events.map((ev, i) => (
 				<EventCard key={i} {...ev} />
 			))}
-			<p>
+			<p className="mobile:hidden">
 				<Link className="flex items-center gap-2 underline" href="/events">
 					View All Events <BsArrowRight size={24} />
 				</Link>

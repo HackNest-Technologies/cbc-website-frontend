@@ -14,7 +14,7 @@ import WorshipWithUs from "../components/Home/WorshipWithUs.jsx";
 
 const HomePage = () => {
 	return (
-		<main>
+		<main className="overflow-x-hidden">
 			<Hero />
 			<LearnMore />
 			<Features />

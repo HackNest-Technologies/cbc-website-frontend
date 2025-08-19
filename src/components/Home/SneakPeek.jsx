@@ -1,8 +1,8 @@
 import sneakPeek from "../../assets/images/sneakpeak.png";
 
 const SneakPeek = () => (
-	<section className="container">
-		<img src={sneakPeek} alt="Sneak-peek" />
+	<section>
+		<img src={sneakPeek} alt="Sneak-peek" className="w-full" />
 	</section>
 );
 

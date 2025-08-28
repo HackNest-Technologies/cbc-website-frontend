@@ -17,11 +17,19 @@
 
 
 
-
+/* Desktop */
 .stroke-white {
   -webkit-text-stroke-width: 3.92px;
   -webkit-text-stroke-color: #fff;
 }
+
+/* tab */
+.stroke-white-tab{
+  -webkit-text-stroke-width: 2.54px;
+-webkit-text-stroke-color: #FFF;
+}
+
+/* mobile */
 .stroke-white-mobile {
   -webkit-text-stroke-width: 0.95px;
   -webkit-text-stroke-color: #fff;

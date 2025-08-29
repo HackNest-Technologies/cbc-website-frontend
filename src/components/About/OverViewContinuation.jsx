@@ -3,7 +3,7 @@ import overviewFrameOne from "../../assets/images/overviewFrame-1.png";
 
 const OverViewContinuation = () => {
   return (
-    <section className="relative pt-[150px]">
+    <section className="relative py-[150px]">
       <div className="w-full h-full  absolute pr-6 bottom-[110px] z-[-1000] md:bottom-[300px] lg:bottom-[450px] xl:bottom-[500px] 2xl:bottom-[550px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +21,6 @@ const OverViewContinuation = () => {
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          // width="1420"
-          // height="894"
           viewBox="0 0 1420 894"
           fill="none"
           className="hidden lg:block"
@@ -38,7 +36,7 @@ const OverViewContinuation = () => {
       <div>
         <div className="flex justify-between relative transform  bottom-1/2 -translate-y-[30%] md:-translate-y-[10%] lg:-translate-y-0 2xl:-translate-y-[-20%]  container mx-auto">
           <div className="w-[220px] md:w-[432px] lg:w-[635px]">
-            <h2 className="px-[25px] text-base font-semibold  leading-[100%] font-satoshi md:text-[36px] lg:text-[52px] lg:px-0 ">
+            <h2 className="px-[25px] text-base font-semibold  leading-[100%] font-satoshi md:text-[36px] lg:text-[52px] lg:px-0">
               Bear one another’s burdens, and so fulfill the law of Christ.
             </h2>
 
@@ -59,7 +57,7 @@ const OverViewContinuation = () => {
             <img
               src={overviewFrame}
               alt=""
-              className="w-[95px] h-auto rounded-[4px] object-cover absolute top-[100px] left-[-20px] md:w-[254.11px] md:top-[210px] md:left-[-40px] lg:w-[358px] lg:top-[350px] lg:left-[-80px] 2xl:w-[450px]"
+              className="w-[95px] h-auto rounded-[4px] object-cover absolute top-[100px] left-[-20px] md:w-[254.11px] md:top-[210px] md:left-[-40px] lg:w-[358px] lg:top-[320px] lg:left-[-140px] 2xl:w-[450px]"
             />
           </div>
         </div>

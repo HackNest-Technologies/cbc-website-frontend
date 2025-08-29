@@ -15,7 +15,7 @@ const BranchCard = ({ branchData}) => {
   return (
     <>
       <div className="relative" onClick={() => handleToggle(branchData.id)}>
-        <img src={branchData.thumbnail} className="w-[200px] rounded-[6px] md:w-[302px] md:rounded-[10px]" />
+        <img src={branchData.thumbnail} className="w-[200px] rounded-[6px] md:w-[302px] md:rounded-[10px] lg:w-full" />
         <p className="text-center text-white absolute inset-0 bottom-[100px]">
           {branchData.branch}
         </p>

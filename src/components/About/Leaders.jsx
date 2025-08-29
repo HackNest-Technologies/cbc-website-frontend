@@ -18,7 +18,7 @@ const Leaders = () => {
           description={leader.description}
         />
       ))}
-      <div className="md:grid md:grid-cols-2 container mx-auto md:gap-x-8 mt-10">
+      <div className="container  mx-auto mt-10 md:grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 ">
         {pastors.map((pastor) => (
           <Pastors
             key={pastor.id}

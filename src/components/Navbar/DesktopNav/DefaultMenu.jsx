@@ -4,7 +4,7 @@ import { IoMenuSharp } from "react-icons/io5";
 
 const DefaultMenu = ({ classLink, toggleMenu }) => {
   return (
-    <header className="fixed w-full top-0 z-[100]">
+    <header className="fixed w-full top-0 z-[1000]">
       <section className="container mx-auto my-4 flex justify-between items-center h-[104px]">
         <div className="flex gap-4 justify-center items-center">
           <Link to="/">
@@ -28,7 +28,7 @@ const DefaultMenu = ({ classLink, toggleMenu }) => {
           </li>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
             <NavLink to="/events" className={classLink}>
-              EVents
+              Events
             </NavLink>
           </li>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">

@@ -2,20 +2,18 @@ import pastorAndWife from "../../assets/images/pastor-and-wife.png";
 
 const OurLeadership = () => (
 	<section className="container mx-auto p-6 space-y-[32.14px]">
-		<h3 className="font-satoshi text-[26.71px] mobile:text-[40px] tablet:text-[62.32px]">
+		<h3 className="font-satoshi text-[26.71px] sm:text-[40px] md:text-[62.32px]">
 			Our Leadership
 		</h3>
 
-		<div className="bg-[#E5E5E5] p-4 rounded-[7.35px] space-y-4 mobile:flex mobile:flex-row-reverse justify-between mobile:p-6 mobile:gap-4 tablet:h-[535px]">
+		<div className="bg-[#E5E5E5] p-4 rounded-[7.35px] space-y-4 sm:flex sm:flex-row-reverse justify-between sm:p-6 sm:gap-4 md:h-[535px]">
 			<img
 				src={pastorAndWife}
 				alt="Pastor and his wife"
-				className="mobile:w-[370.56px] mobile:h-[381.56px] tablet:w-[539px] tablet:h-[555px] mobile:translate-y-[80%] tablet:translate-y-[10%]"
+				className="sm:w-[370.56px] sm:h-[381.56px] md:w-[539px] md:h-[555px] sm:translate-y-[80%] md:translate-y-[10%]"
 			/>
-			<div className="space-y-4 mobile:space-y-8 flex-1 tablet:max-w-[472px] tablet:flex flex-col justify-between">
-				<h4 className="font-satoshi tablet:text-[32px]">
-					PASTOR OLUMIDE EMMANUEL
-				</h4>
+			<div className="space-y-4 sm:space-y-8 flex-1 md:max-w-[472px] md:flex flex-col justify-between">
+				<h4 className="font-satoshi md:text-[32px]">PASTOR OLUMIDE EMMANUEL</h4>
 				<p className="leading-[120%]">
 					Pastor Olumide Emmanuel has been the heart and soul of Calvary Bible
 					Church for over 35 years. As the founding Overseer, he has transformed

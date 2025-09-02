@@ -1,13 +1,52 @@
+import icon1 from "../../assets/images/bible-icon.png";
 import featImg1 from "../../assets/images/feature-1.png";
 import featImg2 from "../../assets/images/feature-2.png";
 import featImg3 from "../../assets/images/feature-3.png";
+import icon3 from "../../assets/images/gift-icon.png";
+import icon2 from "../../assets/images/group-icon.png";
 
-const Features = () => (
-	<section className="container mx-auto p-6 grid-cols-1 grid gap-4 relative z-1 mobile:grid-cols-3">
-		<img src={featImg1} alt="Bible Centered Teaching" />
-		<img src={featImg2} alt="Loving Community" />
-		<img src={featImg3} alt="Impactful Outreach" />
-	</section>
-);
+const Features = () => {
+	const features = [
+		{
+			title: "Bible centered teaching",
+			bgImg: featImg1,
+			icon: icon1,
+		},
+		{
+			title: "Loving Community",
+			bgImg: featImg2,
+			icon: icon2,
+		},
+		{
+			title: "Impactful Outreach",
+			bgImg: featImg3,
+			icon: icon3,
+		},
+	];
+
+	const FeatureCard = ({ title, bgImg, icon }) => (
+		<div
+			style={{
+				backgroundImage: `linear-gradient(#00000044, #00000044), url(${bgImg})`,
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+			}}
+			className="py-6 px-4 text-white rounded-2xl h-[373px]"
+		>
+			<div className="flex flex-col justify-between h-full">
+				<img src={icon} alt="" width={64} />
+				<h3 className="text-[34px] capitalize">{title}</h3>
+			</div>
+		</div>
+	);
+
+	return (
+		<section className="container mx-auto p-6 grid-cols-1 grid gap-4 relative z-1 md:grid-cols-3">
+			{features.map((feat) => (
+				<FeatureCard {...feat} key={feat.title} />
+			))}
+		</section>
+	);
+};
 
 export default Features;

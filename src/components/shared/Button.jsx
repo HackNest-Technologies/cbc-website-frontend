@@ -1,6 +1,4 @@
-const Button = (props) => {
-	const { text, variant, icon, className, ...others } = props;
-
+const Button = ({ text, variant, icon, className, ...others }) => {
 	if (variant === "solid")
 		return (
 			<button
@@ -20,7 +18,7 @@ const Button = (props) => {
 			className={`${className} border border-[#989898] rounded-full px-4 py-2 text-sm hover:cursor-pointer active:scale-95 transition-transform`}
 			{...others}
 		>
-			{props.text}
+			{text}
 		</button>
 	);
 };

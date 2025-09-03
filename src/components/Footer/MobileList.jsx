@@ -16,10 +16,10 @@ const MobileList = () => {
                 <Link to="/about">About Us</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/donate">Leadership</Link>
+                <Link to="/leadership">Leadership</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/volunteer">CBC branches</Link>
+                <Link to="/cbc--branches">CBC branches</Link>
               </li>
             </ul>
           </div>
@@ -28,22 +28,22 @@ const MobileList = () => {
             <h2 className=" text-sm md:text-base pt-5 uppercase font-satoshi">Community </h2>
             <ul className="list-none  font-inter">
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/about">Discussion Forum</Link>
+                <Link to="/discussion-forum">Discussion Forum</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/donate">Prayer Requests</Link>
+                <Link to="/prayer-request">Prayer Requests</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/volunteer">Testimonies</Link>
+                <Link to="/testimonies">Testimonies</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/contact">Departments & Groups</Link>
+                <Link to="/departments-group">Departments & Groups</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/events">New Member’s Corner</Link>
+                <Link to="/new-members">New Member’s Corner</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/careers">Counselling</Link>
+                <Link to="/counselling">Counselling</Link>
               </li>
             </ul>
           </div>
@@ -54,10 +54,10 @@ const MobileList = () => {
             </h2>
             <ul className="list-none  font-inter">
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/about">TEA</Link>
+                <Link to="/tea">TEA</Link>
               </li>
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/donate">CSV</Link>
+                <Link to="/csv">CSV</Link>
               </li>
             </ul>
           </div>
@@ -71,19 +71,19 @@ const MobileList = () => {
           </h2>
           <ul className="list-none  font-inter">
             <li className="pt-3 text-xs md:text-sm">
-              <Link to="/about">Live Service </Link>
+              <Link to="/live-service">Live Service </Link>
             </li>
             <li className="pt-3 text-xs md:text-sm">
-              <Link to="/donate">Past Sermons </Link>
+              <Link to="/past-sermons">Past Sermons </Link>
             </li>
             <li className="pt-3 text-xs md:text-sm">
-              <Link to="/volunteer">Daily Devotional </Link>
+              <Link to="/daily-devotional">Daily Devotional </Link>
             </li>
             <li className="pt-3 text-xs md:text-sm">
-              <Link to="/contact">Daily Devotional </Link>
+              <Link to="/daily-devotional">Daily Devotional </Link>
             </li>
             <li className="pt-3 text-xs">
-              <Link to="/events">House fellowship</Link>
+              <Link to="/house-fellowship">House fellowship</Link>
             </li>
           </ul>
         </div>
@@ -95,19 +95,19 @@ const MobileList = () => {
           <h2 className=" text-sm md:text-base pt-5 uppercase font-satoshi">learning </h2>
           <ul className="list-none  font-inter">
             <li className="pt-3 text-xs">
-              <Link to="/about">Membership class</Link>
+              <Link to="/membership-class">Membership class</Link>
             </li>
             <li className="pt-3 text-xs">
-              <Link to="/donate">Maturity class</Link>
+              <Link to="/maturity-class">Maturity class</Link>
             </li>
             <li className="pt-3 text-xs">
-              <Link to="/volunteer">Ministerial class</Link>
+              <Link to="/ministerial-class">Ministerial class</Link>
             </li>
             <li className="pt-3 text-xs">
-              <Link to="/contact">Missions</Link>
+              <Link to="/mission">Missions</Link>
             </li>
             <li className="pt-3 text-xs">
-              <Link to="/events">Marriage class</Link>
+              <Link to="/marriage-class">Marriage class</Link>
             </li>
           </ul>
         </div>

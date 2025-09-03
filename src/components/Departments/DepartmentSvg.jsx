@@ -1,0 +1,176 @@
+// import headingLine from "../../assets/images/headingLine.png";
+// import EllipsegiveTab from "../../assets/images/Ellipsegive-desk.png";
+// import headingLineTab from "../../assets/images/headingLineTab.png";
+
+// const DepartmentSvg = () => {
+//   return (
+//     <section className="overflow-hidden md:pb-[400px] h-[55dvh] md:h-full lg:h-[60vh] 2xl:h-[85vh]" >
+//       <section className="relative">
+//         <div
+//           className="w-full h-full absolute bottom-[-140px] z-[-1000] 
+//         right-[46px] md:top-[110px] md:left-0  lg:left-[-100px]"
+//         >
+//           <div className="">
+//             {/* Mobile */}
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               width="67"
+//               height="67"
+//               viewBox="0 0 67 67"
+//               fill="none"
+//               className="md:hidden"
+//             >
+//               <circle
+//                 cx="33.5"
+//                 cy="33.5"
+//                 r="32"
+//                 stroke="#FD9F2B"
+//                 strokeWidth="1.77923"
+//                 strokeDasharray="3.56 3.56"
+//               />
+//             </svg>
+
+//             {/* Tab */}
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               width="36"
+//               height="133"
+//               viewBox="0 0 36 133"
+//               fill="none"
+//               className="hidden md:block lg:hidden"
+//             >
+//               <circle
+//                 cx="-30.2357"
+//                 cy="66.5593"
+//                 r="63.9869"
+//                 stroke="#FD9F2B"
+//                 strokeWidth="3.55483"
+//                 strokeDasharray="7.11 7.11"
+//               />
+//             </svg>
+
+//             {/* Desktop */}
+
+//             <img src={EllipsegiveTab} className="hidden lg:block w-[175px]" />
+//           </div>
+//         </div>
+
+//         <div className="w-full h-full  absolute px-6  top-[20px] md:top-[98px] md:pr-[80px] md:left-[8px] lg:pr-[140px] lg:left-[45px]">
+//           <div className="">
+//             <img src={headingLine} className="h-[370px] w-[100vw] md:hidden" />
+//             <img src={headingLineTab} className="hidden  md:block" />
+//           </div>
+//         </div>
+//         <div className="flex justify-center items-center   pt-[20px] px-[10px] absolute inset-0 top-[180px] z-[1000] md:top-[11vw] lg:top-[15vw]">
+//           <div className=" flex justify-center">
+//             <div className="w-[80vw] pt-[40px] px-[2px] pl-[25px] md:pt-[200px] md:pl-[90px] lg:w-[65vw]">
+//               <p className="text-sm font-inter italic leading-[145%] md:text-base  lg:text-lg lg:leading-[30px]">
+//                 At Calvary, serving is how we grow, connect, and reveal Christ.
+//                 Whether you're drawn to ushering, sound, or nu Media, there's a
+//                 place for your gifts. Our departments ensure excellence in
+//                 worship and order, while our fellowship groups build community
+//                 around shared journeys and purpose. Through heartfelt service
+//                 and deep connections, we nurture gifts, sharpen one another, and
+//                 align our lives with God's will. Here, we build each other, live
+//                 purposefully, and serve with joyful excellence. Find your fit,
+//                 take your place, and flourish in purpose.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </section>
+//   );
+// };
+
+// export default DepartmentSvg;
+
+
+
+import headingLine from "../../assets/images/headingLine.png";
+import EllipsegiveTab from "../../assets/images/Ellipsegive-desk.png";
+import headingLineTab from "../../assets/images/headingLineTab.png";
+
+const DepartmentSvg = () => {
+  return (
+    <section className="overflow-hidden md:pb-[400px] h-[55dvh] md:h-full lg:h-[60dvh] 2xl:h-[85dvh]">
+      <section className="relative">
+        <div
+          className="w-full h-full absolute bottom-[-140px] z-[-1000] 
+        right-[46px] md:top-[110px] md:left-0 lg:left-[-100px]"
+        >
+          <div>
+            {/* Mobile */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="67"
+              height="67"
+              viewBox="0 0 67 67"
+              fill="none"
+              className="md:hidden"
+            >
+              <circle
+                cx="33.5"
+                cy="33.5"
+                r="32"
+                stroke="#FD9F2B"
+                strokeWidth="1.77923"
+                strokeDasharray="3.56 3.56"
+              />
+            </svg>
+
+            {/* Tab */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="133"
+              viewBox="0 0 36 133"
+              fill="none"
+              className="hidden md:block lg:hidden"
+            >
+              <circle
+                cx="-30.2357"
+                cy="66.5593"
+                r="63.9869"
+                stroke="#FD9F2B"
+                strokeWidth="3.55483"
+                strokeDasharray="7.11 7.11"
+              />
+            </svg>
+
+            {/* Desktop */}
+            <img src={EllipsegiveTab} className="hidden lg:block w-[175px]" />
+          </div>
+        </div>
+
+        <div className="w-full h-full absolute px-6 top-[20px] md:top-[98px] md:pr-[80px] md:left-[8px] lg:pr-[140px] lg:left-[45px]">
+          <div>
+            <img src={headingLine} className="h-[370px] w-[100vw] md:hidden" />
+            <img src={headingLineTab} className="hidden md:block" />
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center pt-[20px] px-[10px] absolute inset-0 top-[180px] z-[1000] md:top-[11vw] lg:top-[15vw]">
+          <div className="flex justify-center">
+            <div className="w-[80vw] pt-[40px] px-[2px] pl-[25px] md:pt-[200px] md:pl-[90px] lg:w-[65vw]">
+              <p className="text-sm font-inter italic leading-[145%] md:text-base lg:text-lg lg:leading-[30px]">
+                At Calvary, serving is how we grow, connect, and reveal Christ.
+                Whether you're drawn to ushering, sound, or nu Media, there's a
+                place for your gifts. Our departments ensure excellence in
+                worship and order, while our fellowship groups build community
+                around shared journeys and purpose. Through heartfelt service
+                and deep connections, we nurture gifts, sharpen one another, and
+                align our lives with God's will. Here, we build each other, live
+                purposefully, and serve with joyful excellence. Find your fit,
+                take your place, and flourish in purpose.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+};
+
+export default DepartmentSvg;
+

@@ -15,10 +15,10 @@ const FooterList = () => {
               <Link to="/about">About Us</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/donate">Leadership</Link>
+              <Link to="/leadership">Leadership</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/volunteer">CBC branches</Link>
+              <Link to="/cbc-branches">CBC branches</Link>
             </li>
           </ul>
         </div>
@@ -30,19 +30,19 @@ const FooterList = () => {
           </h2>
           <ul className="list-none  font-inter">
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/about">Live Service </Link>
+              <Link to="/live-service">Live Service </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/donate">Past Sermons </Link>
+              <Link to="/past-sermon">Past Sermons </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/volunteer">Daily Devotional </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/contact">Daily Devotional </Link>
+              <Link to="/daily-devotional">Daily Devotional </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/events">House fellowship</Link>
+              <Link to="/house-fellowship">House fellowship</Link>
             </li>
           </ul>
         </div>
@@ -52,22 +52,22 @@ const FooterList = () => {
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">Community </h2>
           <ul className="list-none  font-inter">
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/about">Discussion Forum</Link>
+              <Link to="/discussion-forum">Discussion Forum</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/donate">Prayer Requests</Link>
+              <Link to="/prayer-request">Prayer Requests</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/volunteer">Testimonies</Link>
+              <Link to="/testimonies">Testimonies</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/contact">Departments & Groups</Link>
+              <Link to="/departments-group">Departments & Groups</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/events">New Member’s Corner</Link>
+              <Link to="/new-member">New Member’s Corner</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/careers">Counselling</Link>
+              <Link to="/counselling">Counselling</Link>
             </li>
           </ul>
         </div>
@@ -77,19 +77,19 @@ const FooterList = () => {
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">learning </h2>
           <ul className="list-none  font-inter">
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/about">Membership class</Link>
+              <Link to="/membership-class">Membership class</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/donate">Maturity class</Link>
+              <Link to="/maturity-class">Maturity class</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/volunteer">Ministerial class</Link>
+              <Link to="/ministerial-class">Ministerial class</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/contact">Missions</Link>
+              <Link to="/mission">Missions</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/events">Marriage class</Link>
+              <Link to="/marriage-class">Marriage class</Link>
             </li>
           </ul>
         </div>
@@ -102,10 +102,10 @@ const FooterList = () => {
           </h2>
           <ul className="list-none  font-inter">
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/about">TEA</Link>
+              <Link to="/tea">TEA</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/donate">CSV</Link>
+              <Link to="/csv">CSV</Link>
             </li>
           </ul>
         </div>

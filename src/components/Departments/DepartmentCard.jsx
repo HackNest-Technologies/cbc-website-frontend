@@ -1,22 +1,22 @@
 const DepartmentCard = ({ departments }) => {
   return (
-    <section className="container mx-auto px-6">
+    <section className="container mx-auto px-6 md:px-0">
       {departments.map((department) => (
         <div key={department.id} className="relative rounded-[14.154px] overflow-hidden py-10 md:flex md:gap-6  ">
           <div className="md:w-1/2">
             <img
               src={department.departmentImg}
               alt={department.department}
-              className="rounded-[20px] w-full object-cover md:h-full md:rounded-[10.62px] lg:rounded-[15px]"
+              className="rounded-[20px] w-full object-cover md:h-full"
             />
           </div>
 
           <div className="md:w-4/6">
-            <h3 className="text-[45px] font-bold font-satoshi capitalize mt-4 md:mt-0 leading-[100%]  lg:text-[32px] lg:leading-[100%]">
+            <h3 className="pt-2 text-[45px] font-bold font-satoshi capitalize mt-4 md:mt-0 leading-[100%]  md:text-[48px]">
               {department.department}
             </h3>
 
-            <p className="py-3 text-sm font-inter leading-[140%] text-black/70 lg:text-base lg:leading-[30px] lg:pt-[40px] 2xl:pt-[100px]">
+            <p className="py-4 text-sm font-inter leading-[140%] text-black/70 md:text-base md:leading-[30px] lg:pt-[40px] 2xl:pt-[100px]">
               {department.description}
             </p>
             <a

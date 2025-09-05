@@ -1,4 +1,4 @@
-import rectangularBg2 from "../../assets/images/rectangular-bg-2.png";
+import logo from "../../assets/images/cbc-logo.webp";
 import rectangularBg from "../../assets/images/rectangular-bg.png";
 import sermonBanner from "../../assets/images/service-banner.png";
 import streamIcon from "../../assets/images/stream-icon.svg";
@@ -25,25 +25,25 @@ const LastSermon = () => {
 
 	return (
 		<section className="relative sm:mt-8">
-			<img
-				src={rectangularBg}
-				alt=""
-				className="absolute left-0 w-full sm:hidden -bottom-11 z-0 "
-			/>
-			<img
-				src={rectangularBg2}
-				alt=""
-				className="absolute left-0 w-full max-sm:hidden -bottom-30 z-0 h-[1450px]"
-			/>
+			<div className="absolute h-[837.42px] md:h-[1500px] w-full -top-30 md:-top-60">
+				<img src={rectangularBg} alt="" className="min-w-full h-full block" />
+				<div className="relative">
+					<img
+						src={logo}
+						alt=""
+						className="absolute w-[73px] md:w-[138px] left-[60%] bottom-13 md:bottom-22"
+					/>
+				</div>
+			</div>
 
 			<div className="container mx-auto p-6 pb-24">
 				<div className="relative space-y-[22.14px]">
-					<h3 className="text-center leading-full text-[18.45px] sm:text-[40px] font-satoshi">
+					<h3 className="text-center leading-full text-[18.45px] lg:text-[40px] font-satoshi">
 						Last Sermon
 					</h3>
 
 					{/* TODO: Consume API for last sermon */}
-					<div className="bg-white p-2 sm:p-4 space-y-[14.76px] rounded-[3.69px] sm:max-w-[805.5px] md:max-w-full mx-auto sm:space-y-8 md:grid grid-cols-2 gap-4 items-center">
+					<div className="bg-white p-2 md:p-4 space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 lg:grid grid-cols-2 gap-4 items-center">
 						<img
 							src={sermonBanner}
 							alt="Last sermon"

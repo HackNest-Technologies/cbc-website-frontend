@@ -50,16 +50,7 @@ body{
     max-width: 87%;
   }
 
+}
 
-
-}
-:root {
-  --vh: 100%;
-}
-@supports (height: 100dvh) {
-  :root {
-    --vh: 100dvh;
-  }
-}
 
 

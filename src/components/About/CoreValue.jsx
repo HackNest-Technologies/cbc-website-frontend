@@ -6,7 +6,7 @@ const CoreValue = () => {
   return (
     <section className="">
       <div className="pt-16 pl-6 lg:pl-[6.8%]">
-        <div className="relative w-full pl-[35px] lg:pl-0">
+        <div className="relative w-full md:pl-[35px] lg:pl-0">
           <img
             src={pillarCard}
             alt=""

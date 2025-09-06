@@ -2,8 +2,9 @@ import lastBg from "../../assets/images/aboutlastImg.png";
 import { Link } from "react-router-dom";
 const LastSection = () => {
   return (
+    <section className="mx-6 md:mx-0">
     <section
-      className="mx-6 container md:mx-auto bg-cover h-full rounded-[5.41px] py-5 md:rounded-[14px] md:pt-[120px] lg:h-[703px]"
+      className="container md:mx-auto bg-cover h-full rounded-[5.41px] py-5 md:rounded-[14px] md:pt-[120px] lg:h-[703px]"
       style={{ backgroundImage: `url(${lastBg})` }}
     >
       <div className="text-white flex flex-col items-center pt-20  px-[20px] md:pt-[150px] md:pb-10 lg:pt-0 lg:pb-0 lg:justify-center lg:h-[70vh]">
@@ -21,6 +22,7 @@ const LastSection = () => {
           Give
         </Link>
       </div>
+    </section>
     </section>
   );
 };

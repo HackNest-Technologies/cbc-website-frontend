@@ -48,7 +48,6 @@ const FellowshipLocation = () => {
                 {location}
               </p>
             ))}
-            {/* <p className="text-base leading-[140%] font-inter">address two</p> */}
           </section>
         </section>
       ))}

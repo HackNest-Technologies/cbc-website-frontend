@@ -2,7 +2,7 @@ import { LuSearch } from "react-icons/lu";
 
 const SearchInput = ({ search, handleSearch, wrapperWidth, glass, input, pholder }) => {
   return (
-    <div className="flex justify-center pt-2 pb-12 lg:pt-10 lg:pb-17">
+    <div className="flex justify-center">
       <div
         className={`flex items-center border ${wrapperWidth}}`}
       >

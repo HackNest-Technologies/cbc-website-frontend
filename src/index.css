@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Reenie+Beanie&display=swap');
+
 
 
 @font-face {
@@ -14,7 +16,8 @@
 @theme{
   --font-inter: Inter, "sans-serif";
   --font-satoshi: satoshi, "sans-serif";
-  --font-geist: Geist, "sans-serif"
+  --font-geist: Geist, "sans-serif";
+  --font-reenie: Reenie Beanie, "san-serif";
   /* --font-proxima: Proxima Nova, "sans-serif"; */
 }
 

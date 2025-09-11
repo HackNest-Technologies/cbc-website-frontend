@@ -25,7 +25,7 @@ const AllEvents = () => {
             {data.map((events) => (
               <div
                 key={events.id}
-                className="rela rounded-[14.154px] overflow-hidden py-10 md:flex md:gap-6  "
+                className="rounded-[14.154px] overflow-hidden py-10 md:flex md:gap-6  "
               >
                 <div className="md:w-1/2">
                   <img

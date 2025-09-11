@@ -1,6 +1,6 @@
 import EventBgDark from "../../assets/images/give.png";
-import SearchInput from "./SearchInput";
-const EventBg = () => {
+import SearchInput from "../Event/SearchInput";
+const CategoriesBg = () => {
   return (
     <section className="px-2">
       {/* Background container */}
@@ -14,7 +14,7 @@ const EventBg = () => {
           />
           <div className="absolute inset-0  flex justify-center items-center text-[#ffffff] z-[100]">
             <h2 className="text-[40px] leading-[100%] uppercase font-satoshi md:text-[64px]">
-              Events{" "}
+              Shop
             </h2>
           </div>
 
@@ -33,4 +33,4 @@ const EventBg = () => {
   );
 };
 
-export default EventBg;
+export default CategoriesBg;

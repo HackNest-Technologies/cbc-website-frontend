@@ -15,6 +15,7 @@ const Groups = () => {
   return (
     <section>
       <div className="container mx-auto pt-[120px]">
+        <div className="pt-2 pb-12 lg:pt-10 lg:pb-17">
         <SearchInput
           pholder="Search group"
           input="text-[#000000] outline-none  px-1 text-lg"
@@ -23,6 +24,8 @@ const Groups = () => {
           handleSearch={handleSearch}
           search={search}
         />
+        </div>
+
       </div>
       <DepartmentCard departments={FilterDepartment} />
     </section>

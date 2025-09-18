@@ -14,9 +14,11 @@ import DepartGroupPage from "./pages/DepartGroupPage";
 import HouseFellowPage from "./pages/HouseFellowPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import BookStorePage from "./pages/BookStorePage";
-import AreYouNewPage from "./pages/AreYouNewPage";
+import WelcomePage from "./pages/WelcomePage";
 import NewConvertPage from "./pages/NewConvertPage";
 import NewMemberPage from "./pages/NewMemberPage";
+import CounsellingPage from "./pages/CounsellingPage";
+import MembershipPage from "./pages/MembershipPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,9 +32,11 @@ const router = createBrowserRouter(
       <Route path="/house-fellowship" element={<HouseFellowPage />} />
       <Route path="/store" element={<BookStorePage />} />
       <Route path="/category/:genre" element={<CategoriesPage />} />
-      <Route path="/welcome" element={<AreYouNewPage />} />
+      <Route path="/welcome" element={<WelcomePage />} />
       <Route path="/new-member" element={<NewMemberPage />} />
       <Route path="/new-convert" element={<NewConvertPage />} />
+      <Route path="/counselling" element={<CounsellingPage />} />
+      <Route path="/membership-login" element={<MembershipPage />} />
     </Route>
   )
 );

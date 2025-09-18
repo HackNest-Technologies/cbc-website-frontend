@@ -1,5 +1,7 @@
 import aboutImg from "../../assets/images/about.webp";
+import CircularText from "../../utils/CircularText";
 import OverView from "./OverView";
+
 
 const AboutChurch = () => {
   return (
@@ -21,12 +23,20 @@ const AboutChurch = () => {
               calvary bible church
             </h2>
           </div>
+         
+          <div
+            className="absolute bottom-[-30px] right-[40px]  
+             md:bottom-[-60px] md:right-[30px] 
+             lg:bottom-[-100px] lg:right-[60px]"
+          >
+           <CircularText/>
+          </div>
         </div>
       </div>
 
       <div className="pt-[200px] pb-[110px] px-6 md:flex md:px-0 md:pt-[400px] container mx-auto md:gap-10 md:pb-[230px] lg:pt-[500px]">
         <div className="lg:w-2/5">
-          <h2 className="text-[32px] font-semibold font-satoshi pt-[50px] md:text-[52px] md:pt-0 lg:text-[52px]">
+          <h2 className="text-[32px] font-semibold font-satoshi pt-[50px] md:text-[52px] md:pt-0 lg:text-[52px] z-">
             Overview
           </h2>
         </div>

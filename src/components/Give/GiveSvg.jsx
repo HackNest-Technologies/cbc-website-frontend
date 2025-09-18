@@ -3,13 +3,13 @@ import EllipsegiveTab from "../../assets/images/Ellipsegive-desk.png";
 import headingLineTab from "../../assets/images/headingLineTab.png";
 const GiveSvg = () => {
   return (
-    <section className="overflow-hidden md:pb-[400px] h-[55vh] md:h-full lg:h-[60vh] 2xl:h-[85vh] ">
+    <section className="overflow-hidden  h-[55vh] md:h-full md:pb-[400px] lg:h-[60vh] 2xl:h-[85vh] ">
       <section className="relative">
         <div
           className="w-full h-full absolute bottom-[-140px] z-[-1000] 
-        right-[46px] md:top-[110px] md:left-0  lg:left-[-100px]"
+        right-[50px] md:top-[60px] md:left-0  lg:left-[-100px]"
         >
-          <div className="overflow-visible">
+          <div className="">
             {/* Mobile */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,15 +54,15 @@ const GiveSvg = () => {
           </div>
         </div>
 
-        <div className="w-full h-full  absolute px-6  top-[20px] md:top-[98px] md:pr-[80px] md:left-[8px] lg:pr-[140px] lg:left-[45px]">
-          <div className="overflow-visible">
-            <img src={headingLine} className="h-[370px] w-[100vw] md:hidden" />
-            <img src={headingLineTab} className="hidden  md:block" />
+        <div className="w-full h-full  absolute px-6 -z-50  top-[20px] left-[-10px] md:top-[68px] md:pr-[80px] md:left-[8px] lg:pr-[140px] lg:left-[45px]">
+          <div className="">
+            <img src={headingLine} className="h-[370px] w-[100vw] pr-[5vw]  md:hidden" />
+            <img src={headingLineTab} className="hidden  md:block pr-[5vw] " />
           </div>
         </div>
-        <div className="flex justify-center items-center   pt-[20px] px-[10px] absolute inset-0 top-[180px] z-[1000] md:top-[11vw] lg:top-[15vw]">
+        <div className="flex justify-center items-center   pt-[20px] px-[10px] absolute inset-0 top-[180px] z-[1000] md:top-[10vw] lg:top-[15vw]">
           <div className=" flex justify-center">
-            <div className="w-[80vw] pt-[40px] px-[2px] pl-[25px] md:pt-[200px] md:pl-[90px] lg:w-[65vw]">
+            <div className="w-[80vw] pt-[40px] px-[17px] md:pt-[150px] md:w-[75vw] md:px-[30px] lg:w-[65vw]">
               <p className="text-sm font-inter italic leading-[145%] md:text-base  lg:text-lg lg:leading-[30px]">
                 <span className="text-sm italic leading-[145%] font-bold font-inter md:text-base">
                   “Honor the Lord with your wealth and with the first fruits of

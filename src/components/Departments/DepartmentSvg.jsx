@@ -7,7 +7,7 @@ const DepartmentSvg = () => {
     <section
       className="
         overflow-visible md:overflow-hidden
-        md:pb-[100px]
+        md:pb-[60px]
         lg:min-h-[60dvh] 2xl:min-h-[85dvh]
       "
     >
@@ -16,7 +16,7 @@ const DepartmentSvg = () => {
         <div
           className="
             w-full h-full absolute bottom-[-140px] z-[-1000]
-            right-[46px] md:top-[110px] md:left-0 lg:left-[-100px]
+            right-[46px] md:top-[65px] md:left-0 lg:left-[-100px]
           "
         >
           {/* Mobile */}
@@ -61,11 +61,11 @@ const DepartmentSvg = () => {
           <img src={EllipsegiveTab} className="hidden lg:block w-[175px]" />
         </div>
 
-        {/* Heading lines (decorative, can stay absolute) */}
+        {/* Heading lines  */}
         <div
           className="
-            w-full h-full absolute px-6
-            top-[20px] md:top-[98px] md:pr-[80px] md:left-[8px]
+            w-full -z-50 h-full absolute px-6 pr-[10vw]
+            top-[20px] md:top-[68px] md:pr-[100px] md:left-[8px]
             lg:pr-[140px] lg:left-[45px]
           "
         >
@@ -82,7 +82,7 @@ const DepartmentSvg = () => {
           "
         >
           <div className="flex justify-center">
-            <div className="w-[80vw] pt-[12vw] px-[2px] pl-[25px] md:pt-[10vw] md:pl-[90px] lg:mt-[6vw]  2xl:pt-[250px]  lg:w-[65vw]">
+            <div className="w-[80vw] pt-[5vw] min-[420px]:pt-[10vw] px-[25px] md:pt-[10vw] md:px-0 md:pl-[90px] md:pr-[20px] lg:mt-[6vw]  2xl:pt-[250px]  lg:w-[65vw]">
               <p className="text-sm font-inter italic leading-[145%] md:text-base lg:text-lg lg:leading-[30px]">
                 At Calvary, serving is how we grow, connect, and reveal Christ.
                 Whether you're drawn to ushering, sound, or nu Media, there's a

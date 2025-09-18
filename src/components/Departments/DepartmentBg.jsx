@@ -1,4 +1,5 @@
 import EventBgDark from "../../assets/images/give.png";
+import CircularText from "../../utils/CircularText";
 
 const DepartmentBg = () => {
   return (
@@ -16,12 +17,19 @@ const DepartmentBg = () => {
             <h2 className="hidden md:block leading-[100%] uppercase font-satoshi md:text-[64px]">
               Department & groups{" "}
             </h2>
-             <h2 className="text-[32px]  text-center leading-[120%] uppercase font-satoshi md:hidden">
-              Department and <br/> groups{" "}
+            <h2 className="text-[32px]  text-center leading-[120%] uppercase font-satoshi md:hidden">
+              Department and <br /> groups{" "}
             </h2>
           </div>
         </div>
-        <div className="absolute inset-0 opacity-70 bg-[#000] rounded-[8px]"></div>
+        <div
+          className="absolute bottom-[-30px] right-[10px]  
+             md:bottom-[-70px] md:right-[30px] 
+             lg:bottom-[-100px] lg:right-[60px]"
+        >
+          <CircularText />
+        </div>
+          <div className="absolute inset-0 opacity-100 bg-[#000] rounded-[8px] -z-50"></div>
       </div>
     </section>
   );

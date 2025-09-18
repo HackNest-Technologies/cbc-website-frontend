@@ -1,7 +1,7 @@
 import EventBgDark from "../../assets/images/give.png";
 import CircularText from "../../utils/CircularText";
 
-const FellowshipBg = () => {
+const CounsellingBg = () => {
   return (
     <section>
       <section className="px-2">
@@ -15,23 +15,23 @@ const FellowshipBg = () => {
               alt="Give background image"
             />
             <div className="absolute inset-0  flex justify-center items-center text-[#ffffff] z-[100]">
-              <h2 className="text-[30px] leading-[100%] uppercase font-satoshi md:text-[64px]">
-                House fellowship
+              <h2 className="text-[32px] leading-[100%] uppercase font-satoshi md:text-[64px]">
+                Counselling
               </h2>
             </div>
           </div>
+          <div className="absolute inset-0 bg-[#000] rounded-[8px] -z-50"></div>
           <div
             className="absolute bottom-[-30px] right-[40px]  
              md:bottom-[-60px] md:right-[30px] 
              lg:bottom-[-100px] lg:right-[60px]"
           >
-           <CircularText/>
+            <CircularText />
           </div>
-          <div className="absolute inset-0 bg-[#000] rounded-[8px] -z-50"></div>
         </div>
       </section>
     </section>
   );
 };
 
-export default FellowshipBg;
+export default CounsellingBg;

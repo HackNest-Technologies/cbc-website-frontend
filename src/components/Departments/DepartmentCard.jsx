@@ -27,7 +27,6 @@ const DepartmentCard = ({ departments }) => {
               <span className="text-lg font-medium font-geist text-[#fff] leading-[150%]">
                 Join Group
               </span>
-              {/* <FaArrowRight /> */}
             </a>
           </div>
         </div>

@@ -2,13 +2,13 @@ import { useLayoutEffect, useState } from "react";
 import updateEventCountDown from "../../utils/Home/updateEventCountdown.js";
 
 const TimeUnit = ({ time }) => (
-	<span className="bg-gradient-to-b from-[#fc8d336c] to-[#0000001A] border border-zinc-200 rounded-[1.57px] p-1 inline-flex items-center justify-center font-orbitron w-10 sm:w-12">
+	<span className=" text-[30px] bg-gradient-to-b from-[#fc8d336c] to-[#0000001A] border border-zinc-200 rounded-[1.57px] p-1 inline-flex items-center justify-center font-orbitron w-10 sm:w-12">
 		{time}
 	</span>
 );
 
 const NextEventCountdown = () => {
-	const [date] = useState(new Date("September 19 2025"));
+	const [date] = useState(new Date("September 25 2025"));
 	const [countdown, setCountdown] = useState({
 		days: [0, 0],
 		hours: [0, 0],
@@ -37,24 +37,24 @@ const NextEventCountdown = () => {
 							<TimeUnit time={countdown.days[0]} />
 							<TimeUnit time={countdown.days[1]} />
 						</span>
-						<span>DAYS</span>
+						<span className="text-base leading-[100%]">DAYS</span>
 					</span>
 					<span className="flex flex-col items-center">
 						<span className="text-[30.14px] flex gap-1">
 							<TimeUnit time={countdown.hours[0]} />
 							<TimeUnit time={countdown.hours[1]} />
 						</span>
-						<span>HOURS</span>
+						<span className="text-base leading-[100%]">HOURS</span>
 					</span>
 					<span className="flex flex-col items-center">
 						<span className="text-[30.14px] flex gap-1">
 							<TimeUnit time={countdown.minutes[0]} />
 							<TimeUnit time={countdown.minutes[1]} />
 						</span>
-						<span>MINUTES</span>
+						<span className="text-base leading-[100%] font-inter">MINUTES</span>
 					</span>
 				</h3>
-				<p className="capitalize text-center text-xl">
+				<p className="eading-[100%] font-satoshi capitalize text-center text-xl">
 					Till the entrepreneurship academy
 				</p>
 			</div>

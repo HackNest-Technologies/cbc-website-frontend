@@ -34,14 +34,14 @@ const Features = () => {
 			className="py-6 px-4 text-white rounded-2xl h-[373px]"
 		>
 			<div className="flex flex-col justify-between h-full">
-				<img src={icon} alt="" width={64} />
-				<h3 className="text-[34px] capitalize">{title}</h3>
+				<img src={icon} alt="" className="w-[58px] h-auto object-cover " />
+				<h3 className="text-[34px] leading-[120%] font-satoshi w-[275px] capitalize">{title}</h3>
 			</div>
 		</div>
 	);
 
 	return (
-		<section className="container mx-auto p-6 grid-cols-1 grid gap-4 relative z-1 md:grid-cols-3">
+		<section className="container mx-auto p-6 grid-cols-1 grid gap-4 relative  md:grid-cols-3">
 			{features.map((feat) => (
 				<FeatureCard {...feat} key={feat.title} />
 			))}

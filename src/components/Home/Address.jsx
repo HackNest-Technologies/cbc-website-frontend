@@ -10,7 +10,7 @@ const Address = () => (
 				className="absolute w-[117.97px] -right-[57.5px] -top-[57.5px] sm:w-[250px] sm:-right-[125px] sm:-top-[125px]"
 			/>
 
-			<address className="text-sm not-italic sm:text-[32px]">
+			<address className="text-sm font-satoshi leading-[145%] not-italic sm:text-[32px]">
 				Rehoboth Multi-Purpose Hall, Calvary Bus Stop, Ikotun, 257 Ikotun -
 				Idimu Rd, Ikotun, Lagos
 			</address>
@@ -18,7 +18,7 @@ const Address = () => (
 				href="#"
 				target="_blank"
 				rel="noopener noreferrer"
-				className="flex items-center gap-2 text-[10px] underline text-[#333333] sm:text-2xl"
+				className="flex  items-center gap-2 text-[10px] leading-[150%] underline text-[#333333] font-inter  sm:text-2xl"
 			>
 				Find us on Google Maps <BsArrowRight />
 			</a>

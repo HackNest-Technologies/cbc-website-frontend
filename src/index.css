@@ -8,20 +8,12 @@
 		url("../src/assets/fonts/Satoshi-Regular.woff2") format("woff2"),;
 }
 
-.font-orbitron {
-	font-family: Orbitron, sans-serif !important;
-}
-
-* {
-	font-family: Inter, sans-serif;
-}
 
 @theme {
 	--font-inter: Inter, "sans-serif";
 	--font-orbitron: Orbitron, "sans-serif";
 	--font-satoshi: satoshi, "sans-serif";
 	/* --font-proxima: Proxima Nova, "sans-serif"; */
-	--leading-full: 100%;
 }
 
 .stroke-white {
@@ -40,17 +32,9 @@
 	}
 }
 
-/* Home page hero section */
-.home-hero {
-	background-image:
-		linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url("./assets/images/home-hero-bg.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
 
-.feedback-form {
-	background-image: url("./assets/images/feedback-form-bg.jpg");
-	background-size: cover;
-	background-position: center;
-}
+
+
+
+
+

@@ -11,25 +11,28 @@ import SneakPeek from "../components/Home/SneakPeek.jsx";
 import Testimonies from "../components/Home/Testimonies.jsx";
 import UpcomingEvents from "../components/Home/UpcomingEvents.jsx";
 import WorshipWithUs from "../components/Home/WorshipWithUs.jsx";
+import WorshipWithUsTab from "../components/Home/WorshipWithUsTab.jsx";
 
 const HomePage = () => {
-	return (
-		<main className="overflow-x-hidden">
-			<Hero />
-			<LearnMore />
-			<Features />
-			<LastSermon />
-			<WorshipWithUs />
-			<Address />
-			<UpcomingEvents />
-			<NextEventCountdown />
-			<PrayerRequest />
-			<SneakPeek />
-			<OurLeadership />
-			<Testimonies />
-			<FeedbackForm />
-		</main>
-	);
+  return (
+    <main className="overflow-x-hidden">
+      <Hero />
+      <LearnMore />
+      <Features />
+      <LastSermon />
+      <WorshipWithUs />
+      <WorshipWithUsTab />
+
+      <Address />
+      <UpcomingEvents />
+      <NextEventCountdown />
+      <PrayerRequest />
+      <SneakPeek />
+      <OurLeadership />
+      <Testimonies />
+      <FeedbackForm />
+    </main>
+  );
 };
 
 export default HomePage;

@@ -2,12 +2,12 @@ import { BsArrowRight } from "react-icons/bs";
 import map from "../../assets/images/map-with-pin.png";
 
 const Address = () => (
-	<section className="container mx-auto sm:mx-0 mt-14 sm:mt-24">
-		<div className="bg-[#FFB91E47] mr-14 p-6 pr-12 pt-12 sm:py-20 relative rounded-r-[11.27px] space-y-4">
+	<section className="container mx-auto sm:mx-0 mt-14 sm:mt-24 md:pt-[90px]">
+		<div className="bg-[#FFB91E47] mr-14 p-6 pr-12 pt-12 sm:py-20 relative rounded-r-[11.27px] space-y-4 md:rounded-r-[30px]">
 			<img
 				src={map}
 				alt="Map with pointed location"
-				className="absolute w-[117.97px] -right-[57.5px] -top-[57.5px] sm:w-[250px] sm:-right-[125px] sm:-top-[125px]"
+				className="absolute w-[117.97px] -right-[57.5px] -top-[57.5px] sm:w-[250px] sm:-right-[125px] sm:-top-[125px] md:w-[270px] object-cover md:-right-[150.5px]"
 			/>
 
 			<address className="text-sm font-satoshi leading-[145%] not-italic sm:text-[32px]">

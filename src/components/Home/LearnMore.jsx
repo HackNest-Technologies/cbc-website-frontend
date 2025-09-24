@@ -1,7 +1,7 @@
 import DblQuote from "../shared/DblQuote.jsx";
 
 const LearnMore = () => (
-  <section className="container mx-auto pt-16 sm:pt-26 flex p-6 gap-2">
+  <section className="container mx-auto pt-16 sm:pt-26 flex p-6 gap-2 md:px-0">
     <div>
       <DblQuote />
     </div>
@@ -18,7 +18,7 @@ const LearnMore = () => (
       <div>
         <button
           type="submit"
-          className={`border border-[#989898] rounded-full px-4 py-2 text-sm hover:cursor-pointer active:scale-95 transition-transform`}
+          className={`border border-[#989898] bg-gradient-to-b from-[#FFFFFF] to-[#EEF4FF]  rounded-[50px] font-medium font-inter px-4 py-2 text-sm hover:cursor-pointer active:scale-95 transition-transform sm:w-[180px] sm:h-[58px]`}
         >
           Learn More
 		</button>

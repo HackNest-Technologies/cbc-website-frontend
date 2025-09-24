@@ -37,24 +37,24 @@ const NextEventCountdown = () => {
 							<TimeUnit time={countdown.days[0]} />
 							<TimeUnit time={countdown.days[1]} />
 						</span>
-						<span className="text-base leading-[100%]">DAYS</span>
+						<span className="text-base leading-[100%] text-[24px] font-inter">DAYS</span>
 					</span>
 					<span className="flex flex-col items-center">
 						<span className="text-[30.14px] flex gap-1">
 							<TimeUnit time={countdown.hours[0]} />
 							<TimeUnit time={countdown.hours[1]} />
 						</span>
-						<span className="text-base leading-[100%]">HOURS</span>
+						<span className="text-base leading-[100%] text-[24px] font-inter">HOURS</span>
 					</span>
 					<span className="flex flex-col items-center">
 						<span className="text-[30.14px] flex gap-1">
 							<TimeUnit time={countdown.minutes[0]} />
 							<TimeUnit time={countdown.minutes[1]} />
 						</span>
-						<span className="text-base leading-[100%] font-inter">MINUTES</span>
+						<span className="text-base leading-[100%] text-[24px] font-inter ">MINUTES</span>
 					</span>
 				</h3>
-				<p className="eading-[100%] font-satoshi capitalize text-center text-xl">
+				<p className="eading-[100%] font-satoshi capitalize text-center text-xl md:text-[32px]">
 					Till the entrepreneurship academy
 				</p>
 			</div>

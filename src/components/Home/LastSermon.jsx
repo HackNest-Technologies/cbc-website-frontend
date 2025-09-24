@@ -14,21 +14,26 @@ const LastSermon = () => {
     },
   ];
 
-  const InfoBlock = ({ title, description,preacher }) => (
+  const InfoBlock = ({ title, description, preacher }) => (
     <div className="space-y-2">
       <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
         sermon series
       </h4>
-      <p className="text-sm leading-[100%] font-inter sm:text-[32px]">{description}</p>
+      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3">
+        {description}
+      </p>
       <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
         sermon series
       </h4>
-      <p className="text-sm leading-[100%] font-inter sm:text-[32px]">{title}</p>
-	   <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
+      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3">
+        {title}
+      </p>
+      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
         Preacher
       </h4>
-      <p className="text-sm leading-[100%] font-inter sm:text-[32px]">{preacher}</p>
-		
+      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3">
+        {preacher}
+      </p>
     </div>
   );
 
@@ -47,12 +52,12 @@ const LastSermon = () => {
 
       <div className="container mx-auto py-6 px-4 pb-24">
         <div className="relative space-y-[22.14px]">
-          <h3 className="text-center leading-[100%] font-satoshi text-[18.45px] uppercase lg:text-[40px] ">
-            Last Sermon
+          <h3 className="text-center leading-[100%] font-satoshi text-[18.45px] uppercase sm:text-[26px] md:text-[40px] md:pb-4 ">
+            Lastest Sermon
           </h3>
 
           {/* TODO: Consume API for last sermon */}
-          <div className="bg-white px-2  pt-[8px] pb-[16px] md:p-4 space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 lg:grid grid-cols-2 gap-4 items-center">
+          <div className="bg-white px-2  pt-[8px] pb-[16px]  space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 md:py-[24px] md:px-[32px] md:rounded-[8px] lg:grid grid-cols-2 gap-4 items-center">
             <img
               src={sermonBanner}
               alt="Last sermon"
@@ -68,14 +73,22 @@ const LastSermon = () => {
                 ))}
               </div>
 
-              <div className=" flex space-x-2 space-y-2 sm:space-x-4">
+              <div className=" flex space-x-2 items-center space-y-2 sm:space-x-4">
                 <Button
-                  icon={<img src={streamIcon} alt="Stream live" />}
-                  text="Watch Now"
-                  className="sm:w-[220px] sm:h-[58px] justify-center sm:text-lg"
+                  text="Watch Live"
+                  spanclass="sm:text-base md:text-lg"
+                  icon={
+                    <img
+                      src={streamIcon}
+                      alt="Stream live"
+                      className="sm:w-[30px] sm:h-[30px] object-cover"
+                    />
+                  }
+                  className="sm:text-lg sm:w-[220px] sm:justify-center sm:h-[58px] md:text-[18px]"
                 />
 
-                <WhiteBgBtn link="/past-sermon" text="All sermons" />
+                <WhiteBgBtn link="/past-sermon" text="All sermons"  className="sm:text-lg sm:w-[220px] sm:justify-center sm:h-[58px] md:text-[18px] md:rounded-[500px] md:py-[3px]"
+/>
               </div>
             </div>
           </div>

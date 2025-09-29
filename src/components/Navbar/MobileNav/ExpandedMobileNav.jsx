@@ -5,7 +5,7 @@ import NavListMobile from "./NavListMobile";
 
 const ExpandedMobileNav = ({ toggleMenu }) => {
   return (
-    <div className="w-full">
+    <div className="w-full fixed top-0 left-0 h-full  z-[9999] overflow-y-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 393 1597"
@@ -41,19 +41,19 @@ const ExpandedMobileNav = ({ toggleMenu }) => {
               <NavLink to="/">Home</NavLink>
             </p>
             <p className="text-xl leading-4 py-[14px] uppercase">
-              <NavLink to="/">Events</NavLink>
+              <NavLink to="/event">Events</NavLink>
             </p>
             <p className="text-xl leading-4 py-[14px] uppercase">
-              <NavLink to="/">Store</NavLink>
+              <NavLink to="/store">Store</NavLink>
             </p>
           </div>
 
           <div>
           <p className="text-xl leading-4 py-[14px] uppercase">
-            <NavLink to="/">About</NavLink>
+            <NavLink to="/about">About</NavLink>
           </p>
           <p className="text-xl leading-4 py-[14px] uppercase ">
-            <NavLink to="/">Give</NavLink>
+            <NavLink to="/give">Give</NavLink>
           </p>
           </div>
 

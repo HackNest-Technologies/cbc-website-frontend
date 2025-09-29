@@ -5,7 +5,7 @@ import NavList from "./NavList";
 
 const ExpandedMenu = ({ classLink, toggleMenu }) => {
   return (
-    <div className="w-full fixed top-0 left-0 z-50">
+    <div className="w-full fixed top-0 left-0 h-full  z-[9999] overflow-y-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1512 820"
@@ -20,7 +20,7 @@ const ExpandedMenu = ({ classLink, toggleMenu }) => {
         viewBox="0 0 1024 820"
         fill="none"
         className="lg:hidden"
-      >
+      > 
         <path d="M-2 -4H1024V738.756L-2 820V-4Z" fill="black" />
       </svg>
       <header className="absolute top-0 right-0 left-0  my-8">

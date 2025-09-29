@@ -1,8 +1,16 @@
+import GiveBg from "../components/Give/GiveBg";
+import Payment from "../components/Give/Payment";
+import ToggleBtn from "../components/Give/ToggleBtn";
 
 const GivePage = () => {
   return (
-    <div>GivePage</div>
-  )
-}
+    <section>
+      <GiveBg />
+      <ToggleBtn />
+      <Payment/>
+     
+    </section>
+  );
+};
 
-export default GivePage
+export default GivePage;

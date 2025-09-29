@@ -3,9 +3,9 @@ import SliderImg from "../../assets/images/sliderImage.jpg";
 import { motion } from "motion/react";
 
 const SneakPeek = () => (
-  <section className="w-full pb-[250px] pt-[100px] md:pb-[600px] ">
+  <section className="w-full pb-[250px] pt-[100px] md:pb-[600px] 2xl:pt-[150px]">
     <section className="relative">
-      <div className="w-full  md:absolute md:top-[-14px]">
+      <div className="w-full  md:absolute md:top-[-14px] 2xl:top-[-95px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 500 49"

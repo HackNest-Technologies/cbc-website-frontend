@@ -1,0 +1,97 @@
+{
+  "hash": "89971d7d",
+  "configHash": "cd144d05",
+  "lockfileHash": "94aa54a2",
+  "browserHash": "9f5eb2f9",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "fa7470d9",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "76ced25b",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "3e5d89e8",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "37d54acb",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "316e6fd0",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit/query": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs",
+      "file": "@reduxjs_toolkit_query.js",
+      "fileHash": "2faac737",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit/query/react": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs",
+      "file": "@reduxjs_toolkit_query_react.js",
+      "fileHash": "2eab714d",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "0b93d633",
+      "needsInterop": false
+    },
+    "react-icons/fa6": {
+      "src": "../../node_modules/react-icons/fa6/index.mjs",
+      "file": "react-icons_fa6.js",
+      "fileHash": "5d55ad93",
+      "needsInterop": false
+    },
+    "react-icons/io5": {
+      "src": "../../node_modules/react-icons/io5/index.mjs",
+      "file": "react-icons_io5.js",
+      "fileHash": "f16d9aa8",
+      "needsInterop": false
+    },
+    "react-icons/ci": {
+      "src": "../../node_modules/react-icons/ci/index.mjs",
+      "file": "react-icons_ci.js",
+      "fileHash": "7eb9d19e",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-IIT576ZH": {
+      "file": "chunk-IIT576ZH.js"
+    },
+    "chunk-RJLX7OWT": {
+      "file": "chunk-RJLX7OWT.js"
+    },
+    "chunk-CNZZZC6C": {
+      "file": "chunk-CNZZZC6C.js"
+    },
+    "chunk-MI4TEKFU": {
+      "file": "chunk-MI4TEKFU.js"
+    },
+    "chunk-SRNTTK4A": {
+      "file": "chunk-SRNTTK4A.js"
+    },
+    "chunk-3VDXVL42": {
+      "file": "chunk-3VDXVL42.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
+    }
+  }
+}

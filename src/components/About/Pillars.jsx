@@ -10,7 +10,7 @@ const Pillars = () => {
           <h2 className="font-semibold font-satoshi text-xl leading-[100%] md:text-[40px] lg:text-[52px] ">
             7 Pillars of Calvary
           </h2>
-          <p className="font-inter text-sm leading-[120%] py-6 capitalize md:text-base md:leading-[20px] lg:text-[24px] lg:leading-[30px] lg:w-[1077px]">
+          <p className="font-inter text-sm leading-[120%] py-6 capitalize md:text-base md:leading-[20px]  lg:text-[24px] lg:leading-[30px] xl:w-[1077px]">
             The brand known as truth of Calvary Ministries, aka Calvary Bible
             Church and her network of Churches Globally has seven unique element
             and distinguishing features which is revealed in the fabrics of the

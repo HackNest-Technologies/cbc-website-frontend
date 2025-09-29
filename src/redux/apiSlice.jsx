@@ -1,13 +1,21 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
 export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://127.0.0.1:3000",
+    baseUrl: "https://cbc.space1.systemsa.org",
   }),
   endpoints: (builder) => ({
-    addContact: builder.mutation({
+
+    // Fetch all events
+    getEvent: builder.query({
+      query: () => "/api/v1/events",   
+    }),
+
+    // Create an event
+    createEvent: builder.mutation({
       query: (contact) => ({
-        url: "v2/contacts",
+        url: "/api/v1/events",   
         method: "POST",
         body: contact,
       }),
@@ -15,4 +23,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const {} = apiSlice;
+export const { useGetEventQuery, useCreateEventMutation } = apiSlice;

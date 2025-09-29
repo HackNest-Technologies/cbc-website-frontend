@@ -8,7 +8,7 @@ const FeedbackForm = () => (
       className="py-[21.9px] px-[13.05px] feedback-form rounded-[16px] sm:flex flex-row-reverse md:gap-5 bg-cover bg-center md:rounded-[14.34px]"
       style={{ backgroundImage: `url(${feedBackImg})` }}
     >
-      <div className="py-[16px] px-[20px] bg-[#FFFFFFF2] rounded-[9.13px] space-y-4 md:w-[461px] md:py-[24px] md:px-[32px]">
+      <div className="py-[16px] px-[20px] bg-[#FFFFFFF2] rounded-[9.13px] space-y-4 md:w-[461px] md:py-[24px] md:px-[32px] lg:w-[65%]">
         <div>
           <h4 className="text-base leading-[100%] font-satoshi uppercase md:text-xl">FEEDBACK FORM</h4>
           <p className="text-sm text-[#666666] font-inter leading-[140%] pt-2">Share your feedback</p>
@@ -48,7 +48,7 @@ const FeedbackForm = () => (
         </form>
       </div>
 
-      <p className="w-[250.77px] text-[32px] capitalize text-white mt-[140px] font-satoshi leading-[100%]  sm:flex sm:mt-0 sm:items-end sm:text-[28px] md:text-[40px] md:w-[300px]">
+      <p className="w-[250.77px] text-[32px] capitalize text-white mt-[140px] font-satoshi leading-[100%]  sm:flex sm:mt-0 sm:items-end sm:text-[28px] md:text-[40px] md:w-[300px] lg:text-[65px] lg:w-[50%]">
         We would love to hear from you!
       </p>
     </div>

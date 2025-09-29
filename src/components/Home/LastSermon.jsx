@@ -39,18 +39,18 @@ const LastSermon = () => {
 
   return (
     <section className="relative sm:mt-8">
-      <div className="absolute h-[837.42px] md:h-[1500px] w-full -top-30 md:-top-60 -z-50">
-        <img src={rectangularBg} alt="" className="min-w-full h-full block" />
+      <div className="absolute h-[837.42px] md:h-[1500px] lg:h-[1100px] xl:h-[1200px] 2xl:h-[1400px] w-full -top-30 md:-top-60 -z-50">
+        <img src={rectangularBg} alt="" className="min-w-full h-full  block" />
         <div className="relative">
           <img
             src={logo}
             alt=""
-            className="absolute w-[73px] md:w-[138px] left-[60%] bottom-13 md:bottom-22"
+            className="absolute w-[73px] md:w-[138px] left-[60%] bottom-13 md:bottom-22 lg:bottom-[70px]"
           />
         </div>
       </div>
 
-      <div className="container mx-auto py-6 px-4 pb-24">
+      <div className="container mx-auto py-6 px-4 pb-24 lg:px-0">
         <div className="relative space-y-[22.14px]">
           <h3 className="text-center leading-[100%] font-satoshi text-[18.45px] uppercase sm:text-[26px] md:text-[40px] md:pb-4 ">
             Lastest Sermon
@@ -61,7 +61,7 @@ const LastSermon = () => {
             <img
               src={sermonBanner}
               alt="Last sermon"
-              className="rounded-[11.1px]"
+              className="rounded-[11.1px] sm:rounded-[24px] lg:rounded-[20px]"
             />
 
             <div className="space-y-[14.76px] sm:space-y-8">

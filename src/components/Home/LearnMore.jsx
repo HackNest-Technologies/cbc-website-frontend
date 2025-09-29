@@ -1,27 +1,28 @@
+import { Link } from "react-router-dom";
 import DblQuote from "../shared/DblQuote.jsx";
 
 const LearnMore = () => (
-  <section className="container mx-auto pt-16 sm:pt-26 flex p-6 gap-2 md:px-0">
+  <section className="container mx-auto pt-16 sm:pt-26 flex p-6 gap-2 md:px-0 md:gap-3">
     <div>
-      <DblQuote />
+      <DblQuote className="md:w-[60px] md:h-[105px] md:pb-10" />
     </div>
     <div className="flex-1 space-y-4 pt-1.5">
-      <h3 className="font-satoshi text-xl leading-[120%] md:text-5xl tracking-normal">
+      <h3 className="font-satoshi text-xl leading-[120%] md:text-5xl lg:text-[52px]">
         Calvary Bible Church is a Christ-centered family — rooted in love for
         God and people.
       </h3>
-      <p className="text-justify sm:text-[20px]">
+      <p className="text-sm leading-[120%] font-inter text-justify sm:text-[20px] md:leading-[100%] lg:text-[24px] ">
         Overwhelmed by the grace we've found in Jesus, we are worshippers at
         heart, lovers of the local church, and carriers of a divine mission to
         see His Kingdom, come and His will be done on earth.
       </p>
       <div>
-        <button
-          type="submit"
-          className={`border border-[#989898] bg-gradient-to-b from-[#FFFFFF] to-[#EEF4FF]  rounded-[50px] font-medium font-inter px-4 py-2 text-sm hover:cursor-pointer active:scale-95 transition-transform sm:w-[180px] sm:h-[58px]`}
+        <Link
+          to="/about"
+          className={`border h-[32px] flex justify-center items-center border-[#989898] bg-gradient-to-b from-[#FFFFFF] to-[#EEF4FF]  rounded-[100px] font-medium font-inter px-4 py-2 text-sm hover:cursor-pointer active:scale-95 transition-transform sm:rounded-[50px] sm:w-[180px] sm:h-[58px] md:w-[220px]`}
         >
           Learn More
-		</button>
+		</Link>
       </div>
     </div>
   </section>

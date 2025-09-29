@@ -35,8 +35,8 @@ const SneakPeek = () => (
         </svg>
       </div>
 
-      <div className="absolute  inset-0  bottom-[40px] flex justify-center items-center overflow-hidden pt-[18px] md:pt-[40px] md:bottom-[65px]">
-        <h2 className="text-[39.58px] leading-[100%] uppercase font-satoshi text-center font-bold  md:text-[105.88px]">
+      <div className="absolute  inset-0  bottom-[40px] flex justify-center items-center overflow-hidden pt-[18px] md:pt-[40px] md:bottom-[65px] lg:pt-[60px]">
+        <h2 className="text-[39.58px] leading-[100%] uppercase font-satoshi text-center font-bold  md:text-[105.88px] lg:text-[150px]">
           Sneak peak
         </h2>
       </div>

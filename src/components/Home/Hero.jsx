@@ -21,11 +21,11 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-white space-y-8 md:px-0">
-        <div className="space-y-2 md:space-y-4 w-[300px] md:w-[673px]">
+        <div className="space-y-2 md:space-y-4 w-[300px] md:w-[673px] lg:w-[812px]">
           <h1 className="font-semibold text-[32px] font-satoshi leading-[100%] sm:text-[64px] md:text-[75px]">
             Raising a People of Power, Purpose & Dominion
           </h1>
-          <p className="text-base font-inter leading-[100%] pt-[5px] sm:w-[578px] sm:text-2xl">
+          <p className="text-base font-inter leading-[100%] pt-[5px] md:w-[578px] sm:text-2xl">
             Worship and serve God with us for six months, and experience a major
             testimony in your life!
           </p>

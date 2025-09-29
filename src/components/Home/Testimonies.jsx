@@ -22,7 +22,7 @@ const Testimonies = () => {
   const TestimonyCard = ({ testimony, image, testifier }) => (
     <div className="px-4 py-[15.33px]  border-[2.55px]  border-dashed border-[#FD9F2B] rounded-[10px] space-y-2 self-stretch md:py-[30px] md:px-[48px] md:border-[4px] md:rounded-[20px]">
       <DblQuote height={53.65} />
-      <p className="text-sm leading-[100%] font-inter md:text-base ">{testimony}</p>
+      <p className="text-sm leading-[100%] font-inter md:text-base">{testimony}</p>
       <div className="flex gap-4 mt-8 items-center">
         <div className="border-[2.13px]  border-dashed border-[#FD9F2B] rounded-full aspect-square p-1 w-fit md:border-[4.17px] ">
           <img
@@ -39,7 +39,7 @@ const Testimonies = () => {
   );
 
   return (
-    <section className="container mx-auto p-6 space-y-6 sm:mt-16 md:mt-24 md:p-0 md:pt-[100px]">
+    <section className="container mx-auto p-6 space-y-6 sm:mt-16 md:mt-24 md:p-0 md:pt-[100px] lg:pt-[150px]">
       <div className="space-y-6">
         <h3 className="font-satoshi text-2xl leading-[100%] sm:text-[62.32px] max-w-[655px] mx-auto text-center uppercase">
           See what the lord is doing!
@@ -64,13 +64,13 @@ const Testimonies = () => {
         </div>
       </div>
 
-      <div className="space-y-3  gap-4 items-stretch">
+      <div className="space-y-3 lg:grid lg:grid-cols-2 gap-4 lg:space-y-0">
         {_testimonies.map((testimony) => (
           <TestimonyCard key={testimony.testifier} {...testimony} />
         ))}
       </div>
 
-      <div className="flex justify-center md:py-10">
+      <div className="flex justify-center md:py-10 ">
         <PopupBtn
           text="Share Your Testimony"
           className="h-[40px] sm:w-[243px] sm:h-[58px] justify-center sm:text-lg sm:font-medium"

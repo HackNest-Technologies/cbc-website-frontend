@@ -4,7 +4,7 @@ import { IoMenuSharp } from "react-icons/io5";
 
 const DefaultMenu = ({ toggleMenu }) => {
   return (
-    <header className="fixed w-full top-0 z-[100]">
+    <header className="fixed w-full top-0 z-[1000]">
       <section className="px-6 my-4 flex justify-between items-center h-[80px]">
         <div className="flex gap-4 justify-center items-center">
           <Link to="/">

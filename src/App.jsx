@@ -7,12 +7,17 @@ import {
 
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import GivePage from "./pages/GivePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       {/* Define your routes here */}
-      <Route  index element={<HomePage/>} />
+      <Route index element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+            <Route path="/give" element={<GivePage />} />
+
     </Route>
   )
 );

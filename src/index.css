@@ -1,36 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Reenie+Beanie&display=swap');
-
-
-
-@font-face {
-  font-family: satoshi;
-  src: url("../src/assets/fonts/Satoshi-Regular.woff2") format("woff2"),
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: satoshi;
+  src: url("../src/assets/fonts/Satoshi-Regular.woff2") format("woff2");
+}
 
-@theme{
+@theme {
   --font-inter: Inter, "sans-serif";
-  --font-satoshi: satoshi, "sans-serif";
   --font-geist: Geist, "sans-serif";
-  --font-reenie: Reenie Beanie, "san-serif";
+  --font-reenie: "Reenie Beanie", "sans-serif";
+  --font-orbitron: Orbitron, "sans-serif";
+  --font-satoshi: satoshi, "sans-serif";
   /* --font-proxima: Proxima Nova, "sans-serif"; */
 }
-
-
-body{
-  color: black;
-}
-
-
 /* Desktop */
 .stroke-white {
-  -webkit-text-stroke-width: 3.92px;
-  -webkit-text-stroke-color: #fff;
+	-webkit-text-stroke-width: 3.92px;
+	-webkit-text-stroke-color: #fff;
 }
 
 /* tab */
@@ -41,17 +32,31 @@ body{
 
 /* mobile */
 .stroke-white-mobile {
-  -webkit-text-stroke-width: 0.95px;
-  -webkit-text-stroke-color: #fff;
+	-webkit-text-stroke-width: 0.95px;
+	-webkit-text-stroke-color: #fff;
 }
 
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
 
 /* For equal space for  both left and right  */
 @media (min-width: 1024px) {
-  .container {
-    max-width: 87%;
-  }
+	.container {
+		max-width: 87%;
+	}
+}
+
+
+
+
 
 }
 

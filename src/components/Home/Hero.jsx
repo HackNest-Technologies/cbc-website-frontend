@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import streamIcon from "../../assets/images/stream-icon.svg";
 import video from "../../assets/videos/video.mp4";
 import Button from "../shared/Button.jsx";
+import CircularText from "../../utils/CircularText.jsx";
 
 const Hero = () => {
   return (
@@ -42,6 +43,14 @@ const Hero = () => {
             I'm New
           </Link>
         </div>
+      </div>
+
+       <div
+        className="absolute bottom-[-30px] right-[40px]  
+          md:bottom-[-60px] md:right-[30px] 
+          lg:bottom-[-100px] lg:right-[60px]"
+      >
+        <CircularText />
       </div>
     </section>
   );

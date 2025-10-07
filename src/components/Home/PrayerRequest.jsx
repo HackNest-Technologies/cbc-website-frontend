@@ -43,15 +43,15 @@ const PrayerRequest = () => (
         <img
           src={prayerIcon}
           alt=""
-          className="w-[139px] object-cover h-[168px] absolute  top-[32vw] right-[-11vw] md:w-[337px] md:h-[406px] md:top-[22vw] md:right-[-10vw] lg:top-[10vw] lg:right-[-7vw] lg:w-[486px] lg:h-[585px]"
+          className="w-[139px] object-cover h-[168px] absolute  top-[32vw] right-[-11vw] md:w-[337px] md:h-[406px] md:top-[22vw] md:right-[-10vw]  lg:w-[377px] lg:h-[438px]  lg:top-[16vw] lg:right-[-8vw] xl:w-[436px] xl:h-[545px]  xl:top-[10vw] xl:right-[-7vw] 2xl:w-[486px] 2xl:h-[585px] 2xl:top-[15vw]"
         />
       </div>
       <section className="w-[80vw] absolute bottom-[20px] px-[16px] md:w-[60vw] md:left-[30px] md:bottom-[12%] lg:w-[45vw] lg:bottom-[5vw]">
-        <div className="h-[23.93px] mb-[10px] w-[23.93px] border-[1.286px] sm:w-[65.33px] sm:h-[65.33px] rounded-full md:border-4 border-[#FD9F2B] border-dashed sm:mb-8 md:mb-[100px] lg:mb-[110px]"></div>
+        <div className="h-[23.93px] mb-[2px] min-[400px]:mb-[30px] w-[23.93px] border-[1.286px] sm:w-[65.33px] sm:h-[65.33px] rounded-full md:border-4 border-[#FD9F2B] border-dashed sm:mb-8 md:mb-[100px] lg:mb-[110px] 2xl:mb-[210px] "></div>
         <h4 className="text-2xl sm:text-[40px] font-semibold font-satoshi max-w-[590px] lg:text-[62px]">
           God Answers Prayers
         </h4>
-        <p className="text-xs my-2 font-inter sm:text-base max-w-[590px] lg:my-5">
+        <p className="text-xs my-1 font-inter sm:text-base max-w-[590px] lg:my-5">
           Prayer is not our last resort—it is our first response. “Call to Me
           and I will answer you” (Jeremiah 33:3). When we pray, God answers in
           love, in power, and in time.

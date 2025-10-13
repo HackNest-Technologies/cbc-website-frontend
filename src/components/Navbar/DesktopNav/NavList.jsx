@@ -3,7 +3,7 @@ import youtube from "../../../assets/images/basil_youtube-outline.png";
 import facebook from "../../../assets/images/facebook-02.png";
 import instagram from "../../../assets/images/instagram.png";
 import twitter from "../../../assets/images/devicon_twitter.png";
-const NavList = () => {
+const NavList = ({toggleMenu}) => {
   return (
     <section className="container mx-auto">
       <section className="text-white flex justify-between md:gap-10 md:lg:gap-0">
@@ -11,13 +11,13 @@ const NavList = () => {
         <div>
           <h2 className="md:text-lg md:py-3 lg:text-xl lg:py-5 uppercase font-satoshi">About</h2>
           <ul className="list-none font-inter">
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link to="/">About Us</Link>
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+              <Link to="/about">About Us</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Leadership</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">CBC branches</Link>
             </li>
           </ul>
@@ -29,19 +29,19 @@ const NavList = () => {
             Watch & Listen
           </h2>
           <ul className="list-none  font-inter">
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Live Service </Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Past Sermons </Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Daily Devotional </Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Daily Devotional </Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">House fellowship</Link>
             </li>
           </ul>
@@ -51,23 +51,23 @@ const NavList = () => {
         <div>
           <h2 className="md:text-lg md:py-3 lg:text-xl lg:py-5 uppercase font-satoshi">Community </h2>
           <ul className="list-none  font-inter">
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Discussion Forum</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Prayer Requests</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link to="/">Testimonies</Link>
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+              <Link to="/testimonies">Testimonies</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Departments & Groups</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link to="/">New Member’s Corner</Link>
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+              <Link to="/welcome">New Member’s Corner</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link to="/">Counselling</Link>
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+              <Link to="/counselling">Counselling</Link>
             </li>
           </ul>
         </div>
@@ -76,19 +76,19 @@ const NavList = () => {
         <div>
           <h2 className="md:text-lg md:py-3 lg:text-xl lg:py-5 uppercase font-satoshi">learning </h2>
           <ul className="list-none  font-inter">
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link to="/">Membership class</Link>
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+              <Link to="/membership">Membership class</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Maturity class</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Ministerial class</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Missions</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Marriage class</Link>
             </li>
           </ul>
@@ -102,19 +102,19 @@ const NavList = () => {
             Registrations{" "}
           </h2>
           <ul className="list-none font-inter">
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Marriage</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Special Thanksgiving</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Baby Dedication</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Naming ceremony</Link>
             </li>
-            <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
+            <li onClick={toggleMenu} className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link to="/">Deliverance</Link>
             </li>
           </ul>

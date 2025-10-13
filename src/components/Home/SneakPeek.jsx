@@ -51,59 +51,59 @@ const SneakPeek = () => (
       >
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
         <img
           src={SliderImg}
-          className="w-[107px] h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+          className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
         />
       </motion.section>
 

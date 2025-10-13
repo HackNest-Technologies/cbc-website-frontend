@@ -16,6 +16,10 @@ const DesktopNav = () => {
     setIsOpen(!isOpen);
   };
 
+
+  const closeMenu =()=>{
+    
+  }
   return (
     <section className="relative hidden md:block">
       {/* Regular Navigation (shown by default) */}

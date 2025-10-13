@@ -6,9 +6,9 @@ import LastSermon from "../components/Home/LastSermon.jsx";
 import LearnMore from "../components/Home/LearnMore.jsx";
 import NextEventCountdown from "../components/Home/NextEventCountdown.jsx";
 import OurLeadership from "../components/Home/OurLeadership.jsx";
-import PrayerRequest from "../components/Home/PrayerRequest.jsx";
+import PrayerRequest from "../components/Home/Prayer/PrayerRequest.jsx";
 import SneakPeek from "../components/Home/SneakPeek.jsx";
-import Testimonies from "../components/Home/Testimonies.jsx";
+import Testimonies from "../components/Home/Testimony/Testimonies.jsx";
 import UpcomingEvents from "../components/Home/UpcomingEvents.jsx";
 import WorshipWithUs from "../components/Home/WorshipWithUs.jsx";
 import WorshipWithUsTab from "../components/Home/WorshipWithUsTab.jsx";
@@ -29,7 +29,7 @@ const HomePage = () => {
       <PrayerRequest />
       <SneakPeek />
       <OurLeadership />
-      <Testimonies />
+      < Testimonies/>
       <FeedbackForm />
     </main>
   );

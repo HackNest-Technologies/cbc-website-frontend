@@ -5,7 +5,7 @@ import OverViewContinuation from "./OverViewContinuation";
 const OverView = () => {
   return (
     <>
-      <section className="relative mt-[200px]">
+      <section className="relative mt-[50px] lg:mt-[200px]">
         <div className="w-full ">
           <svg
             xmlns="http://www.w3.org/2000/svg"

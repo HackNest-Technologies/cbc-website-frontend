@@ -1,7 +1,9 @@
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import avatar from "../../assets/images/avatar.png";
-import DblQuote from "../shared/DblQuote.jsx";
-import PopupBtn from "../shared/PopupBtn.jsx";
+import { useState } from "react";
+import avatar from "../../../assets/images/avatar.png";
+import DblQuote from "../../shared/DblQuote.jsx";
+import PopupBtn from "../../shared/PopupBtn.jsx";
+import TestimonyPopup from "./TestimonyPopup.jsx";
 
 const Testimonies = () => {
   const _testimonies = [
@@ -18,6 +20,15 @@ const Testimonies = () => {
       image: avatar,
     },
   ];
+
+    const [popup, setPopup] = useState(null);
+    const handleToggle = () => {
+      setPopup(true);
+    };
+  
+    const closePopup = () => {
+      setPopup(null);
+    };
 
   const TestimonyCard = ({ testimony, image, testifier }) => (
     <div className="px-4 py-[15.33px]  border-[2.55px]  border-dashed border-[#FD9F2B] rounded-[10px] space-y-2 self-stretch md:py-[30px] md:px-[48px] md:border-[4px] md:rounded-[20px]">
@@ -70,12 +81,16 @@ const Testimonies = () => {
         ))}
       </div>
 
-      <div className="flex justify-center md:py-10 ">
+      <div className="flex justify-center md:py-10" onClick={handleToggle}>
         <PopupBtn
           text="Share Your Testimony"
           className="h-[40px] sm:w-[243px] sm:h-[58px] justify-center sm:text-lg sm:font-medium"
         />
       </div>
+
+        {popup !== null && (
+        <TestimonyPopup onclose={closePopup}/>
+      )}
     </section>
   );
 };

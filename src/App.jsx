@@ -40,6 +40,7 @@ const router = createBrowserRouter(
       <Route path="/counselling" element={<CounsellingPage />} />
       <Route path="/membership-login" element={<MembershipPage />} />
       <Route path="/study" element={<StudyPage />} />
+
       <Route path="/past-sermon" element={<PastSermonPage />} />
     </Route>
   )

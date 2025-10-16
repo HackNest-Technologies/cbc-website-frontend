@@ -25,23 +25,38 @@ export const apiSlice = createApi({
       query: () => "api/v1/store_item_categories",
     }),
 
-
     getBooksById: builder.query({
       query: (id) => `api/v1/store_item_categories/${id}`,
     }),
 
-
-     createCategory: builder.mutation({
-    query: (category) => ({
-      url: "api/v1/store_item_categories",
-      method: "POST",
-      body: category,
+    createCategory: builder.mutation({
+      query: (category) => ({
+        url: "api/v1/store_item_categories",
+        method: "POST",
+        body: category,
+      }),
     }),
-  }),
 
+    // STUDY
+    // ----------- BIBLE N ONE YEAR -----------
 
+    getBibleInOneYear: builder.query({
+      query: () => "api/v1/bible_readings",
+    }),
 
+    getBiblePassage: builder.query({
+      query: ({ passage, version = "kjv" }) => ({
+        url: `https://bible-api.com/${encodeURIComponent(passage)}`,
+        params: {
+          translation: version,
+        },
+      }),
+    }),
 
+    // ------- DAILY DEVOTIONAL----------
+    getDailyDevotional: builder.query({
+      query: () => "api/v1/devotionals",
+    }),
   }),
 });
 
@@ -51,4 +66,7 @@ export const {
   useCreateCategoryMutation,
   useGetCategoriesQuery,
   useGetBooksByIdQuery,
+  useGetDailyDevotionalQuery,
+  useGetBiblePassageQuery,
+  useGetBibleInOneYearQuery,
 } = apiSlice;

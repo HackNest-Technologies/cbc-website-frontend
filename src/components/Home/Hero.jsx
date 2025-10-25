@@ -34,6 +34,7 @@ const Hero = () => {
 
         <div className="flex items-center gap-4">
           <Button
+          link="/live"
             text="Watch Live"
             spanclass="sm:text-base md:text-lg"
             icon={<img src={streamIcon} alt="Stream live"  className="sm:w-[30px] sm:h-[30px] object-cover"/>}

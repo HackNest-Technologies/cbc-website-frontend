@@ -1,6 +1,6 @@
 import tvLogo from "../../assets/images/tvLogo.png";
 
-const SermonHeader = () => {
+const Header = () => {
   return (
     <section>
       <div className="bg-[#E8E8E8] h-[150px] relative md:h-[210px]">
@@ -19,8 +19,7 @@ const SermonHeader = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </section>  )
+}
 
-export default SermonHeader;
+export default Header

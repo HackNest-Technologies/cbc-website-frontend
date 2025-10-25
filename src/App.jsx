@@ -21,6 +21,7 @@ import CounsellingPage from "./pages/CounsellingPage";
 import MembershipPage from "./pages/MembershipPage";
 import StudyPage from "./pages/StudyPage";
 import PastSermonPage from "./pages/PastSermonPage";
+import LivePage from "./pages/LivePage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="/counselling" element={<CounsellingPage />} />
       <Route path="/membership-login" element={<MembershipPage />} />
       <Route path="/study" element={<StudyPage />} />
+      <Route path="/live" element={<LivePage />} />
 
       <Route path="/past-sermon" element={<PastSermonPage />} />
     </Route>

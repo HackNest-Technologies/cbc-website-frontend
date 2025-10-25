@@ -4,6 +4,7 @@ export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://cbc.space1.systemsa.org/",
+    tagTypes: ["Books", "Cart"],
   }),
   endpoints: (builder) => ({
     // EVENT
@@ -27,6 +28,16 @@ export const apiSlice = createApi({
 
     getBooksById: builder.query({
       query: (id) => `api/v1/store_item_categories/${id}`,
+    }),
+
+    // CART
+
+    addToCart: builder.mutation({
+      query: (cartItem) => ({
+        url: '/cart-items', // or your actual cart endpoint
+        method: 'POST',
+        body: { cart_item: cartItem },
+      }),
     }),
 
     createCategory: builder.mutation({
@@ -69,4 +80,5 @@ export const {
   useGetDailyDevotionalQuery,
   useGetBiblePassageQuery,
   useGetBibleInOneYearQuery,
+  useAddToCartMutation,
 } = apiSlice;

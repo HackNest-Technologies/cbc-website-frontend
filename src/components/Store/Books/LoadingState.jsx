@@ -1,7 +1,8 @@
-const LoadingState = () => {
+import Spinner from "../../Loader/Spinner"
+const LoadingState = ({isLoading}) => {
   return (
     <div className="container mx-auto px-6 py-6 md:px-0">
-      <p className="text-gray-500">Loading books...</p>
+          <Spinner loading={isLoading} size={30} />
     </div>
   );
 };

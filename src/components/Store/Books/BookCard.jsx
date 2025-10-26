@@ -54,7 +54,7 @@ const BookCard = ({ book, currentFilter }) => {
           disabled={isInCart}
           className={`text-base font-inter leading-[100%] border rounded-[100px] py-[12px] px-[69px] transition-colors ${
             isInCart 
-              ? "bg-green-500 text-white cursor-not-allowed" 
+              ? "bg-orange-400 text-white cursor-not-allowed" 
               : "hover:bg-gray-100"
           }`}
         >

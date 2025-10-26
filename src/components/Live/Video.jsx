@@ -65,7 +65,7 @@ const Video = () => {
 
           {/* Video List */}
           <div className="lg:col-span-1 border">
-
+<h2>Ajelekokotobi</h2>
             
           </div>
         </div>

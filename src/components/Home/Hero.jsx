@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import streamIcon from "../../assets/images/stream-icon.svg";
 import video from "../../assets/videos/video.mp4";
 import Button from "../shared/Button.jsx";
+import CircularText from "../../utils/CircularText.jsx";
 
 const Hero = () => {
   return (
@@ -33,6 +34,7 @@ const Hero = () => {
 
         <div className="flex items-center gap-4">
           <Button
+          link="/live"
             text="Watch Live"
             spanclass="sm:text-base md:text-lg"
             icon={<img src={streamIcon} alt="Stream live"  className="sm:w-[30px] sm:h-[30px] object-cover"/>}
@@ -42,6 +44,14 @@ const Hero = () => {
             I'm New
           </Link>
         </div>
+      </div>
+
+       <div
+        className="absolute bottom-[-30px] right-[40px]  
+          md:bottom-[-60px] md:right-[30px] 
+          lg:bottom-[-100px] lg:right-[60px]"
+      >
+        <CircularText />
       </div>
     </section>
   );

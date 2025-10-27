@@ -3,7 +3,7 @@ import overviewFrameOne from "../../assets/images/overviewFrame-1.png";
 
 const OverViewContinuation = () => {
   return (
-    <section className="relative py-[150px]">
+    <section className="relative py-[150px] pb-[40px]">
       <div className="w-full h-full  absolute pr-6 bottom-[110px] z-[-1000] md:bottom-[300px] lg:bottom-[450px] xl:bottom-[500px] 2xl:bottom-[550px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"

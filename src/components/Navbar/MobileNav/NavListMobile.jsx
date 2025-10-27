@@ -4,7 +4,7 @@ import facebook from "../../../assets/images/facebook-02.png";
 import instagram from "../../../assets/images/instagram.png";
 import twitter from "../../../assets/images/devicon_twitter.png";
 
-const NavListMobile = () => {
+const NavListMobile = ({toggleMenu}) => {
   return (
     <>
       <section className="px-6 text-white container mx-auto">
@@ -13,13 +13,13 @@ const NavListMobile = () => {
           <div>
             <h2 className=" text-xl pt-4 uppercase font-satoshi">About</h2>
             <ul className="list-none font-inter">
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/about">About Us</Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/donate">Leadership</Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/volunteer">CBC branches</Link>
               </li>
             </ul>
@@ -30,19 +30,19 @@ const NavListMobile = () => {
               Watch & Listen
             </h2>
             <ul className="list-none  font-inter">
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/about">Live Service </Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/donate">Past Sermons </Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/volunteer">Daily Devotional </Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/contact">Bible in one year </Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/events">House fellowship</Link>
               </li>
             </ul>
@@ -57,22 +57,22 @@ const NavListMobile = () => {
                 Community{" "}
               </h2>
               <ul className="list-none  font-inter">
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/about">Discussion Forum</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/donate">Prayer Requests</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/volunteer">Testimonies</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/contact">Departments & Groups</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/events">New Member’s Corner</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/careers">Counselling</Link>
                 </li>
               </ul>
@@ -83,19 +83,19 @@ const NavListMobile = () => {
                 Registrations{" "}
               </h2>
               <ul className="list-none font-inter">
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/about">Marriage</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/donate">Special Thanksgiving</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/volunteer">Baby Dedication</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/contact">Naming ceremony</Link>
                 </li>
-                <li className="pt-3 text-base">
+                <li onClick={toggleMenu} className="pt-3 text-base">
                   <Link to="/events">Deliverance</Link>
                 </li>
               </ul>
@@ -107,19 +107,19 @@ const NavListMobile = () => {
           <div>
             <h2 className=" text-xl pt-4 uppercase font-satoshi">learning </h2>
             <ul className="list-none  font-inter">
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/about">Membership class</Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/donate">Maturity class</Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/volunteer">Ministerial class</Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/contact">Missions</Link>
               </li>
-              <li className="pt-3 text-base">
+              <li onClick={toggleMenu} className="pt-3 text-base">
                 <Link to="/events">Marriage class</Link>
               </li>
             </ul>

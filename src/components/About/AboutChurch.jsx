@@ -5,7 +5,7 @@ import OverView from "./OverView";
 
 const AboutChurch = () => {
   return (
-    <section className="">
+    <section>
       {/* Background container */}
       <div className="bg-[#E8E8E8] h-[150px] relative md:h-[210px] lg:h-[267px]">
         {/* Image positioned absolutely within the background */}

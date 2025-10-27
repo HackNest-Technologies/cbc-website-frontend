@@ -37,22 +37,22 @@ const ExpandedMobileNav = ({ toggleMenu }) => {
         </section>
         <div className="px-6 pt-8 flex gap-[120px] font-satoshi list-none text-white ">
           <div>
-            <p className="text-xl leading-4 py-[14px] uppercase">
+            <p onClick={toggleMenu} className="text-xl leading-4 py-[14px] uppercase">
               <NavLink to="/">Home</NavLink>
             </p>
-            <p className="text-xl leading-4 py-[14px] uppercase">
-              <NavLink to="/event">Events</NavLink>
+            <p onClick={toggleMenu} className="text-xl leading-4 py-[14px] uppercase">
+              <NavLink to="/events">Events</NavLink>
             </p>
-            <p className="text-xl leading-4 py-[14px] uppercase">
+            <p onClick={toggleMenu} className="text-xl leading-4 py-[14px] uppercase">
               <NavLink to="/store">Store</NavLink>
             </p>
           </div>
 
           <div>
-          <p className="text-xl leading-4 py-[14px] uppercase">
+          <p onClick={toggleMenu} className="text-xl leading-4 py-[14px] uppercase">
             <NavLink to="/about">About</NavLink>
           </p>
-          <p className="text-xl leading-4 py-[14px] uppercase ">
+          <p onClick={toggleMenu} className="text-xl leading-4 py-[14px] uppercase ">
             <NavLink to="/give">Give</NavLink>
           </p>
           </div>

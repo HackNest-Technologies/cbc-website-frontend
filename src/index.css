@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
 
@@ -16,49 +17,41 @@
   --font-reenie: "Reenie Beanie", "sans-serif";
   --font-orbitron: Orbitron, "sans-serif";
   --font-satoshi: satoshi, "sans-serif";
+  --font-poppins: Poppins, "sans-serif";
+
   /* --font-proxima: Proxima Nova, "sans-serif"; */
 }
+
 /* Desktop */
 .stroke-white {
-	-webkit-text-stroke-width: 3.92px;
-	-webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width: 3.92px;
+  -webkit-text-stroke-color: #fff;
 }
 
 /* tab */
-.stroke-white-tab{
+.stroke-white-tab {
   -webkit-text-stroke-width: 2.54px;
--webkit-text-stroke-color: #FFF;
+  -webkit-text-stroke-color: #fff;
 }
 
 /* mobile */
 .stroke-white-mobile {
-	-webkit-text-stroke-width: 0.95px;
-	-webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width: 0.95px;
+  -webkit-text-stroke-color: #fff;
 }
-
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
-
 
 /* For equal space for  both left and right  */
 @media (min-width: 1024px) {
-	.container {
-		max-width: 87%;
-	}
+  .container {
+    max-width: 87%;
+  }
 }
-
-
-
-
-
-}
-
-
-

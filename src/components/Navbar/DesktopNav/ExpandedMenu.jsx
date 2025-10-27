@@ -35,27 +35,27 @@ const ExpandedMenu = ({ classLink, toggleMenu }) => {
             </Link>
           </div>
           <ul className="list-none font-inter flex justify-between items-center h-[50px] w-[600px] lg:w-[732px] bg-white rounded-[50px] pl-[45px] pr-[8px] py-[15px]">
-            <li className="text-base text-center leading-4 py-[10px] w-[57px]">
+            <li onClick={toggleMenu} className="text-base text-center leading-4 py-[10px] w-[57px]">
               <NavLink to="/" className={classLink}>
                 Home
               </NavLink>
             </li>
-            <li className="text-base text-center leading-4 py-[10px] w-[57px]">
+            <li onClick={toggleMenu} className="text-base text-center leading-4 py-[10px] w-[57px]">
               <NavLink to="/about" className={classLink}>
                 About
               </NavLink>
             </li>
-            <li className="text-base text-center leading-4 py-[10px] w-[57px]">
-              <NavLink to="/event" className={classLink}>
+            <li onClick={toggleMenu} className="text-base text-center leading-4 py-[10px] w-[57px]">
+              <NavLink to="/events" className={classLink}>
                 Events
               </NavLink>
             </li>
-            <li className="text-base text-center leading-4 py-[10px] w-[57px]">
+            <li onClick={toggleMenu}  className="text-base text-center leading-4 py-[10px] w-[57px]">
               <NavLink to="/give" className={classLink}>
                 Give
               </NavLink>
             </li>
-            <li className="text-base text-center leading-4 py-[10px] w-[57px]">
+            <li onClick={toggleMenu} className="text-base text-center leading-4 py-[10px] w-[57px]">
               <NavLink to="/store" className={classLink}>
                 Store
               </NavLink>
@@ -71,7 +71,7 @@ const ExpandedMenu = ({ classLink, toggleMenu }) => {
           </ul>
         </section>
         <section className="absolute top-[120px] text-white right-0 left-0 2xl:top-[200px]">
-          <NavList />
+          <NavList toggleMenu={toggleMenu} />
         </section>
       </header>
     </div>

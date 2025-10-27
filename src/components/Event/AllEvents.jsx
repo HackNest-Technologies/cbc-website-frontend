@@ -17,7 +17,7 @@ const AllEvents = () => {
       ) : (
         <section className="px-6 pt-5  container mx-auto md:px-0 lg:pt-[150px] ">
           <div className="">
-            {data.map((events, index) => {
+            {data?.map((events, index) => {
               const isEven = index % 2 === 0;
 
               return (

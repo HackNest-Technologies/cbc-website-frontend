@@ -25,25 +25,26 @@ const Construction = () => {
             This Marriage e-learning is currently being work on, please check
             back at a later date
           </p>
-          <div className="flex gap-2 items-center">
-            <Link to="/">
-              <FaArrowLeft className="inline mr-1 text-lg" />
-            </Link>
-            <p className="text-[#333] text-[16px] font-normal font-inter leading-[150%] tracking-[-0.32px] underline underline-offset-auto  ">
-              Go Back
-            </p>
-          </div>
+
+          <Link
+            to="/"
+            className="flex gap-2 items-center text-[#333] text-[16px] font-normal font-inter leading-[150%] tracking-[-0.32px] underline underline-offset-auto"
+          >
+            <FaArrowLeft className="text-lg" />
+            <span>Go Back</span>
+          </Link>
+
           <img src={construction} alt="" className="w-[469px] h-[352px]" />
         </div>
       </div>
-      <footer className=" inline-flex items-center gap-[42px] mt-20 ml-0 sm:ml-0 md:ml-0 lg:ml-[250px] xl:ml-[300px] w-full px-4">
-        <div className="text-black items-center font-inter font-[16px] justify-between w-[367px] h-[30px]">
-          <p>&copy; 2025 Calvary Bible Church. All rights reserved </p>
+      <footer className="flex justify-center items-center gap-10 mt-20 w-full px-4">
+        <div className="text-black font-inter text-[16px]">
+          <p>&copy; 2025 Calvary Bible Church. All rights reserved</p>
         </div>
-        <div className="font-inter item-center font-[16px] capitalize text-black w-[147px] h-[30px]">
+        <div className="text-black font-inter text-[16px] capitalize">
           <p>Terms & Condition</p>
         </div>
-        <p className="item-center capitalize font-inter text-black font-[16px] h-[30px] w-[105px]">
+        <p className="text-black font-inter text-[16px] capitalize">
           Privacy Policy
         </p>
       </footer>

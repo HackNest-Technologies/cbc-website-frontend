@@ -23,6 +23,7 @@ import StudyPage from "./pages/StudyPage";
 import PastSermonPage from "./pages/PastSermonPage";
 import LivePage from "./pages/LivePage";
 import ConstructionPage from "./pages/ConstructionPage";
+import LiveChatPage from "./pages/LiveChatPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
 
         <Route path="/past-sermon" element={<PastSermonPage />} />
       </Route>
+      <Route path="/liveChat" element={<LiveChatPage />} />
       <Route path="*" element={<ConstructionPage />} />
     </>
   )

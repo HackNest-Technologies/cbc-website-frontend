@@ -51,12 +51,12 @@ const Video = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="container mx-auto pt-[100px]">
+    <section className="container mx-auto pt-[100px] px-6 md:px-0">
       {/* Main Content */}
       <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
           {/* Main Video Player */}
-          <div className="lg:col-span-5">
+          <div className="md:col-span-5">
             <div className="bg-black rounded-xl overflow-hidden shadow-lg">
               <div className="relative pt-[56.25%]">
                 {" "}
@@ -74,52 +74,59 @@ const Video = () => {
           </div>
 
           {/* Video List */}
-          <div className="lg:col-span-1 mx-auto flex w-[79px] flex-col items-center gap-11px">
-            <div className="flex h-[72px] pt-[5px] pr-[9px] pb-[6px] pl-[9px] justify-center items-center self-stretch bg-[#FFB91E]/30 rounded-[15px]">
-              <img
-                src={liveChat}
-                alt="Live Chat"
-                className="w-[61px] h-[61px] aspect-square"
-              />
+          <div className="lg:col-span-1 ">
+            <div className="flex md:block gap-4">
+              <div className="flex">
+                <div className="flex flex-col item-center gap-4 ">
+                  <Link to="/liveChat">
+                    <img
+                      src={liveChat}
+                      alt="Give Icon"
+                      className="py-1.5 px-3 rounded-[15px]  bg-[#FFB91E]/28 w-[4.6rempx] h-[4.6rem]"
+                    />
+                    <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase lg:text-[14px] lg:font-bold mb-4 w-auto max-w-full">
+                      LIVE CHAT
+                    </p>
+                  </Link>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex flex-col item-center gap-4 ">
+                  <img
+                    src={streamline}
+                    alt="Give Icon"
+                    className="py-3 px-4 rounded-[15px]  bg-[#FFB91E]/28 w-[4.6rempx] h-[4.6rem]"
+                  />
+                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase lg:text-[14px] lg:font-bold mb-4 w-auto max-w-full">
+                    GIVE
+                  </p>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex flex-col item-center gap-4 ">
+                  <img
+                    src={solar}
+                    alt="Give Icon"
+                    className="py-1.5 px-3 rounded-[15px]  bg-[#FFB91E]/28 w-[4.6rempx] h-[4.6rem]"
+                  />
+                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase lg:text-[14px] lg:font-bold mb-4 w-auto max-w-full">
+                    SHARE
+                  </p>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex flex-col item-center gap-4 ">
+                  <img
+                    src={humbleicons}
+                    alt="Give Icon"
+                    className="py-1.5 px-3 rounded-[15px]  bg-[#FFB91E]/28 w-[4.6rempx] h-[4.6rem]"
+                  />
+                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase lg:text-[14px] lg:font-bold mb-4 w-auto max-w-full">
+                    OFF VIDEO
+                  </p>
+                </div>
+              </div>
             </div>
-            <Link to="/liveChat">
-              <p className="text-black font-satoshi font-bold uppercase text-[14px] leading-normal w-[72px] h-[19px] m-4">
-                LIVE CHAT
-              </p>
-            </Link>
-
-            <div className="flex h-[72px] pt-[5px] pr-[9px] pb-[6px] pl-[9px] justify-center items-center self-stretch bg-[#FFB91E]/30 rounded-[15px]">
-              <img
-                src={streamline}
-                alt="Live Chat"
-                className="w-[61px] h-[61px] aspect-square"
-              />
-            </div>
-            <p className="text-black font-satoshi font-bold uppercase text-[14px] leading-normal w-[72px] h-[19px] m-4 text-center">
-              GIVE
-            </p>
-
-            <div className="flex h-[72px] pt-[5px] pr-[9px] pb-[6px] pl-[9px] justify-center items-center self-stretch bg-[#FFB91E]/30 rounded-[15px]">
-              <img
-                src={solar}
-                alt="Live Chat"
-                className="w-[61px] h-[61px] aspect-square"
-              />
-            </div>
-            <p className="text-black font-satoshi font-bold uppercase text-[14px] leading-normal w-[72px] h-[19px] m-4 text-center">
-              SHARE
-            </p>
-
-            <div className="flex h-[72px] pt-[5px] pr-[9px] pb-[6px] pl-[9px] justify-center items-center self-stretch bg-[#FFB91E]/30 rounded-[15px]">
-              <img
-                src={humbleicons}
-                alt="Live Chat"
-                className=" w-[61px] h-[61px] aspect-square "
-              />
-            </div>
-            <p className="text-black font-satoshi font-bold uppercase text-[14px] leading-normal w-[72px] h-[19px] m-4 text-center">
-              OFF VIDEO
-            </p>
           </div>
         </div>
       </div>

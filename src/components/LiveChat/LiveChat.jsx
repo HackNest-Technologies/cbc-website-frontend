@@ -4,118 +4,151 @@ import logo from "../../assets/images/cbc-logo.webp";
 import eyeIcon from "../../assets/images/eyeIcon.svg";
 import { Link } from "react-router-dom";
 import { MdCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
+import { FaCheckCircle } from "react-icons/fa";
+import { FaTimesCircle } from "react-icons/fa";
+import SubmitBtn from "../shared/SubmitBtn";
 
 const LiveChat = () => {
   return (
-    <section className="bg-white px-2  pt-[8px] pb-[16px]  space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 md:py-[24px] md:px-[32px] md:rounded-[8px] grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-      <div className="relative w-full h-screen">
+    <section className=" flex flex-col justify-center items-start pt-[20px] pb-[108.378px] md:grid md:grid-cols-2  md:p-[24px] md:items-start px-2">
+      <div className=" mx-auto relative rounded-[16px] md:rounded-[20px] w-full max-w-[400px] h-[250px] md:max-w-[480px]   md:h-[800px] lg:w-[620px] lg:h-[600px]">
         <img
           src={livechatimage}
-          alt="Live Chat Image"
-          className="w-full h-full object-cover rounded-[14px] bg-black"
+          alt="Live Chat image"
+          className=" rounded-[16px] md:h-[800px] lg:w-[620px] lg:h-[600px]"
         />
-        <p className=" absolute bottom-4 left-4 md:left-8 text-white text-[65px] sm:text-[48px] md:text-[48px] lg:text-[48px] font-normal leading-[1.1] capitalize break-words whitespace-normal  font-satoshi max-w-[462px] mb-[15px]">
-          Raising a<br />
-          People of <br />
-          Power, Purpose <br />& Dominion
-        </p>
-      </div>
-      <div>
         <img
           src={logo}
-          alt=""
-          className="flex flex-start shrink-0 h-[85.858px] w-[98.062px] aspect-[98.06/85.86]"
+          alt="Logo"
+          className="absolute top-4 left-4 w-[45px] h-[45px]  md:w-[69px] md:hidden md:h-[69px]"
         />
-        <div className="flex flex-col items-start gap-[32px] w-[592px] mt-[101.4px]">
-          <div className="flex flex-start flex-col w-[361px] gap-[8px]">
-            <p className="text-black font-satoshi text-[28px] font-bold uppercase">
-              Log In
+        <p className="absolute left-0 bottom-0 text-white font-satoshi text-[24px] capitalize">
+          Raising a People of <br /> Power, Purpose & <br /> Dominion
+        </p>
+      </div>
+      <div className="relative w-full max-w-[624px] mx-auto ml-[20px] items-start">
+        <img
+          src={logo}
+          alt="LOGO"
+          className=" absolute top-4 left-4 hidden md:block h-[45px] w-[69px] md:h-[69px] "
+        />
+        <form className="pt-[60px] ">
+          <div className="gap-[8px] md:mt-[64px] w-[361px]">
+            <p className="font-satoshi text-[21.986px] font-normal uppercase md:text-[28px] md:text-bold ">
+              Sign Up
             </p>
-            <p className="text-[#666] font-inter text-[14px] font-normal leading-[19.6px]">
+            <p className="gap-2 w-[361px] font-inter text-[14px] font-normal text-[#666]">
               Enter your personal information details
             </p>
           </div>
-          <form className="flex flex-col items-start gap-[16px] w-full">
-            <div className="flex flex-col items-start gap-[8px] w-full">
-              <label
-                htmlFor="email"
-                className="text-black font-inter text-[16px font-normal leading-[30px] capitalize"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="flex py-[15.5px] px-[24px] items-center gap-[16px] w-full rounded-[100px] border border-[#E5E5E5]"
-              />
-            </div>
-            <div className="relative  flex flex-col items-start gap-[8px] w-full">
-              <label
-                htmlFor="password"
-                className="text-black font-inter text-[16px] font-normal leading-[30px] capitalize w-full required"
-              >
-                Password
-              </label>
-
-              <input
-                type="password"
-                id="password"
-                name="password"
-                className="flex h-[48px] py-[15.5px] px-[24px] pr-[48px] items-center self-stretch rounded-[100px] border border-[#DCDCDC]"
-                placeholder="............."
-              />
-              <img
-                src={eyeIcon}
-                alt="eyeIcon"
-                className="absolute right-4 top-[70%] transform -translate-y-1/2 cursor-pointer"
-              />
-            </div>
-            <div className="flex justify-between items-start w-full">
-              <label className="text-[#666] items-center font-inter text-[14px] font-normal leading-normal flex gap-[8px]">
-                <MdCheckBoxOutlineBlank className="rounded-4 borber border-[#E5E5E5]" />
-                Remember me
-              </label>
-              <button
-                type="button"
-                className="text-[#666] text-rightfont-inter text-[14px] font-normal leading-normal underline tracking-[0.28px] decoration-solid underline-offset-[auto] decoration-[auto] hover:text-black"
-              >
-                Forgot password
-              </button>
-            </div>
-          </form>
-          <button
-            type="submit"
-            className="flex w-[592px] h-[58px] py-4 px-6 justify-center items-center gap-[31px] shrink-0 rounded-[50px] bg-[radial-gradient(133.33%_122.42%_at_52.23%_0%,_#FFB91E_0%,_#FC8E33_54.74%)] shadow-[0_31px_19px_0_rgba(255,185,30,0.35),_0_14px_14px_0_rgba(255,185,30,0.28),_0_3px_8px_0_rgba(255,225,159,0.28)]"
-          >
-            <p className="text-white shadow-none [text-shadow:0_2px_2px_rgba(0,0,0,0.25)] font-inter font-medium leading-[27px] tracking-[-0.36px]">
-              Log in
-            </p>
-          </button>
-          <div className="flex items-center justify-center gap-2 text-sm text-[#666] w-full">
-            <span className="text-[#000929] font-inter font-medium leading-[22.4px]">
-              Don’t have an account?
-            </span>
-            <button
-              type="button"
-              className="text-[#FC8E33] font-medium underline hover:opacity-80"
+          <div className="flex flex-col space-y-1 pr-5">
+            <label
+              htmlFor="Name"
+              className="text-black font-inter text-[16px] font-normal capitalize mt-[32px]"
             >
-              Create Account
+              Name
+            </label>
+            <input
+              id="Name"
+              className="py-[12.171px] px-[4.23px] rounded-[78.521px] border border-[#E5E5E5]"
+              placeholder="E.g Wisdomibu@gmail.com"
+            />
+          </div>
+          <div className="flex flex-col space-y-1 pr-5">
+            <label
+              htmlFor="Email"
+              className="text-black font-inter text-[16px] font-normal capitalize mt-[32px]"
+            >
+              Email
+            </label>
+            <input
+              id="Name"
+              className="py-[12.171px] px-[4.23px] rounded-[78.521px] border border-[#E5E5E5]"
+              placeholder="E.g Wisdomibu@gmail.com"
+            />
+          </div>
+          <div className="flex flex-col space-y-1 pr-5  w-full relative">
+            <label
+              htmlFor="password"
+              className="text-black font-inter text-[16px] font-normal capitalize mt-[32px]"
+            >
+              Set Password
+            </label>
+            <input
+              id="Name"
+              className="py-[12.171px] px-[4.23px] rounded-[78.521px] border border-[#E5E5E5]"
+              placeholder="*************"
+            />
+            <img
+              src={eyeIcon}
+              alt="eye"
+              className=" absolute right-4 top-1/2 -translate-y-1/2 mr-4 pt-14"
+            />
+          </div>
+          <div className="flex items-start gap-2 mt-[2px]">
+            <button className=" text-[#FF4D00]">
+              <FaTimesCircle />
             </button>
+            <p className="text-[#FF4D00] font-inter text-[14px] font-normal">
+              Must be at least 8 characters
+            </p>
           </div>
-        </div>
-        <footer className="inline-flex items-center gap-[42px] mt-[100px]">
-          <div className="text-black items-center font-inter text-[16px] font-normal leading-[30px] capitalize">
-            <p>&copy; 2025 Calvary Bible Church. All rights reserved</p>
+          <div className="flex items-start gap-2 mt-[2px]">
+            <button className=" text-[#079455] rounded-[7890px]">
+              <FaCheckCircle />
+            </button>
+            <p className="text-black font-inter text-[14px] font-normal">
+              Must contain one special character
+            </p>
           </div>
-          <div className="text-black items-center font-inter text-[16px] font-normal leading-[30px] capitalize">
-            <p>Terms & Condition</p>
+          <div className="flex items-start gap-2 mt-[10px]">
+            <button className="#">
+              <MdCheckBoxOutlineBlank />
+            </button>
+            <p className="text-black font-inter text-[14px] font-medium">
+              I agree to the <span className="text-[#FD9F2B]">Terms</span> and{" "}
+              <span className="text-[#FD9F2B]">Privacy Policy</span>
+            </p>
           </div>
-          <p className="text-black items-center font-inter text-[16px] font-normal leading-[30px] capitalize">
-            Privacy Policy
+          <div className=" flex flex-col mt-[18.85px] items-center mr-8">
+            <button
+              className="text-white py-[12.542px] rounded-[39.26px] shadow-[0_24.341px_14.919px_rgba(255,185,30,0.35),0_10.993px_10.993px_rgba(255,185,30,0.28),0_2.356px_6.282px_rgba(255,225,159,0.28)] block w-full px-8"
+              style={{
+                background:
+                  "radial-gradient(133.33% 122.42% at 52.23% 0%, #FFB91E 0%, #FC8E33 54.74%) ",
+              }}
+            >
+              Sign Up
+            </button>
+            <p className="mt-[37.8px] text-black font-inter text-[10.993px] font-normal">
+              Already have an account?{" "}
+              <span className="text-[#FC8E33]">Log in</span>
+            </p>
+          </div>
+        </form>
+        <footer className="flex flex-col justify-center items-end text-[#595858] lg:hidden lg:flex-row lg:gap-[42px]">
+          <p className="mt-[18.5px] text-[12px] md:text-[14px] lg:text-[16px] font-normal capitalize  items-center mr-6">
+            © 2025 Calvary bible church. All rights reserved
+          </p>
+          <p className="mt-[6.28px] text-[12px] md:text-[14px] lg:text-[16px] font-normal capitalize  items-center mr-6">
+            Terms & conditions
+          </p>
+          <p className="mt-[6.28px] text-[12px] md:text-[14px] lg:text-[16px] font-normal capitalize  items-center mr-6">
+            Privacy policy
           </p>
         </footer>
       </div>
+      <footer className="hidden lg:flex flex-row justify-center items-center text-[#595858] gap-[42px]">
+        <p className="mt-[18.5px] text-[12px] lg:text-[16px] font-normal capitalize">
+          © 2025 Calvary Bible Church. All rights reserved
+        </p>
+        <p className="mt-[6.28px] text-[12px] lg:text-[16px] font-normal capitalize">
+          Terms & Conditions
+        </p>
+        <p className="mt-[6.28px] text-[12px] lg:text-[16px] font-normal capitalize">
+          Privacy Policy
+        </p>
+      </footer>
     </section>
   );
 };

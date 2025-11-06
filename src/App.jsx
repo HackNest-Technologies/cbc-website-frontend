@@ -48,7 +48,7 @@ const router = createBrowserRouter(
 
         <Route path="/past-sermon" element={<PastSermonPage />} />
       </Route>
-      <Route path="/liveChat" element={<LiveChatPage />} />
+      <Route path="/livechat" element={<LiveChatPage />} />
       <Route path="*" element={<ConstructionPage />} />
     </>
   )

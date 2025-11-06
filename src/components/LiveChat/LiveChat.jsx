@@ -191,8 +191,8 @@ import React from "react";
 const LiveChat = () => {
   return (
     // pt-[20px] pb-[108px]    px-[16px] md:p-[24px]
-    <div className=" grid grid-cols-1 md:grid-cols-2 gap-7   w-full md:gap-[24px]">
-      <div className="rounded-[16px] md:rounded-[20px] min-h-full liveBg  md:h-screen h-[342px] relative flex items-end">
+    <div className=" grid grid-cols-1 md:grid-cols-2 gap-7  w-full md:gap-[24px] px-[0.5px]">
+      <div className="rounded-[16px] md:rounded-[20px] min-h-full liveBg  md:h-screen h-[342px] relative flex items-end w-full">
         {/* <img
             src={livechatimage}
             alt="live chat image"
@@ -201,7 +201,7 @@ const LiveChat = () => {
         <img
           src={logo}
           alt="logo"
-          className="absolute w-[45px] h-[40px] block md:hidden  top-4 left-4"
+          className="absolute w-[69px] h-[60px] block md:hidden  top-4 left-4"
         />
         <p className="text-white text-[24px] md:text-5xl lg:text-[65px] p-4 pb-8">
           Raising A People of Power, Purpose & Dominion
@@ -209,7 +209,7 @@ const LiveChat = () => {
       </div>
 
       {/* FORM */}
-      <div className="flex flex-col gap-10 overflow-auto p-4 md:py-4 md:px-0">
+      <div className="flex flex-col gap-10 overflow-auto p-4 md:py-4 md:px-0  w-full">
         <img
           src={logo}
           alt="logo"
@@ -298,16 +298,14 @@ const LiveChat = () => {
               </span>
             </div>
 
+            <div>
+              <SubmitBtn
+                text="Sign Up"
+                className="w-full h-[45px] md:h-[58px] rounded-[50px]"
+              />
+            </div>
+
             <div className=" flex flex-col mt-[18.85px] items-center mr-8">
-              <button
-                className="text-white py-[12.542px] rounded-[39.26px] shadow-[0_24.341px_14.919px_rgba(255,185,30,0.35),0_10.993px_10.993px_rgba(255,185,30,0.28),0_2.356px_6.282px_rgba(255,225,159,0.28)] block w-full px-8"
-                style={{
-                  background:
-                    "radial-gradient(133.33% 122.42% at 52.23% 0%, #FFB91E 0%, #FC8E33 54.74%) ",
-                }}
-              >
-                Sign Up
-              </button>
               <p className="mt-[37.8px] text-black font-inter text-[10.993px] font-normal">
                 Already have an account?{" "}
                 <span className="text-[#FC8E33]">Log in</span>
@@ -315,7 +313,7 @@ const LiveChat = () => {
             </div>
           </form>
 
-          <footer className="flex flex-col justify-center items-end text-[#595858]  lg:flex-row lg:gap-[42px] lg:justify-between">
+          <footer className="flex flex-col justify-center items-end text-[#595858]  lg:flex-row lg:gap-[42px] lg:gap-x-4 ">
             <p className="mt-[18.5px] text-[12px] md:text-[14px] lg:text-[16px] font-normal capitalize  items-center mr-6">
               © 2025 Calvary bible church. All rights reserved
             </p>

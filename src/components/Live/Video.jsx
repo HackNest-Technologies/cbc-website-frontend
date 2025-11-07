@@ -75,54 +75,64 @@ const Video = () => {
 
           {/* Video List */}
           <div className="lg:col-span-1 ">
-            <div className="flex md:block gap-[8px]">
-              <div className="flex">
-                <div className="flex flex-col item-center  mx-[8px] md:mb-[11px]">
-                  <Link to="/livechat">
+            <div className="  flex md:block justify-center  md:gap-0 ">
+              <div className="flex flex-col items-center md:mb-[11px]">
+                <Link to="/livechat">
+                  <div className=" flex items-center justify-center bg-[#FFB91E]/28 w-[32px] h-[27px] md:w-[60px] md:h-[51px] lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
                     <img
                       src={liveChat}
                       alt="Give Icon"
-                      className="pt-[4px] pb-[4px]  pr-[10px] pl-[6px] rounded-[10px]  bg-[#FFB91E]/28 w-[60px] h-[51px] mb-[2px]"
+                      className="w-[24px] h-[24px] md:w-[44px] md:h-[44px] lg:w-[61px] lg:h-[61px] object-cover"
                     />
-                    <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal mt-[8px] uppercase lg:text-[14px]lg:font-medium md:mt-[11px]">
-                      <strong>LIVE CHAT</strong>
+                  </div>
+
+                  <p className="text-black text-center font-satoshi text-[12px] font-normal w-[70px] leading-normal mt-[8px] uppercase lg:text-[14px] lg:font-medium md:mt-[11px]">
+                    LIVE CHAT
+                  </p>
+                </Link>
+              </div>
+              <div className="flex">
+                <div className="flex flex-col item-center   md:mb-[11px] ">
+                  <div className=" flex items-center justify-center bg-[#FFB91E]/28 w-[32px]  h-[27px] md:w-[60px] md:h-[51px] lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
+                    <img
+                      src={streamline}
+                      alt="Give Icon"
+                      className="w-[14px] h-[14px] md:w-[27px] md:h-[27px] lg:w-[38px] lg:h-[38px] object-cover "
+                    />
+                  </div>
+
+                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal w-[70px] mt-[8px] uppercase lg:text-[14px] lg:font-medium md:mt-[11px]">
+                    GIVE
+                  </p>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex flex-col item-center   md:mb-[11px]">
+                  <div className=" flex items-center justify-center bg-[#FFB91E]/28  w-[32px]  h-[27px] md:w-[60px] md:h-[51px]  lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
+                    <img
+                      src={solar}
+                      alt="Give Icon"
+                      className="w-[16px] h-[16px] md:w-[20px] md:h-[24px] lg:w-[42px] lg:h-[42px] object-cover"
+                    />
+                  </div>
+                  <div className="gap-4 md:gap-0">
+                    <p className="text-black text-center font-satoshi text-[12px] font-normal w-[70px] leading-normal uppercase mt-[8px] lg:text-[14px] lg:font-medium  md:mt-[11px]">
+                      SHARE
                     </p>
-                  </Link>
+                  </div>
                 </div>
               </div>
               <div className="flex">
-                <div className="flex flex-col item-center mx-[8px]  md:mb-[11px] ">
-                  <img
-                    src={streamline}
-                    alt="Give Icon"
-                    className="pt-[4px] pb-[4px]  pr-[10px] pl-[6px] rounded-[10px]  bg-[#FFB91E]/28 w-[60px] h-[51px] "
-                  />
-                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal mt-[8px] uppercase lg:text-[14px] lg:font-medium w-auto max-w-full md:mt-[11px]">
-                    <strong>GIVE</strong>
-                  </p>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex flex-col item-center  mx-[8px] md:mb-[11px]">
-                  <img
-                    src={solar}
-                    alt="Give Icon"
-                    className="pt-[4px] pb-[4px]  pr-[10px] pl-[6px] rounded-[10px]  bg-[#FFB91E]/28 w-[60px] h-[51px]"
-                  />
-                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase mt-[8px] lg:text-[14px] lg:font-medium w-auto max-w-full md:mt-[11px]">
-                    <strong>SHARE</strong>
-                  </p>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex flex-col item-center mx-[8px]  md:mb-[11px]">
-                  <img
-                    src={humbleicons}
-                    alt="Give Icon"
-                    className="pt-[4px] pb-[4px]  pr-[10px] pl-[6px] rounded-[10px]  bg-[#FFB91E]/28 w-[60px] h-[51px]"
-                  />
-                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase mt-[8px] lg:text-[14px] lg:font-medium mb-4 w-auto max-w-full md:mt-[11px]">
-                    <strong>OFF VIDEO</strong>
+                <div className="flex flex-col item-center  md:mb-[11px]">
+                  <div className=" flex items-center justify-center bg-[#FFB91E]/28 w-[32px] h-[27px] md:w-[60px] md:h-[51px]   lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
+                    <img
+                      src={humbleicons}
+                      alt="Give Icon"
+                      className="w-[23px] h-[23px] md:w-[43px] md:h-[43px] lg:w-[61px] lg:h-[61px] object-cover"
+                    />
+                  </div>
+                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase mt-[8px] lg:text-[14px] lg:font-medium w-[70px] mb-4 md:mt-[11px]">
+                    OFF VIDEO
                   </p>
                 </div>
               </div>

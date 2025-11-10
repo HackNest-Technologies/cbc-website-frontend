@@ -38,10 +38,8 @@ const Video = () => {
   const [selectedVideo, setSelectedVideo] = useState(mockVideos[0]);
   const [isPlaying, setIsPlaying] = useState(false);
 
- 
   return (
     <section className="container mx-auto pt-[100px]">
-  
 
       {/* Main Content */}
       <div className="">
@@ -59,14 +57,13 @@ const Video = () => {
                   poster="https://via.placeholder.com/800x450/1f2937/ffffff?text=Video+Preview"
                 />
               </div>
-              
+
             </div>
           </div>
 
           {/* Video List */}
           <div className="lg:col-span-1 border">
 
-            
           </div>
         </div>
       </div>

@@ -4,9 +4,38 @@ export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://cbc.space1.systemsa.org/",
-    tagTypes: ["Books", "Cart"],
+
+    
+    tagTypes: ["Books", "Cart", "User"],
+    credentials: "include", // VERY IMPORTANT for cookies
+    prepareHeaders: (headers) => {
+      headers.set("Accept", "application/json");
+      return headers;
+    },
   }),
+
+
+
   endpoints: (builder) => ({
+    // HOME
+    // ======= Prayer Request ======
+    sendPrayerRequest: builder.mutation({
+      query: (prayer) => ({
+        url: "api/v1/prayer_requests",
+        method: "POST",
+        body: prayer,
+      }),
+    }),
+
+    // ===== Testimonies ========
+    sendTestimony: builder.mutation({
+      query: (testimony) => ({
+        url: "api/v1/testimonies",
+        method: "POST",
+        body: testimony,
+      }),
+    }),
+
     // EVENT
     getEvent: builder.query({
       query: () => "/api/v1/events",
@@ -34,8 +63,8 @@ export const apiSlice = createApi({
 
     addToCart: builder.mutation({
       query: (cartItem) => ({
-        url: '/cart-items', // or your actual cart endpoint
-        method: 'POST',
+        url: "/cart-items", // or your actual cart endpoint
+        method: "POST",
         body: { cart_item: cartItem },
       }),
     }),
@@ -81,4 +110,6 @@ export const {
   useGetBiblePassageQuery,
   useGetBibleInOneYearQuery,
   useAddToCartMutation,
+  useSendPrayerRequestMutation,
+  useSendTestimonyMutation,
 } = apiSlice;

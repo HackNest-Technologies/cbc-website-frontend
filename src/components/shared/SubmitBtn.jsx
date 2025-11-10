@@ -2,6 +2,7 @@ const SubmitBtn = ({ className, text }) => {
   return (
     <section>
       <button
+        type="submit"
         className={`${className} font-inter leading-[150%] font-medium  rounded-[22.82px]  text-white text-sm hover:cursor-pointer active:scale-95 transition-transform`}
         style={{
           background:

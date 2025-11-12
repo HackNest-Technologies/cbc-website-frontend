@@ -5,7 +5,6 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://cbc.space1.systemsa.org/",
 
-    
     tagTypes: ["Books", "Cart", "User"],
     credentials: "include", // VERY IMPORTANT for cookies
     prepareHeaders: (headers) => {
@@ -13,10 +12,30 @@ export const apiSlice = createApi({
       return headers;
     },
   }),
-
-
-
   endpoints: (builder) => ({
+    //  USER
+
+    // Sign Up
+    signUp: builder.mutation({
+      query: (user) => ({
+        url: "api/v1/users",
+        method: "POST",
+        body: user,
+      }),
+    }), 
+
+
+    // CURRENT USER LOGGED IN 
+
+     signUp: builder.mutation({
+      query: (user) => ({
+        url: "api/v1/users",
+        method: "POST",
+        body: user,
+      }),
+    }), 
+
+
     // HOME
     // ======= Prayer Request ======
     sendPrayerRequest: builder.mutation({
@@ -100,7 +119,9 @@ export const apiSlice = createApi({
   }),
 });
 
+
 export const {
+  useSignUpMutation,
   useGetEventQuery,
   useCreateEventMutation,
   useCreateCategoryMutation,

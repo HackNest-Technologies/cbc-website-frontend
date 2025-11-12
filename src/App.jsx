@@ -22,29 +22,35 @@ import MembershipPage from "./pages/MembershipPage";
 import StudyPage from "./pages/StudyPage";
 import PastSermonPage from "./pages/PastSermonPage";
 import LivePage from "./pages/LivePage";
+import ConstructionPage from "./pages/ConstructionPage";
+import LiveChatPage from "./pages/LiveChatPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<MainLayout />}>
-      {/* Define your routes here */}
-      <Route index element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/give" element={<GivePage />} />
-      <Route path="/events" element={<EventPage />} />
-      <Route path="/departments-group" element={<DepartGroupPage />} />
-      <Route path="/house-fellowship" element={<HouseFellowPage />} />
-      <Route path="/store" element={<BookStorePage />} />
-      <Route path="/store/:id" element={<CategoriesPage />} />
-      <Route path="/welcome" element={<WelcomePage />} />
-      <Route path="/new-member" element={<NewMemberPage />} />
-      <Route path="/new-convert" element={<NewConvertPage />} />
-      <Route path="/counselling" element={<CounsellingPage />} />
-      <Route path="/membership-login" element={<MembershipPage />} />
-      <Route path="/study" element={<StudyPage />} />
-      <Route path="/live" element={<LivePage />} />
+    <>
+      <Route path="/" element={<MainLayout />}>
+        {/* Define your routes here */}
+        <Route index element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/give" element={<GivePage />} />
+        <Route path="/events" element={<EventPage />} />
+        <Route path="/departments-group" element={<DepartGroupPage />} />
+        <Route path="/house-fellowship" element={<HouseFellowPage />} />
+        <Route path="/store" element={<BookStorePage />} />
+        <Route path="/store/:id" element={<CategoriesPage />} />
+        <Route path="/welcome" element={<WelcomePage />} />
+        <Route path="/new-member" element={<NewMemberPage />} />
+        <Route path="/new-convert" element={<NewConvertPage />} />
+        <Route path="/counselling" element={<CounsellingPage />} />
+        <Route path="/membership-login" element={<MembershipPage />} />
+        <Route path="/study" element={<StudyPage />} />
+        <Route path="/live" element={<LivePage />} />
 
-      <Route path="/past-sermon" element={<PastSermonPage />} />
-    </Route>
+        <Route path="/past-sermon" element={<PastSermonPage />} />
+      </Route>
+      <Route path="/livechat" element={<LiveChatPage />} />
+      <Route path="*" element={<ConstructionPage />} />
+    </>
   )
 );
 

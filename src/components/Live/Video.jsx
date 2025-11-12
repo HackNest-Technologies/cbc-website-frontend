@@ -74,67 +74,60 @@ const Video = () => {
           </div>
 
           {/* Video List */}
-          <div className="lg:col-span-1 ">
-            <div className="  flex md:block justify-center  md:gap-0 ">
-              <div className="flex flex-col items-center md:mb-[11px]">
+          <div className="lg:col-span-1  ">
+            <div className="flex flex-row md:flex-col gap-[8px] md:gap-[11px] w-[237px] h-[47px] md:w-[59px] md:h-[330px] lg:w-[84px] lg:h-[441px]  ">
+              <div className=" flex flex-col items-center gap-[8px] md:gap-[11px] w-[58px] h-[47px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]  ">
                 <Link to="/livechat">
-                  <div className=" flex items-center justify-center bg-[#FFB91E]/28 w-[32px] h-[27px] md:w-[60px] md:h-[51px] lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
+                  <div className=" justify-center items-center bg-[#FFB91E]/28 w-[32px] h-[27px] pt-[1.9px] pr-[5.3px] pb-[2.3px] pl-[3.4px] rounded-[5.7px] md:w-[60px] md:h-[51.4px] md:pt-[3.5px] md:pr-[10px] md:pb-[4.3px] md:pl-[6.4px] md:rounded-[10.7px] lg:w-[84px] lg:h-[72px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] lg:rounded-[15px]">
                     <img
                       src={liveChat}
-                      alt="Give Icon"
-                      className="w-[24px] h-[24px] md:w-[44px] md:h-[44px] lg:w-[61px] lg:h-[61px] object-cover"
+                      alt="live chat"
+                      className="w-[23.2px] h-[23.2px] md:w-[43.5px] md:h-[43.5px] lg:w-[61px] lg:h-[61px] "
                     />
                   </div>
-
-                  <p className="text-black text-center font-satoshi text-[12px] font-normal w-[70px] leading-normal mt-[8px] uppercase lg:text-[14px] lg:font-medium md:mt-[11px]">
-                    LIVE CHAT
-                  </p>
                 </Link>
+                <p className="text-[#000] font-satoshi uppercase font-normal text-[12px] w-[58px] h-[12px] lg:text-[14px] lg:font-bold lg:w-[72px] lg:h-[19px]">
+                  live Chat
+                </p>
               </div>
-              <div className="flex">
-                <div className="flex flex-col item-center   md:mb-[11px] ">
-                  <div className=" flex items-center justify-center bg-[#FFB91E]/28 w-[32px]  h-[27px] md:w-[60px] md:h-[51px] lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
-                    <img
-                      src={streamline}
-                      alt="Give Icon"
-                      className="w-[14px] h-[14px] md:w-[27px] md:h-[27px] lg:w-[38px] lg:h-[38px] object-cover "
-                    />
-                  </div>
 
-                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal w-[70px] mt-[8px] uppercase lg:text-[14px] lg:font-medium md:mt-[11px]">
-                    GIVE
-                  </p>
+              <div className="flex flex-col items-center justify-center gap-[8px]  w-[47.2px] h-[47.4px] md:gap-[11px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px] ">
+                <div className=" flex justify-center items-center bg-[#FFB91E]/28 w-[32px] h-[27px] pt-[1.9px] pr-[5.3px] pb-[2.3px] pl-[3.4px] rounded-[5.7px] md:w-[60px] md:h-[51.4px] md:pt-[3.5px] md:pr-[10px] md:pb-[4.3px] md:pl-[6.4px] md:rounded-[10.7px] lg:w-[84px] lg:h-[72px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] lg:rounded-[15px] ">
+                  <img
+                    src={streamline}
+                    alt="Give Icon"
+                    className="w-[14.4px] h-[14.4px] md:w-[27.1px] md:h-[27.1px] lg:w-[38px] lg:h-[38px] "
+                  />
                 </div>
+                <p className="text-[#000] font-satoshi uppercase font-normal text-[12px] w-[27px] h-[12px] lg:text-[14px] lg:font-bold lg:w-[34px] lg:h-[19px]">
+                  give
+                </p>
               </div>
-              <div className="flex">
-                <div className="flex flex-col item-center   md:mb-[11px]">
-                  <div className=" flex items-center justify-center bg-[#FFB91E]/28  w-[32px]  h-[27px] md:w-[60px] md:h-[51px]  lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
-                    <img
-                      src={solar}
-                      alt="Give Icon"
-                      className="w-[16px] h-[16px] md:w-[20px] md:h-[24px] lg:w-[42px] lg:h-[42px] object-cover"
-                    />
-                  </div>
-                  <div className="gap-4 md:gap-0">
-                    <p className="text-black text-center font-satoshi text-[12px] font-normal w-[70px] leading-normal uppercase mt-[8px] lg:text-[14px] lg:font-medium  md:mt-[11px]">
-                      SHARE
-                    </p>
-                  </div>
+
+              <div className="flex flex-col items-center justify-center gap-[8px]  w-[47.2px] h-[47.4px] md:gap-[11px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]  ">
+                <div className="flex justify-center items-center bg-[#FFB91E]/28 w-[32px] h-[27px] pt-[1.9px] pr-[5.3px] pb-[2.3px] pl-[3.4px] rounded-[5.7px] md:w-[60px] md:h-[51.4px] md:pt-[3.5px] md:pr-[10px] md:pb-[4.3px] md:pl-[6.4px] md:rounded-[10.7px] lg:w-[84px] lg:h-[72px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] lg:rounded-[15px] ">
+                  <img
+                    src={solar}
+                    alt="SHARE"
+                    className="w-[16px] h-[16px] md:w-[30px] md:h-[30px] lg:w-[42px] lg:h-[42px] "
+                  />
                 </div>
+                <p className="text-[#000] font-satoshi uppercase font-normal text-[12px] w-[38px] h-[12px] lg:text-[14px] lg:font-bold lg:w-[46px] lg:h-[19px]">
+                  share
+                </p>
               </div>
-              <div className="flex">
-                <div className="flex flex-col item-center  md:mb-[11px]">
-                  <div className=" flex items-center justify-center bg-[#FFB91E]/28 w-[32px] h-[27px] md:w-[60px] md:h-[51px]   lg:w-[84px] lg:h-[72px] rounded-[5.7px] md:rounded-[10px] pt-[2px] pr-[5.3px] pb-[2.2px] pl-[3.4px] md:pt-[4px] md:pb-[4px]  md:pr-[10px] md:pl-[6px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] ">
-                    <img
-                      src={humbleicons}
-                      alt="Give Icon"
-                      className="w-[23px] h-[23px] md:w-[43px] md:h-[43px] lg:w-[61px] lg:h-[61px] object-cover"
-                    />
-                  </div>
-                  <p className="text-black text-center font-satoshi text-[12px] font-normal leading-normal uppercase mt-[8px] lg:text-[14px] lg:font-medium w-[70px] mb-4 md:mt-[11px]">
-                    OFF VIDEO
-                  </p>
+
+              <div className=" flex flex-col items-center justify-center gap-[8px]  w-[47.2px] h-[47.4px] md:gap-[11px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]">
+                <div className="flex justify-center items-center bg-[#FFB91E]/28 w-[32px] h-[27px] pt-[1.9px] pr-[5.3px] pb-[2.3px] pl-[3.4px] rounded-[5.7px] md:w-[60px] md:h-[51.4px] md:pt-[3.5px] md:pr-[10px] md:pb-[4.3px] md:pl-[6.4px] md:rounded-[10.7px] lg:w-[84px] lg:h-[72px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] lg:rounded-[15px] ">
+                  <img
+                    src={humbleicons}
+                    alt="SHARE"
+                    className="w-[23.2px] h-[23.2px] md:w-[43.5px] md:h-[43.5px] lg:w-[61px] lg:h-[61px] "
+                  />
                 </div>
+                <p className="text-[#000] font-satoshi uppercase font-normal text-[12px] w-[61px] h-[12px] lg:text-[14px] lg:font-bold lg:w-[75px] lg:h-[19px]">
+                  off video
+                </p>
               </div>
             </div>
           </div>

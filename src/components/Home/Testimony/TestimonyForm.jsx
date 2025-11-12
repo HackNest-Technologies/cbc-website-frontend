@@ -1,10 +1,28 @@
 import { useState } from "react";
 import uploadICon from "../../../assets/images/upload.png";
 import SubmitBtn from "../../shared/SubmitBtn";
+import { useSendTestimonyMutation } from "../../../redux/apiSlice";
 
 const TestimonyForm = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [fileName, setFileName] = useState("");
+  const [sendTestimony] = useSendTestimonyMutation();
+  const initialState = {
+    testifier_first_name: "",
+    testifier_last_name: "",
+    testifier_email_address: "",
+    body: "",
+    file: "",
+  };
+
+  const [testimonyVal, setTestimony] = useState(initialState);
+  const handleTestimonyValue = (e) => {
+    const { name, value } = e.target;
+    setTestimony((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -19,29 +37,85 @@ const TestimonyForm = () => {
     e.preventDefault();
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
-    if (file) setFileName(file.name);
+    if (file) {
+      setFileName(file.name);
+      setTestimony((prev) => ({ ...prev, file }));
+    }
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file) setFileName(file.name);
+    if (file) {
+      setFileName(file.name);
+      setTestimony((prev) => ({ ...prev, file }));
+    }
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append(
+      "testimony[testifier_first_name]",
+      testimonyVal.testifier_first_name
+    );
+    formData.append(
+      "testimony[testifier_last_name]",
+      testimonyVal.testifier_last_name
+    );
+    formData.append("testimony[body]", testimonyVal.body);
+    formData.append("testimony[featured]", false);
+    if (testimonyVal.file) {
+      formData.append("testimony[file]", testimonyVal.file);
+    }
+
+    try {
+      const res = await sendTestimony(formData).unwrap();
+      setTestimony(initialState);
+      setFileName("");
+      alert("Testimony submitted successfully!");
+    } catch (error) {
+      alert("Something went wrong while sending your testimony.");
+    }
+  };
+
   return (
-    <section>
+    <form onSubmit={handleSubmit}>
       <div className="py-4 w-full">
         <label
           htmlFor="name"
           className="text-base  uppercase leading-[19px] text-[#000] font-inter"
         >
-          Name
+          First Name
         </label>
         <input
           id="name"
           type="text"
-          className="w-full h-[48px] bg-transparent border border-black my-2 text-white placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
+          className="w-full h-[48px] bg-transparent border border-black my-2 text-black placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
           required
+          value={testimonyVal.testifier_first_name}
+          onChange={handleTestimonyValue}
+          name="testifier_first_name"
         />
       </div>
+      <div className="py-4 w-full">
+        <label
+          htmlFor="last_name"
+          className="text-base  uppercase leading-[19px] text-[#000] font-inter"
+        >
+          Last Name
+        </label>
+        <input
+          id="last_naame"
+          type="text"
+          className="w-full h-[48px] bg-transparent border border-black my-2 text-black placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
+          required
+          value={testimonyVal.testifier_last_name}
+          onChange={handleTestimonyValue}
+          name="testifier_last_name"
+        />
+      </div>
+
       <div className="py-4 w-full">
         <label
           htmlFor="mail"
@@ -51,23 +125,29 @@ const TestimonyForm = () => {
         </label>
         <input
           id="mail"
-          type="text"
-          className="w-full h-[48px] bg-transparent border border-black my-2 text-white placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
+          type="email"
+          className="w-full h-[48px] bg-transparent border border-black my-2 text-black placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
           required
+          value={testimonyVal.testifier_email_address}
+          onChange={handleTestimonyValue}
+          name="testifier_email_address"
         />
       </div>
 
       <div className="bg-transparent py-4 w-full">
         <label
-          htmlFor="mail"
+          htmlFor="body"
           className="text-base uppercase leading-[19px] text-[#000] font-inter"
         >
-          Email
+          Testimony
         </label>
         <textarea
-          id="mail"
+          id="body"
           className="w-full h-[192px]  border border-black my-4 text-black outline-none py-[16px] px-[32px] rounded-[20px] font-inter text-base resize-none md:rounded-[30px] md:h-[268px]"
           required
+          value={testimonyVal.body}
+          onChange={handleTestimonyValue}
+          name="body"
         />
       </div>
 
@@ -119,7 +199,7 @@ const TestimonyForm = () => {
       <div className="py-4 md:py-10">
         <SubmitBtn text="Submit" className="w-[100%] h-[58px]" />
       </div>
-    </section>
+    </form>
   );
 };
 

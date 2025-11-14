@@ -18,23 +18,23 @@ export const apiSlice = createApi({
     // Sign Up
     signUp: builder.mutation({
       query: (user) => ({
-        url: "api/v1/users",
+        url: "users",
         method: "POST",
-        body: user,
+        body: {
+          user: user,
+        },
       }),
-    }), 
+    }),
 
+    // CURRENT USER LOGGED IN
 
-    // CURRENT USER LOGGED IN 
-
-     signUp: builder.mutation({
+    currentUser: builder.mutation({
       query: (user) => ({
-        url: "api/v1/users",
+        url: "users",
         method: "POST",
         body: user,
       }),
-    }), 
-
+    }),
 
     // HOME
     // ======= Prayer Request ======
@@ -119,9 +119,9 @@ export const apiSlice = createApi({
   }),
 });
 
-
 export const {
   useSignUpMutation,
+  useCurrentUserMutation,
   useGetEventQuery,
   useCreateEventMutation,
   useCreateCategoryMutation,

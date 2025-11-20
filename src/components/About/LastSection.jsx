@@ -4,10 +4,10 @@ const LastSection = () => {
   return (
     <section className="mx-6 md:mx-0">
     <section
-      className="container md:mx-auto bg-cover h-full rounded-[5.41px] py-5 md:rounded-[14px] md:pt-[120px] lg:h-[703px]"
+      className="container md:mx-auto bg-cover h-full rounded-[5.41px] py-5 md:rounded-[14px] md:pt-[120px] lg:h-[703px] lg:mt-18"
       style={{ backgroundImage: `url(${lastBg})` }}
     >
-      <div className="text-white flex flex-col items-center pt-20  px-[20px] md:pt-[150px] md:pb-10 lg:pt-0 lg:pb-0 lg:justify-center lg:h-[70vh]">
+      <div className="text-white flex flex-col items-center pt-20  px-[20px] md:pt-[150px] md:pb-10 lg:pt-0 lg:pb-0 lg:justify-center lg:h-[38vh]">
         <h2 className="text-base text-white font-satoshi leading-[100%] md:text-[40px] lg:text-[52px] lg:font-semibold">
           A People After God’s Heart
         </h2>

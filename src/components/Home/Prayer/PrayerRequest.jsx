@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import PopupBtn from "../../shared/PopupBtn.jsx";
 import prayerIcon from "../../../assets/images/prayerIcon.png";
 import PrayerPopup from "./PrayerPopup.jsx";
@@ -14,9 +15,28 @@ const PrayerRequest = () => {
   };
 
  
+// import { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom";
+
+    const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Scroll to top if no hash
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [hash]);
+
 
   return (
-    <section className="px-6 pt-10 container mx-auto md:px-0 md:pt-[150px] md:mb-[60px] lg:pt-[200px] lg:mb-0">
+    <section id="prayer" className="px-6 pt-10 container mx-auto md:px-0 md:pt-[150px] md:mb-[60px] lg:pt-[200px] lg:mb-0">
       <section className="relative">
         <div className="">
           <svg

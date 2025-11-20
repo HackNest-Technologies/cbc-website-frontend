@@ -60,7 +60,7 @@ const ExpandedMobileNav = ({ toggleMenu }) => {
         </div>
 
         <section className="absolute top-[200px] text-white right-0 left-0">
-          <NavListMobile />
+          <NavListMobile  toggleMenu={toggleMenu}/>
         </section>
       </header>
     </div>

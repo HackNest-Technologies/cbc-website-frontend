@@ -5,7 +5,7 @@ import pillarDeskTwo from "../../assets/images/Subtractdesk-2.webp";
 const CoreValue = () => {
   return (
     <section className="">
-      <div className="pt-16 pl-6 lg:pl-[6.8%]">
+      <div className="pt-16 pl-6 lg:pl-[6.8%] lg:pt-20">
         <div className="relative w-full md:pl-[35px] lg:pl-0">
           <img
             src={pillarCard}
@@ -17,7 +17,7 @@ const CoreValue = () => {
             alt=""
             className="object-cover w-full hidden lg:block"
           />{" "}
-          <div className="rounded-[16px] absolute bottom-0 right-0 pl-5  pr-6 w-[64%] md:top-[250px] md:pl-10  lg:w-1/2 lg:top-[450px] 2xl:top-[550px]">
+          <div className="rounded-[16px] absolute bottom-0 right-0 pl-5  pr-6 w-[64%] md:top-[250px] md:pl-10  lg:w-1/2 lg:top-[50%] 2xl:top-[60%]">
             <h3 className=" text-base font-bold font-satoshi leading-[200%] md:text-[40px]  md:font-semibold lg:text-[52px]">
               Our Core Values
             </h3>
@@ -39,7 +39,7 @@ const CoreValue = () => {
         </div>
       </div>
 
-      <div className="py-16 pr-6  lg:pr-[6.8%]">
+      <div className="py-16 pr-6  lg:pr-[6.8%] lg:pt-20">
         <div className="relative w-full md:pr-[35px] lg:pr-0">
           <img
             src={pillarCardTwo}
@@ -51,7 +51,7 @@ const CoreValue = () => {
             alt=""
             className="object-cover w-full hidden lg:block"
           />{" "}
-          <div className="rounded-[16px] absolute top-[110px] min-[420px]:top-[140px] left-0 pl-6 w-[64%] md:top-[300px] lg:w-1/2 lg:top-[450px] 2xl:top-[550px]  lg:pl-[6.8%]">
+          <div className="rounded-[16px] absolute top-[110px] min-[420px]:top-[140px] left-0 pl-6 w-[64%] md:top-[300px] lg:w-1/2 lg:top-[55%] 2xl:top-[60%]  lg:pl-[6.8%]">
             <h3 className=" text-base font-bold font-satoshi leading-[110%] md:text-[40px]  md:font-semibold lg:text-[52px]">
               What We Do
             </h3>

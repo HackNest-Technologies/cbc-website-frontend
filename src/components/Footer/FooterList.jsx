@@ -15,10 +15,10 @@ const FooterList = () => {
               <Link to="/about">About Us</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/leadership">Leadership</Link>
+              <Link to="/about#leadership">Leadership</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/cbc-branches">CBC branches</Link>
+              <Link to="/about#branches">CBC branches</Link>
             </li>
           </ul>
         </div>
@@ -30,16 +30,16 @@ const FooterList = () => {
           </h2>
           <ul className="list-none  font-inter">
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/live-service">Live Service </Link>
+              <Link to="/live">Live Service </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/past-sermon">Past Sermons </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/volunteer">Daily Devotional </Link>
+              <Link to="/study">Daily Devotional </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/daily-devotional">Daily Devotional </Link>
+              <Link to="/study">Bible in One Year </Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/house-fellowship">House fellowship</Link>
@@ -52,19 +52,19 @@ const FooterList = () => {
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">Community </h2>
           <ul className="list-none  font-inter">
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/discussion-forum">Discussion Forum</Link>
+              <Link to="/discussion">Discussion Forum</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/prayer-request">Prayer Requests</Link>
+              <Link to="/#prayer">Prayer Requests</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/testimonies">Testimonies</Link>
+              <Link to="/#testimonies">Testimonies</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/departments-group">Departments & Groups</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/new-member">New Member’s Corner</Link>
+              <Link to="/welcome">New Member’s Corner</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/counselling">Counselling</Link>

@@ -27,7 +27,7 @@ const Branches = () => {
   );
 
   return (
-    <section className="relative pb-[450px] md:pt-[250px] md:pb-[200px] lg:pt-[430px] lg:pb-[400px]">
+    <section id="branches" className="relative pb-[450px] md:pt-[250px] md:pb-[200px] lg:pt-[430px] lg:pb-[400px]">
       <div className="bg-[rgba(255,185,30,0.28)] h-[220px] md:h-[408px] md:py-[67px]">
         <div className="flex flex-col items-center">
           <div className="w-[262px] pt-6 pb-5 md:w-[689px] lg:w-full">

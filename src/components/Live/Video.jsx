@@ -34,7 +34,7 @@ const mockVideos = [
       "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
     title: "Ocean Waves",
     description: "Peaceful ocean waves crashing",
-  },
+  }, 
   {
     id: "4",
     video_url:

@@ -103,7 +103,7 @@ const Testimonies = () => {
         ))}
       </div>
 
-      <div className="flex justify-center md:py-10" onClick={handleToggle}>
+      <div className="flex justify-center md:py-10 lg:pt-7" onClick={handleToggle}>
         <PopupBtn
           text="Share Your Testimony"
           className="h-[40px] sm:w-[243px] sm:h-[58px] justify-center sm:text-lg sm:font-medium"

@@ -3,7 +3,7 @@ import feedBackImg from "../../assets/images/feedback-form-bg.jpg";
 import SubmitBtn from "../shared/SubmitBtn.jsx";
 
 const FeedbackForm = () => (
-  <section className="container p-6 mx-auto md:p-0 md:pb-[100px]">
+  <section className="container p-6 mx-auto md:p-0 md:pb-[100px] mt-[100px]">
     <div
       className="py-[21.9px] px-[13.05px] feedback-form rounded-[16px] sm:flex flex-row-reverse md:gap-5 bg-cover bg-center md:rounded-[14.34px]"
       style={{ backgroundImage: `url(${feedBackImg})` }}

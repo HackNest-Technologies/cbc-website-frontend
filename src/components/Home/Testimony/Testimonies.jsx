@@ -1,9 +1,10 @@
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import avatar from "../../../assets/images/avatar.png";
 import DblQuote from "../../shared/DblQuote.jsx";
 import PopupBtn from "../../shared/PopupBtn.jsx";
 import TestimonyPopup from "./TestimonyPopup.jsx";
+import { useLocation } from "react-router-dom";
 
 const Testimonies = () => {
   const _testimonies = [
@@ -21,19 +22,37 @@ const Testimonies = () => {
     },
   ];
 
-    const [popup, setPopup] = useState(null);
-    const handleToggle = () => {
-      setPopup(true);
-    };
-  
-    const closePopup = () => {
-      setPopup(null);
-    };
+  const [popup, setPopup] = useState(null);
+  const handleToggle = () => {
+    setPopup(true);
+  };
+
+  const closePopup = () => {
+    setPopup(null);
+  };
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Scroll to top if no hash
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [hash]);
 
   const TestimonyCard = ({ testimony, image, testifier }) => (
     <div className="px-4 py-[15.33px]  border-[2.55px]  border-dashed border-[#FD9F2B] rounded-[10px] space-y-2 self-stretch md:py-[30px] md:px-[48px] md:border-[4px] md:rounded-[20px]">
       <DblQuote height={53.65} />
-      <p className="text-sm leading-[100%] font-inter md:text-base">{testimony}</p>
+      <p className="text-sm leading-[100%] font-inter md:text-base">
+        {testimony}
+      </p>
       <div className="flex gap-4 mt-8 items-center">
         <div className="border-[2.13px]  border-dashed border-[#FD9F2B] rounded-full aspect-square p-1 w-fit md:border-[4.17px] ">
           <img
@@ -50,7 +69,10 @@ const Testimonies = () => {
   );
 
   return (
-    <section className="container mx-auto p-6 space-y-6 sm:mt-16 md:mt-24 md:p-0 md:pt-[100px] lg:pt-[150px]">
+    <section
+      id="testimonies"
+      className="container mx-auto p-6 space-y-6 sm:mt-16 md:mt-24 md:p-0 md:pt-[100px] lg:pt-[150px]"
+    >
       <div className="space-y-6">
         <h3 className="font-satoshi text-2xl leading-[100%] sm:text-[62.32px] max-w-[655px] mx-auto text-center uppercase">
           See what the lord is doing!
@@ -63,14 +85,14 @@ const Testimonies = () => {
             aria-label="Carousel back button"
             type="button"
           >
-            <BsArrowLeft className="text-[16px] md:text-[24px]"/>
+            <BsArrowLeft className="text-[16px] md:text-[24px]" />
           </button>
           <button
             className="p-1 border rounded-full"
             aria-label="Carousel next button"
             type="button"
           >
-            <BsArrowRight className="text-[16px] md:text-[24px]"/>
+            <BsArrowRight className="text-[16px] md:text-[24px]" />
           </button>
         </div>
       </div>
@@ -81,16 +103,14 @@ const Testimonies = () => {
         ))}
       </div>
 
-      <div className="flex justify-center md:py-10" onClick={handleToggle}>
+      <div className="flex justify-center md:py-10 lg:pt-7" onClick={handleToggle}>
         <PopupBtn
           text="Share Your Testimony"
           className="h-[40px] sm:w-[243px] sm:h-[58px] justify-center sm:text-lg sm:font-medium"
         />
       </div>
 
-        {popup !== null && (
-        <TestimonyPopup onclose={closePopup}/>
-      )}
+      {popup !== null && <TestimonyPopup onclose={closePopup} />}
     </section>
   );
 };

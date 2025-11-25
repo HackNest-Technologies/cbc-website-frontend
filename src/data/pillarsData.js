@@ -2,8 +2,8 @@ const pillarsData = [
   {
     id: 1,
     title: "Love for God",
-    description: `our love for God is evident from the leadership to the membership as the &#39;
-no compromise &#39; stand is a general knowledge in the house. If it is not Godly it is not Calvary compliant.`,
+    description: `our love for God is evident from the leadership to the membership as the
+no compromise stand is a general knowledge in the house. If it is not Godly it is not Calvary compliant.`,
   },
   {
     id: 2,

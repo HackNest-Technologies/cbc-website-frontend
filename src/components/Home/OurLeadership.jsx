@@ -20,7 +20,7 @@ const OurLeadership = () => (
         <h4 className="text-sm leading-[100%] font-satoshi capitalize md:text-base lg:text-[32px]">
           pastor olumide emmanuel
         </h4>
-        <p className="text-sm font-inter leading-[120%] md:text-base lg:leading-[100%] lg:w-[472px]">
+        <p className="text-sm font-inter leading-[120%] md:text-base  lg:w-[472px]">
           Pastor Olumide Emmanuel has been the heart and soul of Calvary Bible
           Church for over 35 years. As the founding Overseer, he has transformed
           a small gathering into a vibrant, Bible-centered community where

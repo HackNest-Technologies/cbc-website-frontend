@@ -24,6 +24,19 @@ import PastSermonPage from "./pages/PastSermonPage";
 import LivePage from "./pages/LivePage";
 import ConstructionPage from "./pages/ConstructionPage";
 import LiveChatPage from "./pages/LiveChatPage";
+import AdminLayout from "./layouts/AdminLayout";
+// import AdminEventPage from "./pages/AdminPages/AdminEventPage";
+import AdminStreamPage from "./pages/AdminPages/AdminStreamPage";
+import AdminPastSermonPage from "./pages/AdminPages/AdminPastSermonPage";
+import AdminStorePage from "./pages/AdminPages/AdminStorePage";
+import AdminConvertPage from "./pages/AdminPages/AdminConvertPage";
+import AdminFellowshipPage from "./pages/AdminPages/AdminFellowshipPage";
+import AdminDevotional from "./pages/AdminPages/AdminDevotional";
+import AdminBranches from "./pages/AdminPages/AdminBranches";
+import AdminDepartment from "./pages/AdminPages/AdminDepartment";
+import TestimonyPage from "./pages/AdminPages/TestimonyPage";
+import AdminEventPage from "./pages/AdminPages/Event/AdminEventPage";
+import AddEventPage from "./pages/AdminPages/Event/AddEventPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,9 +58,23 @@ const router = createBrowserRouter(
         <Route path="/membership-login" element={<MembershipPage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/live" element={<LivePage />} />
-
         <Route path="/past-sermon" element={<PastSermonPage />} />
       </Route>
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route path="admin/live-stream" element={<AdminStreamPage />} />
+        <Route path="admin/past-sermon" element={<AdminPastSermonPage />} />
+        <Route path="admin/admin-events" element={<AdminEventPage />} />
+        <Route  path="events/add-events" element={<AddEventPage />} />
+
+        <Route path="admin/store" element={<AdminStorePage />} />
+        <Route path="admin/convert" element={<AdminConvertPage />} />
+        <Route path="admin/fellowship" element={<AdminFellowshipPage />} />
+        <Route path="admin/devotional" element={<AdminDevotional />} />
+        <Route path="admin/branches" element={<AdminBranches />} />
+        <Route path="admin/department" element={<AdminDepartment />} />
+        <Route path="admin/testimonies" element={<TestimonyPage />} />
+      </Route>
+
       <Route path="/livechat" element={<LiveChatPage />} />
       <Route path="*" element={<ConstructionPage />} />
     </>

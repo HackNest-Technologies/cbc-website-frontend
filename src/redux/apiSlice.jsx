@@ -13,28 +13,28 @@ export const apiSlice = createApi({
     },
   }),
   endpoints: (builder) => ({
-    //  USER
+    //  ======> USER <======
 
     // Sign Up
     signUp: builder.mutation({
       query: (user) => ({
-        url: "api/v1/users",
+        url: "users",
         method: "POST",
-        body: user,
+        body: {
+          user: user,
+        },
       }),
-    }), 
+    }),
 
+    // CURRENT USER LOGGED IN
 
-    // CURRENT USER LOGGED IN 
-
-     signUp: builder.mutation({
+    currentUser: builder.mutation({
       query: (user) => ({
-        url: "api/v1/users",
+        url: "users",
         method: "POST",
         body: user,
       }),
-    }), 
-
+    }),
 
     // HOME
     // ======= Prayer Request ======
@@ -55,20 +55,33 @@ export const apiSlice = createApi({
       }),
     }),
 
-    // EVENT
+    // ======> EVENT <========
+
+    // get
     getEvent: builder.query({
       query: () => "/api/v1/events",
     }),
 
+    // create
     createEvent: builder.mutation({
-      query: (contact) => ({
+      query: (event) => ({
         url: "api/v1/events",
         method: "POST",
-        body: contact,
+        body: event,
+      }),
+    }),
+    
+// delete
+ deleteEvent: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/events/${id}`,
+        method: "DELETE",
       }),
     }),
 
-    //  STORE
+
+
+    // =======> STORE <=======
     // ---------BOOKS CATEGORY----------
     getCategories: builder.query({
       query: () => "api/v1/store_item_categories",
@@ -78,7 +91,7 @@ export const apiSlice = createApi({
       query: (id) => `api/v1/store_item_categories/${id}`,
     }),
 
-    // CART
+    // ======> CART <=======
 
     addToCart: builder.mutation({
       query: (cartItem) => ({
@@ -96,7 +109,7 @@ export const apiSlice = createApi({
       }),
     }),
 
-    // STUDY
+    // =======> STUDY <=======
     // ----------- BIBLE N ONE YEAR -----------
 
     getBibleInOneYear: builder.query({
@@ -119,11 +132,12 @@ export const apiSlice = createApi({
   }),
 });
 
-
 export const {
   useSignUpMutation,
+  useCurrentUserMutation,
   useGetEventQuery,
   useCreateEventMutation,
+  useDeleteEventMutation,
   useCreateCategoryMutation,
   useGetCategoriesQuery,
   useGetBooksByIdQuery,

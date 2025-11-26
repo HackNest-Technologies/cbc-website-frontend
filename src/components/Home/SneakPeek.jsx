@@ -17,7 +17,6 @@ const SneakPeek = () => (
           />
         ))}
       </motion.section>
-      
     </section>
   </section>
 );

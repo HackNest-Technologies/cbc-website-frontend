@@ -1,6 +1,4 @@
-// import sneakPeek from "../../assets/images/sneakpeak.png";
 import sneekPeak from "../../data/sneekPeak";
-
 import { motion } from "motion/react";
 
 const SneakPeek = () => (
@@ -15,7 +13,7 @@ const SneakPeek = () => (
           <img
           key={index}
             src={item}
-            className="w-[107px] h-[202px] min-[400px]:h-[207px] rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+            className="w-[107px] h-[202px] min-[400px]:h-[207px] object-cover rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
           />
         ))}
       </motion.section>

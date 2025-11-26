@@ -28,7 +28,7 @@ const Leaders = () => {
   }, [hash]);
 
   return (
-    <section id="leadership" className="pt-[70px]">
+    <section id="leadership" className="pt-[30px] md:pt-[40px]">
       {isOverseer.map((leader) => (
         <Overseer key={leader.id} overseer={leader} />
       ))}

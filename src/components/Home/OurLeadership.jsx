@@ -37,7 +37,7 @@ const OurLeadership = () => (
         </p>
         <div>
           <Link
-            to="/about"
+            to="/leadership"
             className="w-[198px] h-[40px] py-[1.38px] flex items-center px-[16px] font-medium font-inter  text-base rounded-[22.96px] bg-gradient-to-b from-[#FFFFFF] to-[#EEF4FF]  md:rounded-[34.38px] md:py-[2px] lg:h-[58px] lg:p-[16px]"
             style={{
               border: "1px solid #EEF4FF",

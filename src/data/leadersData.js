@@ -1,4 +1,5 @@
  import pastorOlumide from "../assets/images/Pastor-Olumide.png"
+ 
  const leadersData = [
     {
       id: 1,

@@ -19,7 +19,7 @@ const NavList = ({ toggleMenu }) => {
               </Link>
             </li>
             <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link onClick={toggleMenu} to="/about#leadership">
+              <Link onClick={toggleMenu} to="/leadership">
                 Leadership
               </Link>
             </li>

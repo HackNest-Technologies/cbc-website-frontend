@@ -1,4 +1,4 @@
-import Image30 from "../../assets/images/image-30.png";
+import firstTimer from "../../assets/videos/First-timer-smaller.mp4";
 import logo from "../../assets/images/cbc-logo.webp";
 import greyBg from "../../assets/images/Rectangle-grey.png";
 import OverViewContinuation from "./OverViewContinuation";
@@ -23,7 +23,11 @@ const OverView = () => {
           {/* <img src={greyBg} alt=""  className=""/> */}
         </div>
         <div className="absolute left-0 right-0 top-[-70px] md:top-[-120px] container mx-auto  lg:top-[-220px]">
-          <img src={Image30} alt="" className="px-6 rounded-[5.2px] md:rounded-[14.34px]  md:w-full md:px-0 lg:rounded-[20px]" />
+          <video
+            src={firstTimer}
+            controls
+            className="px-6 rounded-[5.2px] md:rounded-[14.34px] md:w-full md:px-0 lg:rounded-[20px]"
+          ></video>
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2 bottom-[55px] md:bottom-[140px] lg:bottom-[250px]">

@@ -47,7 +47,7 @@ const OverViewContinuation = () => {
             </p>
           </div>
 
-          <div className="relative pr-[33px] min-[430px]:bg-red-300 md:bg-transparent md:pr-[50px] lg:ml-[250px] lg:pr-0">
+          <div className="relative pr-[33px] md:bg-transparent md:pr-[50px] lg:ml-[250px] lg:pr-0">
             <img
               src={overviewFrameOne}
               alt=""

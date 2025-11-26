@@ -22,7 +22,7 @@ const OverView = () => {
           </svg>
           {/* <img src={greyBg} alt=""  className=""/> */}
         </div>
-        <div className="absolute left-0 right-0 top-[-70px] md:top-[-120px] container mx-auto  lg:top-[-220px]">
+        <div className="absolute left-0 right-0 top-[-70px] md:top-[-120px] container mx-auto  lg:top-[-20vw] 2xl:top-[-15vw]">
           <video
             src={firstTimer}
             controls
@@ -30,8 +30,8 @@ const OverView = () => {
           ></video>
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[55px] md:bottom-[140px] lg:bottom-[250px]">
-          <p className="text-center w-[266px] text-[15.732px] font-satoshi md:text-[40px] md:w-[661px] md:leading-[100%] lg:text-[52px] lg:w-[923px]">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-[16vw] min-[500px]:bottom-[12vw] sm:bottom-[8vw] md:bottom-[5vw] lg:bottom-[15vw] 2xl:bottom-[12vw]">
+          <p className="text-[13.73px] text-center w-[266px] font-satoshi md:text-[40px] md:w-[661px] leading-[100%] lg:text-[45px] xl:text-[52px] lg:w-[923px]">
             Be Part of A People Walking Boldly In Power, Purpose, And Dominion.
           </p>
         </div>

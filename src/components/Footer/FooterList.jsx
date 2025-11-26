@@ -15,7 +15,7 @@ const FooterList = () => {
               <Link to="/about">About Us</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/about#leadership">Leadership</Link>
+              <Link to="/leadership">Leadership</Link>
             </li>
             <li className="pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/about#branches">CBC branches</Link>

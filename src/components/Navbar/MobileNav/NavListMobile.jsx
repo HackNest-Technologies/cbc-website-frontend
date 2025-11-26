@@ -17,7 +17,7 @@ const NavListMobile = ({ toggleMenu }) => {
                 <Link onClick={toggleMenu} to="/about">About Us</Link>
               </li>
               <li className="pt-3 text-base">
-                <Link onClick={toggleMenu} to="/about#leadership">Leadership</Link>
+                <Link onClick={toggleMenu} to="/leadership">Leadership</Link>
               </li>
               <li className="pt-3 text-base">
                 <Link onClick={toggleMenu} to="/about#branches">CBC branches</Link>

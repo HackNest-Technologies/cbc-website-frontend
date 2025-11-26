@@ -1,4 +1,4 @@
-import Image30 from "../../assets/images/image-30.png";
+import firstTimer from "../../assets/videos/First-timer-smaller.mp4";
 import logo from "../../assets/images/cbc-logo.webp";
 import greyBg from "../../assets/images/Rectangle-grey.png";
 import OverViewContinuation from "./OverViewContinuation";
@@ -22,12 +22,16 @@ const OverView = () => {
           </svg>
           {/* <img src={greyBg} alt=""  className=""/> */}
         </div>
-        <div className="absolute left-0 right-0 top-[-70px] md:top-[-120px] container mx-auto  lg:top-[-220px]">
-          <img src={Image30} alt="" className="px-6 rounded-[5.2px] md:rounded-[14.34px]  md:w-full md:px-0 lg:rounded-[20px]" />
+        <div className="absolute left-0 right-0 top-[-70px] md:top-[-120px] container mx-auto  lg:top-[-20vw] 2xl:top-[-15vw]">
+          <video
+            src={firstTimer}
+            controls
+            className="px-6 rounded-[5.2px] md:rounded-[14.34px] md:w-full md:px-0 lg:rounded-[20px]"
+          ></video>
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[55px] md:bottom-[140px] lg:bottom-[250px]">
-          <p className="text-center w-[266px] text-[15.732px] font-satoshi md:text-[40px] md:w-[661px] md:leading-[100%] lg:text-[52px] lg:w-[923px]">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-[16vw] min-[500px]:bottom-[12vw] sm:bottom-[8vw] md:bottom-[5vw] lg:bottom-[15vw] 2xl:bottom-[12vw]">
+          <p className="text-[13.73px] text-center w-[266px] font-satoshi md:text-[40px] md:w-[661px] leading-[100%] lg:text-[45px] xl:text-[52px] lg:w-[923px]">
             Be Part of A People Walking Boldly In Power, Purpose, And Dominion.
           </p>
         </div>

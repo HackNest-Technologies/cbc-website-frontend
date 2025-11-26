@@ -19,7 +19,7 @@ const Pastors = ({ pastors }) => {
         <img
           src={pastors.thumbnail}
           alt=""
-          className="rounded-[9.66px] md:w-full md:rounded-[20.98px] "
+          className="rounded-[9.66px] h-[325px] w-full  md:h-[408px]  md:rounded-[20.98px]  object-cover "
         />
       </div>
       <div className="bg-[#FFF0CD] rounded-[12px] p-[15.9px] h-[88px] mt-3 md:h-[113px] md:p-[20px]">

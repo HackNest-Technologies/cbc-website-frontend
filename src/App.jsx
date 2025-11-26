@@ -37,6 +37,7 @@ import AdminDepartment from "./pages/AdminPages/AdminDepartment";
 import TestimonyPage from "./pages/AdminPages/TestimonyPage";
 import AdminEventPage from "./pages/AdminPages/Event/AdminEventPage";
 import AddEventPage from "./pages/AdminPages/Event/AddEventPage";
+import LeadershipPage from "./pages/LeadershipPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,6 +46,8 @@ const router = createBrowserRouter(
         {/* Define your routes here */}
         <Route index element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+                <Route path="/leadership" element={<LeadershipPage />} />
+
         <Route path="/give" element={<GivePage />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/departments-group" element={<DepartGroupPage />} />

@@ -16,10 +16,10 @@ const AboutChurch = () => {
             alt="About Calvary Bible Church"
           />
           <div className="absolute bottom-[30px] px-[20px] text-[#ffffff]">
-            <h2 className="text-xl leading-[120%] uppercase font-satoshi md:text-[48px] lg:text-[75px] lg:leading-[100%]">
+            <h2 className="text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[75px] lg:leading-[100%]">
               ABOUT
             </h2>
-            <h2 className="text-xl leading-[120%] uppercase font-satoshi md:text-[48px] lg:text-[75px] lg:leading-[100%]">
+            <h2 className="text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[75px] lg:leading-[100%]">
               calvary bible church
             </h2>
           </div>

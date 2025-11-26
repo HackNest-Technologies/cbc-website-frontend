@@ -58,7 +58,7 @@ const Branches = () => {
         </div>
       </div>
 
-      <section className="absolute top-[190px] px-6 grid grid-cols-2 gap-5 md:top-[550px] md:flex  md:px-0 md:pl-20 lg:top-[800px]">
+      <section className="absolute top-[190px] px-6 grid grid-cols-2 gap-5 md:top-[550px] md:flex md:px-0 md:pl-20 lg:top-[800px]">
         {visibleBranches.map((branch) => (
           <BranchCard
             key={branch.id}

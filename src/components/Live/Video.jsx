@@ -52,12 +52,13 @@ const Video = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="container mx-auto pt-[100px] px-6 md:px-0">
+    <section className="w-full max-w-[1600px] mx-auto pt-[100px] px-4 md:px-6 lg:px-8 *******">
       {/* Main Content */}
       <div className="">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 lg:gap-6 *******">
+          {" "}
           {/* Main Video Player */}
-          <div className="md:col-span-5">
+          <div className="lg:col-span-7 ********">
             <div className="bg-black rounded-xl overflow-hidden shadow-lg">
               <div className="relative pt-[56.25%]">
                 {" "}
@@ -73,9 +74,8 @@ const Video = () => {
               </div>
             </div>
           </div>
-
           {/* Video List */}
-          <div className="lg:col-span-1 ">
+          <div className="lg:col-span-3 ****** ">
             {/* <div className="flex flex-row md:flex-col gap-[8px] md:gap-[11px] w-[237px] h-[47px] md:w-[59px] md:h-[330px] lg:w-[84px] lg:h-[441px]  ">
               <div className=" flex flex-col items-center gap-[8px] md:gap-[11px] w-[58px] h-[47px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]  ">
                 <Link to="/livechat">
@@ -131,8 +131,8 @@ const Video = () => {
                 </p>
               </div>
             </div> */}
-            <section className="flex flex-col items-start justify-between rounded-[16px] border-[2px] border-dashed border-[#FC8E33] w-[328px] h-full md:w-[361px] lg:w-[406px] lg:border-[5px]">
-              <div className="first child flex flex-col items-start gap-[24px] w-full ">
+            <section className="flex flex-col rounded-[16px] border-[2px] border-dashed border-[#FC8E33] w-full h-auto lg:h-full lg:border-[5px]*****">
+              <div className="first child flex flex-col items-start gap-[24px] w-full flex-1 overflow-hidden ">
                 <div className="flex p-[16px] justify-between items-center  border-dashed border-b-[2px] w-full lg:border-b-[5px] border-[#FC8E33] the livechat part">
                   <div className="flex items-center gap-[8px]">
                     <img
@@ -155,7 +155,7 @@ const Video = () => {
                     </p>
                   </button>
                 </div>
-                <div className="flex flex-col items-start gap-[8px] self-stretch py-[8px] md:py-[16px] body section">
+                <div className="flex flex-col items-start gap-[8px] self-stretch py-[8px] md:py-[16px] px-[8px] overflow-y-auto flex-1 max-h-[300px] md:max-h-[400px] lg:max-h-none****">
                   <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
                     <div className=" flex gap-[10px] items-center ml-0.5 ">
                       <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">

@@ -5,7 +5,8 @@ import solar from "../../assets/images/solar_share-outline.svg";
 import humbleicons from "../../assets/images/humbleicons_chat.svg";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-
+import cancel from "../../assets/images/cancel.png";
+import { FaArrowRight } from "react-icons/fa";
 // Mock data to replace the empty API
 const mockVideos = [
   {
@@ -34,7 +35,7 @@ const mockVideos = [
       "https://assets.mixkit.co/music/preview/mixkit-deep-urban-623.mp3",
     title: "Ocean Waves",
     description: "Peaceful ocean waves crashing",
-  }, 
+  },
   {
     id: "4",
     video_url:
@@ -74,8 +75,8 @@ const Video = () => {
           </div>
 
           {/* Video List */}
-          <div className="lg:col-span-1  ">
-            <div className="flex flex-row md:flex-col gap-[8px] md:gap-[11px] w-[237px] h-[47px] md:w-[59px] md:h-[330px] lg:w-[84px] lg:h-[441px]  ">
+          <div className="lg:col-span-1 ">
+            {/* <div className="flex flex-row md:flex-col gap-[8px] md:gap-[11px] w-[237px] h-[47px] md:w-[59px] md:h-[330px] lg:w-[84px] lg:h-[441px]  ">
               <div className=" flex flex-col items-center gap-[8px] md:gap-[11px] w-[58px] h-[47px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]  ">
                 <Link to="/livechat">
                   <div className=" justify-center items-center bg-[#FFB91E]/28 w-[32px] h-[27px] pt-[1.9px] pr-[5.3px] pb-[2.3px] pl-[3.4px] rounded-[5.7px] md:w-[60px] md:h-[51.4px] md:pt-[3.5px] md:pr-[10px] md:pb-[4.3px] md:pl-[6.4px] md:rounded-[10.7px] lg:w-[84px] lg:h-[72px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] lg:rounded-[15px]">
@@ -129,7 +130,143 @@ const Video = () => {
                   off video
                 </p>
               </div>
-            </div>
+            </div> */}
+            <section className="flex flex-col items-start justify-between rounded-[16px] border-[2px] border-dashed border-[#FC8E33] w-[328px] h-full md:w-[361px] lg:w-[406px] lg:border-[5px]">
+              <div className="first child flex flex-col items-start gap-[24px] w-full ">
+                <div className="flex p-[16px] justify-between items-center  border-dashed border-b-[2px] w-full lg:border-b-[5px] border-[#FC8E33] the livechat part">
+                  <div className="flex items-center gap-[8px]">
+                    <img
+                      src={liveChat}
+                      alt="logo"
+                      className="w-[30px] h-[28px]"
+                    />
+                    <p className="text-black font-satoshi text-[18px] font-bold uppercase">
+                      Live chat
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="flex px-[18.3px] items-center gap-[8.07px] rounded-[36.7px] bg-black ml-auto"
+                  >
+                    <img src={cancel} className="w-[16px] h-[16px]" />
+                    <p className="text-white text-right font-inter text-[16px] font-normal py-[5.38px]  leading-[1.4] uppercase">
+                      close
+                    </p>
+                  </button>
+                </div>
+                <div className="flex flex-col items-start gap-[8px] self-stretch py-[8px] md:py-[16px] body section">
+                  <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
+                    <div className=" flex gap-[10px] items-center ml-0.5 ">
+                      <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">
+                        <p className="items-start">WI</p>
+                      </div>
+                      <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
+                        Femi Balogun
+                      </p>
+                    </div>
+                    <div className=" flex  pt-[16px] items-start gap-[9px]  holding the chat section">
+                      <p className="text-black font-satoshi text-[16px] font-normal leading-[1.4] capitalize">
+                        In Jesus’ name, I declare the restoration of my family!
+                      </p>
+                    </div>
+                  </div>
+                  {/* CHAT2 */}
+                  <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
+                    <div className=" flex gap-[10px] items-center ml-0.5 ">
+                      <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">
+                        <p className="items-start">WI</p>
+                      </div>
+                      <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
+                        Femi Balogun
+                      </p>
+                    </div>
+                    <div className=" flex  pt-[16px] items-start gap-[9px]  holding the chat section">
+                      <p className="text-black font-satoshi text-[16px] font-normal leading-[1.4] capitalize">
+                        In Jesus’ name, I declare the restoration of my family!
+                      </p>
+                    </div>
+                  </div>
+                  {/* CHAT 3 */}
+                  <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
+                    <div className=" flex gap-[10px] items-center ml-0.5 ">
+                      <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">
+                        <p className="items-start">WI</p>
+                      </div>
+                      <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
+                        Femi Balogun
+                      </p>
+                    </div>
+                    <div className=" flex  pt-[16px] items-start gap-[9px]  holding the chat section">
+                      <p className="text-black font-satoshi text-[16px] font-normal leading-[1.4] capitalize">
+                        In Jesus’ name, I declare the restoration of my family!
+                      </p>
+                    </div>
+                  </div>
+                  {/* CHAT 4*/}
+                  <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
+                    <div className=" flex gap-[10px] items-center ml-0.5 ">
+                      <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">
+                        <p className="items-start">WI</p>
+                      </div>
+                      <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
+                        Femi Balogun
+                      </p>
+                    </div>
+                    <div className=" flex  pt-[16px] items-start gap-[9px]  holding the chat section">
+                      <p className="text-black font-satoshi text-[16px] font-normal leading-[1.4] capitalize">
+                        In Jesus’ name, I declare the restoration of my family!
+                      </p>
+                    </div>
+                  </div>
+                  {/* CHAT 5 */}
+                  <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
+                    <div className=" flex gap-[10px] items-center ml-0.5 0">
+                      <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">
+                        <p className="items-start">WI</p>
+                      </div>
+                      <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
+                        Femi Balogun
+                      </p>
+                    </div>
+                    <div className=" flex  pt-[16px] items-start gap-[9px]  holding the chat section">
+                      <p className="text-black font-satoshi text-[16px] font-normal leading-[1.4] capitalize">
+                        In Jesus’ name, I declare the restoration of my family!
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* CHAT 6 */}
+                  <div className="flex items-center gap-[8px] self-stretch holding the whole first section">
+                    <div className=" flex gap-[10px] items-center ml-0.5 ">
+                      <div className="flex justify-end items-center pt-[6.84px] pl-[5.4px] md:pt-[6.84px] md:pr-[3.52px] md:pb-[2.15px] md:pl-[5.47px] md:justify-center rounded-[34.2px] bg-[#BCBCBC]">
+                        <p className="items-start">WI</p>
+                      </div>
+                      <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
+                        Femi Balogun
+                      </p>
+                    </div>
+                    <div className=" flex  pt-[16px] items-start gap-[9px]  holding the chat section">
+                      <p className="text-black font-satoshi text-[16px] font-normal leading-[1.4] capitalize">
+                        In Jesus’ name, I declare the restoration of my family!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className=" flex flex-col px-[8px] py-[16px] items-center gap-[8px] border-t-2 border-dashed border-t-[#FC8E33] lg:border-t-5  w-full LowerChild of the section">
+                <div className=" flex justify-center items-center gap-[15px]holding text and arrow">
+                  <div className="flex items-center gap-[12px] holding only the text">
+                    <p className="text-[#333] font-satoshi text-[16px] font-normal leading-[1.4] underline lowercase">
+                      LOG IN/ SIGN UP TO LIVE CHAT
+                    </p>
+                  </div>
+                  <Link to="/" className="">
+                    <FaArrowRight className="h-[24px] w-[24px] pl-[10px]" />
+                  </Link>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>

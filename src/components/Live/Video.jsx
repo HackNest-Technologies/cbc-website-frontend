@@ -52,15 +52,15 @@ const Video = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="w-full max-w-[1600px] mx-auto pt-[100px] px-4 md:px-6 lg:px-8 *******">
+    <section className="container mx-auto pt-[100px] px-6 md:px-0">
       {/* Main Content */}
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 lg:gap-6 *******">
           {" "}
           {/* Main Video Player */}
-          <div className="lg:col-span-7 ********">
+          <div className="md:col-span-6 lg:col-span-7 ********">
             <div className="bg-black rounded-xl overflow-hidden shadow-lg">
-              <div className="relative pt-[56.25%]">
+              <div className="relative pt-[56.25%] ">
                 {" "}
                 {/* 16:9 Aspect Ratio */}
                 <video
@@ -131,7 +131,7 @@ const Video = () => {
                 </p>
               </div>
             </div> */}
-            <section className="flex flex-col rounded-[16px] border-[2px] border-dashed border-[#FC8E33] w-full h-auto lg:h-full lg:border-[5px]*****">
+            <section className="flex flex-col rounded-[16px] border-[2px] border-dashed border-[#FC8E33] w-full h-auto md:h-[300px]  lg:h-[430px] lg:border-[5px] *****">
               <div className="first child flex flex-col items-start gap-[24px] w-full flex-1 overflow-hidden ">
                 <div className="flex p-[16px] justify-between items-center  border-dashed border-b-[2px] w-full lg:border-b-[5px] border-[#FC8E33] the livechat part">
                   <div className="flex items-center gap-[8px]">
@@ -257,8 +257,8 @@ const Video = () => {
               <div className=" flex flex-col px-[8px] py-[16px] items-center gap-[8px] border-t-2 border-dashed border-t-[#FC8E33] lg:border-t-5  w-full LowerChild of the section">
                 <div className=" flex justify-center items-center gap-[15px]holding text and arrow">
                   <div className="flex items-center gap-[12px] holding only the text">
-                    <p className="text-[#333] font-satoshi text-[16px] font-normal leading-[1.4] underline lowercase">
-                      LOG IN/ SIGN UP TO LIVE CHAT
+                    <p className="text-[#333] font-satoshi text-[16px] font-normal leading-[1.4] underline capitalize">
+                      SEND
                     </p>
                   </div>
                   <Link to="/" className="">

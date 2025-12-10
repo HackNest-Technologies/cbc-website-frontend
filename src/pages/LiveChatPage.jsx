@@ -1,4 +1,3 @@
-import React from "react";
 import LiveChat from "../components/LiveChat/LiveChat";
 
 const LiveChatPage = () => {

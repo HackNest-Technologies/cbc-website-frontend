@@ -6,7 +6,7 @@ export const apiSlice = createApi({
     baseUrl: "https://cbc.space1.systemsa.org/",
 
     tagTypes: ["Books", "Cart", "User"],
-    credentials: "include", // VERY IMPORTANT for cookies
+    credentials: "include",
     prepareHeaders: (headers) => {
       headers.set("Accept", "application/json");
       return headers;
@@ -26,14 +26,20 @@ export const apiSlice = createApi({
       }),
     }),
 
-    // CURRENT USER LOGGED IN
-
-    currentUser: builder.mutation({
+    login: builder.mutation({
       query: (user) => ({
-        url: "users",
+        url: "session",
         method: "POST",
         body: user,
       }),
+    }),
+
+    // CURRENT USER LOGGED IN
+
+    currentUser: builder.query({
+      query: () => "session",
+      transformResponse: (response) => response.user,
+      providesTags: ["User"],
     }),
 
     // HOME
@@ -47,6 +53,10 @@ export const apiSlice = createApi({
     }),
 
     // ===== Testimonies ========
+    getTestimonies: builder.query({
+      query: () => "api/v1/testimonies",
+    }),
+
     sendTestimony: builder.mutation({
       query: (testimony) => ({
         url: "api/v1/testimonies",
@@ -55,14 +65,26 @@ export const apiSlice = createApi({
       }),
     }),
 
-    // ======> EVENT <========
+    updateTestimony: builder.mutation({
+      query: ({ id, testimony }) => ({
+        url: `api/v1/testimonies/${id}`,
+        method: "PUT",
+        body: testimony,
+      }),
+    }),
 
-    // get
+    deleteTestimony: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/testimonies/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // ======> EVENT <========
     getEvent: builder.query({
       query: () => "/api/v1/events",
     }),
 
-    // create
     createEvent: builder.mutation({
       query: (event) => ({
         url: "api/v1/events",
@@ -70,16 +92,13 @@ export const apiSlice = createApi({
         body: event,
       }),
     }),
-    
-// delete
- deleteEvent: builder.mutation({
+
+    deleteEvent: builder.mutation({
       query: (id) => ({
         url: `api/v1/events/${id}`,
         method: "DELETE",
       }),
     }),
-
-
 
     // =======> STORE <=======
     // ---------BOOKS CATEGORY----------
@@ -129,12 +148,42 @@ export const apiSlice = createApi({
     getDailyDevotional: builder.query({
       query: () => "api/v1/devotionals",
     }),
+
+    // PAST SERMON
+    // ------ Get past sermon ------
+    getPastSermon: builder.query({
+      query: () => "api/v1/past_sermons",
+    }),
+
+    uploadPastSermon: builder.mutation({
+      query: (pastsermon) => ({
+        url: "api/v1/past_sermons",
+        method: "POST",
+        body: pastsermon,
+      }),
+    }),
+
+    upDatePastSermon: builder.mutation({
+      query: ({ id, pastsermon }) => ({
+        url: `api/v1/past_sermons/${id}`,
+        method: "PUT",
+        body: pastsermon,
+      }),
+    }),
+
+    deletePastSermon: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/past_sermons/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
 export const {
   useSignUpMutation,
-  useCurrentUserMutation,
+  useCurrentUserQuery,
+  useLoginMutation,
   useGetEventQuery,
   useCreateEventMutation,
   useDeleteEventMutation,
@@ -146,5 +195,12 @@ export const {
   useGetBibleInOneYearQuery,
   useAddToCartMutation,
   useSendPrayerRequestMutation,
+  useGetTestimoniesQuery,
   useSendTestimonyMutation,
+  useUpdateTestimonyMutation,
+  useDeleteTestimonyMutation,
+  useGetPastSermonQuery,
+  useUploadPastSermonMutation,
+  useUpDatePastSermonMutation,
+  useDeletePastSermonMutation,
 } = apiSlice;

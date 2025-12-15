@@ -1,7 +1,13 @@
 import LiveChat from "../components/LiveChat/LiveChat";
+import LoginPage from "../components/LiveChat/LoginPage";
 
 const LiveChatPage = () => {
-  return <LiveChat />;
+  return (
+    <section>
+      <LiveChat />
+      <LoginPage />
+    </section>
+  );
 };
 
 export default LiveChatPage;

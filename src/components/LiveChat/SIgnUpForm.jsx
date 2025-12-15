@@ -3,9 +3,7 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaTimesCircle } from "react-icons/fa";
 import SubmitBtn from "../shared/SubmitBtn";
-import {
-  useSignUpMutation,
-} from "../../redux/apiSlice";
+import {useSignUpMutation} from "../../redux/apiSlice";
 const SIgnUpForm = () => {
   const initialState = {
     email_address: "",

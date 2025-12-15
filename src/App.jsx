@@ -4,7 +4,10 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useCurrentUserQuery } from "./redux/apiSlice";
+import { setUser } from "./redux/authSlice";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -25,19 +28,32 @@ import LivePage from "./pages/LivePage";
 import ConstructionPage from "./pages/ConstructionPage";
 import LiveChatPage from "./pages/LiveChatPage";
 import AdminLayout from "./layouts/AdminLayout";
-// import AdminEventPage from "./pages/AdminPages/AdminEventPage";
-import AdminStreamPage from "./pages/AdminPages/AdminStreamPage";
-import AdminPastSermonPage from "./pages/AdminPages/AdminPastSermonPage";
-import AdminStorePage from "./pages/AdminPages/AdminStorePage";
+import AdminStorePage from "./pages/AdminPages/Store/AdminStorePage";
 import AdminConvertPage from "./pages/AdminPages/AdminConvertPage";
 import AdminFellowshipPage from "./pages/AdminPages/AdminFellowshipPage";
 import AdminDevotional from "./pages/AdminPages/AdminDevotional";
 import AdminBranches from "./pages/AdminPages/AdminBranches";
 import AdminDepartment from "./pages/AdminPages/AdminDepartment";
-import TestimonyPage from "./pages/AdminPages/TestimonyPage";
 import AdminEventPage from "./pages/AdminPages/Event/AdminEventPage";
 import AddEventPage from "./pages/AdminPages/Event/AddEventPage";
 import LeadershipPage from "./pages/LeadershipPage";
+import AdminRoute from "./components/Admin/AdminRoute";
+import UserLoginPage from "./pages/UserLoginPage";
+import AddPastSermonPage from "./pages/AdminPages/PastSermon/AddPastSermonPage";
+import AdminPastSermonPage from "./pages/AdminPages/PastSermon/AdminPastSermonPage";
+import EditPastSermonPage from "./pages/AdminPages/PastSermon/EditPastSermonPage";
+import AdminTestimoyPage from "./pages/AdminPages/Testimony/AdminTestimoyPage";
+import AddTestimony from "./pages/AdminPages/Testimony/AddTestimony";
+import EditTestimony from "./components/Admin/Testimony/EditTestimony";
+import AdminCategoryPage from "./pages/AdminPages/Store/Category/AdminCategoryPage";
+import EditCategoryPage from "./pages/AdminPages/Store/Category/EditCategoryPage";
+import ProductsCategoryPage from "./pages/AdminPages/Store/ProductsCategoryPage";
+import EditBookItemPage from "./pages/AdminPages/Store/EditBookItemPage";
+import CreateCategoryPage from "./pages/AdminPages/Store/Category/CreateCategoryPage";
+import AddProductsPage from "./pages/AdminPages/Store/AddProductsPage";
+import AddStreamPage from "./pages/AdminPages/Stream/AddStreamPage";
+import ShowStreamLinkPage from "./pages/AdminPages/Stream/ShowStreamLinkPage";
+import EditStreamPage from "./pages/AdminPages/Stream/EditStreamPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,7 +62,7 @@ const router = createBrowserRouter(
         {/* Define your routes here */}
         <Route index element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-                <Route path="/leadership" element={<LeadershipPage />} />
+        <Route path="/leadership" element={<LeadershipPage />} />
 
         <Route path="/give" element={<GivePage />} />
         <Route path="/events" element={<EventPage />} />
@@ -63,29 +79,237 @@ const router = createBrowserRouter(
         <Route path="/live" element={<LivePage />} />
         <Route path="/past-sermon" element={<PastSermonPage />} />
       </Route>
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route path="admin/live-stream" element={<AdminStreamPage />} />
-        <Route path="admin/past-sermon" element={<AdminPastSermonPage />} />
-        <Route path="admin/admin-events" element={<AdminEventPage />} />
-        <Route  path="events/add-events" element={<AddEventPage />} />
+      <Route
+        path="/"
+        element={
+          <AdminRoute>
+            <AdminLayout />
+          </AdminRoute>
+        }
+      >
+        <Route
+          path="/admin-livestream"
+          element={
+            <AdminRoute>
+              <ShowStreamLinkPage />
+            </AdminRoute>
+          }
+        />
 
-        <Route path="admin/store" element={<AdminStorePage />} />
-        <Route path="admin/convert" element={<AdminConvertPage />} />
-        <Route path="admin/fellowship" element={<AdminFellowshipPage />} />
-        <Route path="admin/devotional" element={<AdminDevotional />} />
-        <Route path="admin/branches" element={<AdminBranches />} />
-        <Route path="admin/department" element={<AdminDepartment />} />
-        <Route path="admin/testimonies" element={<TestimonyPage />} />
+        <Route
+          path="/add-livestream"
+          element={
+            <AdminRoute>
+              <AddStreamPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/edit-livestream"
+          element={
+            <AdminRoute>
+              <EditStreamPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-pastsermon"
+          element={
+            <AdminRoute>
+              <AdminPastSermonPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-pastsermon/add-pastsermon"
+          element={
+            <AdminRoute>
+              <AddPastSermonPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/edit-pastsermon"
+          element={
+            <AdminRoute>
+              <EditPastSermonPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-events"
+          element={
+            <AdminRoute>
+              <AdminEventPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-event/add-event"
+          element={
+            <AdminRoute>
+              <AddEventPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/book-category"
+          element={
+            <AdminRoute>
+              <AdminCategoryPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-category/add-category"
+          element={
+            <AdminRoute>
+              <CreateCategoryPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/edit-category"
+          element={
+            <AdminRoute>
+              <EditCategoryPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <AdminRoute>
+              <ProductsCategoryPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          // path="/edit-product/:id"
+          path="/edit-product"
+          element={
+            <AdminRoute>
+              <EditBookItemPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/products/add-product"
+          element={
+            <AdminRoute>
+              <AddProductsPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-store"
+          element={
+            <AdminRoute>
+              <AdminStorePage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-convert"
+          element={
+            <AdminRoute>
+              <AdminConvertPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-fellowship"
+          element={
+            <AdminRoute>
+              <AdminFellowshipPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-devotional"
+          element={
+            <AdminRoute>
+              <AdminDevotional />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-branches"
+          element={
+            <AdminRoute>
+              <AdminBranches />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-department"
+          element={
+            <AdminRoute>
+              <AdminDepartment />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-testimonies"
+          element={
+            <AdminRoute>
+              <AdminTestimoyPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-testimony/add-testimony"
+          element={
+            <AdminRoute>
+              <AddTestimony />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/edit-testimony"
+          element={
+            <AdminRoute>
+              <EditTestimony />
+            </AdminRoute>
+          }
+        />
       </Route>
-
+      <Route path="/login" element={<UserLoginPage />} />
       <Route path="/livechat" element={<LiveChatPage />} />
       <Route path="*" element={<ConstructionPage />} />
     </>
   )
 );
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const { data, isSuccess } = useCurrentUserQuery();
+
+  useEffect(() => {
+    if (isSuccess && data?.user) {
+      dispatch(setUser(data.user));
+      console.log(data, "current data");
+    }
+  }, [isSuccess, data]);
+
   return <RouterProvider router={router} />;
-}
+};
 
 export default App;

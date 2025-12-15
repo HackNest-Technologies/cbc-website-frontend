@@ -3,10 +3,7 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaTimesCircle } from "react-icons/fa";
 import SubmitBtn from "../shared/SubmitBtn";
-import {
-  useSignUpMutation,
-  useCurrentUserMutation,
-} from "../../redux/apiSlice";
+import {useSignUpMutation} from "../../redux/apiSlice";
 const SIgnUpForm = () => {
   const initialState = {
     email_address: "",
@@ -14,7 +11,6 @@ const SIgnUpForm = () => {
   };
 
   const [signUp] = useSignUpMutation();
-  const [currentUser] = useCurrentUserMutation();
   const [inputVal, setInputVal] = useState(initialState);
   const [passType, setPassType] = useState("password");
 

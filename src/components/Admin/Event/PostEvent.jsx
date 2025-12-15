@@ -47,7 +47,7 @@ const PostEvent = () => {
       setStatus("success");
       setMsg(res.msg);
       clearMessageAfterTimeout();
-      navigate("admin/admin-events", { state: { refresh: true } });
+      navigate("/admin-events", { state: { refresh: true } });
     } catch (error) {
       setStatus("reject");
       setMsg(error.msg);
@@ -98,7 +98,7 @@ const PostEvent = () => {
           <div className="buttons flex gap-[20px] items-center">
             <button
               type="submit"
-              className="flex font-inter font-semibold text-sm text-white rounded-[8px] py-[10px] px-[18px] gap-[8px] bg-[#62A516] items-center w-[108px] h-[44px]"
+              className="flex font-inter font-semibold text-sm text-white rounded-[8px] py-[10px] px-[18px] gap-[8px] bg-[#FD9F2B] items-center w-[108px] h-[44px]"
             >
               <img src={publish} className="w-[14px] h-[14px]" />
               Publish

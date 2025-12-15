@@ -32,6 +32,22 @@ const sneekPeak = [
   seven,
   sixteen,
   seventeen,
+   one,
+  eight,
+  two,
+  three,
+  four,
+  six,
+  nine,
+  ten,
+  eleven,
+  twelve,
+  thirteen,
+  fourteen,
+  fifteen,
+  seven,
+  sixteen,
+  seventeen,
 ];
 
 export default sneekPeak;

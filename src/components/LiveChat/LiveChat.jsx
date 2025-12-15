@@ -4,7 +4,7 @@ import SIgnUpForm from "./SIgnUpForm";
 
 const LiveChat = () => {
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 gap-7  w-full md:gap-[24px]  xl:pb-[20px]">
+    <div className=" grid grid-cols-1 md:grid-cols-2 gap-7 pt-[20px]   w-full md:gap-[24px]  xl:pb-[20px]">
       <div className="rounded-[16px] md:rounded-[20px] min-h-full liveBg  md:h-screen h-[342px] relative flex items-end w-full">
         <img
           src={logo}
@@ -33,8 +33,8 @@ const LiveChat = () => {
             </p>
           </span>
 
-     {/* Form here */}
-     <SIgnUpForm/>
+          {/* Form here */}
+          <SIgnUpForm />
 
           <footer className="flex flex-col justify-center items-end text-[#595858]  lg:flex-row lg:gap-[42px] lg:gap-x-4 ">
             <p className="mt-[18.5px] text-[12px] md:text-[14px] lg:text-[16px] font-normal capitalize  items-center mr-6">

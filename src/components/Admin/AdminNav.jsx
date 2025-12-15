@@ -1,84 +1,3 @@
-// import { NavLink } from "react-router-dom";
-// import logo from "../../assets/images/cbc-logo.webp";
-
-// const Nav = () => {
-//   const activeClass = ({ isActive }) =>
-//     isActive
-//       ? "bg-[#FD9F2B] py-3  text-white rounded-[4px] px-4 w-full flex gap-3 text-sm font-inter font-semibold"
-//       : " flex gap-3 text-sm  font-inter font-semibold py-4  px-4";
-
-//   return (
-//     <section className="border-r-[1.8px] border-[#E4E7EC] px-2 pt-6 w-[280px] shrink-0">
-//       <div className="flex gap-4 justify-center items-center">
-//         <NavLink to="/">
-//           <img
-//             src={logo}
-//             alt="Calvary bible church logo"
-//             className="w-[110px] h-auto object-cover"
-//           />
-//         </NavLink>
-//       </div>
-//       <div className="mt-12">
-//         <NavLink to="/admin-livestream" className={activeClass}>
-//           {/* <img src={blogIcon} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Stream</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-pastsermon" className={activeClass}>
-//           {/* <img src={galleryIcon} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Past Sermon</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-events" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Event</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-store" className={activeClass}>
-//           {/* <img src={authorIcon} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Store</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-convert" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">New Convert</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-fellowship" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">House Fellowship</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-devotional" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Devotional</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-branches" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Branches</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-department" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Departments</p>
-//         </NavLink>
-
-//         <NavLink to="/admin-testimonies" className={activeClass}>
-//           {/* <img src={calender} alt="" className="w-[20px] h-[20px]" /> */}
-//           <p className="">Testimonies</p>
-//         </NavLink>
-//       </div>
-
-//       <div className="flex items-end h-[55vh]">{/* <Dashboard/> */}</div>
-//     </section>
-//   );
-// };
-
-// export default Nav;
-
-
-
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/cbc-logo.webp";
 import { useState } from "react";
@@ -105,7 +24,7 @@ const AdminNav = () => {
     { to: "/admin-livestream", label: "Stream" },
     { to: "/admin-pastsermon", label: "Past Sermon" },
     { to: "/admin-events", label: "Event" },
-    { to: "/admin-store", label: "Store" },
+    { to: "/book-category", label: "Store" },
     { to: "/admin-convert", label: "New Convert" },
     { to: "/admin-fellowship", label: "House Fellowship" },
     { to: "/admin-devotional", label: "Devotional" },
@@ -146,18 +65,24 @@ const AdminNav = () => {
       >
         {/* Logo and Collapse Button */}
         <div className="p-4 border-b border-[#E4E7EC]">
-          <div className={`flex items-center justify-between ${isCollapsed ? "flex-col gap-4" : ""}`}>
-            <NavLink 
-              to="/" 
+          <div
+            className={`flex items-center justify-between ${
+              isCollapsed ? "flex-col gap-4" : ""
+            }`}
+          >
+            <NavLink
+              to="/"
               className={`${isCollapsed ? "flex justify-center w-full" : ""}`}
             >
               <img
                 src={logo}
                 alt="Calvary bible church logo"
-                className={`${isCollapsed ? "w-12 h-12" : "w-[110px] h-auto"} object-cover transition-all`}
+                className={`${
+                  isCollapsed ? "w-12 h-12" : "w-[110px] h-auto"
+                } object-cover transition-all`}
               />
             </NavLink>
-            
+
             {/* Desktop Collapse Button */}
             <button
               onClick={toggleSidebar}
@@ -176,7 +101,7 @@ const AdminNav = () => {
               className="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
             >
               <FiX size={20} className="text-gray-600" />
-            </button> 
+            </button>
           </div>
         </div>
 
@@ -202,12 +127,18 @@ const AdminNav = () => {
         </div>
 
         {/* User Profile/Logout Section */}
-        <div className={`
+        <div
+          className={`
           absolute bottom-0 left-0 right-0 
           p-4 border-t border-[#E4E7EC]
           ${isCollapsed ? "text-center" : ""}
-        `}>
-          <div className={`flex items-center ${isCollapsed ? "justify-center" : "justify-between"}`}>
+        `}
+        >
+          <div
+            className={`flex items-center ${
+              isCollapsed ? "justify-center" : "justify-between"
+            }`}
+          >
             {!isCollapsed && (
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
@@ -217,12 +148,12 @@ const AdminNav = () => {
                 </div>
               </div>
             )}
-            
+
             {isCollapsed && (
               <div className="w-8 h-8 bg-gray-300 rounded-full mx-auto"></div>
             )}
-            
-            <button 
+
+            <button
               className={`
                 text-sm text-gray-500 hover:text-gray-800
                 ${isCollapsed ? "mt-2" : ""}

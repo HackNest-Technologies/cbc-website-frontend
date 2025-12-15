@@ -28,8 +28,7 @@ import LivePage from "./pages/LivePage";
 import ConstructionPage from "./pages/ConstructionPage";
 import LiveChatPage from "./pages/LiveChatPage";
 import AdminLayout from "./layouts/AdminLayout";
-import AdminStreamPage from "./pages/AdminPages/AdminStreamPage";
-import AdminStorePage from "./pages/AdminPages/AdminStorePage";
+import AdminStorePage from "./pages/AdminPages/Store/AdminStorePage";
 import AdminConvertPage from "./pages/AdminPages/AdminConvertPage";
 import AdminFellowshipPage from "./pages/AdminPages/AdminFellowshipPage";
 import AdminDevotional from "./pages/AdminPages/AdminDevotional";
@@ -46,6 +45,15 @@ import EditPastSermonPage from "./pages/AdminPages/PastSermon/EditPastSermonPage
 import AdminTestimoyPage from "./pages/AdminPages/Testimony/AdminTestimoyPage";
 import AddTestimony from "./pages/AdminPages/Testimony/AddTestimony";
 import EditTestimony from "./components/Admin/Testimony/EditTestimony";
+import AdminCategoryPage from "./pages/AdminPages/Store/Category/AdminCategoryPage";
+import EditCategoryPage from "./pages/AdminPages/Store/Category/EditCategoryPage";
+import ProductsCategoryPage from "./pages/AdminPages/Store/ProductsCategoryPage";
+import EditBookItemPage from "./pages/AdminPages/Store/EditBookItemPage";
+import CreateCategoryPage from "./pages/AdminPages/Store/Category/CreateCategoryPage";
+import AddProductsPage from "./pages/AdminPages/Store/AddProductsPage";
+import AddStreamPage from "./pages/AdminPages/Stream/AddStreamPage";
+import ShowStreamLinkPage from "./pages/AdminPages/Stream/ShowStreamLinkPage";
+import EditStreamPage from "./pages/AdminPages/Stream/EditStreamPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -83,7 +91,25 @@ const router = createBrowserRouter(
           path="/admin-livestream"
           element={
             <AdminRoute>
-              <AdminStreamPage />
+              <ShowStreamLinkPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/add-livestream"
+          element={
+            <AdminRoute>
+              <AddStreamPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/edit-livestream"
+          element={
+            <AdminRoute>
+              <EditStreamPage />
             </AdminRoute>
           }
         />
@@ -128,6 +154,58 @@ const router = createBrowserRouter(
           element={
             <AdminRoute>
               <AddEventPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/book-category"
+          element={
+            <AdminRoute>
+              <AdminCategoryPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin-category/add-category"
+          element={
+            <AdminRoute>
+              <CreateCategoryPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/edit-category"
+          element={
+            <AdminRoute>
+              <EditCategoryPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <AdminRoute>
+              <ProductsCategoryPage />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          // path="/edit-product/:id"
+          path="/edit-product"
+          element={
+            <AdminRoute>
+              <EditBookItemPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/products/add-product"
+          element={
+            <AdminRoute>
+              <AddProductsPage />
             </AdminRoute>
           }
         />

@@ -1,26 +1,27 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import TestimonyList from "./TestimonyList";
-import Spinner from "../../Loader/Spinner";
-import { useGetTestimoniesQuery } from "../../../redux/apiSlice";
+import CategoryList from "./CategoryList";
+import Spinner from "../../../Loader/Spinner";
+import { useGetCategoriesQuery } from "../../../../redux/apiSlice";
 
-const DisplayTestimonies = ({ search = "" }) => {
+const DisplayCategory = ({ search = "" }) => {
   const location = useLocation();
-  const { data = [], isLoading, refetch } = useGetTestimoniesQuery();
+  const { data = [], isLoading, refetch } = useGetCategoriesQuery();
 
-  const filteredEvents = data.filter((event) => {
+  const filteredCategory = data.filter((category) => {
     const searchTerm = search.toLowerCase();
     return (
-      event?.testifier_first_name?.toLowerCase().includes(searchTerm) ||
-      event?.testifier_last_name?.toLowerCase().includes(searchTerm) ||
-      event?.body?.toLowerCase().includes(searchTerm)
+      category?.name?.toLowerCase().includes(searchTerm)
     );
   });
+
+
+  console.log(data, "Catergory data")
 
   useEffect(() => {
     if (location.state?.refresh) {
       refetch(); // Force refetch
-      // Clear the refresh state to prevent infinite loops
+      // Clear the refresh state to prcategory infinite loops
     }
   }, [location.state, refetch]);
   return (
@@ -36,11 +37,11 @@ const DisplayTestimonies = ({ search = "" }) => {
             </div>
           </>
         ) : (
-          <TestimonyList data={filteredEvents} />
+          <CategoryList data={filteredCategory} />
         )}
       </div>
     </section>
   );
 };
 
-export default DisplayTestimonies;
+export default DisplayCategory;

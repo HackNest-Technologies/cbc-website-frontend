@@ -41,7 +41,6 @@ const SignIn = () => {
       console.log("Login successful:", res);
     } catch (err) {
       console.log("Login error:", err);
-      // Better error handling
       if (err.data) {
         console.log("Error details:", err.data);
       }

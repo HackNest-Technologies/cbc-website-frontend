@@ -101,7 +101,8 @@ export const apiSlice = createApi({
     }),
 
     // =======> STORE <=======
-    // ---------BOOKS CATEGORY----------
+
+    // ---BOOKS CATEGORY---
     getCategories: builder.query({
       query: () => "api/v1/store_item_categories",
     }),
@@ -110,21 +111,61 @@ export const apiSlice = createApi({
       query: (id) => `api/v1/store_item_categories/${id}`,
     }),
 
-    // ======> CART <=======
-
-    addToCart: builder.mutation({
-      query: (cartItem) => ({
-        url: "/cart-items", // or your actual cart endpoint
-        method: "POST",
-        body: { cart_item: cartItem },
-      }),
-    }),
-
     createCategory: builder.mutation({
       query: (category) => ({
         url: "api/v1/store_item_categories",
         method: "POST",
         body: category,
+      }),
+    }),
+
+    updateCategory: builder.mutation({
+      query: ({ id, category }) => ({
+        url: `api/v1/store_item_categories/${id}`,
+        method: "PUT",
+        body: category,
+      }),
+    }),
+
+    deleteCategory: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/store_item_categories/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // --- Book Items ---
+
+    AddBookItem: builder.mutation({
+      query: (category) => ({
+        url: "api/v1/store_items",
+        method: "POST",
+        body: category,
+      }),
+    }),
+
+    updateBookItem: builder.mutation({
+      query: ({ id, product }) => ({
+        url: `api/v1/store_items/${id}`,
+        method: "PUT",
+        body: product,
+      }),
+    }),
+
+    deleteBookItem: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/store_items/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // ======> CART <=======
+
+    addToCart: builder.mutation({
+      query: (cartItem) => ({
+        url: "/cart-items",
+        method: "POST",
+        body: { cart_item: cartItem },
       }),
     }),
 
@@ -148,6 +189,40 @@ export const apiSlice = createApi({
     getDailyDevotional: builder.query({
       query: () => "api/v1/devotionals",
     }),
+
+    // LIVE STREAM
+
+    // Get Streaming links
+    getStreamLinks: builder.query({
+      query: () => "api/v1/livestreams",
+    }),
+
+    // --- Create live stream video ---
+    uploadLiveStream: builder.mutation({
+      query: (stream) => ({
+        url: "api/v1/livestreams",
+        method: "POST",
+        body: stream,
+      }),
+    }),
+
+    // --- Update live stream link ---
+    updateLiveStream: builder.mutation({
+      query: ({ id, stream }) => ({
+        url: `api/v1/livestreams/${id}`,
+        method: "PUT",
+        body: stream,
+      }),
+    }),
+    // ---Delete Stream Link
+
+     deleteStreamLink: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/livestreams/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
 
     // PAST SERMON
     // ------ Get past sermon ------
@@ -187,9 +262,14 @@ export const {
   useGetEventQuery,
   useCreateEventMutation,
   useDeleteEventMutation,
-  useCreateCategoryMutation,
   useGetCategoriesQuery,
   useGetBooksByIdQuery,
+  useCreateCategoryMutation,
+  useUpdateCategoryMutation,
+  useDeleteCategoryMutation,
+  useAddBookItemMutation,
+  useDeleteBookItemMutation,
+  useUpdateBookItemMutation,
   useGetDailyDevotionalQuery,
   useGetBiblePassageQuery,
   useGetBibleInOneYearQuery,
@@ -199,6 +279,10 @@ export const {
   useSendTestimonyMutation,
   useUpdateTestimonyMutation,
   useDeleteTestimonyMutation,
+  useGetStreamLinksQuery,
+  useUploadLiveStreamMutation,
+  useUpdateLiveStreamMutation,
+  useDeleteStreamLinkMutation,
   useGetPastSermonQuery,
   useUploadPastSermonMutation,
   useUpDatePastSermonMutation,

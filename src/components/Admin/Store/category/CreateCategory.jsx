@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import publish from "../../../../assets/images/publish.png";
 
+
 const CreateCategory = () => {
   const navigate = useNavigate();
   const [isDragging, setIsDragging] = useState(false);
@@ -87,7 +88,7 @@ const CreateCategory = () => {
       alert("Category created successfully!");
 
       // Redirect to categories list
-      navigate("/book-category");
+      navigate("/admin/book-category");
     } catch (error) {
       console.error("Error creating category:", error);
       alert("Something went wrong while creating the category.");
@@ -100,7 +101,7 @@ const CreateCategory = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link
-            to="/book-category"
+            to="/admin/book-category"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
@@ -331,7 +332,7 @@ const CreateCategory = () => {
         </button>
 
         <Link
-          to="/book-category"
+          to="/admin/book-category"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"
         >
           Cancel

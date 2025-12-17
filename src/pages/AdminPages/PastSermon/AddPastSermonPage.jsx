@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import CreatePastSermon from "../../../components/Admin/PastSermon/CreatePastSermon"
 
 const AddPastSermonPage = () => {

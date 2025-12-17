@@ -97,7 +97,7 @@ const CreateTestimony = () => {
       alert("Testimony created successfully!");
       
       // Redirect to testimonies list
-      navigate("/admin-testimonies");
+      navigate("/admin/admin-testimonies");
       
     } catch (error) {
       console.error("Error creating testimony:", error);
@@ -111,7 +111,7 @@ const CreateTestimony = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link 
-            to="/admin-testimonies" 
+            to="/admin/admin-testimonies" 
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
@@ -410,7 +410,7 @@ const CreateTestimony = () => {
         </button>
         
         <Link
-          to="/admin-testimonies"
+          to="/admin/admin-testimonies"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"
         >
           Cancel

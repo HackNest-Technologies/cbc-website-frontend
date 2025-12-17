@@ -1,11 +1,12 @@
 import LiveChat from "../components/LiveChat/LiveChat";
+import LoginPage from "../components/LiveChat/LoginPage";
 // import LoginPage from "../components/LiveChat/LoginPage";
 
 const LiveChatPage = () => {
   return (
     <section>
       <LiveChat />
-      {/* <LoginPage /> */}
+      <LoginPage/>
     </section>
   );
 };

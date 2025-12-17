@@ -117,7 +117,7 @@ const  EditPastSermon = () => {
       alert("Past sermon updated successfully!");
       
       // Redirect back to past sermons list
-      navigate("/admin-pastsermon");
+      navigate("/admin/admin-pastsermon");
       
     } catch (error) {
       console.error("Error updating past sermon:", error);
@@ -130,7 +130,7 @@ const  EditPastSermon = () => {
       <div className="flex flex-col items-center justify-center min-h-[400px]">
         <p className="text-lg text-gray-600">No sermon data found for editing.</p>
         <Link 
-          to="/admin-pastsermon" 
+          to="admin/admin-pastsermon" 
           className="mt-4 text-[#FD9F2B] hover:underline"
         >
           Back to Past Sermons

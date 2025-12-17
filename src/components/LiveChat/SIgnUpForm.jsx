@@ -109,7 +109,7 @@ const SIgnUpForm = () => {
           </span>
           <span className="flex items-start gap-2 ">
             <button className="#">
-              <input type="checkbox" />
+              <input type="checkbox" required/>
             </button>
             <p className="text-black font-inter text-[14px] font-medium">
               I agree to the <span className="text-[#FD9F2B]">Terms</span> and{" "}

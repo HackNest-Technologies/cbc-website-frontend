@@ -37,7 +37,7 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const res = await login(loginDetails).unwrap();
-      navigate("/admin-livestream");
+      navigate("/admin/admin-livestream");
       console.log("Login successful:", res);
     } catch (err) {
       console.log("Login error:", err);

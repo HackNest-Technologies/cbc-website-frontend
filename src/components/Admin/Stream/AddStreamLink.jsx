@@ -39,6 +39,7 @@ const AddStreamLink = () => {
 
       // Reset form
       setStreamData(initialState);
+      navigate("/admin/admin-livestream")
 
       alert("Stream link added successfully!");
 
@@ -55,7 +56,7 @@ const AddStreamLink = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link
-            to="/admin-streams"
+            to="/admin/admin-livestream"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />

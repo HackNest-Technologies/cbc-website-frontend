@@ -13,7 +13,7 @@ const ManagerPastSermon = () => {
     <section>
       <AdminInput search={search} handleSearch={handleSearch} />
       <AddBtn
-        linkTo="/admin-pastsermon/add-pastsermon"
+        linkTo="add-pastsermon"
         title="Past Sermon"
         addMsg="Add Past Sermon"
       />

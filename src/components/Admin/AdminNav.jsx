@@ -21,16 +21,16 @@ const AdminNav = () => {
   };
 
   const navItems = [
-    { to: "/admin-livestream", label: "Stream" },
-    { to: "/admin-pastsermon", label: "Past Sermon" },
-    { to: "/admin-events", label: "Event" },
-    { to: "/book-category", label: "Store" },
-    { to: "/admin-convert", label: "New Convert" },
-    { to: "/admin-fellowship", label: "House Fellowship" },
-    { to: "/admin-devotional", label: "Devotional" },
-    { to: "/admin-branches", label: "Branches" },
-    { to: "/admin-department", label: "Departments" },
-    { to: "/admin-testimonies", label: "Testimonies" },
+    { to: "admin-livestream", label: "Stream" },
+    { to: "admin-pastsermon", label: "Past Sermon" },
+    { to: "admin-events", label: "Event" },
+    { to: "book-category", label: "Store" },
+    { to: "admin-convert", label: "New Convert" },
+    { to: "admin-fellowship", label: "House Fellowship" },
+    { to: "admin-devotional", label: "Devotional" },
+    { to: "admin-branches", label: "Branches" },
+    { to: "admin-department", label: "Departments" },
+    { to: "admin-testimonies", label: "Testimonies" },
   ];
 
   return (

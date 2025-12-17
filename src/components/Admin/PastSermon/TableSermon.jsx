@@ -4,10 +4,10 @@ import ConfirmModal from "../ConfirmModal";
 import Spinner from "../../Loader/Spinner";
 import {
   useGetPastSermonQuery,
-useDeletePastSermonMutation
+  useDeletePastSermonMutation,
 } from "../../../redux/apiSlice";
 
-const TableSermon = ({data =[]}) => {
+const TableSermon = ({ data = [] }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPastSermon, setSelectedPastSermon] = useState(null);
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const TableSermon = ({data =[]}) => {
   };
 
   const handleEdit = (pastSermon) => {
-    navigate("/edit-pastsermon", { state: { pastSermon } });
+    navigate("/admin/edit-pastsermon", { state: { pastSermon } });
   };
 
   // Loading state
@@ -43,7 +43,31 @@ const TableSermon = ({data =[]}) => {
       </div>
     );
   }
-  console.log(data, "Get pastsermon data ")
+
+  const getYouTubeEmbedUrl = (url) => {
+    if (!url) return null;
+
+    let videoId = "";
+
+    // youtu.be/VIDEO_ID
+    if (url.includes("youtu.be")) {
+      videoId = url.split("youtu.be/")[1]?.split("?")[0];
+    }
+
+    // youtube.com/watch?v=VIDEO_ID
+    else if (url.includes("watch?v=")) {
+      videoId = url.split("v=")[1]?.split("&")[0];
+    }
+
+    // youtube.com/shorts/VIDEO_ID
+    else if (url.includes("shorts/")) {
+      videoId = url.split("shorts/")[1]?.split("?")[0];
+    }
+
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+  };
+
+  console.log(data, "Get pastsermon data ");
 
   return (
     <div className="p-4 md:px-0">
@@ -56,9 +80,9 @@ const TableSermon = ({data =[]}) => {
           >
             {/* Video Thumbnail/Player */}
             <div className="relative pt-[56.25%] bg-gray-900">
-              {pastSermon.video_url ? (
+              {getYouTubeEmbedUrl(pastSermon.video_url) ? (
                 <iframe
-                  src={pastSermon.video_url}
+                  src={getYouTubeEmbedUrl(pastSermon.video_url)}
                   className="absolute inset-0 w-full h-full"
                   title={pastSermon.series_title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -176,7 +200,7 @@ const TableSermon = ({data =[]}) => {
           <p className="mt-1 text-gray-500">
             Get started by adding your first video pastSermon.
           </p>
-        ``
+          ``
         </div>
       )}
 

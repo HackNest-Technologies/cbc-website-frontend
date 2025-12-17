@@ -2,6 +2,8 @@ import { useState } from "react";
 import uploadIcon from "../../../assets/images/upload.png";
 import { useUploadPastSermonMutation } from "../../../redux/apiSlice";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { FaArrowLeft } from "react-icons/fa6";
 import publish from "../../../assets/images/publish.png";
 
@@ -9,6 +11,7 @@ const CreatePastSermon = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [coverImage, setCoverImage] = useState(null);
   const [uploadPastSermon] = useUploadPastSermonMutation();
+  const navigate = useNavigate();
   
   // Initial state based on API structure
   const initialState = {
@@ -80,6 +83,7 @@ const CreatePastSermon = () => {
       // Reset form
       setPastSermonData(initialState);
       setCoverImage(null);
+      navigate("/admin/admin-pastsermon")
       
       alert("Past sermon created successfully!");
       
@@ -96,7 +100,7 @@ const CreatePastSermon = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link 
-            to="/admin-pastsermon" 
+            to="/admin/admin-pastsermon" 
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />

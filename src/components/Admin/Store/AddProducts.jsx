@@ -1,6 +1,9 @@
 import { useState } from "react";
 import uploadIcon from "../../../assets/images/upload.png";
-import { useAddBookItemMutation, useGetCategoriesQuery } from "../../../redux/apiSlice";
+import {
+  useAddBookItemMutation,
+  useGetCategoriesQuery,
+} from "../../../redux/apiSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import publish from "../../../assets/images/publish.png";
@@ -10,9 +13,14 @@ const AddProducts = () => {
   const navigate = useNavigate();
   const [isDragging, setIsDragging] = useState(false);
   const [coverImage, setCoverImage] = useState(null);
-  const [addBookItem, { isLoading: isAddingProduct }] = useAddBookItemMutation();
-  const { data: categories = [], isLoading: categoriesLoading, error: categoriesError } = useGetCategoriesQuery();
-  
+  const [addBookItem, { isLoading: isAddingProduct }] =
+    useAddBookItemMutation();
+  const {
+    data: categories = [],
+    isLoading: categoriesLoading,
+    error: categoriesError,
+  } = useGetCategoriesQuery();
+
   // Initial state based on API structure
   const initialState = {
     title: "",
@@ -45,7 +53,7 @@ const AddProducts = () => {
     e.preventDefault();
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file && file.type.startsWith("image/")) {
       setCoverImage(file);
     } else {
       alert("Please upload an image file");
@@ -54,7 +62,7 @@ const AddProducts = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file && file.type.startsWith("image/")) {
       setCoverImage(file);
     } else {
       alert("Please upload an image file");
@@ -63,50 +71,60 @@ const AddProducts = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate required fields
     if (!productData.store_item_category_id) {
       alert("Please select a category");
       return;
     }
-    
+
     if (!coverImage) {
       alert("Please upload a cover image");
       return;
     }
-    
+
     // Prepare form data according to API structure
     const formData = new FormData();
-    
+
     // Append cover image if exists
     if (coverImage) {
       formData.append("store_item[cover_image]", coverImage);
     }
-    
+
     // Append other fields
     formData.append("store_item[title]", productData.title);
     formData.append("store_item[price]", productData.price);
     formData.append("store_item[item_type]", productData.item_type);
     formData.append("store_item[description]", productData.description);
-    formData.append("store_item[store_item_category_id]", productData.store_item_category_id);
+    formData.append(
+      "store_item[store_item_category_id]",
+      productData.store_item_category_id
+    );
 
-    console.log("Submitting with category ID:", productData.store_item_category_id);
-    
+    console.log(
+      "Submitting with category ID:",
+      productData.store_item_category_id
+    );
+
     try {
       await addBookItem(formData).unwrap();
-      
+
       // Reset form
       setProductData(initialState);
       setCoverImage(null);
-      
+
       alert("Product added successfully!");
-      
+
       // Redirect to products page
-      navigate("/book-category");
-      
+      navigate(-1);
     } catch (error) {
       console.error("Error adding product:", error);
-      alert(`Error: ${error.data?.message || "Something went wrong while adding the product."}`);
+      alert(
+        `Error: ${
+          error.data?.message ||
+          "Something went wrong while adding the product."
+        }`
+      );
     }
   };
 
@@ -124,19 +142,22 @@ const AddProducts = () => {
     return (
       <div className="p-6">
         <div className="mb-6">
-          <Link 
-            to="/products" 
+          <Link
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
             <span>Back to Products</span>
           </Link>
         </div>
-        
+
         <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <h2 className="text-lg font-medium text-red-800 mb-2">Error Loading Categories</h2>
+          <h2 className="text-lg font-medium text-red-800 mb-2">
+            Error Loading Categories
+          </h2>
           <p className="text-red-600">
-            Failed to load categories. Please check your connection and try again.
+            Failed to load categories. Please check your connection and try
+            again.
           </p>
           <button
             onClick={() => window.location.reload()}
@@ -150,22 +171,24 @@ const AddProducts = () => {
   }
 
   // Find selected category for preview
-  const selectedCategory = categories.find(cat => cat.id === productData.store_item_category_id);
+  const selectedCategory = categories.find(
+    (cat) => cat.id === productData.store_item_category_id
+  );
 
   return (
     <form onSubmit={handleSubmit} className="">
       {/* Header Section */}
       <section className="mb-8">
         <div className="mb-6">
-          <Link 
-            to="/products" 
+          <Link
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
             <span>Back to Products</span>
           </Link>
         </div>
-        
+
         <div className="border-b border-gray-300 pb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
@@ -176,18 +199,38 @@ const AddProducts = () => {
                 Fill in the details of the product you want to add
               </p>
             </div>
-            
+
             <button
               type="submit"
               disabled={isAddingProduct}
               className={`inline-flex items-center justify-center gap-2 bg-[#FD9F2B] text-white font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#FD9F2B] focus:ring-offset-2 w-full md:w-auto
-                ${isAddingProduct ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#E88F25]'}`}
+                ${
+                  isAddingProduct
+                    ? "opacity-70 cursor-not-allowed"
+                    : "hover:bg-[#E88F25]"
+                }`}
             >
               {isAddingProduct ? (
                 <>
-                  <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    className="animate-spin h-4 w-4 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
                   </svg>
                   Adding...
                 </>
@@ -206,8 +249,8 @@ const AddProducts = () => {
       <div className="space-y-6">
         {/* Product Title */}
         <div>
-          <label 
-            htmlFor="title" 
+          <label
+            htmlFor="title"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Product Title *
@@ -226,8 +269,8 @@ const AddProducts = () => {
 
         {/* Price */}
         <div>
-          <label 
-            htmlFor="price" 
+          <label
+            htmlFor="price"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Price *
@@ -247,15 +290,13 @@ const AddProducts = () => {
               name="price"
             />
           </div>
-          <p className="text-xs text-gray-500 mt-2">
-            Enter price in Naira (₦)
-          </p>
+          <p className="text-xs text-gray-500 mt-2">Enter price in Naira (₦)</p>
         </div>
 
         {/* Product Type */}
         <div>
-          <label 
-            htmlFor="item_type" 
+          <label
+            htmlFor="item_type"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Product Type *
@@ -278,8 +319,8 @@ const AddProducts = () => {
 
         {/* Category - Dropdown with fetched categories */}
         <div>
-          <label 
-            htmlFor="store_item_category_id" 
+          <label
+            htmlFor="store_item_category_id"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Category *
@@ -300,7 +341,7 @@ const AddProducts = () => {
               </option>
             ))}
           </select>
-          
+
           {categories.length === 0 ? (
             <p className="text-xs text-red-500 mt-2">
               No categories available. Please create a category first.
@@ -310,15 +351,25 @@ const AddProducts = () => {
               Select the category this product belongs to
             </p>
           )}
-          
+
           {categories.length === 0 && (
             <div className="mt-4">
               <Link
                 to="/create-category"
                 className="inline-flex items-center gap-2 text-[#FD9F2B] hover:text-[#E88F25]"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 4v16m8-8H4"
+                  />
                 </svg>
                 Create New Category
               </Link>
@@ -328,8 +379,8 @@ const AddProducts = () => {
 
         {/* Description */}
         <div>
-          <label 
-            htmlFor="description" 
+          <label
+            htmlFor="description"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Description
@@ -364,10 +415,11 @@ const AddProducts = () => {
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
             className={`border-2 border-dashed rounded-lg p-6 flex flex-col items-center justify-center transition-all cursor-pointer min-h-[200px]
-              ${isDragging 
-                ? "border-[#FD9F2B] bg-[#FFF5EB]" 
-                : coverImage 
-                  ? "border-green-500 bg-green-50" 
+              ${
+                isDragging
+                  ? "border-[#FD9F2B] bg-[#FFF5EB]"
+                  : coverImage
+                  ? "border-green-500 bg-green-50"
                   : "border-gray-300 hover:border-[#FD9F2B] hover:bg-gray-50"
               }`}
           >
@@ -376,7 +428,7 @@ const AddProducts = () => {
               alt="Upload icon"
               className="w-12 h-12 mb-4 opacity-80"
             />
-            
+
             {coverImage ? (
               <div className="text-center">
                 <p className="text-green-600 font-medium mb-2">
@@ -411,9 +463,7 @@ const AddProducts = () => {
                 <p className="text-gray-700 text-center mb-2 text-lg">
                   Drag & drop your cover image here
                 </p>
-                <p className="text-sm text-gray-500 mb-4">
-                  or
-                </p>
+                <p className="text-sm text-gray-500 mb-4">or</p>
                 <label className="cursor-pointer">
                   <span className="inline-flex items-center px-4 py-2 border border-[#FD9F2B] text-[#FD9F2B] font-medium rounded-lg hover:bg-[#FFF5EB] transition-colors text-lg">
                     Browse Files
@@ -426,7 +476,8 @@ const AddProducts = () => {
                   />
                 </label>
                 <p className="text-xs text-gray-500 mt-4 text-center">
-                  Recommended: Square aspect ratio, max 5MB<br />
+                  Recommended: Square aspect ratio, max 5MB
+                  <br />
                   JPG, PNG, or WebP format
                 </p>
               </>
@@ -454,7 +505,7 @@ const AddProducts = () => {
           <p className="text-sm text-gray-600 mb-4">
             Here's how your product will appear:
           </p>
-          
+
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4">
             <div className="flex gap-4">
               {/* Preview Image */}
@@ -473,18 +524,20 @@ const AddProducts = () => {
                   )}
                 </div>
               </div>
-              
+
               {/* Preview Details */}
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {productData.title || "Product Title"}
                 </h3>
                 <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                    productData.item_type === "book" 
-                      ? "bg-blue-500 text-white" 
-                      : "bg-purple-500 text-white"
-                  }`}>
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs font-bold ${
+                      productData.item_type === "book"
+                        ? "bg-blue-500 text-white"
+                        : "bg-purple-500 text-white"
+                    }`}
+                  >
                     {productData.item_type === "book" ? "BOOK" : "AUDIO"}
                   </span>
                   {selectedCategory && (
@@ -504,7 +557,8 @@ const AddProducts = () => {
                 {selectedCategory && (
                   <div className="mt-3 pt-3 border-t border-gray-100">
                     <p className="text-xs text-gray-500">
-                      <span className="font-medium">Category:</span> {selectedCategory.name} (ID: {selectedCategory.id})
+                      <span className="font-medium">Category:</span>{" "}
+                      {selectedCategory.name} (ID: {selectedCategory.id})
                     </p>
                   </div>
                 )}
@@ -520,13 +574,33 @@ const AddProducts = () => {
           type="submit"
           disabled={isAddingProduct || categories.length === 0}
           className={`inline-flex items-center justify-center gap-2 bg-[#FD9F2B] text-white font-semibold py-3 px-8 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#FD9F2B] focus:ring-offset-2 flex-1
-            ${isAddingProduct || categories.length === 0 ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#E88F25]'}`}
+            ${
+              isAddingProduct || categories.length === 0
+                ? "opacity-70 cursor-not-allowed"
+                : "hover:bg-[#E88F25]"
+            }`}
         >
           {isAddingProduct ? (
             <>
-              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
               </svg>
               Adding Product...
             </>
@@ -537,7 +611,7 @@ const AddProducts = () => {
             </>
           )}
         </button>
-        
+
         <Link
           to="/products"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"

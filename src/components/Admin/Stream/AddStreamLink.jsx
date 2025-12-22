@@ -223,7 +223,7 @@ const AddStreamLink = () => {
         </button>
 
         <Link
-          to="/admin-streams"
+            to="/admin/admin-livestream"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"
         >
           Cancel

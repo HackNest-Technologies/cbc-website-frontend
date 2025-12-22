@@ -1,4 +1,3 @@
-
 import BgWelcome from "../components/Welcome/BgWelcome";
 import WelcomeCard from "../components/Welcome/WelcomeCard";
 const WelcomePage = () => {

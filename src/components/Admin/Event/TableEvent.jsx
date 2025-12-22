@@ -29,7 +29,7 @@ const TableEvent = ({ events = [] }) => {
   };
 
   const handleEdit = (event) => {
-    navigate("/edit-event", { state: { event } });
+    navigate("/admin/edit-event", { state: { event } });
   };
 
   return (

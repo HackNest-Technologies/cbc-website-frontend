@@ -1,17 +1,15 @@
-import { Outlet } from "react-router-dom"
-
+import { Outlet } from "react-router-dom";
+import UserNav from "../components/User/UserNav";
+import UserWelcomeMsg from "../components/User/UserWelcomeMsg";
 
 const UserLayout = () => {
   return (
- <div className="flex">
-      
-      {/* Main Content Area */}
-      <main className="flex-1 min-h-screen hide-scrollbar">
-        <div className="p-4 md:p-6 lg:p-8">
-          <Outlet />
-        </div>
-      </main>
-    </div>  )
-}
+    <section className="lg:flex overflow-hidden">
+      <UserNav />
+      <Outlet />
+      <UserWelcomeMsg />
+    </section>
+  );
+};
 
-export default UserLayout
+export default UserLayout;

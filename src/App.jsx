@@ -26,7 +26,6 @@ import StudyPage from "./pages/StudyPage";
 import PastSermonPage from "./pages/PastSermonPage";
 import LivePage from "./pages/LivePage";
 import ConstructionPage from "./pages/ConstructionPage";
-import LiveChatPage from "./pages/LiveChatPage";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminStorePage from "./pages/AdminPages/Store/AdminStorePage";
 import AdminConvertPage from "./pages/AdminPages/AdminConvertPage";
@@ -56,6 +55,11 @@ import AddProductsPage from "./pages/AdminPages/Store/AddProductsPage";
 import AddStreamPage from "./pages/AdminPages/Stream/AddStreamPage";
 import ShowStreamLinkPage from "./pages/AdminPages/Stream/ShowStreamLinkPage";
 import EditStreamPage from "./pages/AdminPages/Stream/EditStreamPage";
+import UserLayout from "./layouts/UserLayout";
+import UserDashboardPage from "./pages/User/UserDashboardPage";
+import AdminDasboardPage from "./pages/AdminPages/AdminDasboardPage";
+import RegistrationPage from "./pages/RegistrationPage";
+import EditEventPage from "./pages/AdminPages/Event/EditEventPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -94,6 +98,8 @@ const router = createBrowserRouter(
           </AdminRoute>
         }
       >
+        <Route index element={<AdminDasboardPage />} />
+
         <Route path="admin-livestream" element={<ShowStreamLinkPage />} />
         <Route
           path="admin-livestream/add-livestream"
@@ -106,7 +112,9 @@ const router = createBrowserRouter(
           element={<AddPastSermonPage />}
         />
         <Route path="edit-pastsermon" element={<EditPastSermonPage />} />
-        <Route path="admin-events" element={<AdminEventPage />} />
+        <Route path="admin-event" element={<AdminEventPage />} />
+        <Route path="edit-event" element={<EditEventPage />} />
+
         <Route path="admin-event/add-event" element={<AddEventPage />} />
         <Route path="book-category" element={<AdminCategoryPage />} />
         <Route
@@ -131,9 +139,21 @@ const router = createBrowserRouter(
         <Route path="edit-testimony" element={<EditTestimony />} />
       </Route>
 
+      {/*  USER AREA (PROTECTED ONCE) */}
+      <Route
+        path="/user"
+        element={
+          <UserRoute>
+            <UserLayout />
+          </UserRoute>
+        }
+      >
+        <Route path="user-dashboard" element={<UserDashboardPage />} />
+      </Route>
+
       {/* 🔹 AUTH & MISC */}
       <Route path="/login" element={<UserLoginPage />} />
-      <Route path="/livechat" element={<LiveChatPage />} />
+      <Route path="/register" element={<RegistrationPage />} />
       <Route path="*" element={<ConstructionPage />} />
     </>
   )
@@ -149,7 +169,7 @@ const App = () => {
 
     if (isSuccess && data?.user) {
       dispatch(setUser(data.user));
-      console.log(data, "inside current data");
+      console.log(data.user.cart, "inside current data");
       console.log("hello");
     }
   }, [isSuccess, data]);

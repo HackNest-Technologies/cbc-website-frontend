@@ -3,11 +3,13 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaTimesCircle } from "react-icons/fa";
 import SubmitBtn from "../shared/SubmitBtn";
-import {useSignUpMutation} from "../../redux/apiSlice";
-const SIgnUpForm = () => {
+import { useSignUpMutation } from "../../redux/apiSlice";
+const SignUpForm = () => {
   const initialState = {
     email_address: "",
     password: "",
+    first_name: "",
+    last_name: "",
   };
 
   const [signUp] = useSignUpMutation();
@@ -39,18 +41,35 @@ const SIgnUpForm = () => {
   return (
     <section>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-        {/* <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
           <label htmlFor="userName" className="text-[16px] text-[#292929]">
-            Name
+            First Name
           </label>
           <input
-            id="userName"
+            id="firstName"
             type="text"
-            name="userName"
+            name="first_name"
             className="py-[12.171px] px-[15.23px] rounded-[78.521px] border border-[#E5E5E5]"
-            placeholder="E.g Wisdom Ibu..."
+            placeholder="Wisdom"
+            value={inputVal.first_name}
+            onChange={handleValue}
           />
-        </div> */}
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <label htmlFor="lastName" className="text-[16px] text-[#292929]">
+            Last Name
+          </label>
+          <input
+            id="lastName"
+            type="text"
+            name="last_name"
+            className="py-[12.171px] px-[15.23px] rounded-[78.521px] border border-[#E5E5E5]"
+            placeholder="Ibu"
+            value={inputVal.last_name}
+            onChange={handleValue}
+          />
+        </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="email" className="text-[16px] text-[#292929]">
@@ -109,7 +128,7 @@ const SIgnUpForm = () => {
           </span>
           <span className="flex items-start gap-2 ">
             <button className="#">
-              <input type="checkbox" required/>
+              <input type="checkbox" required />
             </button>
             <p className="text-black font-inter text-[14px] font-medium">
               I agree to the <span className="text-[#FD9F2B]">Terms</span> and{" "}
@@ -136,4 +155,4 @@ const SIgnUpForm = () => {
   );
 };
 
-export default SIgnUpForm;
+export default SignUpForm;

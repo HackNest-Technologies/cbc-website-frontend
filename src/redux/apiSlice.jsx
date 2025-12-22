@@ -34,6 +34,13 @@ export const apiSlice = createApi({
       }),
     }),
 
+    logout: builder.mutation({
+      query: () => ({
+        url: "session",
+        method: "DELETE",
+      }),
+    }),
+
     // CURRENT USER LOGGED IN
 
     currentUser: builder.query({
@@ -85,12 +92,21 @@ export const apiSlice = createApi({
       query: () => "/api/v1/events",
     }),
 
+
+    updateEvent: builder.mutation({
+      query: ({ id, event }) => ({
+        url: `api/v1/events/${id}`,
+        method: "PUT",
+        body: event,
+      }),
+    }),
+
     createEvent: builder.mutation({
       query: (event) => ({
         url: "api/v1/events",
         method: "POST",
         body: event,
-      }),
+      }), 
     }),
 
     deleteEvent: builder.mutation({
@@ -216,13 +232,12 @@ export const apiSlice = createApi({
     }),
     // ---Delete Stream Link
 
-     deleteStreamLink: builder.mutation({
+    deleteStreamLink: builder.mutation({
       query: (id) => ({
         url: `api/v1/livestreams/${id}`,
         method: "DELETE",
       }),
     }),
-
 
     // PAST SERMON
     // ------ Get past sermon ------
@@ -259,7 +274,9 @@ export const {
   useSignUpMutation,
   useCurrentUserQuery,
   useLoginMutation,
+  useLogoutMutation,
   useGetEventQuery,
+  useUpdateEventMutation,
   useCreateEventMutation,
   useDeleteEventMutation,
   useGetCategoriesQuery,

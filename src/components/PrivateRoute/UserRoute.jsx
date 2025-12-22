@@ -1,6 +1,8 @@
-
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useCurrentUserQuery } from "../../redux/apiSlice";
 const UserRoute = ({ children }) => {
-const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
   const { isLoading } = useCurrentUserQuery();
 
   if (isLoading) return <div>Checking authentication...</div>;
@@ -14,6 +16,6 @@ const { user } = useSelector((state) => state.auth);
   }
 
   return children;
-}
+};
 
-export default UserRoute
+export default UserRoute;

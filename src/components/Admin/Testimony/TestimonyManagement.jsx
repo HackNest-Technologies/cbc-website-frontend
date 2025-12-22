@@ -13,7 +13,7 @@ const TestimonyManagement = () => {
     <section>
       <AdminInput search={search} handleSearch={handleSearch} />
       <AddBtn
-        linkTo="/admin-testimony/add-testimony"
+        linkTo="add-testimony"
         title="Testimonies"
         addMsg="Add Testimony"
       />

@@ -26,7 +26,6 @@ import StudyPage from "./pages/StudyPage";
 import PastSermonPage from "./pages/PastSermonPage";
 import LivePage from "./pages/LivePage";
 import ConstructionPage from "./pages/ConstructionPage";
-import LiveChatPage from "./pages/LiveChatPage";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminStorePage from "./pages/AdminPages/Store/AdminStorePage";
 import AdminConvertPage from "./pages/AdminPages/AdminConvertPage";
@@ -37,7 +36,9 @@ import AdminDepartment from "./pages/AdminPages/AdminDepartment";
 import AdminEventPage from "./pages/AdminPages/Event/AdminEventPage";
 import AddEventPage from "./pages/AdminPages/Event/AddEventPage";
 import LeadershipPage from "./pages/LeadershipPage";
-import AdminRoute from "./components/Admin/AdminRoute";
+import AuthRedirect from "./components/PrivateRoute/AuthRedirect";
+import AdminRoute from "./components/PrivateRoute/AdminRoute";
+import UserRoute from "./components/PrivateRoute/UserRoute";
 import UserLoginPage from "./pages/UserLoginPage";
 import AddPastSermonPage from "./pages/AdminPages/PastSermon/AddPastSermonPage";
 import AdminPastSermonPage from "./pages/AdminPages/PastSermon/AdminPastSermonPage";
@@ -54,16 +55,24 @@ import AddProductsPage from "./pages/AdminPages/Store/AddProductsPage";
 import AddStreamPage from "./pages/AdminPages/Stream/AddStreamPage";
 import ShowStreamLinkPage from "./pages/AdminPages/Stream/ShowStreamLinkPage";
 import EditStreamPage from "./pages/AdminPages/Stream/EditStreamPage";
+import UserLayout from "./layouts/UserLayout";
+import UserDashboardPage from "./pages/User/UserDashboardPage";
+import AdminDasboardPage from "./pages/AdminPages/AdminDasboardPage";
+import RegistrationPage from "./pages/RegistrationPage";
+import EditEventPage from "./pages/AdminPages/Event/EditEventPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+      {/* 🔹 AUTH DECISION ROUTE */}
+      <Route path="/" element={<AuthRedirect />} />
+
+      {/* 🔹 PUBLIC WEBSITE */}
       <Route path="/" element={<MainLayout />}>
         {/* Define your routes here */}
         <Route index element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
-
         <Route path="/give" element={<GivePage />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/departments-group" element={<DepartGroupPage />} />
@@ -79,220 +88,72 @@ const router = createBrowserRouter(
         <Route path="/live" element={<LivePage />} />
         <Route path="/past-sermon" element={<PastSermonPage />} />
       </Route>
+
+      {/*  ADMIN AREA (PROTECTED ONCE) */}
       <Route
-        path="/"
+        path="/admin"
         element={
           <AdminRoute>
             <AdminLayout />
           </AdminRoute>
         }
       >
-        <Route
-          path="/admin-livestream"
-          element={
-            <AdminRoute>
-              <ShowStreamLinkPage />
-            </AdminRoute>
-          }
-        />
+        <Route index element={<AdminDasboardPage />} />
 
+        <Route path="admin-livestream" element={<ShowStreamLinkPage />} />
         <Route
-          path="/add-livestream"
-          element={
-            <AdminRoute>
-              <AddStreamPage />
-            </AdminRoute>
-          }
+          path="admin-livestream/add-livestream"
+          element={<AddStreamPage />}
         />
+        <Route path="edit-livestream" element={<EditStreamPage />} />
+        <Route path="admin-pastsermon" element={<AdminPastSermonPage />} />
+        <Route
+          path="admin-pastsermon/add-pastsermon"
+          element={<AddPastSermonPage />}
+        />
+        <Route path="edit-pastsermon" element={<EditPastSermonPage />} />
+        <Route path="admin-event" element={<AdminEventPage />} />
+        <Route path="edit-event" element={<EditEventPage />} />
 
+        <Route path="admin-event/add-event" element={<AddEventPage />} />
+        <Route path="book-category" element={<AdminCategoryPage />} />
         <Route
-          path="/edit-livestream"
-          element={
-            <AdminRoute>
-              <EditStreamPage />
-            </AdminRoute>
-          }
+          path="book-category/add-category"
+          element={<CreateCategoryPage />}
         />
-
+        <Route path="edit-category" element={<EditCategoryPage />} />
+        <Route path="products" element={<ProductsCategoryPage />} />
+        <Route path="edit-product" element={<EditBookItemPage />} />
+        <Route path="products/add-product" element={<AddProductsPage />} />
+        <Route path="admin-store" element={<AdminStorePage />} />
+        <Route path="admin-convert" element={<AdminConvertPage />} />
+        <Route path="admin-fellowship" element={<AdminFellowshipPage />} />
+        <Route path="admin-devotional" element={<AdminDevotional />} />
+        <Route path="admin-branches" element={<AdminBranches />} />
+        <Route path="admin-department" element={<AdminDepartment />} />
+        <Route path="admin-testimonies" element={<AdminTestimoyPage />} />
         <Route
-          path="/admin-pastsermon"
-          element={
-            <AdminRoute>
-              <AdminPastSermonPage />
-            </AdminRoute>
-          }
+          path="admin-testimonies/add-testimony"
+          element={<AddTestimony />}
         />
-
-        <Route
-          path="/admin-pastsermon/add-pastsermon"
-          element={
-            <AdminRoute>
-              <AddPastSermonPage />
-            </AdminRoute>
-          }
-        />
-        <Route
-          path="/edit-pastsermon"
-          element={
-            <AdminRoute>
-              <EditPastSermonPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-events"
-          element={
-            <AdminRoute>
-              <AdminEventPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-event/add-event"
-          element={
-            <AdminRoute>
-              <AddEventPage />
-            </AdminRoute>
-          }
-        />
-        <Route
-          path="/book-category"
-          element={
-            <AdminRoute>
-              <AdminCategoryPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-category/add-category"
-          element={
-            <AdminRoute>
-              <CreateCategoryPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/edit-category"
-          element={
-            <AdminRoute>
-              <EditCategoryPage />
-            </AdminRoute>
-          }
-        />
-        <Route
-          path="/products"
-          element={
-            <AdminRoute>
-              <ProductsCategoryPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          // path="/edit-product/:id"
-          path="/edit-product"
-          element={
-            <AdminRoute>
-              <EditBookItemPage />
-            </AdminRoute>
-          }
-        />
-        <Route
-          path="/products/add-product"
-          element={
-            <AdminRoute>
-              <AddProductsPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-store"
-          element={
-            <AdminRoute>
-              <AdminStorePage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-convert"
-          element={
-            <AdminRoute>
-              <AdminConvertPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-fellowship"
-          element={
-            <AdminRoute>
-              <AdminFellowshipPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-devotional"
-          element={
-            <AdminRoute>
-              <AdminDevotional />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-branches"
-          element={
-            <AdminRoute>
-              <AdminBranches />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-department"
-          element={
-            <AdminRoute>
-              <AdminDepartment />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-testimonies"
-          element={
-            <AdminRoute>
-              <AdminTestimoyPage />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/admin-testimony/add-testimony"
-          element={
-            <AdminRoute>
-              <AddTestimony />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/edit-testimony"
-          element={
-            <AdminRoute>
-              <EditTestimony />
-            </AdminRoute>
-          }
-        />
+        <Route path="edit-testimony" element={<EditTestimony />} />
       </Route>
+
+      {/*  USER AREA (PROTECTED ONCE) */}
+      <Route
+        path="/user"
+        element={
+          <UserRoute>
+            <UserLayout />
+          </UserRoute>
+        }
+      >
+        <Route path="user-dashboard" element={<UserDashboardPage />} />
+      </Route>
+
+      {/* 🔹 AUTH & MISC */}
       <Route path="/login" element={<UserLoginPage />} />
-      <Route path="/livechat" element={<LiveChatPage />} />
+      <Route path="/register" element={<RegistrationPage />} />
       <Route path="*" element={<ConstructionPage />} />
     </>
   )
@@ -301,11 +162,15 @@ const router = createBrowserRouter(
 const App = () => {
   const dispatch = useDispatch();
   const { data, isSuccess } = useCurrentUserQuery();
+  console.log(data, " outside current user fetching ");
 
   useEffect(() => {
+    console.log("useEffect fired", { isSuccess, data });
+
     if (isSuccess && data?.user) {
       dispatch(setUser(data.user));
-      console.log(data, "current data");
+      console.log(data.user.cart, "inside current data");
+      console.log("hello");
     }
   }, [isSuccess, data]);
 

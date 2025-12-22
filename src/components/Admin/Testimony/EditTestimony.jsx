@@ -133,7 +133,7 @@ const EditTestimony = () => {
       alert("Testimony updated successfully!");
       
       // Redirect to testimonies list
-      navigate("/admin-testimonies");
+      navigate("/admin/admin-testimonies");
       
     } catch (error) {
       console.error("Error updating testimony:", error);
@@ -147,7 +147,7 @@ const EditTestimony = () => {
       <div className="flex flex-col items-center justify-center min-h-[400px]">
         <p className="text-lg text-gray-600">No testimony data found for editing.</p>
         <Link 
-          to="/admin-testimonies" 
+          to="/admin/admin-testimonies" 
           className="mt-4 text-[#FD9F2B] hover:underline"
         >
           Back to Testimonies
@@ -162,7 +162,7 @@ const EditTestimony = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link 
-            to="/admin-testimonies" 
+            to="/admin/admin-testimonies" 
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
@@ -439,7 +439,7 @@ const EditTestimony = () => {
         </button>
         
         <Link
-          to="/admin-testimonies"
+          to="/admin/admin-testimonies"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"
         >
           Cancel

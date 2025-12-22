@@ -35,7 +35,7 @@ const TestimonyList = ({ data = [] }) => {
   };
 
   const handleEdit = (testimony) => {
-    navigate("/edit-testimony", { state: { testimony } });
+    navigate("/admin/edit-testimony", { state: { testimony } });
   };
 
  

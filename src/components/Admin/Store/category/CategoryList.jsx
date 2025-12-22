@@ -31,7 +31,7 @@ const CategoryList = ({ data = [] }) => {
   };
 
   const handleEdit = (category) => {
-    navigate("/edit-category", { state: { category } });
+    navigate("/admin/edit-category", { state: { category } });
   };
 
   // Loading state
@@ -118,7 +118,7 @@ const CategoryList = ({ data = [] }) => {
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
                 <button
-                  onClick={() => navigate(`/products?category=${category.id}`)}
+                  onClick={() => navigate(`/admin/products?category=${category.id}`)}
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
                 >
                   <svg

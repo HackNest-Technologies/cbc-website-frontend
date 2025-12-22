@@ -13,7 +13,7 @@ const CategoryManagement = () => {
     <section>
       <AdminInput search={search} handleSearch={handleSearch} />
       <AddBtn
-        linkTo="/admin-category/add-category"
+        linkTo="add-category"
         title="Book Category"
         addMsg="Add Category"
       />

@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa6";
+
 import { useState } from "react";
 import {
   useGetBooksByIdQuery,
@@ -85,8 +87,17 @@ const ViewProductCategory = () => {
             <p className="text-gray-600">{items?.length} items available</p>
           </div>
         </div>
+        <div className="mb-6">
+          <Link
+            to="/admin/book-category"
+            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <FaArrowLeft className="text-xl mr-2" />
+            <span>Back to Categories</span>
+          </Link>
+        </div>
         <div className="pb-10">
-          <AddBtn linkTo="/products/add-product" addMsg="Add Product" />
+          <AddBtn linkTo="/admin/products/add-product" addMsg="Add Product" />
         </div>
       </section>
 
@@ -117,7 +128,7 @@ const ViewProductCategory = () => {
             <div className="flex gap-2 w-full">
               <button
                 // onClick={() => navigate(`/edit-product/${item.id}`)}
-                onClick={() => navigate("/edit-product", { state: { product: item } })}
+                onClick={() => navigate("/admin/edit-product", { state: { product: item } })}
 
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
               >

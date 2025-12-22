@@ -53,7 +53,7 @@ const UpdateStream = () => {
       }).unwrap();
       
       alert("Stream updated successfully!");
-      navigate("/streams");
+      navigate("/admin/admin-livestream");
       
     } catch (error) {
       console.error("Error updating stream:", error);
@@ -66,7 +66,7 @@ const UpdateStream = () => {
       <div className="flex flex-col items-center justify-center min-h-[400px]">
         <p className="text-lg text-gray-600">No stream data found for editing.</p>
         <Link 
-          to="/admin-livestream" 
+          to="/admin/admin-livestream" 
           className="mt-4 text-[#FD9F2B] hover:underline"
         >
           Back to Streams
@@ -81,7 +81,7 @@ const UpdateStream = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link 
-          to="/admin-livestream" 
+          to="/admin/admin-livestream" 
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />

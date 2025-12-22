@@ -21,16 +21,17 @@ const AdminNav = () => {
   };
 
   const navItems = [
-    { to: "/admin-livestream", label: "Stream" },
-    { to: "/admin-pastsermon", label: "Past Sermon" },
-    { to: "/admin-events", label: "Event" },
-    { to: "/book-category", label: "Store" },
-    { to: "/admin-convert", label: "New Convert" },
-    { to: "/admin-fellowship", label: "House Fellowship" },
-    { to: "/admin-devotional", label: "Devotional" },
-    { to: "/admin-branches", label: "Branches" },
-    { to: "/admin-department", label: "Departments" },
-    { to: "/admin-testimonies", label: "Testimonies" },
+    { to: "/admin", label: "Dashboard" },
+    { to: "admin-livestream", label: "Stream" },
+    { to: "admin-pastsermon", label: "Past Sermon" },
+    { to: "admin-event", label: "Event" },
+    { to: "book-category", label: "Store" },
+    { to: "admin-convert", label: "New Convert" },
+    { to: "admin-fellowship", label: "House Fellowship" },
+    { to: "admin-devotional", label: "Devotional" },
+    { to: "admin-branches", label: "Branches" },
+    { to: "admin-department", label: "Departments" },
+    { to: "admin-testimonies", label: "Testimonies" },
   ];
 
   return (
@@ -111,9 +112,9 @@ const AdminNav = () => {
             <NavLink
               key={item.to}
               to={item.to}
+              end={item.to === "/admin"}
               className={activeClass}
               onClick={() => setIsMobileMenuOpen(false)}
-              title={isCollapsed ? item.label : ""}
             >
               {/* You can add icons here later */}
               {!isCollapsed && <p>{item.label}</p>}
@@ -124,45 +125,6 @@ const AdminNav = () => {
               )}
             </NavLink>
           ))}
-        </div>
-
-        {/* User Profile/Logout Section */}
-        <div
-          className={`
-          absolute bottom-0 left-0 right-0 
-          p-4 border-t border-[#E4E7EC]
-          ${isCollapsed ? "text-center" : ""}
-        `}
-        >
-          <div
-            className={`flex items-center ${
-              isCollapsed ? "justify-center" : "justify-between"
-            }`}
-          >
-            {!isCollapsed && (
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-                <div>
-                  <p className="text-sm font-medium text-gray-800">Admin</p>
-                  <p className="text-xs text-gray-500">admin@church.com</p>
-                </div>
-              </div>
-            )}
-
-            {isCollapsed && (
-              <div className="w-8 h-8 bg-gray-300 rounded-full mx-auto"></div>
-            )}
-
-            <button
-              className={`
-                text-sm text-gray-500 hover:text-gray-800
-                ${isCollapsed ? "mt-2" : ""}
-              `}
-            >
-              {!isCollapsed && "Logout"}
-              {isCollapsed && <FiX size={20} />}
-            </button>
-          </div>
         </div>
       </section>
 

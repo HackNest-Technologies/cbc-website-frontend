@@ -120,7 +120,7 @@ const EditCategory = () => {
       alert("Category updated successfully!");
 
       // Redirect to categories list
-      navigate("/book-category");
+      navigate("/admin/book-category");
     } catch (error) {
       console.error("Error updating category:", error);
       console.error("Error details:", error.data);
@@ -140,7 +140,7 @@ const EditCategory = () => {
           No category data found for editing.
         </p>
         <Link
-          to="/book-category"
+          to="/admin/book-category"
           className="mt-4 text-[#FD9F2B] hover:underline"
         >
           Back to Categories
@@ -155,7 +155,7 @@ const EditCategory = () => {
       <section className="mb-8">
         <div className="mb-6">
           <Link
-            to="/book-category"
+            to="/admin/book-category"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
@@ -352,7 +352,7 @@ const EditCategory = () => {
         </button>
 
         <Link
-          to="/book-category"
+          to="/admin/book-category"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"
         >
           Cancel

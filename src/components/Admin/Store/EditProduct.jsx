@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate, Link, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import uploadIcon from "../../../assets/images/upload.png";
-import { 
-  useUpdateBookItemMutation, 
+import {
+  useUpdateBookItemMutation,
   useGetCategoriesQuery,
-  useGetBooksByIdQuery // Add this hook
+  useGetBooksByIdQuery, // Add this hook
 } from "../../../redux/apiSlice";
 import { FaArrowLeft } from "react-icons/fa6";
 import publish from "../../../assets/images/publish.png";
@@ -14,27 +14,32 @@ const EditProduct = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { id: productIdFromParams } = useParams(); // Get ID from URL params if using /edit-product/:id
-  
+
   // Get product from location state OR fetch by ID
   const productFromState = location.state?.product;
   const productId = productIdFromParams || productFromState?.id;
-  
+
   const [isDragging, setIsDragging] = useState(false);
   const [coverImage, setCoverImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
-  const [updateBookItem, { isLoading: isUpdatingProduct }] = useUpdateBookItemMutation();
-  const { data: categories = [], isLoading: categoriesLoading, error: categoriesError } = useGetCategoriesQuery();
-  
+  const [updateBookItem, { isLoading: isUpdatingProduct }] =
+    useUpdateBookItemMutation();
+  const {
+    data: categories = [],
+    isLoading: categoriesLoading,
+    error: categoriesError,
+  } = useGetCategoriesQuery();
+
   // Fetch product by ID if not provided in state
-  const { 
-    data: fetchedProduct, 
-    isLoading: productLoading, 
+  const {
+    data: fetchedProduct,
+    isLoading: productLoading,
     error: productError,
-    refetch: refetchProduct 
+    refetch: refetchProduct,
   } = useGetBooksByIdQuery(productId, {
     skip: !productId || !!productFromState, // Skip if we already have product from state
   });
-  
+
   // Use product from state OR fetched product
   const product = productFromState || fetchedProduct;
 
@@ -53,21 +58,22 @@ const EditProduct = () => {
   useEffect(() => {
     if (product) {
       console.log("Received product data:", product);
-      
+
       // Extract numeric price if it has "NGN" prefix
       let priceValue = product.price || "";
-      if (typeof priceValue === 'string' && priceValue.includes('NGN')) {
-        priceValue = priceValue.replace('NGN', '').trim();
+      if (typeof priceValue === "string" && priceValue.includes("NGN")) {
+        priceValue = priceValue.replace("NGN", "").trim();
       }
-      
+
       setProductData({
         title: product.title || "",
         price: priceValue,
         item_type: product.item_type || "book",
         description: product.description || "",
-        store_item_category_id: product.store_item_category_id || product.category_id || "",
+        store_item_category_id:
+          product.store_item_category_id || product.category_id || "",
       });
-      
+
       // Set image preview if product has cover image
       if (product.cover_image) {
         setImagePreview(product.cover_image);
@@ -96,7 +102,7 @@ const EditProduct = () => {
     e.preventDefault();
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file && file.type.startsWith("image/")) {
       setCoverImage(file);
       setImagePreview(URL.createObjectURL(file));
     } else {
@@ -106,7 +112,7 @@ const EditProduct = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file && file.type.startsWith("image/")) {
       setCoverImage(file);
       setImagePreview(URL.createObjectURL(file));
     } else {
@@ -126,7 +132,7 @@ const EditProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!productId) {
       alert("Product ID not found!");
       return;
@@ -137,36 +143,43 @@ const EditProduct = () => {
       alert("Please select a category");
       return;
     }
-    
+
     // Prepare form data according to API structure
     const formData = new FormData();
-    
+
     // Append cover image if exists (for update)
     if (coverImage) {
       formData.append("store_item[cover_image]", coverImage);
     }
-    
+
     // Append other fields
     formData.append("store_item[title]", productData.title);
     formData.append("store_item[price]", productData.price);
     formData.append("store_item[item_type]", productData.item_type);
     formData.append("store_item[description]", productData.description);
-    formData.append("store_item[store_item_category_id]", productData.store_item_category_id);
+    formData.append(
+      "store_item[store_item_category_id]",
+      productData.store_item_category_id
+    );
 
     try {
-      await updateBookItem({ 
-        id: productId, 
-        product: formData 
+      await updateBookItem({
+        id: productId,
+        product: formData,
       }).unwrap();
-      
+
       alert("Product updated successfully!");
-      
+
       // Redirect to products page
-      navigate("/products");
-      
+      navigate(-1);
     } catch (error) {
       console.error("Error updating product:", error);
-      alert(`Error: ${error.data?.message || "Something went wrong while updating the product."}`);
+      alert(
+        `Error: ${
+          error.data?.message ||
+          "Something went wrong while updating the product."
+        }`
+      );
     }
   };
 
@@ -184,26 +197,28 @@ const EditProduct = () => {
     return (
       <div className="p-6">
         <div className="mb-6">
-          <Link 
-            to="/products" 
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
             <span>Back to Products</span>
-          </Link>
+          </button>
         </div>
-        
+
         <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <h2 className="text-lg font-medium text-red-800 mb-2">Product Not Found</h2>
+          <h2 className="text-lg font-medium text-red-800 mb-2">
+            Product Not Found
+          </h2>
           <p className="text-red-600">
             Failed to load product with ID: {productId}
           </p>
-          <Link
-            to="/products"
+          <button
+            to="/admin/products"
             className="inline-block mt-4 px-4 py-2 bg-[#FD9F2B] text-white rounded-lg hover:bg-[#E88F25] transition-colors"
           >
             Go to Products
-          </Link>
+          </button>
         </div>
       </div>
     );
@@ -213,26 +228,28 @@ const EditProduct = () => {
     return (
       <div className="p-6">
         <div className="mb-6">
-          <Link 
-            to="/products" 
+          <button
+            to="admin/products"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
             <span>Back to Products</span>
-          </Link>
+          </button>
         </div>
-        
+
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-          <h2 className="text-lg font-medium text-yellow-800 mb-2">No Product Selected</h2>
+          <h2 className="text-lg font-medium text-yellow-800 mb-2">
+            No Product Selected
+          </h2>
           <p className="text-yellow-600">
             Please select a product to edit from the products list.
           </p>
-          <Link
-            to="/products"
+          <button
+            to="/admin/products"
             className="inline-block mt-4 px-4 py-2 bg-[#FD9F2B] text-white rounded-lg hover:bg-[#E88F25] transition-colors"
           >
             Go to Products
-          </Link>
+          </button>
         </div>
       </div>
     );
@@ -243,19 +260,22 @@ const EditProduct = () => {
     return (
       <div className="p-6">
         <div className="mb-6">
-          <Link 
-            to="/products" 
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
             <span>Back to Products</span>
-          </Link>
+          </button>
         </div>
-        
+
         <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <h2 className="text-lg font-medium text-red-800 mb-2">Error Loading Categories</h2>
+          <h2 className="text-lg font-medium text-red-800 mb-2">
+            Error Loading Categories
+          </h2>
           <p className="text-red-600">
-            Failed to load categories. Please check your connection and try again.
+            Failed to load categories. Please check your connection and try
+            again.
           </p>
           <button
             onClick={() => window.location.reload()}
@@ -269,22 +289,24 @@ const EditProduct = () => {
   }
 
   // Find selected category for preview
-  const selectedCategory = categories.find(cat => cat.id === productData.store_item_category_id);
+  const selectedCategory = categories.find(
+    (cat) => cat.id === productData.store_item_category_id
+  );
 
   return (
     <form onSubmit={handleSubmit} className="">
       {/* Header Section */}
       <section className="mb-8">
         <div className="mb-6">
-          <Link 
-            to="/products" 
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <FaArrowLeft className="text-xl mr-2" />
             <span>Back to Products</span>
-          </Link>
+          </button>
         </div>
-        
+
         <div className="border-b border-gray-300 pb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
@@ -295,18 +317,38 @@ const EditProduct = () => {
                 Update the details of "{product.title}"
               </p>
             </div>
-            
+
             <button
               type="submit"
               disabled={isUpdatingProduct}
               className={`inline-flex items-center justify-center gap-2 bg-[#FD9F2B] text-white font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#FD9F2B] focus:ring-offset-2 w-full md:w-auto
-                ${isUpdatingProduct ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#E88F25]'}`}
+                ${
+                  isUpdatingProduct
+                    ? "opacity-70 cursor-not-allowed"
+                    : "hover:bg-[#E88F25]"
+                }`}
             >
               {isUpdatingProduct ? (
                 <>
-                  <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <svg
+                    className="animate-spin h-4 w-4 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
                   </svg>
                   Updating...
                 </>
@@ -325,18 +367,22 @@ const EditProduct = () => {
       <div className="mb-6 bg-gray-50 p-4 rounded-lg">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-gray-700">Product ID: {product.id}</p>
+            <p className="text-sm font-medium text-gray-700">
+              Product ID: {product.id}
+            </p>
             {product.created_at && (
               <p className="text-xs text-gray-500 mt-1">
                 Created: {new Date(product.created_at).toLocaleDateString()}
               </p>
             )}
           </div>
-          <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-            productData.item_type === "book" 
-              ? "bg-blue-500 text-white" 
-              : "bg-purple-500 text-white"
-          }`}>
+          <span
+            className={`px-2 py-1 rounded-full text-xs font-bold ${
+              productData.item_type === "book"
+                ? "bg-blue-500 text-white"
+                : "bg-purple-500 text-white"
+            }`}
+          >
             {productData.item_type === "book" ? "BOOK" : "AUDIO"}
           </span>
         </div>
@@ -346,8 +392,8 @@ const EditProduct = () => {
       <div className="space-y-6">
         {/* Product Title */}
         <div>
-          <label 
-            htmlFor="title" 
+          <label
+            htmlFor="title"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Product Title *
@@ -366,8 +412,8 @@ const EditProduct = () => {
 
         {/* Price */}
         <div>
-          <label 
-            htmlFor="price" 
+          <label
+            htmlFor="price"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Price *
@@ -387,15 +433,13 @@ const EditProduct = () => {
               name="price"
             />
           </div>
-          <p className="text-xs text-gray-500 mt-2">
-            Enter price in Naira (₦)
-          </p>
+          <p className="text-xs text-gray-500 mt-2">Enter price in Naira (₦)</p>
         </div>
 
         {/* Product Type */}
         <div>
-          <label 
-            htmlFor="item_type" 
+          <label
+            htmlFor="item_type"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Product Type *
@@ -418,8 +462,8 @@ const EditProduct = () => {
 
         {/* Category - Dropdown with fetched categories */}
         <div>
-          <label 
-            htmlFor="store_item_category_id" 
+          <label
+            htmlFor="store_item_category_id"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Category *
@@ -440,7 +484,7 @@ const EditProduct = () => {
               </option>
             ))}
           </select>
-          
+
           {categories.length === 0 ? (
             <p className="text-xs text-red-500 mt-2">
               No categories available.
@@ -454,8 +498,8 @@ const EditProduct = () => {
 
         {/* Description */}
         <div>
-          <label 
-            htmlFor="description" 
+          <label
+            htmlFor="description"
             className="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wider"
           >
             Description
@@ -482,7 +526,9 @@ const EditProduct = () => {
             Update Cover Image
           </h2>
           <p className="text-sm text-gray-600 mb-4">
-            {imagePreview ? "Current cover image:" : "Upload a new cover image (optional)"}
+            {imagePreview
+              ? "Current cover image:"
+              : "Upload a new cover image (optional)"}
           </p>
 
           {/* Current Image Preview */}
@@ -495,12 +541,15 @@ const EditProduct = () => {
                   className="w-full h-full object-contain"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/300x400?text=Image+Error";
+                    e.target.src =
+                      "https://via.placeholder.com/300x400?text=Image+Error";
                   }}
                 />
               </div>
               <p className="text-center text-sm text-gray-600 mt-2">
-                {coverImage ? "New image selected (will replace current)" : "Current image"}
+                {coverImage
+                  ? "New image selected (will replace current)"
+                  : "Current image"}
               </p>
             </div>
           )}
@@ -510,9 +559,10 @@ const EditProduct = () => {
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
             className={`border-2 border-dashed rounded-lg p-6 flex flex-col items-center justify-center transition-all cursor-pointer min-h-[150px]
-              ${isDragging 
-                ? "border-[#FD9F2B] bg-[#FFF5EB]" 
-                : "border-gray-300 hover:border-[#FD9F2B] hover:bg-gray-50"
+              ${
+                isDragging
+                  ? "border-[#FD9F2B] bg-[#FFF5EB]"
+                  : "border-gray-300 hover:border-[#FD9F2B] hover:bg-gray-50"
               }`}
           >
             <img
@@ -520,13 +570,13 @@ const EditProduct = () => {
               alt="Upload icon"
               className="w-12 h-12 mb-3 opacity-80"
             />
-            
+
             <p className="text-gray-700 text-center mb-1">
-              {coverImage ? "Image selected. Drop another to replace" : "Drag & drop new cover image here"}
+              {coverImage
+                ? "Image selected. Drop another to replace"
+                : "Drag & drop new cover image here"}
             </p>
-            <p className="text-sm text-gray-500 mb-3">
-              or
-            </p>
+            <p className="text-sm text-gray-500 mb-3">or</p>
             <div className="flex gap-2">
               <label className="cursor-pointer">
                 <span className="inline-flex items-center px-4 py-2 border border-[#FD9F2B] text-[#FD9F2B] font-medium rounded-lg hover:bg-[#FFF5EB] transition-colors">
@@ -561,7 +611,7 @@ const EditProduct = () => {
           <p className="text-sm text-gray-600 mb-4">
             Here's how your product will appear after update:
           </p>
-          
+
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4">
             <div className="flex gap-4">
               {/* Preview Image */}
@@ -580,18 +630,20 @@ const EditProduct = () => {
                   )}
                 </div>
               </div>
-              
+
               {/* Preview Details */}
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {productData.title || "Product Title"}
                 </h3>
                 <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                    productData.item_type === "book" 
-                      ? "bg-blue-500 text-white" 
-                      : "bg-purple-500 text-white"
-                  }`}>
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs font-bold ${
+                      productData.item_type === "book"
+                        ? "bg-blue-500 text-white"
+                        : "bg-purple-500 text-white"
+                    }`}
+                  >
                     {productData.item_type === "book" ? "BOOK" : "AUDIO"}
                   </span>
                   {selectedCategory && (
@@ -611,14 +663,15 @@ const EditProduct = () => {
                 {selectedCategory && (
                   <div className="mt-3 pt-3 border-t border-gray-100">
                     <p className="text-xs text-gray-500">
-                      <span className="font-medium">Category:</span> {selectedCategory.name} (ID: {selectedCategory.id})
+                      <span className="font-medium">Category:</span>{" "}
+                      {selectedCategory.name} (ID: {selectedCategory.id})
                     </p>
                   </div>
                 )}
               </div>
             </div>
           </div>
-          
+
           <div className="mt-4 text-sm text-gray-600">
             <p>
               Product ID: <span className="font-medium">{product.id}</span>
@@ -633,13 +686,33 @@ const EditProduct = () => {
           type="submit"
           disabled={isUpdatingProduct || categories.length === 0}
           className={`inline-flex items-center justify-center gap-2 bg-[#FD9F2B] text-white font-semibold py-3 px-8 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#FD9F2B] focus:ring-offset-2 flex-1
-            ${isUpdatingProduct || categories.length === 0 ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#E88F25]'}`}
+            ${
+              isUpdatingProduct || categories.length === 0
+                ? "opacity-70 cursor-not-allowed"
+                : "hover:bg-[#E88F25]"
+            }`}
         >
           {isUpdatingProduct ? (
             <>
-              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
               </svg>
               Updating Product...
             </>
@@ -650,13 +723,13 @@ const EditProduct = () => {
             </>
           )}
         </button>
-        
-        <Link
+
+        <button
           to="/products"
           className="inline-flex items-center justify-center border border-gray-300 text-gray-700 font-medium py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex-1 text-center"
         >
           Cancel
-        </Link>
+        </button>
       </div>
     </form>
   );

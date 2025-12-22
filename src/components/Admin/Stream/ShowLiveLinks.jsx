@@ -1,84 +1,98 @@
-import { useState } from "react"
-import { useGetStreamLinksQuery, useDeleteStreamLinkMutation } from "../../../redux/apiSlice"
-import { useNavigate } from "react-router-dom"
-import Spinner from "../../Loader/Spinner"
-import ConfirmModal from "../ConfirmModal"
+import { useState } from "react";
+import {
+  useGetStreamLinksQuery,
+  useDeleteStreamLinkMutation,
+} from "../../../redux/apiSlice";
+import { useNavigate } from "react-router-dom";
+import Spinner from "../../Loader/Spinner";
+import ConfirmModal from "../ConfirmModal";
+import AddBtn from "../PastSermon/AddBtn";
 
 const ShowLiveLinks = () => {
-  const navigate = useNavigate()
-  const { data: streams, isLoading, error, refetch } = useGetStreamLinksQuery()
-  const [deleteStreamLink] = useDeleteStreamLinkMutation()
-  
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedStream, setSelectedStream] = useState(null)
+  const navigate = useNavigate();
+  const { data: streams, isLoading, error, refetch } = useGetStreamLinksQuery();
+  const [deleteStreamLink] = useDeleteStreamLinkMutation();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedStream, setSelectedStream] = useState(null);
 
   const handleEdit = (stream) => {
-    navigate("/edit-livestream", { state: { stream } })
-  }
+    navigate("/admin/edit-livestream", { state: { stream } });
+  };
 
   const handleDeleteClick = (stream) => {
-    setSelectedStream(stream)
-    setIsModalOpen(true)
-  }
+    setSelectedStream(stream);
+    setIsModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
-    if (!selectedStream?.id) return
-    
+    if (!selectedStream?.id) return;
+
     try {
-      await deleteStreamLink(selectedStream.id).unwrap()
-      await refetch()
-      alert("Stream deleted successfully!")
-      closeModal()
+      await deleteStreamLink(selectedStream.id).unwrap();
+      await refetch();
+      alert("Stream deleted successfully!");
+      closeModal();
     } catch (error) {
-      console.error("Error deleting stream:", error)
-      alert("Failed to delete stream")
+      console.error("Error deleting stream:", error);
+      alert("Failed to delete stream");
     }
-  }
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedStream(null)
-  }
+    setIsModalOpen(false);
+    setSelectedStream(null);
+  };
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
         <Spinner />
       </div>
-    )
+    );
   }
 
   if (error) {
     return (
       <div className="text-center py-12">
         <div className="text-red-500 text-lg">Error loading stream links</div>
-        <button 
+        <button
           onClick={() => window.location.reload()}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Retry
         </button>
       </div>
-    )
+    );
   }
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Live Stream Links</h1>
-      
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">
+        Live Stream Links
+      </h1>
+
+      <div className="pb-10">
+        <AddBtn
+          linkTo="add-livestream"
+          addMsg="Add Product"
+        />
+      </div>
       {streams?.length === 0 ? (
         <div className="text-center py-12">
           <div className="text-gray-500 text-lg">No stream links found</div>
-          <p className="mt-2 text-gray-600">Add your first stream link to get started</p>
+          <p className="mt-2 text-gray-600">
+            Add your first stream link to get started
+          </p>
         </div>
       ) : (
         <div className="space-y-6">
           {streams?.map((stream) => (
-            <div 
-              key={stream.id} 
+            <div
+              key={stream.id}
               className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm"
             >
-               <div className="flex justify-end gap-3 pt-3 border-t">
+              <div className="flex justify-end gap-3 pt-3 border-t">
                 <button
                   onClick={() => handleEdit(stream)}
                   className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
@@ -99,7 +113,7 @@ const ShowLiveLinks = () => {
                   Edit
                 </button>
                 <button
-                    onClick={() => handleDeleteClick(stream)}
+                  onClick={() => handleDeleteClick(stream)}
                   className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-700 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
                 >
                   <svg
@@ -122,11 +136,15 @@ const ShowLiveLinks = () => {
               <div className="space-y-4">
                 {/* Video URL */}
                 <div>
-                  <h4 className="text-sm font-medium text-gray-700 mb-1">Video Stream URL</h4>
+                  <h4 className="text-sm font-medium text-gray-700 mb-1">
+                    Video Stream URL
+                  </h4>
                   {stream.video_url ? (
                     <div className="p-3 bg-blue-50 rounded border border-blue-100">
-                      <p className="text-sm text-blue-800 break-all">{stream.video_url}</p>
-                      <a 
+                      <p className="text-sm text-blue-800 break-all">
+                        {stream.video_url}
+                      </p>
+                      <a
                         href={stream.video_url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -136,17 +154,23 @@ const ShowLiveLinks = () => {
                       </a>
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-500 italic">No video URL provided</p>
+                    <p className="text-sm text-gray-500 italic">
+                      No video URL provided
+                    </p>
                   )}
                 </div>
 
                 {/* Audio URL */}
                 <div>
-                  <h4 className="text-sm font-medium text-gray-700 mb-1">Audio Stream URL</h4>
+                  <h4 className="text-sm font-medium text-gray-700 mb-1">
+                    Audio Stream URL
+                  </h4>
                   {stream.audio_url ? (
                     <div className="p-3 bg-green-50 rounded border border-green-100">
-                      <p className="text-sm text-green-800 break-all">{stream.audio_url}</p>
-                      <a 
+                      <p className="text-sm text-green-800 break-all">
+                        {stream.audio_url}
+                      </p>
+                      <a
                         href={stream.audio_url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -156,7 +180,9 @@ const ShowLiveLinks = () => {
                       </a>
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-500 italic">No audio URL provided</p>
+                    <p className="text-sm text-gray-500 italic">
+                      No audio URL provided
+                    </p>
                   )}
                 </div>
               </div>
@@ -175,7 +201,7 @@ const ShowLiveLinks = () => {
         subMsg={`Are you sure you want to delete stream #${selectedStream?.id}?`}
       />
     </div>
-  )
-}
+  );
+};
 
-export default ShowLiveLinks
+export default ShowLiveLinks;

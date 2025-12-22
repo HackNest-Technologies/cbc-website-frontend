@@ -3,7 +3,7 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm,msg, warningMsg }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0  bg-opacity-100 flex items-center justify-center">
+    <div className="fixed inset-0   bg-black/50 flex items-center justify-center">
       <div className="w-[453px] bg-white p-[15px] rounded-[15px] shadow-lg">
         <h2 className="text-center font-semibold font-inter text-[26px] mb-4">{msg}</h2>
         <div className="flex justify-center">

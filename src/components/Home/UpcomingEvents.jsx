@@ -3,47 +3,68 @@ import { BsArrowRight, BsClock } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import eventScene from "../../assets/images/event-scene.png";
 import EventLine from "../../assets/images/EventLine.png";
-import EventCircle from "../../assets/images/EventCircle.png";
+import { useGetEventQuery } from "../../redux/apiSlice";
 
 const UpcomingEvents = () => {
-  const events = [
-    {
-      theme: "The entrepreneurship academy",
-      date: "Monday 20th- Saturday 25th January",
-      time: "8am - 2pm",
-      description:
-        "There is a Divine Call to Create, Build, and Prosper for the Glory of God. At Calvary Bible Church, we believe that business is more than profit - it is a Kingdom Mandate. This is a space where visionaries, builders, and purpose-driven leaders are trained, equipped, and sent forth to “occupy until He comes” (Luke 19:13). Come, be equipped. come, be commissioned. The Earth awaits your manifestation.",
-    },
-    {
-      theme: "The entrepreneurship academy",
-      date: "Monday 20th- Saturday 25th January",
-      time: "8am - 2pm",
-      description:
-        "There is a Divine Call to Create, Build, and Prosper for the Glory of God. At Calvary Bible Church, we believe that business is more than profit - it is a Kingdom Mandate. This is a space where visionaries, builders, and purpose-driven leaders are trained, equipped, and sent forth to “occupy until He comes” (Luke 19:13). Come, be equipped. come, be commissioned. The Earth awaits your manifestation.",
-    },
-  ];
+  
+  const {data, isLoading} = useGetEventQuery()
 
-  const EventCard = ({ theme, date, time, description }) => (
-    <div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px]  sm:min-w-[540px] sm:rounded-[8px]  md:p-[24px] md:mr-[16px] lg:items-center lg:grid gap-5 lg:grid-cols-2 lg:min-w-[1227px]">
+  // Simple date formatting function - FIXED VERSION
+  const formatDateRange = (startDate, endDate) => {
+    if (!startDate || !endDate) return "";
+    
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                   'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    const startDay = start.getDate();
+    const endDay = end.getDate();
+    const startMonth = months[start.getMonth()];
+    const endMonth = months[end.getMonth()];
+    
+    // Simple ordinal suffix
+    const getSuffix = (day) => {
+      if (day > 3 && day < 21) return 'th';
+      switch (day % 10) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+      }
+    };
+    
+    // Check if same month
+    if (startMonth === endMonth) {
+      return `${startDay}${getSuffix(startDay)} - ${endDay}${getSuffix(endDay)} ${endMonth}`;
+    } else {
+      return `${startDay}${getSuffix(startDay)} ${startMonth} - ${endDay}${getSuffix(endDay)} ${endMonth}`;
+    }
+  };
+
+  const EventCard = ({ cover_image, title, start_date, end_date, time, description }) => (
+    <div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px]  sm:min-w-[540px] lg:min-w-[1105px] sm:rounded-[8px]  md:p-[24px] md:mr-[16px] lg:items-center lg:grid gap-5 lg:grid-cols-2 xl:min-w-[1227px]">
       <img
         src={eventScene}
+        // src={cover_image}
         alt=""
-        className="object-contain rounded-[7.39px] w-full"
+        className="object-contain rounded-[7.39px] w-full lg:h-[270px]"
       />
 
       <div className="space-y-2 md:w-[503px] ">
-        <h4 className="border-b-[0.49px] border-b-[#565656] pb-[3.94px] text-base leading-[100%]  font-satoshi capitalize  sm:text-[32px] md:pt-2">
-          {theme}
+        <h4 className="border-b-[0.49px] border-b-[#565656] pb-[3.94px]  text-base leading-[100%]  font-satoshi capitalize  sm:text-[32px] md:pt-2 lg:text-[26px] lg:pb-[10px] xl:text-[32px] ">
+          {title}
         </h4>
-        <div className="space-y-[7.88px] italic text-[#777777] md:pt-2">
-          <p className="flex items-center italic text-xs leading-[100%] capitalize gap-2 md:pt-2 md:text-base">
-            <BiCalendar /> {date}
+        <div className="space-y-[7.88px] italic text-[#777777] md:pt-2 lg:pb-[5px]">
+          <p className="flex items-center italic text-xs leading-[100%] capitalize gap-2 md:pt-2 md:text-base xl:text-base">
+            <BiCalendar /> {formatDateRange(start_date, end_date)}
           </p>
-          <p className="flex items-center italic text-xs leading-[100%] capitalize gap-2 border-b-[0.49px] border-b-[#565656] pb-[3.94px] md:pt-2 md:text-base">
+          <p className="flex items-center italic text-xs leading-[100%] capitalize gap-2 border-b-[0.49px] border-b-[#565656] pb-[3.94px] md:pt-2 md:text-base lg:text-sm lg:pb-[8px] xl:text-base">
             <BsClock /> {time}
           </p>
         </div>
-        <p className="text-sm leading-[100%] text-[#000000] font-normal font-inter md:text-base md:pt-2">
+        <p className="text-sm leading-[100%] text-[#000000] font-normal font-inter md:text-base md:pt-2 lg:text-sm lg:leading-[110%] xl:text-base">
           {description}
         </p>
       </div>
@@ -54,22 +75,22 @@ const UpcomingEvents = () => {
     <section className="relative lg:pt-20">
       <section className="container mx-auto p-6 space-y-4 sm:mt-8 md:p-0 md:mb-[60px] md:py-6 ">
         <div className="flex justify-between lg:py-5">
-          <h2 className="font-satoshi text-[24px] leading-[100%] sm:text-[30px] md:text-[40px]">
+          <h2 className="font-satoshi text-[24px] leading-[100%] sm:text-[30px] md:text-[40px] lg:text-[30px] xl:text-[40px]">
             UPCOMING EVENTS
           </h2>
           <p className="max-sm:hidden">
             <Link
               to="/events"
-              className="text-sm font-inter leading-[150%] flex items-center gap-2 underline sm:text-[24px]"
-            >
+              className="text-sm font-inter leading-[150%] flex items-center gap-2 underline sm:text-[24px] lg:text-base xl:text-[40px]"
+              >
               View All Events{" "}
-              <BsArrowRight className="text-[24px] md:text-[30px]" />
+              <BsArrowRight className="text-[24px] md:text-[30px] lg:text-xl xl:text-[30px]" />
             </Link>
           </p>
         </div>
 
         <div className="hide-scrollbar space-y-4  sm:flex sm:flex-nowrap sm:overflow-auto sm:max-w-full sm:gap-2">
-          {events.map((ev, i) => (
+          {data?.map((ev, i) => (
             <EventCard key={i} {...ev} />
           ))}
           <p className="sm:hidden">
@@ -80,7 +101,7 @@ const UpcomingEvents = () => {
         </div>
       </section>
 
-      <div className=" hidden absolute bottom-[-50px] right-[50px] -z-50 md:block lg:bottom-[-100px] lg:right-[75px]  ">
+      <div className=" hidden absolute bottom-[-50px] right-[50px] -z-50 md:block lg:bottom-[-100px] lg:right-[75px]">
         <img src={EventLine} alt="" className="w-full" />
       </div>
       <div className="hidden absolute right-0 bottom-[-120px] -z-50 md:block lg:hidden lg:bottom-[-160px] ">

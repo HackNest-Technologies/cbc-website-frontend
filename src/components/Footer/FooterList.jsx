@@ -11,13 +11,13 @@ const FooterList = () => {
         <div>
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">About</h2>
           <ul className="list-none font-inter">
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/about">About Us</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/leadership">Leadership</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/about#branches">CBC branches</Link>
             </li>
           </ul>
@@ -29,19 +29,19 @@ const FooterList = () => {
             Watch & Listen
           </h2>
           <ul className="list-none  font-inter">
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/live">Live Service </Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/past-sermon">Past Sermons </Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/study">Daily Devotional </Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/study">Bible in One Year </Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/house-fellowship">House fellowship</Link>
             </li>
           </ul>
@@ -51,22 +51,22 @@ const FooterList = () => {
         <div>
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">Community </h2>
           <ul className="list-none  font-inter">
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/discussion">Discussion Forum</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/#prayer">Prayer Requests</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/#testimonies">Testimonies</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/departments-group">Departments & Groups</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/welcome">New Member’s Corner</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/counselling">Counselling</Link>
             </li>
           </ul>
@@ -76,19 +76,19 @@ const FooterList = () => {
         <div>
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">learning </h2>
           <ul className="list-none  font-inter">
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/membership-class">Membership class</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/maturity-class">Maturity class</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/ministerial-class">Ministerial class</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/mission">Missions</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/marriage-class">Marriage class</Link>
             </li>
           </ul>
@@ -97,14 +97,14 @@ const FooterList = () => {
         {/* Fifth Column */}
 
         <div>
-          <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">
+          <h2 className="text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">
             Arms of Trucalms
           </h2>
           <ul className="list-none  font-inter">
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/tea">TEA</Link>
             </li>
-            <li className="pt-1 lg:pt-5 text-sm lg:text-base">
+            <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/csv">CSV</Link>
             </li>
           </ul>
@@ -113,9 +113,9 @@ const FooterList = () => {
 
       {/* icon list */}
 
-      <div className="flex justify-center  gap-4 pt-[20px] lg:pt-[100px]  ">
-        <a href="" className="bg-[#FD9F2B] rounded-full p-2  lg:p-[11px] ">
-          <img src={instagram} alt="" className="w-[15px] h-[15px] lg:w-[24px] lg:h-[24px] " />
+      <div className="footer-icon flex justify-center  gap-4 pt-[20px] lg:pt-[100px]">
+        <a href="" className="bg-[#FD9F2B] rounded-full p-2 lg:p-[11px]">
+          <img src={instagram} alt="" className="w-[15px] h-[15px] lg:w-[24px] lg:h-[24px]" />
         </a>
         <a href="" className="bg-[#FD9F2B] rounded-full p-2  lg:p-[11px]">
           <img src={facebook} alt="" className="w-[15px] h-[15px] lg:w-[24px] lg:h-[24px]" />

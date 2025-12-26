@@ -1,0 +1,35 @@
+@media (max-height: 700px) {
+  .hero {
+    padding-bottom: 45px;
+  }
+
+  .parent-height {
+    width: 400px;
+  }
+
+  .title-height {
+    font-size: 45px;
+  }
+
+  .paragragh-height {
+    padding-top: 10px;
+    font-size: 17px;
+    width: 420px
+  }
+
+  .btn-container{
+    gap:5px;
+    margin-top: 15px;
+  }
+
+  .btn-height{
+    width:170px;
+    height: 45px;
+  }
+}
+
+@media (min-height: 900px) {
+  .hero {
+    padding-bottom: 100px;
+  }
+}

@@ -10,6 +10,10 @@
   font-family: satoshi;
   src: url("../src/assets/fonts/Satoshi-Regular.woff2") format("woff2");
 }
+@font-face {
+  font-family: digital;
+  src: url("../src/assets/fonts/DigitalNumbers-Regular.woff") format("woff");
+}
 
 @theme {
   --font-inter: Inter, "sans-serif";
@@ -18,6 +22,7 @@
   --font-orbitron: Orbitron, "sans-serif";
   --font-satoshi: satoshi, "sans-serif";
   --font-poppins: Poppins, "sans-serif";
+  --font-digital: digital, "sans-serif";
 
   /* --font-proxima: Proxima Nova, "sans-serif"; */
 }
@@ -49,17 +54,16 @@
   scrollbar-width: none; /* Firefox */
 }
 
-/* For equal space for  both left and right  */
-@media (min-width: 1024px) {
-  .container {
-    max-width: 87%;
-  }
-}
-
-
 .liveBg {
   background-image: url("./assets/images/livechatimage.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+/* For equal space for  both left and right  */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 87%;
+  }
 }

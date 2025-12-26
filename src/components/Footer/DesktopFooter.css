@@ -1,0 +1,20 @@
+@media (max-height: 700px) {
+  .logo-height {
+    top: 10px;
+  }
+
+  .footer-list{
+    padding-top: 12px
+  }
+
+  .stroke-white {
+    -webkit-text-stroke-width: 3.92px;
+    -webkit-text-stroke-color: #fff;
+    font-size: 145px;
+    line-height: 160px;
+  }
+
+  .footer-icon {
+    padding: 24px 0;
+  }
+}

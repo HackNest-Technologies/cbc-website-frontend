@@ -16,22 +16,22 @@ const LastSermon = () => {
 
   const InfoBlock = ({ title, description, preacher }) => (
     <div className="space-y-2">
-      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
+      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi lg:text-xs xl:text-base">
         sermon series
       </h4>
-      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3">
+      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3 lg:text-[20px] xl:text-[32px]">
         {description}
       </p>
-      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
+      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi lg:text-xs xl:text-base">
         sermon series
       </h4>
-      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3">
+      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3 lg:text-[20px] xl:text-[32px]">
         {title}
       </p>
-      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi">
+      <h4 className="uppercase leading-[100%] pb-1 border-b-[#D6D6D6] border-b-[0.46px] text-[7.38px] sm:text-base font-satoshi lg:text-xs xl:text-base">
         Preacher
       </h4>
-      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3">
+      <p className="text-sm leading-[100%] font-inter sm:text-[32px] sm:pt-3 lg:text-[20px] xl:text-[32px]">
         {preacher}
       </p>
     </div>
@@ -45,15 +45,15 @@ const LastSermon = () => {
           <img
             src={logo}
             alt=""
-            className="absolute w-[73px] md:w-[138px] left-[60%] bottom-13 md:bottom-22 lg:bottom-[70px]"
+            className="absolute w-[73px] md:w-[138px] left-[60%] bottom-13 md:bottom-22 lg:bottom-[70px] lg:w-[100px] xl:w-[138px]"
           />
         </div>
       </div>
 
       <div className="container mx-auto py-6 px-4 pb-24 lg:px-0">
         <div className="relative space-y-[22.14px]">
-          <h3 className="text-center leading-[100%] font-satoshi text-[18.45px] uppercase sm:text-[26px] md:text-[40px] md:pb-4 ">
-            Lastest Sermon
+          <h3 className="text-center leading-[100%] font-satoshi text-[18.45px] uppercase sm:text-[26px] md:text-[40px] lg:text-[30px] xl:text-[40px] md:pb-4 ">
+            Latest Sermon
           </h3>
 
           {/* TODO: Consume API for last sermon */}
@@ -84,10 +84,10 @@ const LastSermon = () => {
                       className="sm:w-[30px] sm:h-[30px] object-cover"
                     />
                   }
-                  className="sm:text-lg sm:w-[220px] sm:justify-center sm:h-[58px] md:text-[18px]"
+                  className="sm:text-lg sm:w-[220px] sm:justify-center sm:h-[58px] md:text-[18px] lg:w-[170px] lg:h-[48px] xl:w-[220px]"
                 />
 
-                <WhiteBgBtn link="/past-sermon" text="All sermons"  className="sm:text-lg sm:w-[220px] sm:justify-center sm:h-[58px] md:text-[18px] md:rounded-[500px] md:py-[3px]"
+                <WhiteBgBtn link="/past-sermon" text="All sermons"  className="sm:text-lg sm:w-[220px] sm:justify-center sm:h-[58px] md:text-[18px] md:rounded-[500px] md:py-[3px] lg:w-[170px] lg:h-[48px] xl:w-[220px]"
 />
               </div>
             </div>

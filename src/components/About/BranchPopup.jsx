@@ -7,6 +7,7 @@ const BranchPopup = ({ branchData, onclose }) => {
  const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     branchData.address
   )}`;
+  
     
   return (
     <section className="fixed inset-0 flex items-center bg-black/40 px-5 h-full z-[1000] overflow-hidden">
@@ -57,7 +58,7 @@ const BranchPopup = ({ branchData, onclose }) => {
         <p className="text-base  leading-[100%] font-inter">
           {branchData.description}
         </p>
-        {/* ✅ Opens Google Maps in a new tab */}
+        {/*  Opens Google Maps in a new tab */}
         <a
           href={googleMapsLink}
           target="_blank"

@@ -37,10 +37,10 @@ const FeatureCard = ({ title, bgImg, icon, desc }) => (
     className="py-6 px-4 text-white rounded-2xl h-[373px] md:rounded-[11.25px] md:py-[27px] md:px-[12px] group overflow-hidden"
   >
     <div className="flex flex-col justify-between h-full">
-      <img src={icon} alt="" className="w-[58px] h-auto object-cover lg:w-[73px]" />
+      <img src={icon} alt="" className="w-[58px] h-auto object-cover xl:w-[73px]" />
 
       <div>
-        <h3 className="text-[34px] leading-[120%] font-satoshi w-[275px] capitalize lg:text-[45px] lg:leading-[50px] lg:w-[365px] ">
+        <h3 className="text-[34px] leading-[120%] font-satoshi w-[275px] capitalize lg:text-[35px] lg:w-[250px]  xl:text-[45px] xl:leading-[50px] xl:w-[365px] ">
           {title}
         </h3>
 
@@ -48,11 +48,9 @@ const FeatureCard = ({ title, bgImg, icon, desc }) => (
         <p
           className="
             text-sm font-inter leading-[100%] pt-5 
-            lg:opacity-0 lg:translate-y-4 lg:pt-0 lg:group-hover:text-base lg:group-hover:pt-6
+            lg:opacity-0 lg:translate-y-4 lg:pt-0 lg:group-hover:text-sm xl:group-hover:text-base lg:group-hover:pt-6
             lg:group-hover:opacity-100 lg:group-hover:translate-y-0
-            transition-all duration-300 ease-out
-          "
-        >
+            transition-all duration-300 ease-out">
           {desc}
         </p>
       </div>

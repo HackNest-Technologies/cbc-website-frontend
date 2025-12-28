@@ -4,7 +4,7 @@ import updateEventCountDown from "../../utils/Home/updateEventCountdown.js";
 
 
 const TimeUnit = ({ time }) => (
-	<span className=" text-[30px] bg-gradient-to-b from-[#fc8d336c] to-[#0000001A] border border-zinc-200 rounded-[1.57px] p-1 inline-flex items-center text-center justify-center lg:text-[40px] lg:h-[62px] font-digital w-10 sm:w-12 xl:text-[49px] lg:rounded-[2.57px] lg:w-[51px] xl:h-[82px]">
+	<span className="time text-[30px] bg-gradient-to-b from-[#fc8d336c] to-[#0000001A] border border-zinc-200 rounded-[1.57px] p-1 inline-flex items-center text-center justify-center lg:text-[40px] lg:h-[62px] font-digital w-10 sm:w-12 xl:text-[49px] lg:rounded-[2.57px] lg:w-[51px] xl:h-[82px]">
 		{time}
 	</span>
 );
@@ -72,21 +72,21 @@ const NextEventCountdown = () => {
 								<TimeUnit time={"0"} />
 								<TimeUnit time={"0"} />
 							</span>
-							<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">DAYS</span>
+							<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">DAYS</span>
 						</span>
 						<span className="flex flex-col items-center">
 							<span className="text-[30.14px] flex gap-1">
 								<TimeUnit time={"0"} />
 								<TimeUnit time={"0"} />
 							</span>
-							<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">HOURS</span>
+							<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">HOURS</span>
 						</span>
 						<span className="flex flex-col items-center">
 							<span className="text-[30.14px] flex gap-1">
 								<TimeUnit time={"0"} />
 								<TimeUnit time={"0"} />
 							</span>
-							<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">MINUTES</span>
+							<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">MINUTES</span>
 						</span>
 					</h3>
 					<p className="leading-[100%] font-satoshi capitalize text-center text-xl md:text-[32px]">
@@ -107,21 +107,21 @@ const NextEventCountdown = () => {
 								<TimeUnit time={"0"} />
 								<TimeUnit time={"0"} />
 							</span>
-							<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">DAYS</span>
+							<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">DAYS</span>
 						</span>
 						<span className="flex flex-col items-center">
 							<span className="text-[30.14px] flex gap-1">
 								<TimeUnit time={"0"} />
 								<TimeUnit time={"0"} />
 							</span>
-							<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">HOURS</span>
+							<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">HOURS</span>
 						</span>
 						<span className="flex flex-col items-center">
 							<span className="text-[30.14px] flex gap-1">
 								<TimeUnit time={"0"} />
 								<TimeUnit time={"0"} />
 							</span>
-							<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">MINUTES</span>
+							<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">MINUTES</span>
 						</span>
 					</h3>
 					<p className="leading-[100%] font-satoshi capitalize text-center text-xl md:text-[32px]">
@@ -147,24 +147,24 @@ const NextEventCountdown = () => {
 							<TimeUnit time={countdown.days[0]} />
 							<TimeUnit time={countdown.days[1]} />
 						</span>
-						<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">DAYS</span>
+						<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">DAYS</span>
 					</span>
 					<span className="flex flex-col items-center">
 						<span className="text-[30.14px] flex gap-1">
 							<TimeUnit time={countdown.hours[0]} />
 							<TimeUnit time={countdown.hours[1]} />
 						</span>
-						<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">HOURS</span>
+						<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">HOURS</span>
 					</span>
 					<span className="flex flex-col items-center">
 						<span className="text-[30.14px] flex gap-1">
 							<TimeUnit time={countdown.minutes[0]} />
 							<TimeUnit time={countdown.minutes[1]} />
 						</span>
-						<span className="text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">MINUTES</span>
+						<span className="time-text text-base leading-[100%] md:text-[24.64px] font-inter lg:text-xl xl:text-[24.64px] lg:py-2">MINUTES</span>
 					</span>
 				</h3>
-				<p className="leading-[100%] font-satoshi capitalize text-center text-xl md:text-[32px]">
+				<p className="till leading-[100%] font-satoshi capitalize text-center text-xl md:text-[32px]">
 					Till {currentEvent?.title || "the next event"}
 				</p>
 			</div>

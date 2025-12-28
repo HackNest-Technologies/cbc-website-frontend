@@ -1,10 +1,10 @@
-@media (max-height: 700px) {
+@media (max-height: 800px) {
   .logo-height {
     top: 10px;
   }
 
   .footer-list{
-    padding-top: 12px
+    padding-top: 12px;
   }
 
   .stroke-white {

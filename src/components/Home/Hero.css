@@ -1,4 +1,5 @@
-@media (max-height: 700px) {
+@media (min-width: 1024px) and (max-height: 800px) {
+  /* Hero component */
   .hero {
     padding-bottom: 45px;
   }
@@ -14,21 +15,114 @@
   .paragragh-height {
     padding-top: 10px;
     font-size: 17px;
-    width: 420px
+    width: 420px;
   }
 
-  .btn-container{
-    gap:5px;
+  .btn-container {
+    gap: 5px;
     margin-top: 15px;
   }
 
-  .btn-height{
-    width:170px;
+  .btn-height {
+    width: 170px;
     height: 45px;
+  }
+
+  /* Address component  */
+
+  .address-text {
+    font-size: 30px;
+    width: 656px;
+  }
+
+  /* Event component */
+  .event-heading {
+    font-size: 24px;
+  }
+
+  .time {
+    font-size: 40px;
+  }
+
+  .time-text {
+    font-size: 20px;
+  }
+  .till {
+    font-size: 24px;
+  }
+
+  /* prayer request component */
+  .prayer-text {
+    font-size: 45px;
+  }
+
+  .scrollbar-height {
+    width: 734px;
+    height: 460px;
+  }
+
+  /* sneak component */
+  .sneak-absolute {
+    bottom: 20px;
+    padding-top: 70px;
+  }
+  .sneakpeek-text {
+    font-size: 120px;
+  }
+
+  /* Leadership component */
+  .pastor-bg {
+    height: 450px;
+  }
+
+  .pastor-image {
+    height: 450px;
+    width: 400px;
+  }
+
+  .leader-text {
+    font-size: 40px;
+  }
+
+  .pastor-name {
+    font-size: 25px;
+  }
+
+  .leader-paragraph {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .leader-btn {
+    height: 45px;
+    font-size: 14px;
+  }
+  /* testimony  */
+  .testimony-text {
+    font-size: 45px;
+  }
+  .testimony-border {
+    padding: 10px 40px;
+    border: 3px solid #fd9f2b;
+    border-style: dotted; /* Sets the style to dotted */
+  }
+  .testimony-desc {
+    font-size: 14px;
+    line-height: 16px;
+    line-height: 16px;
+  }
+  .testifer {
+    font-size: 20px;
+  }
+  .img-border{
+     border: 3px solid #fd9f2b;
+    border-style: dotted;
+  }
+  .testifier-img{
+    width: 50px;
   }
 }
 
-@media (min-height: 900px) {
+@media (min-width: 1024px) and (min-height: 900px) {
   .hero {
     padding-bottom: 100px;
   }

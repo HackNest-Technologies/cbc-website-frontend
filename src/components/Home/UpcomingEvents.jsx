@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import eventScene from "../../assets/images/event-scene.png";
 import EventLine from "../../assets/images/EventLine.png";
 import { useGetEventQuery } from "../../redux/apiSlice";
-
+import "./Hero.css"
 const UpcomingEvents = () => {
   
   const {data, isLoading} = useGetEventQuery()
@@ -75,13 +75,13 @@ const UpcomingEvents = () => {
     <section className="relative lg:pt-20">
       <section className="container mx-auto p-6 space-y-4 sm:mt-8 md:p-0 md:mb-[60px] md:py-6 ">
         <div className="flex justify-between lg:py-5">
-          <h2 className="font-satoshi text-[24px] leading-[100%] sm:text-[30px] md:text-[40px] lg:text-[30px] xl:text-[40px]">
+          <h2 className="event-heading font-satoshi text-[24px] leading-[100%] sm:text-[30px] md:text-[40px] lg:text-[30px] xl:text-[40px]">
             UPCOMING EVENTS
           </h2>
           <p className="max-sm:hidden">
             <Link
               to="/events"
-              className="text-sm font-inter leading-[150%] flex items-center gap-2 underline sm:text-[24px] lg:text-base xl:text-[40px]"
+              className=" event-heading text-sm font-inter leading-[150%] flex items-center gap-2 underline sm:text-[24px] lg:text-base xl:text-[40px]"
               >
               View All Events{" "}
               <BsArrowRight className="text-[24px] md:text-[30px] lg:text-xl xl:text-[30px]" />

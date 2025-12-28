@@ -14,11 +14,10 @@ const PrayerRequest = () => {
     setPopup(null);
   };
 
- 
-// import { useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
+  // import { useState, useEffect } from "react";
+  // import { useLocation } from "react-router-dom";
 
-    const { hash } = useLocation();
+  const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
@@ -34,9 +33,11 @@ const PrayerRequest = () => {
     }
   }, [hash]);
 
-
   return (
-    <section id="prayer" className="px-6 pt-10 container mx-auto md:px-0 md:pt-[150px] md:mb-[60px] lg:pt-[200px] lg:mb-0">
+    <section
+      id="prayer"
+      className="px-6 pt-10 container mx-auto md:px-0 md:pt-[150px] md:mb-[60px] lg:pt-[200px] lg:mb-0"
+    >
       <section className="relative">
         <div className="">
           <svg
@@ -80,7 +81,7 @@ const PrayerRequest = () => {
         </div>
         <section className="w-[80vw] absolute bottom-[20px] px-[16px] md:w-[60vw] md:left-[30px] md:bottom-[12%] lg:w-65vw]  lg:bottom-[4vw] xl:w-[48vw] xl:bottom-[5vw] 2xl:bottom-[5vw]">
           <div className="h-[23.93px] mb-[2px] min-[400px]:mb-[30px] w-[23.93px] border-[1.286px] sm:w-[65.33px] sm:h-[65.33px] rounded-full md:border-4 border-[#FD9F2B] border-dashed sm:mb-8 md:mb-[100px] lg:mb-[40px] xl:mb-[120px] 2xl:mb-[200px]"></div>
-          <h4 className="text-2xl sm:text-[40px] font-semibold font-satoshi lg:text-[62px]">
+          <h4 className="prayer-text text-2xl sm:text-[40px] font-semibold font-satoshi lg:text-[62px]">
             God Answers Prayers
           </h4>
           <p className="text-xs my-1 font-inter sm:text-base lg:my-5 2xl:w-[40vw]">
@@ -96,9 +97,7 @@ const PrayerRequest = () => {
           </div>
         </section>
       </section>
-      {popup !== null && (
-        <PrayerPopup  onclose={closePopup}/>
-      )}
+      {popup !== null && <PrayerPopup onclose={closePopup} />}
     </section>
   );
 };

@@ -1,5 +1,7 @@
 import sneekPeak from "../../data/sneekPeak";
-// import { motion } from "motion/react";
+import { motion } from "motion/react";
+import "./Hero.css"
+
 
 // const SneakPeek = () => (
 //   <section className="w-full pb-[250px] pt-[100px] md:pb-[600px] lg:pt-[180px] xl:pt-[200px] 2xl:pt-[150px]">
@@ -24,12 +26,6 @@ import sneekPeak from "../../data/sneekPeak";
 // export default SneakPeek;
 
 
-import sneakPeek from "../../assets/images/sneakpeak.png";
-import SliderImg from "../../assets/images/sliderImage.jpg";
-import sneakup from "../../assets/images/sneakup.png";
-import sneakdown from "../../assets/images/sneakdown.png";
-
-import { motion } from "motion/react";
 
 const SneakPeek = () => (
   <section className="w-full pb-[250px] pt-[100px] md:pb-[600px] lg:pt-[180px] xl:pt-[200px] 2xl:pt-[150px]">
@@ -65,9 +61,9 @@ const SneakPeek = () => (
         {/* <img src={sneakup} alt="" className="hidden min-w-[105vw] h-auto object-cover  md:block" /> */}
       </div>
 
-      <div className="absolute  inset-0  bottom-[40px] flex justify-center items-center overflow-hidden pt-[18px] md:pt-[40px] md:bottom-[65px] lg:pt-[60px]">
-        <h2 className="text-[39.58px] leading-[100%] uppercase font-satoshi text-center font-bold  md:text-[105.88px] lg:text-[150px]">
-          Sneak peak
+      <div className=" sneak-absolute absolute  inset-0  bottom-[40px] flex justify-center items-center overflow-hidden pt-[18px] md:pt-[40px] md:bottom-[65px] lg:pt-[60px]">
+        <h2 className="sneakpeek-text text-[39.58px] leading-[100%] uppercase font-satoshi text-center font-bold  md:text-[105.88px] lg:text-[150px]">
+          Sneak peek
         </h2>
       </div>
       <motion.section
@@ -75,11 +71,11 @@ const SneakPeek = () => (
         animate={{ x: [0, "-100%"] }}
         transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
       >
-            {sneekPeak.map((item,index) => (
+        {sneekPeak.map((item, index) => (
           <img
-          key={index}
+            key={index}
             src={item}
-            className="w-[107px] h-[202px] min-[400px]:h-[207px] object-cover rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
+            className="sneak-image w-[107px] h-[202px] min-[400px]:h-[207px] object-cover rounded-[3.95px] md:w-[287px] md:h-[550px] md:rounded-[10.57px]"
           />
         ))}
       </motion.section>
@@ -118,4 +114,3 @@ const SneakPeek = () => (
 );
 
 export default SneakPeek;
-

@@ -1,10 +1,11 @@
 import overviewFrame from "../../assets/images/overviewFrame.png";
 import overviewFrameOne from "../../assets/images/overviewFrame-1.png";
+import "./About.css";
 
 const OverViewContinuation = () => {
   return (
-    <section className="relative py-[150px] pb-[40px]">
-      <div className="w-full h-full  absolute pr-6 bottom-[110px] z-[-1000] md:bottom-[300px] lg:bottom-[450px] xl:bottom-[500px] 2xl:bottom-[550px]">
+    <section className="relative py-[150px] pb-[40px] ">
+      <div className="w-full h-full  absolute pr-6 bottom-[70px] z-[-1000] md:bottom-[300px] lg:bottom-[200px] xl:bottom-[500px] 2xl:bottom-[300px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 371 253"
@@ -35,8 +36,8 @@ const OverViewContinuation = () => {
       </div>
       <div>
         <div className="flex justify-between relative transform  bottom-1/2 -translate-y-[30%] md:-translate-y-[10%] lg:-translate-y-0 2xl:-translate-y-[-20%]  container mx-auto">
-          <div className="w-[220px] md:w-[432px] lg:w-[635px]">
-            <h2 className="px-[25px] text-base font-semibold  leading-[100%] font-satoshi md:text-[36px] lg:text-[52px] lg:px-0">
+          <div className=" w-[220px] pt-[30px] md:w-[432px] lg:w-[635px]  lg:mt-[10px] lg:pt-[50px] 2xl:pt-[70px] 2xl:mt-[70px]">
+            <h2 className=" px-[25px] text-base font-semibold  leading-[100%] font-satoshi md:text-[36px] lg:text-[30px] lg:px-0">
               Bear one another’s burdens, and so fulfill the law of Christ.
             </h2>
 
@@ -57,7 +58,7 @@ const OverViewContinuation = () => {
             <img
               src={overviewFrame}
               alt=""
-              className="w-[95px] h-auto rounded-[4px] object-cover absolute top-[100px] left-[-20px] md:w-[254.11px] md:top-[210px] md:left-[-40px] lg:w-[358px] lg:top-[320px] lg:left-[-140px] 2xl:w-[450px]"
+              className="w-[95px] h-auto rounded-[4px] object-cover absolute top-[100px] left-[-20px] md:w-[254.11px] md:top-[210px] md:left-[-40px] lg:w-[358px] lg:top-[160px] lg:left-[-120px] 2xl:lg:top-[320px] 2xl:lg:left-[-140px] 2xl:w-[450px]"
             />
           </div>
         </div>

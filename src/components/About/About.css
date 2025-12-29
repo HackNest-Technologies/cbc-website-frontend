@@ -1,0 +1,10 @@
+@media (max-height: 700px) {
+  .about-text {
+    font-size: 50px;
+  }
+}
+
+@media (min-height: 900px) {
+  .text-paragraph {
+  }
+}

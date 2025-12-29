@@ -1,7 +1,7 @@
 import aboutImg from "../../assets/images/about.webp";
 import CircularText from "../../utils/CircularText";
 import OverView from "./OverView";
-
+import "./About.css";
 
 const AboutChurch = () => {
   return (
@@ -16,20 +16,20 @@ const AboutChurch = () => {
             alt="About Calvary Bible Church"
           />
           <div className="absolute bottom-[30px] px-[20px] text-[#ffffff]">
-            <h2 className="text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[75px] lg:leading-[100%]">
+            <h2 className=" about-text text-base leading-[120%] uppercase font-satoshi md:text-[48px] lg:text-[10px] xl:text-[75px] lg:leading-[100%]">
               ABOUT
             </h2>
-            <h2 className="text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[75px] lg:leading-[100%]">
+            <h2 className="about-text text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[75px] lg:leading-[100%]">
               calvary bible church
             </h2>
           </div>
-         
+
           <div
             className="absolute bottom-[-30px] right-[40px]  
              md:bottom-[-60px] md:right-[30px] 
              lg:bottom-[-100px] lg:right-[60px]"
           >
-           <CircularText/>
+            <CircularText />
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ const AboutChurch = () => {
         </div>
 
         <div className="lg:w-3/5">
-          <p className="text-sm font-inter pt-5 leading-[145%] md:text-base">
+          <p className="text-paragraph text-sm font-inter pt-5 leading-[145%] md:text-base">
             Calvary Bible church is a vibrant Bible-Centered church devoted to
             proclaiming Christ’s finished work at Calvary and nurturing
             transformative faith in everyday life. We are deeply rooted in the

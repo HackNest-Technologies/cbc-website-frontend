@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { getDatabase, onValue, ref, set, off } from "firebase/database";
 import liveChat from "../../assets/images/liveChat.svg";
+import smiley from "../../assets/images/ph_smiley.png";
+import sendIcon from "../../assets/images/proicons_send.png";
 
 const LiveChat = () => {
   const { user } = useSelector((state) => state.auth);
@@ -71,7 +73,6 @@ const LiveChat = () => {
 
   return (
     <section className="flex flex-col rounded-[16px] border-[2px] border-dashed border-[#FC8E33] w-full h-auto md:h-[300px] lg:h-[430px] lg:border-[5px]">
-      
       {/* ================= Header ================= */}
       <div className="flex p-[16px] justify-between items-center border-dashed border-b-[2px] w-full lg:border-b-[5px] border-[#FC8E33]">
         <div className="flex items-center gap-[8px]">
@@ -98,21 +99,19 @@ const LiveChat = () => {
         ) : (
           chatMessages.map((chat) => {
             const isCurrentUser = chat.user_id === user.id;
-            
+
             return (
               <div
                 key={chat.id}
-                className={`flex items-start gap-[8px] self-stretch ${
-                  isCurrentUser ? 'justify-end' : 'justify-start'
+                className={` flex  items-start gap-[8px] self-stretch ${
+                  isCurrentUser ? "justify-end" : "justify-start"
                 }`}
               >
                 {/* User Info - Only show for other users' messages on left side */}
                 {!isCurrentUser && (
                   <div className="flex gap-[10px] items-center min-w-fit">
                     <div className="flex justify-center items-center w-[34px] h-[34px] rounded-full bg-[#BCBCBC]">
-                      <p className="text-xs">
-                        {getInitials(chat.username)}
-                      </p>
+                      <p className="text-xs">{getInitials(chat.username)}</p>
                     </div>
 
                     <p className="text-black font-satoshi text-[16px] font-bold leading-[1.4] capitalize">
@@ -122,14 +121,11 @@ const LiveChat = () => {
                 )}
 
                 {/* Message Bubble */}
-                <div className="pt-[16px]">
+                <div className=" flex  pt-[8px]">
                   <p
                     className={`
-                      font-satoshi text-[16px] font-normal leading-[1.4] capitalize
-                      ${isCurrentUser 
-                        ? 'text-black' 
-                        : 'text-black'
-                      }
+                      font-satoshi text-[16px] font-normal leading-[1.4] capitalize 
+                      ${isCurrentUser ? "text-black" : "text-black"}
                     `}
                   >
                     {chat.message}
@@ -138,11 +134,9 @@ const LiveChat = () => {
 
                 {/* User Info - Only show for current user's messages on right side */}
                 {isCurrentUser && (
-                  <div className="flex gap-[10px] items-center min-w-fit">
+                  <div className="flex gap-[10px] items-center min-w-fit ">
                     <div className="flex justify-center items-center w-[34px] h-[34px] rounded-full bg-[#BCBCBC]">
-                      <p className="text-xs">
-                        {getInitials(chat.username)}
-                      </p>
+                      <p className="text-xs">{getInitials(chat.username)}</p>
                     </div>
                   </div>
                 )}
@@ -154,25 +148,37 @@ const LiveChat = () => {
       </div>
 
       {/* ================= Input ================= */}
-      <div className="flex px-[12px] py-[16px] border-t-2 border-dashed border-[#FC8E33]">
+      <div className="flex px-[px] py-[16px] border-t-2 border-dashed border-[#FC8E33]  ">
         <form
           onSubmit={sendChatMessage}
-          className="flex items-center gap-[12px] w-full"
+          className="flex  items-center gap-[12px] w-full  px-[8px] py-[2px] rounded-[30px] bg-[#E8E8E8] mx-[8px]"
         >
-          <button
-            type="submit"
-            className="text-[#333] font-satoshi text-[16px] underline hover:text-[#FC8E33]"
-          >
-            SEND
-          </button>
-
           <input
             type="text"
             placeholder="Type your message..."
-            className="flex-1 border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-[#FC8E33]"
+            className="flex-1 border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-[#FC8E33] border-none"
             value={chatMessage}
             onChange={(e) => setChatMessage(e.target.value)}
           />
+          <div className="flex gap-[8px] items-center">
+            <button type="button" className="">
+              <img
+                src={smiley}
+                alt="smiley"
+                className="w-[23px] h-[23px] button"
+              />
+            </button>
+            <button
+              type="submit"
+              className="text-[#333] font-satoshi text-[16px] underline hover:text-[#FC8E33]"
+            >
+              <img
+                src={sendIcon}
+                alt="sendIcon"
+                className="w-[24px] h-[24px] button cursor-pointer"
+              />
+            </button>
+          </div>
         </form>
       </div>
     </section>

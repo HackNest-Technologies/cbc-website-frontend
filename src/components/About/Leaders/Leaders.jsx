@@ -5,13 +5,11 @@ import Pastors from "./Pastors";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-
 const Leaders = () => {
   const isOverseer = leadersData.filter((pastor) => pastor.isToggle === true);
   const pastors = leadersData.filter((pastor) => pastor.isToggle === false);
 
-
-    const { hash } = useLocation();
+  const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {

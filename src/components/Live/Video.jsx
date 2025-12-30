@@ -13,7 +13,7 @@ const Video = () => {
   const { user } = useSelector((state) => state.auth);
 
   const handleLiveChatClick = () => {
-      return navigate("/login");
+    return navigate("/login");
   };
 
   return (
@@ -41,12 +41,11 @@ const Video = () => {
           </div>
           {/* Video List */}
           <div className="lg:col-span-3">
-          
             {!user ? (
-            <GuestLiveActions onLiveChatClick={handleLiveChatClick} />
-          ) : (
-            <LiveChat />
-          )}
+              <GuestLiveActions onLiveChatClick={handleLiveChatClick} />
+            ) : (
+              <LiveChat />
+            )}
           </div>
         </div>
       </div>

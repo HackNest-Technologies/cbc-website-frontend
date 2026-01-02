@@ -1,5 +1,4 @@
-@media (min-width: 1024px) and (max-height: 800px) {
-  /* Hero component */
+/* @media (min-width: 1024px) and (max-height: 800px) {
   .hero {
     padding-bottom: 45px;
   }
@@ -28,14 +27,12 @@
     height: 45px;
   }
 
-  /* Address component  */
 
   .address-text {
     font-size: 30px;
     width: 656px;
   }
 
-  /* Event component */
   .event-heading {
     font-size: 24px;
   }
@@ -51,7 +48,6 @@
     font-size: 24px;
   }
 
-  /* prayer request component */
   .prayer-text {
     font-size: 45px;
   }
@@ -61,7 +57,6 @@
     height: 460px;
   }
 
-  /* sneak component */
   .sneak-absolute {
     bottom: 20px;
     padding-top: 70px;
@@ -70,7 +65,6 @@
     font-size: 120px;
   }
 
-  /* Leadership component */
   .pastor-bg {
     height: 450px;
   }
@@ -96,16 +90,15 @@
     height: 45px;
     font-size: 14px;
   }
-  /* testimony  */
   .testimony-text {
     font-size: 45px;
   }
   .testimony-border {
     padding: 10px 40px;
     border: 3px solid #fd9f2b;
-    border-style: dotted; /* Sets the style to dotted */
+    border-style: dotted; 
   }
-  .testimony-desc {
+   .testimony-desc {
     font-size: 14px;
     line-height: 16px;
     line-height: 16px;
@@ -119,11 +112,11 @@
   }
   .testifier-img{
     width: 50px;
-  }
+  } 
 }
 
 @media (min-width: 1024px) and (min-height: 900px) {
   .hero {
     padding-bottom: 100px;
   }
-}
+} */

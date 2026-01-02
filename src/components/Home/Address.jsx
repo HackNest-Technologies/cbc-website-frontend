@@ -17,14 +17,15 @@ const Address = () => {
           className="absolute w-[117.97px] -right-[57.5px] -top-[57.5px] sm:w-[250px] sm:-right-[125px] sm:-top-[125px] md:w-[270px] object-cover md:-right-[150.5px] lg:w-[314px] lg:top-[-200px] lg:right-[-100.5px] xl:w-[400px] 2xl:w-[450px] xl:top-[-250px] xl:right-[-200.5px]"
         />
 
-        <address className="address-text text-sm font-satoshi leading-[145%] not-italic sm:text-[32px] lg:text-[30px] xl:text-[48px] lg:w-[656px] xl:w-[1000px] ">
+        <address className="font-satoshi leading-[1.45] not-italic sm:text-[30px] text-[clamp(14px,4vw,50px)] max-w-[clamp(300px,45vw,800px)]">
           {address}
         </address>
+
         <a
           href={googleMapsLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[10px] leading-[150%] underline text-[#333333] font-inter sm:text-2xl lg:text-xs lg:w-[400px] xl:text-[20px] **inline-flex w-full py-2 px-4**"
+          className="flex items-center gap-2 underline text-[#333333] font-inter py-2 px-4 md:px-0 text-[clamp(10px,1.5vw,20px)] max-w-[clamp(200px,100%,255px)]"
         >
           Find us on Google Maps <BsArrowRight />
         </a>

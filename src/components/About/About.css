@@ -1,0 +1,70 @@
+@media (min-width: 1024px) and (max-height: 800px) {
+  .generalBg-heading {
+    height: 320px;
+  }
+  .overview-padding {
+    padding-top: 320px;
+  }
+
+  .about-text {
+    font-size: 40px;
+  }
+
+  .overview {
+    font-size: 35px;
+  }
+
+  .about-paragraph {
+    font-size: 12px;
+  }
+
+  /* vidoe section */
+  .video-text {
+    font-size: 28px;
+    width: 600px;
+  }
+  .videotext-div {
+    bottom: 20vw;
+  }
+
+  .bear-svg{
+    bottom: 360px
+  }
+
+  .bear-text{
+    font-size:35px
+  }
+  .bear-paragraph{
+    font-size:12px
+  }
+  .bearBottom-img{
+    top:200px
+  }
+  /* branch section */
+
+  .branchBg{
+    height:370px;
+  }
+
+
+  .branch-paragraph {
+    font-size:16px;
+    padding-top: 20px;
+  }
+
+  .branch-arrow{
+    padding: 8px;
+
+  }
+
+.branch-icon{
+    font-size: 20px;
+} 
+.branchImage-div{
+    top: 700px
+}
+
+}
+
+@media (min-width: 1024px) and (min-height: 900px) {
+}

@@ -6,7 +6,7 @@ const WorshipWithUsTab = () => {
   return (
     <section className="relative  pt-[100px] mt-[70px] mb-[700px] space-y-8 hidden md:block lg:mt-[230px] 2xl:mt-[350px] 2xl:mb-[1100px]">
       <div className="container mx-auto">
-        <h3 className="font-satoshi text-[28.36px] leading-[100%] relative before:absolute before:w-[174.4px] before:h-[77.27px] before:rounded-[283.57px] before:bg-[#FFB91E47] before:top-1/2 before:-translate-y-1/2 before:-right-3 w-fit before:z-0 lg:text-[30px]  lg:before:w-[100.4px] lg:before:h-[55.27px] xl:before:w-[146px] xl:before:h-[109px] lg:rounded-[400px] xl:text-[40px] ">
+        <h3 className="font-satoshi text-[28.36px] leading-[100%] relative before:absolute before:w-[174.4px] before:h-[77.27px] before:rounded-[283.57px] before:bg-[#FFB91E47] before:top-1/2 before:-translate-y-1/2 before:-right-3 w-fit before:z-0 lg:text-[30px]  lg:before:w-[100.4px] lg:before:h-[55.27px] xl:before:w-[146px] xl:before:h-[109px] lg:rounded-[400px] xl:text-[40px]">
           WORSHIP WITH US
         </h3>
       </div>

@@ -37,12 +37,12 @@ const WorshipWithUs = () => {
   );
 
   return (
-    <section className="container mx-auto p-6 sm:px-0 relative mt-24 space-y-8 md:hidden">
+    <section className="container mx-auto p-6 sm:px-0 relative mt-24 space-y-8 md:hidden min-[410px]:pt-[120px]">
       <h3 className="font-satoshi text-base leading-[100%] relative before:absolute before:w-[63.08px] before:h-[27.94px] before:rounded-[102.55px] before:bg-[#FFB91E47] before:top-1/2 before:-translate-y-1/2 before:-right-3 w-fit before:z-0">
         WORSHIP WITH US
       </h3>
 
-      <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-4">
+      <div className="space-y-4">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}

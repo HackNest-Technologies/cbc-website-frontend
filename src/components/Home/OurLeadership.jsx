@@ -4,7 +4,7 @@ import "./Hero.css";
 
 const OurLeadership = () => (
   <section className="container mx-auto p-6 space-y-[32.14px] md:p-0 md:pt-[80px]">
-    <h3 className="leader-text font-satoshi text-[26.71px] leading-[100%] uppercase sm:text-[40px] lg:text-[62px]">
+    <h3 className="font-satoshi uppercase leading-tight text-[clamp(26px,3.5vw,62px)]">
       Our Leadership
     </h3>
 
@@ -18,10 +18,27 @@ const OurLeadership = () => (
       </div>
 
       <div className="space-y-4 sm:space-y-8 lg:space-y-0 flex-1 md:flex flex-col justify-between lg:justify-normal">
-        <h4 className="pastor-name text-sm leading-[100%] font-satoshi capitalize md:text-base lg:text-[32px]">
+        <h4
+          className="
+    font-satoshi
+    capitalize
+    leading-tight
+    text-[clamp(14px,2.2vw,32px)]
+  "
+        >
           pastor olumide emmanuel
         </h4>
-        <p className="leader-paragraph text-sm font-inter leading-[120%] md:text-base lg:w-[472px] lg:py-[40px] ">
+
+        {/* <p className="leader-paragraph text-sm font-inter leading-[120%] md:text-base lg:w-[472px] lg:py-[40px] "> */}
+        <p
+        className="
+        font-inter
+        leading-relaxed
+       text-[clamp(14px,0.8vw,16px)]
+        lg:max-w-[clamp(280px,40vw,472px)]
+       py-[clamp(12px,4vh,40px)]
+  "
+>
           Pastor Olumide Emmanuel has been the heart and soul of Calvary Bible
           Church for over 35 years. As the founding Overseer, he has transformed
           a small gathering into a vibrant, Bible-centered community where
@@ -36,20 +53,30 @@ const OurLeadership = () => (
           their God-given purpose and make a meaningful impact in their
           communities.
         </p>
-        <div>
-          <Link
-            to="/leadership"
-            className="leader-btn w-[198px] h-[40px] py-[1.38px] flex items-center px-[16px] font-medium font-inter  text-base rounded-[22.96px] bg-gradient-to-b from-[#FFFFFF] to-[#EEF4FF]  md:rounded-[34.38px] md:py-[2px] lg:h-[58px] lg:p-[16px]"
-            style={{
-              border: "1px solid #EEF4FF",
-              borderImage:
-                "linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 100%), linear-gradient(0deg, #989898, #989898)",
-              borderImageSlice: 1,
-            }}
-          >
-            View Our Leadership
-          </Link>
-        </div>
+       <div>
+  <Link
+    to="/leadership"
+    className="
+      inline-flex items-center justify-center
+      font-inter font-medium
+      text-[clamp(14px,1.2vw,18px)]
+      h-[clamp(40px,6vh,58px)]
+      px-[clamp(16px,2vw,32px)]
+      rounded-[clamp(22px,3vw,34px)]
+      bg-gradient-to-b from-[#FFFFFF] to-[#EEF4FF]
+      transition-transform active:scale-95
+    "
+    style={{
+      border: "1px solid #EEF4FF",
+      borderImage:
+        "linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 100%), linear-gradient(0deg, #989898, #989898)",
+      borderImageSlice: 1,
+    }}
+  >
+    View Our Leadership
+  </Link>
+</div>
+
       </div>
     </div>
   </section>

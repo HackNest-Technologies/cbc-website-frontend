@@ -4,46 +4,72 @@ import { Link } from "react-router-dom";
 import eventScene from "../../assets/images/event-scene.png";
 import EventLine from "../../assets/images/EventLine.png";
 import { useGetEventQuery } from "../../redux/apiSlice";
-import "./Hero.css"
+import "./Hero.css";
 const UpcomingEvents = () => {
-  
-  const {data, isLoading} = useGetEventQuery()
+  const { data, isLoading } = useGetEventQuery();
 
   // Simple date formatting function - FIXED VERSION
   const formatDateRange = (startDate, endDate) => {
     if (!startDate || !endDate) return "";
-    
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                   'July', 'August', 'September', 'October', 'November', 'December'];
-    
+
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
     const start = new Date(startDate);
     const end = new Date(endDate);
-    
+
     const startDay = start.getDate();
     const endDay = end.getDate();
     const startMonth = months[start.getMonth()];
     const endMonth = months[end.getMonth()];
-    
+
     // Simple ordinal suffix
     const getSuffix = (day) => {
-      if (day > 3 && day < 21) return 'th';
+      if (day > 3 && day < 21) return "th";
       switch (day % 10) {
-        case 1: return 'st';
-        case 2: return 'nd';
-        case 3: return 'rd';
-        default: return 'th';
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
       }
     };
-    
+
     // Check if same month
     if (startMonth === endMonth) {
-      return `${startDay}${getSuffix(startDay)} - ${endDay}${getSuffix(endDay)} ${endMonth}`;
+      return `${startDay}${getSuffix(startDay)} - ${endDay}${getSuffix(
+        endDay
+      )} ${endMonth}`;
     } else {
-      return `${startDay}${getSuffix(startDay)} ${startMonth} - ${endDay}${getSuffix(endDay)} ${endMonth}`;
+      return `${startDay}${getSuffix(
+        startDay
+      )} ${startMonth} - ${endDay}${getSuffix(endDay)} ${endMonth}`;
     }
   };
 
-  const EventCard = ({ cover_image, title, start_date, end_date, time, description }) => (
+  const EventCard = ({
+    cover_image,
+    title,
+    start_date,
+    end_date,
+    time,
+    description,
+  }) => (
     <div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px]  sm:min-w-[540px] lg:min-w-[1105px] sm:rounded-[8px]  md:p-[24px] md:mr-[16px] lg:items-center lg:grid gap-5 lg:grid-cols-2 xl:min-w-[1227px]">
       <img
         src={eventScene}
@@ -75,16 +101,17 @@ const UpcomingEvents = () => {
     <section className="relative lg:pt-20">
       <section className="container mx-auto p-6 space-y-4 sm:mt-8 md:p-0 md:mb-[60px] md:py-6 ">
         <div className="flex justify-between lg:py-5">
-          <h2 className="event-heading font-satoshi text-[24px] leading-[100%] sm:text-[30px] md:text-[40px] lg:text-[30px] xl:text-[40px]">
+          <h2 className="event-heading font-satoshi leading-[1] text-[clamp(24px,2.4vw,40px)]">
             UPCOMING EVENTS
           </h2>
+
           <p className="max-sm:hidden">
             <Link
               to="/events"
-              className=" event-heading text-sm font-inter leading-[150%] flex items-center gap-2 underline sm:text-[24px] lg:text-base xl:text-[40px]"
-              >
-              View All Events{" "}
-              <BsArrowRight className="text-[24px] md:text-[30px] lg:text-xl xl:text-[30px]" />
+              className="event-heading font-inter leading-[1.5] flex items-center gap-2 underline text-[clamp(14px,2vw,40px)]"
+            >
+              View All Events
+              <BsArrowRight className="text-[clamp(20px,2.5vw,30px)]" />
             </Link>
           </p>
         </div>

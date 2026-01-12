@@ -39,7 +39,6 @@ const LearnMore = () => (
     <DblQuote
       className="
         w-[clamp(30px,4vw,60px)]
-        h-[clamp(60px,10vh,105px)]
         flex-shrink-0
         2xl:max-w-[1400px]
       "

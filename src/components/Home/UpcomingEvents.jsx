@@ -5,8 +5,37 @@ import eventScene from "../../assets/images/event-scene.png";
 import EventLine from "../../assets/images/EventLine.png";
 import { useGetEventQuery } from "../../redux/apiSlice";
 import "./Hero.css";
+import { useEffect, useState } from "react";
+
 const UpcomingEvents = () => {
   const { data, isLoading } = useGetEventQuery();
+  const [currentEvents, setCurrentEvents] = useState([]);
+
+  useEffect(() => {
+    if (data && data.length > 0) {
+      // Sort events by date (ascending - soonest first)
+      const sortedEvents = [...data].sort((a, b) => {
+        // Use start_date for comparison
+        const dateA = new Date(a.start_date);
+        const dateB = new Date(b.start_date);
+        return dateA - dateB; // Ascending order
+      });
+
+      // Get only upcoming events (events that haven't ended yet)
+      const now = new Date();
+      const upcomingEvents = sortedEvents.filter(event => {
+        const endDate = new Date(event.end_date);
+        return endDate >= now; // Only include events that haven't ended
+      });
+      console.log("All events:", data.length);
+console.log("Upcoming events:", upcomingEvents.length);
+
+      // Get the first 2 upcoming events
+      setCurrentEvents(upcomingEvents.slice(0, 2));
+    } else {
+      setCurrentEvents([]);
+    }
+  }, [data]);
 
   // Simple date formatting function - FIXED VERSION
   const formatDateRange = (startDate, endDate) => {
@@ -70,16 +99,19 @@ const UpcomingEvents = () => {
     time,
     description,
   }) => (
-    <div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px]  sm:min-w-[540px] lg:min-w-[1105px] sm:rounded-[8px]  md:p-[24px] md:mr-[16px] lg:items-center lg:grid gap-5 lg:grid-cols-2 xl:min-w-[1227px]">
+    <div className="bg-[#E5E5E5] p-[11.82px] space-y-[15.76px] rounded-[3.94px] sm:min-w-[540px] lg:min-w-[1105px] sm:rounded-[8px] md:p-[24px] md:mr-[16px] lg:items-center lg:grid gap-5 lg:grid-cols-2 xl:min-w-[1227px]">
       <img
-        src={eventScene}
-        // src={cover_image}
-        alt=""
-        className="object-contain rounded-[7.39px] w-full lg:h-[270px]"
+        src={cover_image || eventScene} // Use API image if available
+        alt={title}
+        className="object-cover rounded-[7.39px] w-full lg:h-[270px]"
+        onError={(e) => {
+          // Fallback to default image if API image fails to load
+          e.target.src = eventScene;
+        }}
       />
 
       <div className="space-y-2 md:w-[503px] ">
-        <h4 className="border-b-[0.49px] border-b-[#565656] pb-[3.94px]  text-base leading-[100%]  font-satoshi capitalize  sm:text-[32px] md:pt-2 lg:text-[26px] lg:pb-[10px] xl:text-[32px] ">
+        <h4 className="border-b-[0.49px] border-b-[#565656] pb-[3.94px] text-base leading-[100%] font-satoshi capitalize sm:text-[32px] md:pt-2 lg:text-[26px] lg:pb-[10px] xl:text-[32px] ">
           {title}
         </h4>
         <div className="space-y-[7.88px] italic text-[#777777] md:pt-2 lg:pb-[5px]">
@@ -96,6 +128,24 @@ const UpcomingEvents = () => {
       </div>
     </div>
   );
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <section className="relative lg:pt-20">
+        <section className="container mx-auto p-6 space-y-4 sm:mt-8 md:p-0 md:mb-[60px] md:py-6 ">
+          <div className="flex justify-between lg:py-5">
+            <h2 className="event-heading font-satoshi leading-[1] text-[clamp(24px,2.4vw,40px)]">
+              UPCOMING EVENTS
+            </h2>
+          </div>
+          <div className="text-center py-8">
+            <p>Loading events...</p>
+          </div>
+        </section>
+      </section>
+    );
+  }
 
   return (
     <section className="relative lg:pt-20">
@@ -116,19 +166,25 @@ const UpcomingEvents = () => {
           </p>
         </div>
 
-        <div className="hide-scrollbar space-y-4  sm:flex sm:flex-nowrap sm:overflow-auto sm:max-w-full sm:gap-2">
-          {data?.map((ev, i) => (
-            <EventCard key={i} {...ev} />
-          ))}
-          <p className="sm:hidden">
-            <Link className="text-[14px] leading-[150%] font-inter flex items-center gap-2 underline">
-              View All Events <BsArrowRight size={24} />
-            </Link>
-          </p>
-        </div>
+        {currentEvents.length === 0 ? (
+          <div className="text-center py-8">
+            <p>No upcoming events at the moment. Check back soon!</p>
+          </div>
+        ) : (
+          <div className="hide-scrollbar space-y-4 sm:flex sm:flex-nowrap sm:overflow-auto sm:max-w-full sm:gap-2">
+            {currentEvents.map((ev, i) => (
+              <EventCard key={i} {...ev} />
+            ))}
+            <p className="sm:hidden">
+              <Link to="/events" className="text-[14px] leading-[150%] font-inter flex items-center gap-2 underline">
+                View All Events <BsArrowRight size={24} />
+              </Link>
+            </p>
+          </div>
+        )}
       </section>
 
-      <div className=" hidden absolute bottom-[-50px] right-[50px] -z-50 md:block lg:bottom-[-100px] lg:right-[75px]">
+      <div className="hidden absolute bottom-[-50px] right-[50px] -z-50 md:block lg:bottom-[-100px] lg:right-[75px]">
         <img src={EventLine} alt="" className="w-full" />
       </div>
       <div className="hidden absolute right-0 bottom-[-120px] -z-50 md:block lg:hidden lg:bottom-[-160px] ">

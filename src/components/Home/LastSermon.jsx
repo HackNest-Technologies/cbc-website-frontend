@@ -190,7 +190,7 @@ const LastSermon = () => {
 
   return (
     <section className="relative sm:mt-8">
-      <div className="absolute h-[837.42px] min-[400px]:h-[950px] min-[520px]:h-[1050px] sm:h-[1200px] md:h-[1500px] lg:h-[1100px] xl:h-[1200px] 2xl:h-[1400px] w-full -top-30 md:-top-60 -z-50">
+      <div className="absolute h-[837.42px] min-[400px]:h-[950px] min-[520px]:h-[1050px] sm:h-[1200px] md:h-[1350px] lg:h-[900px] xl:h-[1200px] 2xl:h-[1400px] w-full -top-30 md:-top-60 -z-50">
         <img src={rectangularBg} alt="" className="min-w-full h-full  block" />
         <div className="relative">
           <img
@@ -208,7 +208,9 @@ const LastSermon = () => {
           </h3>
 
           {/* Sermon content - using API data */}
-          <div className="bg-white px-2 pt-[8px] pb-[16px] space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 md:py-[24px] md:px-[32px] md:rounded-[8px] lg:grid grid-cols-2 gap-4 items-center">
+          {/* <div className="bg-white px-2 pt-[8px] pb-[16px] space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 md:py-[24px] md:px-[32px] md:rounded-[8px] lg:grid grid-cols-2 gap-4 items-center"> */}
+                     <div className="bg-white px-2  pt-[8px] pb-[16px]  space-y-[14.76px] rounded-[3.69px] md:max-w-[805.5px] lg:max-w-full mx-auto md:space-y-8 md:py-[24px] md:px-[32px] md:rounded-[8px] lg:grid grid-cols-2 gap-4 items-center">
+
             {/* Video/Image section - keeping original img but adding video option */}
             <div className="relative pt-[56.25%] bg-gray-900 rounded-[11.1px] sm:rounded-[24px] lg:rounded-[20px] overflow-hidden">
               {latestSermon?.video_url ? (

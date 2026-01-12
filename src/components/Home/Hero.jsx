@@ -39,26 +39,27 @@ const Hero = () => {
       space-y-[clamp(16px,3vh,32px)]
     "
       >
-        <div className=" w-[300px] md:w-[673px] max-w-[812px]">
+        <div className="max-w-[clamp(280px,60vw,812px)]">
           <h1
             className="
           font-satoshi font-semibold
           leading-[1]
           text-[clamp(30px,4vw,75px)]
+          md:text-[clamp(30px,6vw,75px)]
+         lg:text-[clamp(30px,4.5vw,75px)]
         "
           >
             Raising a People of Power, Purpose & Dominion
           </h1>
 
           <p
-            className="
+          className="
           font-inter
           mt-[clamp(8px,2vh,16px)]
-          md:max-w-[578px]
           text-[clamp(16px,1.5vw,24px)]
+          md:max-w-[568px]
           leading-[100%]
-        "
-          >
+        ">
             Worship and serve God with us for six months, and experience a major
             testimony in your life!
           </p>
@@ -77,9 +78,9 @@ const Hero = () => {
             }
           />
 
-       <Link
-  to="welcome"
-  className="
+          <Link
+            to="welcome"
+            className="
     inline-flex items-center justify-center
     rounded-full
     bg-gradient-to-b from-white to-[#EEF4FF]
@@ -91,10 +92,9 @@ const Hero = () => {
 
     text-[clamp(14px,1.2vw,18px)]
   "
->
-  I'm New
-</Link>
-
+          >
+            I'm New
+          </Link>
         </div>
       </div>
 

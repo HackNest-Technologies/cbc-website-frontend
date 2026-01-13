@@ -20,10 +20,10 @@ const PillarCard = () => {
           />
 
           <div className="rounded-[16px] absolute bottom-0 right-0 px-2  pr-6 w-[64%] md:top-[300px] lg:pr-[6.8%] lg:w-1/2 lg:top-[51%] 2xl:top-[60%]">
-            <h3 className=" text-base font-bold font-satoshi leading-[110%] md:text-[40px] md:leading-[110%] md:font-semibold lg:text-[52px]">
+            <h3 className="text-base font-bold font-satoshi leading-[110%] md:text-[40px] md:leading-[110%] md:font-semibold lg:text-[clamp(28px,3vw,52px)]">
               Those who worship Him, must worship in spirit and in truth.
             </h3>
-            <p className="text-sm text-inter text-black/70 leading-[120%] py-[5px] md:text-base md:pt-10 lg:text-[24px] lg:leading-[30px] xl:w-[580px]">
+            <p className="text-sm text-inter text-black/70 leading-[120%] py-[5px] md:text-base md:pt-10 lg:pt-8 lg:text-[clamp(14px,1.2vw,24px)] lg:leading-[30px] xl:max-w-[580px]">
               Worship is a life-changing encounter, and the greatest thing a man
               can give to God. Join us as we declare His greatness with
               gratitude.
@@ -46,10 +46,10 @@ const PillarCard = () => {
           />
 
           <div className="rounded-[16px] absolute top-[110px] min-[420px]:top-[140px] left-0 pl-6 w-[64%]  md:top-[300px] lg:pl-[6.8%] lg:w-1/2 lg:top-[54%] 2xl:top-[60%]">
-            <h3 className=" text-base font-bold font-satoshi leading-[110%] md:text-[40px]  md:font-semibold lg:text-[52px]">
+            <h3 className=" text-base font-bold font-satoshi leading-[110%] md:text-[40px]  md:font-semibold lg:text-[clamp(28px,3vw,52px)]">
               Where two or three are gathered, He is there
             </h3>
-            <p className="text-sm text-inter text-black/70 leading-[120%] py-[8px] md:text-base md:pt-10 lg:text-[24px] lg:leading-[30px] xl:w-[580px]">
+            <p className="text-sm text-inter text-black/70 leading-[120%] py-[8px] md:text-base md:pt-10 lg:pt-8 lg:text-[clamp(14px,1.2vw,24px)] lg:leading-[30px] xl:max-w-[580px]">
               Every gathering is a family united in purpose. We embrace one
               another , and create a community where people thrive and lives are
               transformed

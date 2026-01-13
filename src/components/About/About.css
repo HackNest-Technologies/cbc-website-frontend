@@ -1,21 +1,9 @@
 @media (min-width: 1024px) and (max-height: 800px) {
   .generalBg-heading {
-    height: 320px;
+    height: 330px;
   }
   .overview-padding {
-    padding-top: 320px;
-  }
-
-  .about-text {
-    font-size: 40px;
-  }
-
-  .overview {
-    font-size: 35px;
-  }
-
-  .about-paragraph {
-    font-size: 12px;
+    padding-top: 370px;
   }
 
   /* vidoe section */
@@ -27,44 +15,38 @@
     bottom: 20vw;
   }
 
-  .bear-svg{
-    bottom: 360px
+  .bear-svg {
+    bottom: 360px;
   }
 
-  .bear-text{
-    font-size:35px
+  .bear-text {
+    font-size: 35px;
   }
-  .bear-paragraph{
-    font-size:12px
-  }
-  .bearBottom-img{
-    top:200px
+
+  .bearBottom-img {
+    top: 200px;
   }
   /* branch section */
 
-  .branchBg{
-    height:370px;
+  .branchBg {
+    height: 370px;
   }
 
-
-  .branch-paragraph {
-    font-size:16px;
-    padding-top: 20px;
-  }
-
-  .branch-arrow{
+  .branch-arrow {
     padding: 8px;
-
   }
 
-.branch-icon{
+  .branch-icon {
     font-size: 20px;
-} 
-.branchImage-div{
-    top: 700px
-}
+  }
+  .branchImage-div {
+    top: 700px;
+  }
+  .lastsection{
+    height: 90vh;
+  }
 
-}
-
-@media (min-width: 1024px) and (min-height: 900px) {
+  .innerdiv{
+    height: 54vh;
+  }
 }

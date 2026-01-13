@@ -61,7 +61,7 @@ const Statement = () => {
         </div>
         <div className="px-10 pt-[100px] md:flex container mx-auto md:px-0 md:pt-[150px] lg:pt-[140px]">
           <div className="md:w-2/5">
-            <h2 className=" text-xl font-bold font-satoshi md:text-[36px] md:font-normal lg:text-[52px] ">
+            <h2 className=" text-xl font-bold font-satoshi md:text-[36px] md:font-normal lg:text-[clamp(26px,4vw,52px)]">
               Vision Statement
             </h2>
           </div>
@@ -71,7 +71,7 @@ const Statement = () => {
               <span className="flex w-[14px] shrink-0 h-[14px] px-[4.078px] py-[1.064px] flex-col justify-center items-center gap-[1.418px] border border-[#fc8e33] text-[#fc8e33] rounded-full text-[8px] font-satoshi  font-bold leading-none md:text-[24px] md:px-[11.14px] md:rounded-[16px] md:py-[2.91px] md:w-[33.43px] md:h-[33.43px]">
                 1
               </span>
-              <p className="text-sm font-inter leading-[120%] md:text-base md:leading-[20px] lg:text-[24px] lg:leading-[30px]">
+              <p className="text-sm font-inter leading-[120%] md:text-base md:leading-[20px] lg:text-[clamp(14px,1.3vw,24px)] lg:leading-[30px]">
                 <strong className="font-semibold">Recruitment Center</strong> :
                 Recruiting men into God's Kingdom from the enemy's camp. (Psalm
                 2:8)
@@ -82,7 +82,7 @@ const Statement = () => {
               <span className="flex w-[14px] shrink-0 h-[14px] px-[4.078px] py-[1.064px] flex-col justify-center items-center gap-[1.418px] border border-[#fc8e33] text-[#fc8e33] rounded-full text-[8px] font-satoshi  font-bold leading-none md:text-[24px] md:px-[11.14px] md:rounded-[16px] md:py-[2.91px] md:w-[33.43px] md:h-[33.43px]">
                 2
               </span>
-              <p className="text-sm font-inter leading-[120%] md:text-base md:leading-[20px] lg:text-[24px] lg:leading-[30px]">
+              <p className="text-sm font-inter leading-[120%] md:text-base md:leading-[20px] lg:text-[clamp(14px,1.3vw,24px)] lg:leading-[30px]">
                 <strong className="font-semibold">Laundry Center</strong> :
                 Preparing the saints for the second coming of Jesus Christ.
                 (John 14:1-3)
@@ -93,7 +93,7 @@ const Statement = () => {
               <span className="flex w-[14px] shrink-0 h-[14px] px-[4.078px] py-[1.064px] flex-col justify-center items-center gap-[1.418px] border border-[#fc8e33] text-[#fc8e33] rounded-full text-[8px] font-satoshi  font-bold leading-none md:text-[24px] md:px-[11.14px] md:rounded-[16px] md:py-[2.91px] md:w-[33.43px] md:h-[33.43px]">
                 3
               </span>
-              <p className="text-sm font-inter leading-[120%] md:text-base md:leading-[20px] lg:text-[24px] lg:leading-[30px]">
+              <p className="text-sm font-inter leading-[120%] md:text-base md:leading-[20px] lg:text-[clamp(14px,1.3vw,24px)] lg:leading-[30px]">
                 <strong className="font-semibold">Teaching Center</strong> :
                 Opening the eyes of believers to the realities of Calvary’s
                 finished work. (Hosea 4:6)

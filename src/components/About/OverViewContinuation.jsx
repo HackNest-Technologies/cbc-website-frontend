@@ -24,7 +24,7 @@ const OverViewContinuation = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1420 894"
           fill="none"
-          className="hidden lg:block"
+          className="hidden"
         >
           <path
             d="M-118 571H849.356V891L1417 891V0"
@@ -37,11 +37,11 @@ const OverViewContinuation = () => {
       <div>
         <div className="flex justify-between relative transform  bottom-1/2 -translate-y-[30%] md:-translate-y-[10%] lg:-translate-y-0 2xl:-translate-y-[-20%]  container mx-auto">
           <div className="w-[220px] md:w-[432px] lg:w-[635px]">
-            <h2 className="bear-text px-[25px] text-base font-semibold  leading-[100%] font-satoshi md:text-[36px] lg:text-[52px] lg:px-0">
+            <h2 className="bear-text px-[25px] text-base font-semibold  leading-[100%] font-satoshi md:text-[36px] lg:text-[clamp(28px,3.8vw,52px)] lg:px-0">
               Bear one another’s burdens, and so fulfill the law of Christ.
             </h2>
 
-            <p className="bear-paragraph px-[25px] pt-2 text-sm font-inter text-black/70 md:text-base md:pt-[30px] xl:text-[24px] xl:leading-[30px] lg:px-0">
+            <p className="bear-paragraph px-[25px] pt-2 text-sm font-inter text-black/70 md:text-base md:pt-[30px]  lg:text-[clamp(16px,1.3vw,24px)] xl:leading-[30px] lg:px-0">
               At Calvary Bible Church, prayer is our first response and our
               steadfast anchor. We believe in standing in the gap for each other
               in love, and seeking God’s face in every need and desire. 

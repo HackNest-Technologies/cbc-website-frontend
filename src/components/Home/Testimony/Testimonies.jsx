@@ -52,7 +52,7 @@ const Testimonies = () => {
   const TestimonyCard = ({ testimony, image, testifier }) => (
     <div className="testimony-border px-4 py-[15.33px]  border-[2.55px]  border-dashed border-[#FD9F2B] rounded-[10px] space-y-2 self-stretch md:py-[30px] md:px-[48px] md:border-[4px] md:rounded-[20px]">
       <DblQuote height={53.65} />
-      <p className="testimony-desc text-sm leading-[100%] font-inter md:text-base">
+      <p className="testimony-desc text-sm leading-[100%] font-inter md:text-base lg:text-[clamp(14px,1vw,16px lg:leading-normal">
         {testimony}
       </p>
       <div className="flex gap-4 mt-8 items-center">
@@ -63,7 +63,7 @@ const Testimonies = () => {
             className="testifier-img rounded-[42.64px] object-cover w-[44.77px] sm:w-[87.63px]"
           />
         </div>
-        <p className="testifer text-sm leading-[100%] font-inter sm:text-2xl md:text-[24px]">
+        <p className="testifer text-sm leading-[100%] font-inter sm:text-2xl md:text-[24px] lg:text-[clamp(16px,1.6vw,24px)]">
           {testifier}
         </p>
       </div>
@@ -76,7 +76,7 @@ const Testimonies = () => {
       className="container mx-auto p-6 space-y-6 sm:mt-16 md:mt-24 md:p-0 md:pt-[100px] lg:pt-[150px]"
     >
       <div className="space-y-6">
-        <h3 className="testimony-text font-satoshi text-2xl leading-[100%] sm:text-[62.32px] max-w-[655px] mx-auto text-center uppercase">
+        <h3 className="testimony-text font-satoshi text-2xl leading-[100%] sm:text-[clamp(28px,3.8vw,62.32px)]  max-w-[655px] mx-auto text-center uppercase">
           See what the lord is doing!
         </h3>
       </div>

@@ -7,10 +7,10 @@ const Pillars = () => {
     <>
       <section className="px-6  container mx-auto md:px-0 md:pt-20 lg:pt-0">
         <div>
-          <h2 className="font-semibold font-satoshi text-xl leading-[100%] md:text-[40px] lg:text-[52px] ">
+          <h2 className="font-semibold font-satoshi text-xl leading-[100%] md:text-[40px] lg:text-[clamp(28px,3.5vw,52px)] ">
             7 Pillars of Calvary
           </h2>
-          <p className="font-inter text-sm leading-[120%] py-6 capitalize md:text-base md:leading-[20px]  lg:text-[24px] lg:leading-[30px] xl:w-[1077px]">
+          <p className="font-inter text-sm leading-[120%] py-6 capitalize md:text-base md:leading-[20px]  lg:text-[clamp(14px,1.3vw,24px)] lg:leading-[30px] xl:w-[1077px]">
             The brand known as truth of Calvary Ministries, aka Calvary Bible
             Church and her network of Churches Globally has seven unique element
             and distinguishing features which is revealed in the fabrics of the
@@ -27,7 +27,7 @@ const Pillars = () => {
                 <h2 className="font-satoshi text-base text-[#0B0A0F] pb-3 md:text-xl md:leading-[22px] lg:leading-[32px]">
                   {pillar.title}
                 </h2>
-                <p className="text-inter text-sm  text-[#474747] lg:text-base ">
+                <p className="text-inter text-sm  text-[#474747] lg:text-[clamp(14px,1.1vw,16px)]">
                   {pillar.description}
                 </p>
               </div>

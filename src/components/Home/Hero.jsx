@@ -102,8 +102,7 @@ const Hero = () => {
       <div
         className="absolute bottom-[-30px] right-[40px]  
           md:bottom-[-60px] md:right-[30px] 
-          lg:bottom-[-100px] lg:right-[60px]"
-      >
+          lg:bottom-[-100px] lg:right-[60px]">
         <CircularText />
       </div>
     </section>

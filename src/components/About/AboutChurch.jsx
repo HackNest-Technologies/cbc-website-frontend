@@ -35,7 +35,7 @@ const AboutChurch = () => {
         </div>
       </div>
 
-      <div className="overview-padding pt-[200px] pb-[110px] px-6 md:flex md:px-0 md:pt-[400px] container mx-auto md:gap-10 md:pb-[230px] lg:pt-[500px]">
+      <div className="overview-padding pt-[200px] pb-[110px] px-6 md:flex md:px-0 md:pt-[400px] container mx-auto md:gap-10 md:pb-[230px] lg:pt-[550px]">
         <div className="lg:w-2/5">
           <h2 className="overview text-[32px] font-semibold font-satoshi pt-[50px] md:text-[52px] md:pt-0 lg:text-[clamp(28px,4vw,52px)]">
             Overview

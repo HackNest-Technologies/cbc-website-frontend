@@ -29,10 +29,7 @@ import ConstructionPage from "./pages/ConstructionPage";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminStorePage from "./pages/AdminPages/Store/AdminStorePage";
 import AdminConvertPage from "./pages/AdminPages/AdminConvertPage";
-import AdminFellowshipPage from "./pages/AdminPages/AdminFellowshipPage";
-import AdminDevotional from "./pages/AdminPages/AdminDevotional";
-import AdminBranches from "./pages/AdminPages/AdminBranches";
-import AdminDepartment from "./pages/AdminPages/AdminDepartment";
+import AdminDevotional from "./pages/AdminPages/Study/Devotional/AdminDevotional";
 import AdminEventPage from "./pages/AdminPages/Event/AdminEventPage";
 import AddEventPage from "./pages/AdminPages/Event/AddEventPage";
 import LeadershipPage from "./pages/LeadershipPage";
@@ -60,6 +57,9 @@ import UserDashboardPage from "./pages/User/UserDashboardPage";
 import AdminDasboardPage from "./pages/AdminPages/AdminDasboardPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import EditEventPage from "./pages/AdminPages/Event/EditEventPage";
+import AdminBibleInOneYear from "./pages/AdminPages/Study/Bible/AdminBibleInOneYear";
+import EditDevotionalPage from "./pages/AdminPages/Study/Devotional/EditDevotionalPage";
+import AddDevotionalPage from "./pages/AdminPages/Study/Devotional/AddDevotionalPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -83,7 +83,7 @@ const router = createBrowserRouter(
         <Route path="/new-member" element={<NewMemberPage />} />
         <Route path="/new-convert" element={<NewConvertPage />} />
         <Route path="/counselling" element={<CounsellingPage />} />
-        <Route path="/membership-login" element={<MembershipPage />} />
+        <Route path="/membership-class" element={<MembershipPage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/live" element={<LivePage />} />
         <Route path="/past-sermon" element={<PastSermonPage />} />
@@ -127,10 +127,17 @@ const router = createBrowserRouter(
         <Route path="products/add-product" element={<AddProductsPage />} />
         <Route path="admin-store" element={<AdminStorePage />} />
         <Route path="admin-convert" element={<AdminConvertPage />} />
-        <Route path="admin-fellowship" element={<AdminFellowshipPage />} />
         <Route path="admin-devotional" element={<AdminDevotional />} />
-        <Route path="admin-branches" element={<AdminBranches />} />
-        <Route path="admin-department" element={<AdminDepartment />} />
+        <Route
+          path="admin-devotional/add-devotional"
+          element={<AddDevotionalPage />}
+        />
+        <Route path="edit-devotional" element={<EditDevotionalPage />} />
+
+        <Route
+          path="admin-bible-in-one-year"
+          element={<AdminBibleInOneYear />}
+        />
         <Route path="admin-testimonies" element={<AdminTestimoyPage />} />
         <Route
           path="admin-testimonies/add-testimony"
@@ -155,8 +162,8 @@ const router = createBrowserRouter(
       <Route path="/login" element={<UserLoginPage />} />
       <Route path="/register" element={<RegistrationPage />} />
       <Route path="*" element={<ConstructionPage />} />
-    </>
-  )
+    </>,
+  ),
 );
 
 const App = () => {

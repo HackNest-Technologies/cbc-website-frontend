@@ -67,13 +67,13 @@ const DailyDevotional = ({ todayReading, isLoading, onSwitchToBible }) => {
           <div className="space-y-6">
             {/* Devotional Title and Body */}
             <section className="">
-              <span className="text-xs leading-[100%] font-satoshi text-[#000000] md:text-[24px]">
+              <span className="text-xs leading-[100%] font-satoshi text-[#000000] md:text-[24px] lg:text-[clamp(18px,2vw,24px)]">
                 Title
               </span>
-              <h3 className="text-[24px] font-satoshi leading-[100%] capitalize pt-4 pb-6 border-b-3 border-[#FD9F2B] border-dotted md:text-[40px] lg:text-[52px]">
+              <h3 className="text-[24px] font-satoshi leading-[100%] capitalize pt-4 pb-6 border-b-3 border-[#FD9F2B] border-dotted md:text-[40px] lg:text-[clamp(28px,3.5vw,52px)]">
                 {todayReading.title}
               </h3>
-              <div className="text-sm leading-[150%] font-inter py-6 whitespace-pre-line md:text-[24px]">
+              <div className="text-sm leading-[150%] font-inter py-6 whitespace-pre-line md:text-[24px] lg:text-[clamp(14px,1.1vw,18px)]">
                 {formatBodyText(todayReading.body)}
               </div>
 
@@ -90,7 +90,7 @@ const DailyDevotional = ({ todayReading, isLoading, onSwitchToBible }) => {
           </div>
         </div>
       ) : (
-        // This will only show when loading is complete and no data is available
+        // Show when loading is complete and no data is available
         <div className="text-center py-8">
           <p className="">
             {isLoading ? "" : "No devotional content available for this date."}

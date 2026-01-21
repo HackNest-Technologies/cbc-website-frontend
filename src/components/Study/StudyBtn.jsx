@@ -99,7 +99,7 @@ const StudyBtn = () => {
 
         {/* Middle Column - Toggle Buttons */}
         <div className="my-6 flex-1 md:my-0 flex justify-center">
-          <div className="border rounded-[10.87px] p-[8.15px] flex justify-between items-center md:p-[15px] md:rounded-[20px] lg:w-[560px] ">
+          <div className="border rounded-[10.87px] p-[8.15px] flex justify-between items-center md:p-[15px] md:rounded-[20px] lg:w-[560px]">
             <span
               className={`py-[5.43px] px-[16.3px] text-inter font-semibold text-sm leading-[100%] cursor-pointer md:text-[24px] ${
                 isActive === "daily"

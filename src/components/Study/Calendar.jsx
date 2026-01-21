@@ -79,7 +79,7 @@ const Calendar = ({
   return (
     <div className="relative inline-block" ref={calendarRef}>
       <button
-        className="flex text-[20px] font-inter italic leading-[100%] gap-[6px] items-center bg-transparent cursor-pointer md:text-[32px] lg:text-[40px]"
+        className="flex text-[20px] font-inter italic leading-[100%] gap-[6px] items-center bg-transparent cursor-pointer md:text-[32px] lg:text-[clamp(32px,2.8vw,40px)]"
         onClick={() => setIsCalendarOpen(!isCalendarOpen)}
       >
         {selectedDate.toLocaleString("en-US", {

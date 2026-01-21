@@ -11,7 +11,7 @@ const GiveBg = () => {
           <div className="">
             <img
               src={giveBg}
-              className="w-full object-cover rounded-[8px] md:rounded-[16px] h-[252px] md:h-[348px] lg:h-[495px]"
+              className="generalBg-heading w-full object-cover rounded-[8px] md:rounded-[16px] h-[252px] md:h-[348px] lg:h-[495px]"
               alt="Give background image"
             />
             <div className="absolute inset-0  flex justify-center items-center text-[#ffffff] z-[100]">

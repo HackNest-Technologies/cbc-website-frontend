@@ -39,7 +39,7 @@ const accounts = [
     bankImg: firstbank,
     number: "2018457003",
     naira: true,
-    type: "power patners",
+    type: "Power partners",
     noBg: true,
   },
   {
@@ -47,7 +47,7 @@ const accounts = [
     bankImg: fcmb,
     number: "1010342016",
     naira: true,
-    type: "club 50",
+    type: "Club 50",
     noBg: true,
   },
 

@@ -8,7 +8,7 @@ const SermonHeader = () => {
         <div className="container mx-auto absolute left-0 right-0 top-[65px]  pt-[60px] md:pt-[100px] md:top-[70px] md:px-0">
           <div className="flex justify-center">
             <div className="flex items-center gap-2 md:gap-4">
-              <button className="text-[18.27px] leading-[100%] font-bold font-satoshi uppercase text-white w-[176px] h-[42px] bg-[#FC8E33] rounded-[32.63px] p-[5.22px] md:w-[270px] md:text-[28px] md:h-[65px] md:rounded-[50px] md:p-[8px]">
+              <button className="text-[18.27px] leading-[100%] font-bold font-satoshi uppercase text-white w-[176px] h-[42px] bg-[#FC8E33] rounded-[32.63px] p-[5.22px] md:w-[270px] md:text-[28px]  md:h-[65px] md:rounded-[50px] md:p-[8px] lg:text-[clamp(22px,2vw,28px)]">
                 Past Sermons
               </button>
               <img

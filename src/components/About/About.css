@@ -1,9 +1,9 @@
 @media (min-width: 1024px) and (max-height: 800px) {
   .generalBg-heading {
-    height: 330px;
+    height: 400px;
   }
   .overview-padding {
-    padding-top: 370px;
+    padding-top: 450px;
   }
 
   /* vidoe section */
@@ -48,5 +48,8 @@
 
   .innerdiv{
     height: 54vh;
+  }
+  .give-svg{
+    height: 88vh;
   }
 }

@@ -92,7 +92,6 @@ export const apiSlice = createApi({
       query: () => "/api/v1/events",
     }),
 
-
     updateEvent: builder.mutation({
       query: ({ id, event }) => ({
         url: `api/v1/events/${id}`,
@@ -106,7 +105,7 @@ export const apiSlice = createApi({
         url: "api/v1/events",
         method: "POST",
         body: event,
-      }), 
+      }),
     }),
 
     deleteEvent: builder.mutation({
@@ -179,15 +178,57 @@ export const apiSlice = createApi({
 
     addToCart: builder.mutation({
       query: (cartItem) => ({
-        url: "/cart-items",
+        url: "api/v1/cart_items",
         method: "POST",
         body: { cart_item: cartItem },
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+
+    updateCart: builder.mutation({
+      query: ({ id, quantity }) => ({
+        url: `api/v1/cart_items/${id}`,
+        method: "PUT", // PATCH is also fine if Rails supports it
+        body: {
+          cart_item: { quantity },
+        },
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+
+    deleteCartItem: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/cart_items/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Cart"],
+    }),
+
+    CreateCart: builder.mutation({
+      query: (cart) => ({
+        url: "api/v1/carts",
+        method: "POST",
+        body: { cart },
+      }),
+    }),
+
+    getCart: builder.query({
+      query: (id) => `api/v1/carts/${id}`,
+      providesTags: ["Cart"],
+    }),
+
+    // Send all order with the cart id
+    createOrder: builder.mutation({
+      query: (order) => ({
+        url: "api/v1/orders",
+        method: "POST",
+        body: { order: order },
       }),
     }),
 
     // =======> STUDY <=======
-    // ----------- BIBLE N ONE YEAR -----------
 
+    // ----------- BIBLE N ONE YEAR -----------
     getBibleInOneYear: builder.query({
       query: () => "api/v1/bible_readings",
     }),
@@ -201,9 +242,56 @@ export const apiSlice = createApi({
       }),
     }),
 
+    createBible: builder.mutation({
+      query: (bible) => ({
+        url: "api/v1/bible_readings",
+        method: "POST",
+        body: { bible_reading: bible },
+      }),
+    }),
+
+    updateBible: builder.mutation({
+      query: ({ id, bible }) => ({
+        url: `api/v1/bible_readings/${id}`,
+        method: "PUT",
+        body: bible,
+      }),
+    }),
+
+    deleteBible: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/bible_readings/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+
     // ------- DAILY DEVOTIONAL----------
     getDailyDevotional: builder.query({
       query: () => "api/v1/devotionals",
+    }),
+
+    createDevotional: builder.mutation({
+      query: (devotional) => ({
+        url: "api/v1/devotionals",
+        method: "POST",
+        body: { devotional: devotional },
+      }),
+    }),
+
+    updateDevotional: builder.mutation({
+      query: ({ id, devotional }) => ({
+        url: `api/v1/devotionals/${id}`,
+        method: "PUT",
+        body: devotional,
+      }),
+    }),
+
+    deleteDevotion: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/devotionals/${id}`,
+        method: "DELETE",
+      }),
     }),
 
     // LIVE STREAM
@@ -230,8 +318,8 @@ export const apiSlice = createApi({
         body: stream,
       }),
     }),
-    // ---Delete Stream Link
 
+    // ---Delete Stream Link
     deleteStreamLink: builder.mutation({
       query: (id) => ({
         url: `api/v1/livestreams/${id}`,
@@ -240,6 +328,7 @@ export const apiSlice = createApi({
     }),
 
     // PAST SERMON
+
     // ------ Get past sermon ------
     getPastSermon: builder.query({
       query: () => "api/v1/past_sermons",
@@ -269,7 +358,6 @@ export const apiSlice = createApi({
     }),
   }),
 });
-
 export const {
   useSignUpMutation,
   useCurrentUserQuery,
@@ -288,9 +376,20 @@ export const {
   useDeleteBookItemMutation,
   useUpdateBookItemMutation,
   useGetDailyDevotionalQuery,
+  useCreateDevotionalMutation,
+  useUpdateDevotionalMutation,
+  useDeleteDevotionMutation,
   useGetBiblePassageQuery,
   useGetBibleInOneYearQuery,
+  useCreateBibleMutation,
+  useUpdateBibleMutation,
+  useDeleteBibleMutation,
   useAddToCartMutation,
+  useUpdateCartMutation,
+  useDeleteCartItemMutation,
+  useCreateCartMutation,
+  useGetCartQuery,
+  useCreateOrderMutation,
   useSendPrayerRequestMutation,
   useGetTestimoniesQuery,
   useSendTestimonyMutation,

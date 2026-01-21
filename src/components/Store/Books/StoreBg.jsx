@@ -1,15 +1,166 @@
-import { useState } from "react";
+// import { useEffect, useState } from "react";
+// import { useSelector } from "react-redux";
+// import SearchInput from "../../Event/SearchInput";
+// import EventBgDark from "../../../assets/images/give.png";
+// import cartIcon from "../../../assets/images/cart.png"; // Renamed import
+// import CartPopup from "./CartPopup";
+// import CheckoutPopup from "./CheckoutPopup";
+// import { useGetCartQuery } from "../../../redux/apiSlice";
+
+// const StoreBg = () => {
+//   const { user } = useSelector((state) => state.auth);
+//   const [isCartOpen, setIsCartOpen] = useState(false);
+//   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+//   const [cartID, setCartID] = useState(null);
+  
+//   const { data: cartData } = useGetCartQuery(cartID, {
+//     skip: !cartID,
+//   });
+
+//   const cartItems = cartData?.items || [];
+
+//   useEffect(() => {
+//     if (user) {
+//       setCartID(user.cart?.id);
+//     } else {
+//       const cartId = localStorage.getItem("cart_id");
+//       setCartID(cartId);
+//     }
+//   }, [user]);
+
+//   const handleCartClick = () => {
+//     setIsCartOpen(true);
+//   };
+
+//   const handleCloseCart = () => {
+//     setIsCartOpen(false);
+//   };
+
+//   const handleProceedToCheckout = () => {
+//     setIsCartOpen(false);
+//     setIsCheckoutOpen(true);
+//   };
+
+//   const handleCloseCheckout = () => {
+//     setIsCheckoutOpen(false);
+//   };
+
+//   const handleOrderSuccess = () => {
+//     setIsCheckoutOpen(false);
+//   };
+
+//   return (
+//     <section className="px-2">
+//       <div className="relative">
+//         <div className="">
+//           <img
+//             src={EventBgDark}
+//             className="w-full object-cover rounded-[8px] h-[302px] md:rounded-[16px] md:h-[348px] lg:h-[495px]"
+//             alt="Give background image"
+//           />
+
+//           {/* Title */}
+//           <div className="absolute inset-0 flex justify-center items-center text-[#ffffff] z-[100]">
+//             <h2 className="text-[20px] leading-[100%] uppercase font-satoshi md:text-[50px] lg:text-[75px] lg:pb-10">
+//               Shop
+//             </h2>
+//           </div>
+
+//           {/* Search + Cart */}
+//           <div className="absolute inset-0 top-[130px] flex justify-center items-center text-[#ffffff] z-[100]">
+//             <div className="flex items-center gap-2">
+//               <SearchInput
+//                 wrapperWidth="border-[#ffffff] rounded-[23.89px] gap-1 w-[290px] h-[38px] py-[8px] px-[8.87px] md:py-[11.14px] px-[22.28px] md:border-2 md:w-[635px] md:h-[65px] md:rounded-[100px] md:px-32px md:py-[16px] lg:w-[900px] "
+//                 pholder="Search Product"
+//                 glass="text-[#ffffff] text-lg md:text-[30px] lg:mr-1"
+//                 input="text-[#fff] placeholder-white outline-none px-1 text-lg"
+//               />
+
+//               {/* Cart Icon with Counter */}
+//               <div
+//                 className="relative cursor-pointer"
+//                 onClick={handleCartClick}
+//               >
+//                 <img
+//                   src={cartIcon} // Updated variable name
+//                   alt="cart icon"
+//                   className="w-[25px] h-[24px] object-cover lg:w-[40px] lg:h-[40px]"
+//                 />
+//                 {cartItems.length > 0 && (
+//                   <span className="absolute -top-2 -right-2 text-[11px] text-[#fff] font-inter text-center flex justify-center items-center bg-[#FD9F2B] w-[20px] h-[20px] rounded-full lg:w-[25px] lg:h-[25px]">
+//                     {cartItems.length}
+//                   </span>
+//                 )}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Dark overlay */}
+//         <div className="absolute inset-0 opacity-80 bg-[#000] rounded-[8px]"></div>
+//       </div>
+
+//       {/* Cart Popup */}
+//       <CartPopup
+//         isOpen={isCartOpen}
+//         onClose={handleCloseCart}
+//         onProceedToCheckout={handleProceedToCheckout}
+//       />
+
+//       {/* Checkout Popup */}
+//       <CheckoutPopup
+//         isOpen={isCheckoutOpen}
+//         onClose={handleCloseCheckout}
+//         onOrderSuccess={handleOrderSuccess}
+//       />
+//     </section>
+//   );
+// };
+
+// export default StoreBg;
+
+
+
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import SearchInput from "../../Event/SearchInput";
 import EventBgDark from "../../../assets/images/give.png";
-import cart from "../../../assets/images/cart.png";
+import cartIcon from "../../../assets/images/cart.png";
 import CartPopup from "./CartPopup";
 import CheckoutPopup from "./CheckoutPopup";
+import { useGetCartQuery } from "../../../redux/apiSlice";
 
-const StoreBg = () => {
-  const { cart: cartItems } = useSelector((state) => state.books);
+const StoreBg = ({
+  cartID,
+  setCartID,
+}) => {
+  const { user } = useSelector((state) => state.auth);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [orderData, setOrderData] = useState(null);
+  
+  const { data: cartData, refetch: refetchCart } = useGetCartQuery(cartID, {
+    skip: !cartID,
+    refetchOnMountOrArgChange: true,
+  });
+
+  const cartItems = cartData?.items || [];
+
+  useEffect(() => {
+    if (user) {
+      setCartID(user.cart?.id);
+    } else {
+      const cartId = localStorage.getItem("cart_id");
+      setCartID(cartId);
+    }
+  }, [user]);
+
+  // Refetch cart when cart popup opens
+  useEffect(() => {
+    if (isCartOpen && cartID) {
+      refetchCart();
+    }
+  }, [isCartOpen, cartID, refetchCart]);
 
   const handleCartClick = () => {
     setIsCartOpen(true);
@@ -19,17 +170,28 @@ const StoreBg = () => {
     setIsCartOpen(false);
   };
 
-  const handleProceedToCheckout = () => {
+  const handleProceedToCheckout = (order) => {
     setIsCartOpen(false);
+    setOrderData(order);
     setIsCheckoutOpen(true);
   };
 
   const handleCloseCheckout = () => {
     setIsCheckoutOpen(false);
+    setOrderData(null);
+    // Refetch cart after checkout
+    if (cartID) {
+      refetchCart();
+    }
   };
 
   const handleOrderSuccess = () => {
     setIsCheckoutOpen(false);
+    setOrderData(null);
+    // Refetch cart after successful order
+    if (cartID) {
+      refetchCart();
+    }
   };
 
   return (
@@ -44,7 +206,7 @@ const StoreBg = () => {
 
           {/* Title */}
           <div className="absolute inset-0 flex justify-center items-center text-[#ffffff] z-[100]">
-            <h2 className="text-[20px] leading-[100%] uppercase font-satoshi md:text-[50px] lg:text-[75px]">
+            <h2 className="text-[20px] leading-[100%] uppercase font-satoshi md:text-[50px] lg:text-[75px] lg:pb-10">
               Shop
             </h2>
           </div>
@@ -53,24 +215,24 @@ const StoreBg = () => {
           <div className="absolute inset-0 top-[130px] flex justify-center items-center text-[#ffffff] z-[100]">
             <div className="flex items-center gap-2">
               <SearchInput
-                wrapperWidth="border-[#ffffff] rounded-[23.89px] gap-1 w-[290px] h-[38px] py-[8px] px-[8.87px] md:py-[11.14px] px-[22.28px] md:border-2 md:w-[635px] md:h-[65px] md:rounded-[100px] md:px-32px md:py-[16px]"
+                wrapperWidth="border-[#ffffff] rounded-[23.89px] gap-1 w-[290px] h-[38px] py-[8px] px-[8.87px] md:py-[11.14px] px-[22.28px] md:border-2 md:w-[635px] md:h-[65px] md:rounded-[100px] md:px-32px md:py-[16px] lg:w-[900px] "
                 pholder="Search Product"
                 glass="text-[#ffffff] text-lg md:text-[30px] lg:mr-1"
                 input="text-[#fff] placeholder-white outline-none px-1 text-lg"
               />
 
               {/* Cart Icon with Counter */}
-              <div 
+              <div
                 className="relative cursor-pointer"
                 onClick={handleCartClick}
               >
                 <img
-                  src={cart}
+                  src={cartIcon}
                   alt="cart icon"
-                  className="w-[25px] h-[24px] object-cover"
+                  className="w-[25px] h-[24px] object-cover lg:w-[40px] lg:h-[40px]"
                 />
                 {cartItems.length > 0 && (
-                  <span className="absolute -top-2 -right-2 text-[11px] text-[#fff] font-inter text-center flex justify-center items-center bg-[#FD9F2B] w-[20px] h-[20px] rounded-full">
+                  <span className="absolute -top-2 -right-2 text-[11px] text-[#fff] font-inter text-center flex justify-center items-center bg-[#FD9F2B] w-[20px] h-[20px] rounded-full lg:w-[25px] lg:h-[25px]">
                     {cartItems.length}
                   </span>
                 )}
@@ -84,17 +246,22 @@ const StoreBg = () => {
       </div>
 
       {/* Cart Popup */}
-      <CartPopup 
+      <CartPopup
         isOpen={isCartOpen}
         onClose={handleCloseCart}
         onProceedToCheckout={handleProceedToCheckout}
+        cartItems={cartItems}
+        cartId={cartID}
       />
 
       {/* Checkout Popup */}
-      <CheckoutPopup 
+      <CheckoutPopup
         isOpen={isCheckoutOpen}
         onClose={handleCloseCheckout}
         onOrderSuccess={handleOrderSuccess}
+        orderData={orderData}
+        cartItems={cartItems}
+        cartId={cartID}
       />
     </section>
   );

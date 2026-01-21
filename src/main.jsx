@@ -30,8 +30,8 @@ const analytics = getAnalytics(app);
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <StrictMode>
+    {/* <StrictMode> */}
       <App />
-    </StrictMode>
+    {/* </StrictMode> */}
    </Provider>
 );

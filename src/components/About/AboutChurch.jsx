@@ -1,7 +1,8 @@
 import aboutImg from "../../assets/images/about.webp";
 import CircularText from "../../utils/CircularText";
 import OverView from "./OverView";
-import "./About.css";
+import "./About.css"
+
 
 const AboutChurch = () => {
   return (
@@ -12,14 +13,14 @@ const AboutChurch = () => {
         <div className="container mx-auto absolute px-6 left-0 right-0 top-[50px]  pt-[60px] md:pt-[100px] md:px-0">
           <img
             src={aboutImg}
-            className="w-full h-full object-cover rounded-[8px] md:rounded-[16px] md:h-[348px] lg:h-[495px]"
+            className="generalBg-heading w-full h-full object-cover rounded-[8px] md:rounded-[16px] md:h-[348px] lg:h-[495px]"
             alt="About Calvary Bible Church"
           />
           <div className="absolute bottom-[30px] px-[20px] text-[#ffffff]">
-            <h2 className=" about-text text-base leading-[120%] uppercase font-satoshi md:text-[48px] lg:text-[10px] xl:text-[75px] lg:leading-[100%]">
+            <h2 className="about-text text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[clamp(28px,4.5vw,75px)] lg:leading-[100%]">
               ABOUT
             </h2>
-            <h2 className="about-text text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[75px] lg:leading-[100%]">
+            <h2 className="about-text text-base leading-[120%] uppercase font-satoshi md:text-[48px] xl:text-[clamp(28px,4.5vw,75px)] lg:leading-[100%]">
               calvary bible church
             </h2>
           </div>
@@ -34,15 +35,15 @@ const AboutChurch = () => {
         </div>
       </div>
 
-      <div className="pt-[200px] pb-[110px] px-6 md:flex md:px-0 md:pt-[400px] container mx-auto md:gap-10 md:pb-[230px] lg:pt-[500px]">
+      <div className="overview-padding pt-[200px] pb-[110px] px-6 md:flex md:px-0 md:pt-[400px] container mx-auto md:gap-10 md:pb-[230px] lg:pt-[550px]">
         <div className="lg:w-2/5">
-          <h2 className="text-[32px] font-semibold font-satoshi pt-[50px] md:text-[52px] md:pt-0 lg:text-[52px] z-">
+          <h2 className="overview text-[32px] font-semibold font-satoshi pt-[50px] md:text-[52px] md:pt-0 lg:text-[clamp(28px,4vw,52px)]">
             Overview
           </h2>
         </div>
 
         <div className="lg:w-3/5">
-          <p className="text-paragraph text-sm font-inter pt-5 leading-[145%] md:text-base">
+          <p className="about-paragraph text-sm font-inter pt-5 leading-[145%] md:text-base lg:text-[clamp(13px,0.8vw,16px)]">
             Calvary Bible church is a vibrant Bible-Centered church devoted to
             proclaiming Christ’s finished work at Calvary and nurturing
             transformative faith in everyday life. We are deeply rooted in the

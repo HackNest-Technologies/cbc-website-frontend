@@ -57,7 +57,7 @@ const SermonItem = ({ sermon }) => {
 
       {/* Sermon Details - You can uncomment this when you have the data */}
       <div className="w-full">
-        <div className="">
+        <div className="px-2">
           <div className="flex items-center">
             <h2 className=" text-[#000000] py-4 font-inter font-semibold text-[24px] leading-[100%] capitalize">
               Building a deep relationship with Jesus

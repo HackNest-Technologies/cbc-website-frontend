@@ -61,6 +61,8 @@
   background-repeat: no-repeat;
 }
 
+
+
 /* For equal space for  both left and right  */
 @media (min-width: 1024px) {
   .container {

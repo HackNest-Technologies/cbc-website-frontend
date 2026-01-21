@@ -18,20 +18,20 @@ const CoreValue = () => {
             className="object-cover w-full hidden lg:block"
           />{" "}
           <div className="rounded-[16px] absolute bottom-0 right-0 pl-5  pr-6 w-[64%] md:top-[250px] md:pl-10  lg:w-1/2 lg:top-[50%] 2xl:top-[60%]">
-            <h3 className=" text-base font-bold font-satoshi leading-[200%] md:text-[40px]  md:font-semibold lg:text-[52px]">
+            <h3 className=" text-base font-bold font-satoshi leading-[200%] md:text-[40px]  md:font-semibold lg:text-[clamp(28px,3vw,52px)]">
               Our Core Values
             </h3>
             <ul className="list-disc">
-              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[24px] ">
+              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[clamp(14px,1.2vw,24px)] ">
                 Prayer
               </li>
-              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[24px]">
+              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[clamp(14px,1.2vw,24px)]">
                 Worship
               </li>
-              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[24px]">
+              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[clamp(14px,1.2vw,24px)]">
                 Community
               </li>
-              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[24px]">
+              <li className="text-sm text-inter text-black/70 leading-[120%] py-[3px] md:text-base lg:text-[clamp(14px,1.2vw,24px)]">
                 Discipleship
               </li>
             </ul>
@@ -52,10 +52,10 @@ const CoreValue = () => {
             className="object-cover w-full hidden lg:block"
           />{" "}
           <div className="rounded-[16px] absolute top-[110px] min-[420px]:top-[140px] left-0 pl-6 w-[64%] md:top-[300px] lg:w-1/2 lg:top-[55%] 2xl:top-[60%]  lg:pl-[6.8%]">
-            <h3 className=" text-base font-bold font-satoshi leading-[110%] md:text-[40px]  md:font-semibold lg:text-[52px]">
+            <h3 className="text-base font-bold font-satoshi leading-[110%] md:text-[40px]  md:font-semibold lg:text-[clamp(28px,3vw,52px)]">
               What We Do
             </h3>
-            <p className="text-sm text-inter text-black/70 leading-[120%] py-[8px] md:text-base md:leading-[145%] md:w-[401px] md:py-5 lg:text-[24px]">
+            <p className="text-sm text-inter text-black/70 leading-[120%] py-[8px] md:text-base md:leading-[145%] md:w-[401px] md:py-5 lg:text-[clamp(14px,1.2vw,24px)]">
               From small groups to community outreach, prayer gatherings, and
               global missions, we live out our calling to be salt and light
               wherever we are.

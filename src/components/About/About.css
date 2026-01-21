@@ -1,10 +1,55 @@
-@media (max-height: 700px) {
-  .about-text {
-    font-size: 50px;
+@media (min-width: 1024px) and (max-height: 800px) {
+  .generalBg-heading {
+    height: 400px;
   }
-}
+  .overview-padding {
+    padding-top: 450px;
+  }
 
-@media (min-height: 900px) {
-  .text-paragraph {
+  /* vidoe section */
+  .video-text {
+    font-size: 28px;
+    width: 600px;
+  }
+  .videotext-div {
+    bottom: 20vw;
+  }
+
+  .bear-svg {
+    bottom: 360px;
+  }
+
+  .bear-text {
+    font-size: 35px;
+  }
+
+  .bearBottom-img {
+    top: 200px;
+  }
+  /* branch section */
+
+  .branchBg {
+    height: 370px;
+  }
+
+  .branch-arrow {
+    padding: 8px;
+  }
+
+  .branch-icon {
+    font-size: 20px;
+  }
+  .branchImage-div {
+    top: 700px;
+  }
+  .lastsection{
+    height: 90vh;
+  }
+
+  .innerdiv{
+    height: 54vh;
+  }
+  .give-svg{
+    height: 88vh;
   }
 }

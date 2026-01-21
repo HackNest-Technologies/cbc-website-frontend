@@ -50,9 +50,16 @@ const CreateCategory = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.type.startsWith("image/")) {
-      setCoverImage(file);
+
+    const fr = new FileReader()
+
+    fr.onload = () => {
+      setCoverImage(fr.result);
       setImagePreview(URL.createObjectURL(file));
+    }
+
+    if (file && file.type.startsWith("image/")) {
+      fr.readAsDataURL(file);
     } else {
       alert("Please upload an image file");
     }

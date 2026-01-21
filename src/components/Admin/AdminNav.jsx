@@ -27,11 +27,9 @@ const AdminNav = () => {
     { to: "admin-event", label: "Event" },
     { to: "book-category", label: "Store" },
     { to: "admin-convert", label: "New Convert" },
-    { to: "admin-fellowship", label: "House Fellowship" },
-    { to: "admin-devotional", label: "Devotional" },
-    { to: "admin-branches", label: "Branches" },
-    { to: "admin-department", label: "Departments" },
-    { to: "admin-testimonies", label: "Testimonies" },
+    { to: "admin-devotional", label: "Daily Devotional" },
+    { to: "admin-bible-in-one-year", label: "Bible in one year" },
+    { to: "admin-testimonies", label: "Testimonies"},
   ];
 
   return (

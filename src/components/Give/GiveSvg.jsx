@@ -3,7 +3,7 @@ import EllipsegiveTab from "../../assets/images/Ellipsegive-desk.png";
 import headingLineTab from "../../assets/images/headingLineTab.png";
 const GiveSvg = () => {
   return (
-    <section className="overflow-hidden  h-[55vh] md:h-full md:pb-[400px] lg:h-[60vh] 2xl:h-[85vh] ">
+    <section className="give-svg overflow-hidden  h-[55vh] md:h-full md:pb-[400px] lg:h-[60vh] 2xl:h-[70vh] ">
       <section className="relative">
         <div
           className="w-full h-full absolute bottom-[-140px] z-[-1000] 
@@ -60,7 +60,7 @@ const GiveSvg = () => {
             <img src={headingLineTab} className="hidden  md:block pr-[5vw] " />
           </div>
         </div>
-        <div className="flex justify-center items-center   pt-[20px] px-[10px] absolute inset-0 top-[180px] z-[1000] md:top-[10vw] lg:top-[15vw]">
+        <div className="flex justify-center items-center pt-[20px] px-[10px] absolute inset-0 top-[180px] z-[1000] md:top-[10vw] lg:top-[15vw]">
           <div className=" flex justify-center">
             <div className="w-[80vw] pt-[40px] px-[17px] md:pt-[150px] md:w-[75vw] md:px-[30px] lg:w-[65vw]">
               <p className="text-sm font-inter italic leading-[145%] md:text-base  lg:text-lg lg:leading-[30px]">

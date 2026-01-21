@@ -2,7 +2,7 @@ import firstTimer from "../../assets/videos/First-timer-smaller.mp4";
 import logo from "../../assets/images/cbc-logo.webp";
 import greyBg from "../../assets/images/Rectangle-grey.png";
 import OverViewContinuation from "./OverViewContinuation";
-
+import "./About.css"
 const OverView = () => {
   return (
     <>
@@ -31,8 +31,8 @@ const OverView = () => {
           ></video>
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[16vw] min-[500px]:bottom-[12vw] sm:bottom-[8vw] md:bottom-[5vw] lg:bottom-[15vw] 2xl:bottom-[12vw]">
-          <p className="text-[13.73px] text-center w-[266px] font-satoshi md:text-[40px] md:w-[661px] leading-[100%] lg:text-[45px] xl:text-[52px] lg:w-[923px]">
+        <div className="videotext-div absolute left-1/2 -translate-x-1/2 bottom-[16vw] min-[500px]:bottom-[12vw] sm:bottom-[8vw] md:bottom-[5vw] lg:bottom-[15vw] 2xl:bottom-[12vw]">
+          <p className=" video-text text-[13.73px] text-center w-[266px] font-satoshi md:text-[40px] md:w-[661px] leading-[100%] lg:text-[45px] xl:text-[52px] lg:w-[923px]">
             Be Part of A People Walking Boldly In Power, Purpose, And Dominion.
           </p>
         </div>

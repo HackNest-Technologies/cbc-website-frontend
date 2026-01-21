@@ -6,9 +6,13 @@ import LoadingState from "./LoadingState";
 import ErrorState from "./ErrorState";
 import EmptyState from "./EmptyState";
 
-const DisplayBooks = () => {
+const DisplayBooks = ({
+  cartID,
+  setCartID,
+}) => {
   const { id } = useParams();
   const { data, error, isLoading, isFetching } = useGetBooksByIdQuery(id);
+  
 
   if (isLoading || isFetching) {
     return <LoadingState isLoading={isLoading} />;
@@ -25,7 +29,7 @@ const DisplayBooks = () => {
   return (
     <div className="container mx-auto px-6 py-6 md:px-0">
       <FilterSection />
-      <BooksGrid data={data} />
+      <BooksGrid data={data} cartID={cartID} setCartID={setCartID} />
     </div>
   );
 };

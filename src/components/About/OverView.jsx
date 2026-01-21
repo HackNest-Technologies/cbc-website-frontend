@@ -36,11 +36,11 @@ const OverView = () => {
             Be Part of A People Walking Boldly In Power, Purpose, And Dominion.
           </p>
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[4px] lg:bottom-[20px]">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-[4px] lg:bottom-[8px] 2xl:bottom-[20px]">
           <img
             src={logo}
             alt=""
-            className="w-[45px] h-auto object-cover md:w-[125px] lg:w-[125px]"
+            className="w-[45px] h-auto object-cover md:w-[125px] lg:w-[125px] "
           />
         </div>
       </section>

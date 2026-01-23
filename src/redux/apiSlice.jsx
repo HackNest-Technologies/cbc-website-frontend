@@ -265,6 +265,14 @@ export const apiSlice = createApi({
       }),
     }),
 
+    // Add Bible passages
+    createBiblePassage: builder.mutation({
+      query: (passage) => ({
+        url: "api/v1/bible_passages",
+        method: "POST",
+        body: { bible_passage: passage },
+      }),
+    }),
 
     // ------- DAILY DEVOTIONAL----------
     getDailyDevotional: builder.query({
@@ -356,6 +364,62 @@ export const apiSlice = createApi({
         method: "DELETE",
       }),
     }),
+
+    // ----- BRANCHES -----
+    getBranches: builder.query({
+      query: () => "api/v1/branches",
+    }),
+
+    uploadBranch: builder.mutation({
+      query: (branch) => ({
+        url: "api/v1/branches",
+        method: "POST",
+        body: branch,
+      }),
+    }),
+
+    updateBranch: builder.mutation({
+      query: ({ id, branch }) => ({
+        url: `api/v1/branches/${id}`,
+        method: "PUT",
+        body: branch,
+      }),
+    }),
+
+    deleteBranch: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/branches/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // ---- FELLOWSHIP ------
+    getFellowship: builder.query({
+      query: () => "api/v1/house_fellowship_centres",
+    }),
+
+    uploadFellowship: builder.mutation({
+      query: (fellowship) => ({
+        url: "api/v1/house_fellowship_centres",
+        method: "POST",
+        body: fellowship,
+      }),
+    }),
+
+    updateFellowship: builder.mutation({
+      query: ({ id, fellowship }) => ({
+        url: `api/v1/house_fellowship_centres/${id}`,
+        method: "PUT",
+        body: fellowship,
+      }),
+    }),
+
+    deleteFellowship: builder.mutation({
+      query: (id) => ({
+        url: `api/v1/house_fellowship_centres/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 export const {
@@ -384,6 +448,7 @@ export const {
   useCreateBibleMutation,
   useUpdateBibleMutation,
   useDeleteBibleMutation,
+  useCreateBiblePassageMutation,
   useAddToCartMutation,
   useUpdateCartMutation,
   useDeleteCartItemMutation,
@@ -403,4 +468,12 @@ export const {
   useUploadPastSermonMutation,
   useUpDatePastSermonMutation,
   useDeletePastSermonMutation,
+  useGetBranchesQuery,
+  useUploadBranchMutation,
+  useUpdateBranchMutation,
+  useDeleteBranchMutation,
+  useGetFellowshipQuery,
+  useUploadFellowshipMutation,
+  useUpdateFellowshipMutation,
+  useDeleteFellowshipMutation,
 } = apiSlice;

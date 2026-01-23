@@ -2,7 +2,7 @@ import EditDevotion from "../../../../components/Admin/Study/Devotional/EditDevo
 
 const EditDevotionalPage = () => {
   return (
-    <section>
+    <section className="px-6 h-[100vh] w-full overflow-x-hidden md:px-[200px] pt-16 hide-scrollbar">
       <EditDevotion />
     </section>
   );

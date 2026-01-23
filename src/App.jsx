@@ -60,6 +60,13 @@ import EditEventPage from "./pages/AdminPages/Event/EditEventPage";
 import AdminBibleInOneYear from "./pages/AdminPages/Study/Bible/AdminBibleInOneYear";
 import EditDevotionalPage from "./pages/AdminPages/Study/Devotional/EditDevotionalPage";
 import AddDevotionalPage from "./pages/AdminPages/Study/Devotional/AddDevotionalPage";
+import AddBiblePassagePage from "./pages/AdminPages/Study/Bible/AddBiblePassagePage";
+import AdminBranchPage from "./pages/AdminPages/Branches/AdminBranchPage";
+import CreateBranchPage from "./pages/AdminPages/Branches/CreateBranchPage";
+import EditBranchPage from "./pages/AdminPages/Branches/EditBranchPage";
+import EditFellowshipPage from "./pages/AdminPages/Fellowship/EditFellowshipPage";
+import CreateFellowship from "./components/Admin/Fellowship/CreateFellowship";
+import AdminFellowshipPage from "./pages/AdminPages/Fellowship/AdminFellowshipPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -133,11 +140,28 @@ const router = createBrowserRouter(
           element={<AddDevotionalPage />}
         />
         <Route path="edit-devotional" element={<EditDevotionalPage />} />
-
+        <Route path="admin-bible" element={<AdminBibleInOneYear />} />
         <Route
-          path="admin-bible-in-one-year"
-          element={<AdminBibleInOneYear />}
+          path="admin-bible/add-passage/:id"
+          element={<AddBiblePassagePage />}
         />
+
+        <Route path="admin-branches" element={<AdminBranchPage />} />
+        <Route
+          path="admin-branches/add-branch"
+          element={<CreateBranchPage />}
+        />
+        <Route path="edit-branch" element={<EditBranchPage />} />
+
+
+      
+        <Route path="admin-fellowship" element={<AdminFellowshipPage />} />
+        <Route
+          path="admin-fellowship/add-fellowship"
+          element={<CreateFellowship />}
+        />
+        <Route path="edit-fellowship" element={<EditFellowshipPage />} />
+
         <Route path="admin-testimonies" element={<AdminTestimoyPage />} />
         <Route
           path="admin-testimonies/add-testimony"

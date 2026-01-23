@@ -28,7 +28,7 @@ const MobileList = () => {
             <h2 className=" text-sm md:text-base pt-5 uppercase font-satoshi">Community </h2>
             <ul className="list-none  font-inter">
               <li className="pt-3 text-xs md:text-sm">
-                <Link to="/discussion-forum">Discussion Forum</Link>
+              <a>Discussion Forum</a>
               </li>
               <li className="pt-3 text-xs md:text-sm">
                 <Link to="/prayer-request">Prayer Requests</Link>

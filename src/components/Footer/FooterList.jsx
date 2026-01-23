@@ -52,7 +52,7 @@ const FooterList = () => {
           <h2 className=" text-base lg:text-xl py-2 lg:py-6  uppercase font-satoshi">Community </h2>
           <ul className="list-none  font-inter">
             <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
-              <Link to="/discussion">Discussion Forum</Link>
+              <a>Discussion Forum</a>
             </li>
             <li className="footer-list pt-1 lg:pt-5 text-sm lg:text-base">
               <Link to="/#prayer">Prayer Requests</Link>

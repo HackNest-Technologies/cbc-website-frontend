@@ -9,7 +9,7 @@ const Header = () => {
           <div className="flex justify-center">
             <div className="flex items-center gap-2 md:gap-4">
               <button className="text-[18.27px] leading-[100%] font-bold font-satoshi uppercase text-white w-[176px] h-[42px] bg-[#FC8E33] rounded-[32.63px] p-[5.22px] md:w-[270px] md:text-[28px] md:h-[65px] md:rounded-[50px] md:p-[8px]">
-                Past Sermons
+                Watch live{" "}
               </button>
               <img
                 src={tvLogo}
@@ -19,7 +19,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </section>  )
-}
+    </section>
+  );
+};
 
-export default Header
+export default Header;

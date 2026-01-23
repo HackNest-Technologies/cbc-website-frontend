@@ -47,7 +47,7 @@ const GuestLiveActions = ({onLiveChatClick}) => {
                         </p>
                       </div>
         
-                      <div className=" flex flex-col items-center justify-center gap-[8px]  w-[47.2px] h-[47.4px] md:gap-[11px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]">
+                      {/* <div className=" flex flex-col items-center justify-center gap-[8px]  w-[47.2px] h-[47.4px] md:gap-[11px] md:w-[60px] md:h-[74px] lg:w-[84px] lg:h-[104px]">
                         <div className="flex justify-center items-center bg-[#FFB91E]/28 w-[32px] h-[27px] pt-[1.9px] pr-[5.3px] pb-[2.3px] pl-[3.4px] rounded-[5.7px] md:w-[60px] md:h-[51.4px] md:pt-[3.5px] md:pr-[10px] md:pb-[4.3px] md:pl-[6.4px] md:rounded-[10.7px] lg:w-[84px] lg:h-[72px] lg:pt-[5px] lg:pr-[14px] lg:pb-[6px] lg:pl-[9px] lg:rounded-[15px] ">
                           <img
                             src={humbleicons}
@@ -58,7 +58,7 @@ const GuestLiveActions = ({onLiveChatClick}) => {
                         <p className="text-[#000] font-satoshi uppercase font-normal text-[12px] w-[61px] h-[12px] lg:text-[14px] lg:font-bold lg:w-[75px] lg:h-[19px]">
                           off video
                         </p>
-                      </div>
+                      </div> */}
                     </div>
     </section>
   )

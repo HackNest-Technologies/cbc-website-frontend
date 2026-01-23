@@ -72,9 +72,9 @@ const NavList = ({ toggleMenu }) => {
           </h2>
           <ul className="list-none  font-inter">
             <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
-              <Link onClick={toggleMenu} to="/discussion">
+              <a onClick={toggleMenu}>
                 Discussion Forum
-              </Link>
+              </a>
             </li>
             <li className="md:pt-2 md:text-sm lg:pt-3 lg:text-base ">
               <Link onClick={toggleMenu} to="/#prayer">

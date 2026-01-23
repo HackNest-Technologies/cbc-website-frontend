@@ -67,6 +67,7 @@ import EditBranchPage from "./pages/AdminPages/Branches/EditBranchPage";
 import EditFellowshipPage from "./pages/AdminPages/Fellowship/EditFellowshipPage";
 import CreateFellowship from "./components/Admin/Fellowship/CreateFellowship";
 import AdminFellowshipPage from "./pages/AdminPages/Fellowship/AdminFellowshipPage";
+import MembershipFormPage from "./pages/MembershipFormPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -94,6 +95,7 @@ const router = createBrowserRouter(
         <Route path="/study" element={<StudyPage />} />
         <Route path="/live" element={<LivePage />} />
         <Route path="/past-sermon" element={<PastSermonPage />} />
+        <Route path="/membership-register" element={<MembershipFormPage />} />
       </Route>
 
       {/*  ADMIN AREA (PROTECTED ONCE) */}
@@ -153,8 +155,6 @@ const router = createBrowserRouter(
         />
         <Route path="edit-branch" element={<EditBranchPage />} />
 
-
-      
         <Route path="admin-fellowship" element={<AdminFellowshipPage />} />
         <Route
           path="admin-fellowship/add-fellowship"

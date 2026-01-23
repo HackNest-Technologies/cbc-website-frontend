@@ -7,7 +7,7 @@ const MembershipForm = () => {
 
   const handleChange = (e, index) => {
     const { value } = e.target;
-    if (!/^[0-9]?$/.test(value)) return; 
+    if (!/^[0-9]?$/.test(value)) return;
 
     const newValues = [...values];
     newValues[index] = value;
@@ -41,8 +41,12 @@ const MembershipForm = () => {
             className="w-[30px] h-[30px] rounded-[6.13px] mb-2 p-[7px] shadow-[0px_0.51px_1.02px_0px_#1018280D] 
              border border-[#D0D5DD] 
              bg-[radial-gradient(132.69%_122.41%_at_52.23%_0%,_#FFB91E_0%,_#FC8E33_54.74%)] 
-            md:rounded-[12px] md:w-[56px] md:h-[56px] flex justify-center items-center">
-            <img src={lock} className="w-[16px] h-[16px] object-cover md:w-[21px] md:h-[23px]" />
+            md:rounded-[12px] md:w-[56px] md:h-[56px] flex justify-center items-center"
+          >
+            <img
+              src={lock}
+              className="w-[16px] h-[16px] object-cover md:w-[21px] md:h-[23px]"
+            />
           </div>
           <p className="text-base text-center leading-[100%]  font-satoshi md:text-[28px]">
             Enter Passcode
@@ -82,10 +86,16 @@ shadow-[0px_3px_8px_0px_#FFE19F47,0px_14px_14px_0px_#FFB91E47]       rounded-[25
             Continue
           </button>
           <div className="pt-8 flex flex-col items-center md:flex-row md:gap-1">
-          <p className="text-sm font-satoshi leading-[100%] md:text-base">Don’t Have a Passcode?</p>
-          <Link to="/" className="text-sm font-satoshi leading-[100%] text-[#FC8E33] underline  md:text-base">Register for membership class</Link>
+            <p className="text-sm font-satoshi leading-[100%] md:text-base">
+              Don’t Have a Passcode?
+            </p>
+            <Link
+              to="/membership-register"
+              className="text-sm font-satoshi leading-[100%] text-[#FC8E33] underline  md:text-base"
+            >
+              Register for membership class
+            </Link>
           </div>
-
         </div>
       </form>
     </section>

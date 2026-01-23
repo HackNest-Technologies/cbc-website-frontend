@@ -58,7 +58,7 @@ const NavListMobile = ({ toggleMenu }) => {
               </h2>
               <ul className="list-none  font-inter">
                 <li className="pt-3 text-base">
-                  <Link onClick={toggleMenu} to="/discussion">Discussion Forum</Link>
+                  <a onClick={toggleMenu}>Discussion Forum</a>
                 </li>
                 <li className="pt-3 text-base">
                   <Link onClick={toggleMenu} to="/#prayer">Prayer Requests</Link>

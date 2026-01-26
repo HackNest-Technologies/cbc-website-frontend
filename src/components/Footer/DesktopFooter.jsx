@@ -4,7 +4,7 @@ import "../Footer/DesktopFooter.css"
 
 const DesktopFooter = () => {
   return (
-    <section className="hidden md:block md:pt-[100px]">
+    <section className="hidden md:block md:pt-[100px] lg:mt-[100px]">
       <div className="relative">
         {/* Logo */}
         <div className="logo-height absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 rounded-full lg:top-[10px] xl:top-[20px] 2xl:top-[20px]">

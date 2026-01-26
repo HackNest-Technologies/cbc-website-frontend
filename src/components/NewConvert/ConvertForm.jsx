@@ -47,7 +47,7 @@ const ConvertForm = () => {
                   className="underline text-[11px] font-satoshi leading-[110%] md:text-[32px] lg:text-[25px] 2xl:text-[32px]"
                 >
                   Register for
-                  <br /> membership class{" "}
+                  <br /> membership class
                 </Link>
                 <GoArrowRight className="md:text-[40px]" />
               </div>

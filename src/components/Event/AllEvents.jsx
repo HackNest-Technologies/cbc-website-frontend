@@ -1,5 +1,6 @@
 import { useGetEventQuery } from "../../redux/apiSlice";
 import Spinner from "../Loader/Spinner";
+import ChurchLoadingAnimation from "../Loader/ChurchLoadingAnimation";
 import aboutImg from "../../assets/images/about.webp";
 import calender from "../../assets/images/calender.png";
 import time from "../../assets/images/time.png";
@@ -12,7 +13,8 @@ const AllEvents = () => {
     <section>
       {isLoading ? (
         <div>
-          <Spinner loading={isLoading} size={30} />
+          {/* <Spinner loading={isLoading} size={30} /> */}
+          <ChurchLoadingAnimation/>
         </div>
       ) : (
         <section className="px-6 pt-5  container mx-auto md:px-0 lg:pt-[150px] ">

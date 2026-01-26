@@ -3,10 +3,10 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const FaqItem = ({ question, handleQuestion }) => {
   return (
     <div
-      className={`py-[20px] border-b overflow-hidden  mt-4  md:mt-6 ${
+      className={`py-[20px] border-b overflow-hidden mt-4 md:mt-6 relative z-10 ${
         question.isOpen ? "h-auto" : ""
       }`}
-    >
+    > 
       <div
         className="flex justify-between cursor-pointer gap-2 "
         onClick={() => handleQuestion(question.id)}
@@ -17,11 +17,11 @@ const FaqItem = ({ question, handleQuestion }) => {
         <div className="">
           {question.isOpen ? (
             <div className="rounded-full border-[2px] border-dotted border-[#FD9F2B] p-2 md:p-3 md:border-[3px]">
-              <IoIosArrowDown className="text-lg md:text-xl text-[#FD9F2B]" />
+              <IoIosArrowUp className="text-lg text-[#FD9F2B]  md:text-xl " />
             </div>
           ) : (
             <div className="rounded-full border-[2px] border-dotted border-[#FD9F2B] p-2 md:p-3 md:border-[3px] ">
-              <IoIosArrowUp className="text-lg text-[#FD9F2B]  md:text-xl " />
+              <IoIosArrowDown className="text-lg md:text-xl text-[#FD9F2B]" />
             </div>
           )}
         </div>

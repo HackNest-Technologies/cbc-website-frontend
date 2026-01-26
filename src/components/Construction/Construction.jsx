@@ -22,7 +22,7 @@ const Construction = () => {
             Coming Soon!
           </h3>
           <p className="text-black font-satoshi text-[16px]  text-center mb-5 lleading-none font-normal">
-            This Marriage e-learning is currently being work on, please check
+            This page is currently being work on, please check
             back at a later date
           </p>
 

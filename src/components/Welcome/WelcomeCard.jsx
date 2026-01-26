@@ -21,11 +21,11 @@ const WelcomeCard = () => {
     <section className=" pt-[178px] pb-[120px] md:pt-[400px] md:pb-[70px] lg:pb-[20px]">
       <div className="px-6 container mx-auto grid md:grid-cols-2  md:px-0 gap-4 ">
         {cards.map((item) => (
-          <div key={item.id} className="relative w-full py-[40px] px-[32px] flex flex-col justify-between border-[3px] mt-[20px]  rounded-[20px] border-[#FD9F2B] border-dotted h-[330px] md:h-[440px]  md:px-[48px]  lg:h-[624px] lg:border-[5px]">
+          <div key={item.id} className="relative w-full py-[40px] px-[32px] flex flex-col justify-between border-[3px] mt-[20px]  rounded-[20px] border-[#FD9F2B] border-dotted h-[330px] md:h-[440px]  md:px-[48px]  lg:h-[385px] lg:border-[5px]">
             <img
               src={item.question}
               alt=""
-              className="w-[64px] h-[64px]  md:w-[65px] md:h-[65px] lg:h-[93px]"
+              className="w-[64px] h-[64px] object-cover  md:w-[65px] lg:h-[83px] lg:w-[83px]"
             />
             <div className="">
               <h4 className="text-[40px] mb-2 leading-[100%] font-bold font-satoshi md:mb-0 md:text-[60px] lg:text-[62.32px] ">

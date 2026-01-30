@@ -15,7 +15,7 @@ const Pastors = ({ pastors }) => {
 
   return (
     <section className="px-6 pt-8 md:px-0">
-      <div onClick={() => handleToggle(pastors.id)}>
+      <div>
         <img
           src={pastors.thumbnail}
           alt=""
@@ -26,7 +26,7 @@ const Pastors = ({ pastors }) => {
         <h3 className="text-[24px] font-semibold font-satoshi leading-[100%] capitalize md:text-[28px]">
           {pastors.pastorName}
         </h3>
-        <div className="flex  gap-3 items-center">
+        <div className="flex  gap-3 items-center" onClick={() => handleToggle(pastors.id)}>
           <span className="font-base leading-[150%] text-[#333] font-inter underline md:text-xl md:my-2">
             Read bio
           </span>

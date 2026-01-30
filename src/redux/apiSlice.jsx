@@ -88,10 +88,40 @@ export const apiSlice = createApi({
     }),
 
     // ======> EVENT <========
-    getEvent: builder.query({
-      query: () => "/api/v1/events",
-    }),
+    // getEvent: builder.query({
+    //   query: () => "/api/v1/events",
+    // }),
 
+    // In apiSlice.js
+    getEvent: builder.query({
+      query: ({ page = 1, per_page = 6, q = "" } = {}) => ({
+        url: q ? "api/v1/events/find" : "api/v1/events",
+        params: {
+          page,
+          per_page,
+          ...(q && { q }),
+        },
+      }),
+      transformResponse: (response, meta, arg) => {
+        // Handle search response format (only IDs and titles)
+        if (arg.q && Array.isArray(response)) {
+          // Note: Search returns only {id, title} - no other data!
+          return {
+            data: response,
+            total: response.length,
+            total_pages: Math.ceil(response.length / arg.per_page),
+            isSearchResult: true, // Flag to indicate limited data
+          };
+        }
+
+        // Regular response (full event data)
+        return {
+          data: response,
+          total: response.length,
+          total_pages: Math.ceil(response.length / arg.per_page),
+        };
+      },
+    }),
     updateEvent: builder.mutation({
       query: ({ id, event }) => ({
         url: `api/v1/events/${id}`,
@@ -149,6 +179,19 @@ export const apiSlice = createApi({
       }),
     }),
 
+    getItemsByCategory: builder.query({
+      query: ({ categoryId, page = 1, perPage = 4 }) => ({
+        url: "api/v1/store_items",
+        params: {
+          store_item_category_id: categoryId,
+          page: page,
+          per_page: perPage,
+        },
+      }),
+      transformResponse: (response) => ({
+        items: response || [], // Wrap array in items property
+      }),
+    }),
     // --- Book Items ---
 
     AddBookItem: builder.mutation({
@@ -170,6 +213,25 @@ export const apiSlice = createApi({
     deleteBookItem: builder.mutation({
       query: (id) => ({
         url: `api/v1/store_items/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    addLikedStoreItem: builder.mutation({
+      query: (store_item_id) => ({
+        url: "/api/v1/liked_store_items",
+        method: "POST",
+        body: {
+          liked_store_item: {
+            store_item_id,
+          },
+        },
+      }),
+    }),
+
+    removeLikedStoreItem: builder.mutation({
+      query: (store_item_id) => ({
+        url: `/api/v1/liked_store_items/${store_item_id}`,
         method: "DELETE",
       }),
     }),
@@ -338,8 +400,38 @@ export const apiSlice = createApi({
     // PAST SERMON
 
     // ------ Get past sermon ------
+    //    getPastSermon: builder.query({
+    //   query: ({ page = 1, per_page = 10 } = {}) => ({
+    //     url: "api/v1/past_sermons",
+    //     params: {
+    //       page,
+    //       per_page
+    //     }
+    //   }),
+    // }),
+
     getPastSermon: builder.query({
-      query: () => "api/v1/past_sermons",
+      query: ({ page = 1, per_page = 6, q = "" } = {}) => ({
+        url: q ? "api/v1/past_sermons/find" : "api/v1/past_sermons",
+        params: {
+          page,
+          per_page,
+          ...(q && { q }), // Only add q parameter if it exists
+        },
+      }),
+      // Transform response to maintain consistent structure
+      transformResponse: (response, meta, arg) => {
+        // Handle both search response format and regular paginated format
+        if (arg.q && Array.isArray(response)) {
+          // Search response format
+          return {
+            data: response,
+            total: response.length,
+            total_pages: Math.ceil(response.length / arg.per_page),
+          };
+        }
+        return response;
+      },
     }),
 
     uploadPastSermon: builder.mutation({
@@ -420,6 +512,15 @@ export const apiSlice = createApi({
         method: "DELETE",
       }),
     }),
+
+    membershipRegistration: builder.mutation({
+      query: (membership) => ({
+        url: "api/v1/membership_class_registrations",
+        method: "POST",
+        body: membership,
+      }),
+    }),
+
   }),
 });
 export const {
@@ -476,4 +577,8 @@ export const {
   useUploadFellowshipMutation,
   useUpdateFellowshipMutation,
   useDeleteFellowshipMutation,
+  useGetItemsByCategoryQuery,
+  useAddLikedStoreItemMutation,
+  useRemoveLikedStoreItemMutation,
+  useMembershipRegistrationMutation,
 } = apiSlice;

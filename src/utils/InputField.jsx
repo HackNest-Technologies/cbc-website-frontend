@@ -12,7 +12,7 @@ const InputField = ({id, type = "text", label, name, placeholder, inputValue, ha
         type={type}
         name={name}
         placeholder={placeholder}
-        className="w-full h-[40px] bg-transparent border border-black my-2 text-white placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
+        className="w-full h-[40px] bg-transparent border border-black my-2 text-black placeholder-[#ABAFB1] outline-none py-[16px]  px-[32px] rounded-[100px] font-inter text-base md:h-[50px]"
         required
         value={inputValue}
         onChange={handleChanges}

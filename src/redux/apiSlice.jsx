@@ -180,7 +180,7 @@ export const apiSlice = createApi({
     }),
 
     getItemsByCategory: builder.query({
-      query: ({ categoryId, page = 1, perPage = 4 }) => ({
+      query: ({ categoryId, page = 1, perPage = 10 }) => ({
         url: "api/v1/store_items",
         params: {
           store_item_category_id: categoryId,

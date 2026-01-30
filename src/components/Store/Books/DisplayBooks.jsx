@@ -30,8 +30,7 @@ const DisplayBooks = ({
   isFetching: isItemsFetching 
 } = useGetItemsByCategoryQuery({ 
   categoryId: id,
-  page,
-  perPage
+  
 });
 
 

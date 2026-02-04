@@ -3,21 +3,18 @@ import InputField from "../../utils/InputField";
 import ResponseModal from "../../utils/ResponseModal";
 import ChurchLoadingAnimation from "../Loader/ChurchLoadingAnimation";
 import { useMembershipRegistrationMutation } from "../../redux/apiSlice";
+import SubmitBtn from "../shared/SubmitBtn";
 
 const RegisterForm = () => {
-  const [createMembership, { isLoading, isSuccess }] = useMembershipRegistrationMutation();
+  const [createMembership, { isLoading, isSuccess }] =
+    useMembershipRegistrationMutation();
 
   const initialState = {
     first_name: "",
     last_name: "",
     email: "",
     phone_number: "",
-    salvation_date: "",
-    baptized_in_water: false,
-    interested_in_baptism: false,
-    willingness_to_serve: false,
-    prayer_needs: "",
-    notes: "",
+    gender: "",
   };
 
   const [formVal, setFormVal] = useState(initialState);
@@ -117,74 +114,19 @@ const RegisterForm = () => {
           />
 
           <InputField
-            label="Salvation Date"
+            label="Gender"
             type="text"
-            name="salvation_date"
-            value={formVal.salvation_date}
+            name="gender"
+            value={formVal.gender}
+            placeholder="Input Date"
             handleChanges={handleChange}
           />
-
-          <InputField
-            label="Prayer Needs"
-            type="text"
-            name="prayer_needs"
-            value={formVal.prayer_needs}
-            handleChanges={handleChange}
-            textarea
-          />
-
-          <InputField
-            label="Notes"
-            type="text"
-            name="notes"
-            value={formVal.notes}
-            handleChanges={handleChange}
-            textarea
-          />
-
-          {/* ---------- Checkboxes ---------- */}
-          <div className="pt-4 space-y-3 text-black">
-            <label className="flex gap-3 items-center">
-              <input
-                type="checkbox"
-                name="baptized_in_water"
-                checked={formVal.baptized_in_water}
-                onChange={handleChange}
-              />
-              Baptized in Water
-            </label>
-
-            <label className="flex gap-3 items-center">
-              <input
-                type="checkbox"
-                name="interested_in_baptism"
-                checked={formVal.interested_in_baptism}
-                onChange={handleChange}
-              />
-              Interested in Baptism
-            </label>
-
-            <label className="flex gap-3 items-center">
-              <input
-                type="checkbox"
-                name="willingness_to_serve"
-                checked={formVal.willingness_to_serve}
-                onChange={handleChange}
-              />
-              Willing to Serve
-            </label>
-          </div>
-
           <div className="pt-6">
-            <button
+            <SubmitBtn
+              text={isLoading ? "Submitting..." : "Submit"}
+              className="w-[100%] h-[58px]"
               type="submit"
-              disabled={isLoading}
-              className="text-lg flex justify-center font-medium text-white w-full
-              bg-[radial-gradient(133.33%_122.42%_at_52.23%_0%,#FFB91E_0%,#FC8E33_54.74%)]
-              h-[58px] rounded-[200px]"
-            >
-              {isLoading ? "Submitting..." : "Submit"}
-            </button>
+            />
           </div>
         </form>
         {/* ---------- Modal ---------- */}

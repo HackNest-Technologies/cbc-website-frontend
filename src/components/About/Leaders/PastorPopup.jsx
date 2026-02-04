@@ -32,7 +32,7 @@ const PastorPopup = ({ pastor, onclose }) => {
   return (
     <AnimatePresence>
       <motion.section
-        className="fixed inset-0 flex justify-center items-center bg-black/40 backdrop-blur-sm px-5 z-[1000]"
+        className="fixed inset-0 flex justify-center items-center bg-black/40 backdrop-blur-sm px-5 z-[9999]"
         variants={backdropVariants}
         initial="hidden"
         animate="visible"
@@ -40,7 +40,7 @@ const PastorPopup = ({ pastor, onclose }) => {
         onClick={onclose} // click outside to close
       >
         <motion.section
-          className="bg-[#E8E8E8] p-[36px] w-full rounded-[30px] overflow-auto md:w-[897px] lg:w-[1028px]"
+          className="bg-[#E8E8E8] p-[36px] w-full h-[80vh] rounded-[30px] overflow-auto md:w-[897px] md:h-[63vh]  lg:w-[1028px]"
           variants={modalVariants}
           initial="hidden"
           animate="visible"
@@ -60,7 +60,7 @@ const PastorPopup = ({ pastor, onclose }) => {
 
           {/* Pastor Info */}
           <div className="md:flex py-3">
-            <div className="w-[25%]">
+            <div className="md:w-[25%]">
               <img
                 src={pastor.thumbnail}
                 alt={pastor.pastorName}
@@ -74,7 +74,7 @@ const PastorPopup = ({ pastor, onclose }) => {
               </p>
             </div>
 
-            <div className="w-[60%]">
+            <div className="md:w-[60%]">
               <p className="text-base leading-[100%] font-inter">
                 {pastor.description}
               </p>

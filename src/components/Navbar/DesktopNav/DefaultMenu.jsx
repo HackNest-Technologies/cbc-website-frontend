@@ -37,7 +37,7 @@ const DefaultMenu = ({ classLink, toggleMenu }) => {
             />
           </Link>
         </div>
-        <ul className={`list-none font-inter flex justify-between items-center h-[50px] w-[732px] rounded-[50px] pl-[45px] pr-[8px] py-[15px] ${isScrolled ? 'bg-gray-100' : 'bg-white'}`}>
+        <ul className={`list-none font-inter flex justify-between items-center h-[50px] w-[732px] rounded-[50px] pl-[45px] pr-[8px] py-[15px] ${isScrolled ? 'border-[0.5px] border-[#929292]' : 'bg-white'}`}>
           <li className="text-base text-center leading-4 py-[10px] w-[57px]">
             <NavLink to="/" className={classLink}>
               Home
@@ -64,7 +64,7 @@ const DefaultMenu = ({ classLink, toggleMenu }) => {
             </NavLink>
           </li>
 
-          <li onClick={toggleMenu} className="w-[123px] flex items-center gap-2.5 h-[35px] pr-[25px] pl-[16px] bg-black rounded-[50px] text-white cursor-pointer">
+          <li onClick={toggleMenu} className="w-[123px] flex items-center gap-2.5 h-[35px] px-[25px] bg-black rounded-[50px] text-white cursor-pointer">
             <IoMenuSharp />
             <button className="text-base">Menu</button>
           </li>

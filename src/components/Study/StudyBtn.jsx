@@ -292,9 +292,9 @@ const StudyBtn = () => {
 
                   {/* Text */}
                   <motion.span
-                    className={`relative z-10 flex justify-center items-center text-inter font-semibold text-sm md:text-[24px] py-[5.43px] md:py-[10px]`}
+                    className={`relative z-10 flex  justify-center items-center text-inter font-semibold text-sm md:text-[24px] py-[5.43px] md:py-[10px]`}
                     animate={{
-                      color: isSelected ? "#ffffff" : "#6b7280",
+                      color: isSelected ? "#ffffff" : "#6b7280 text-red-500 ",
                     }}
                     transition={{ duration: 0.3 }}
                   >

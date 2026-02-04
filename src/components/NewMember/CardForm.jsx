@@ -52,11 +52,34 @@ const CardForm = () => {
                 <GoArrowRight className="md:text-[40px]" />
               </div>
             </div>
+          </div>  
+          {/* POSITIONED CONTAINER AND LINE */}
+          <div className="absolute top-[-6vw] left-[20vw] lg:left-[10vw] lg:top-[-4vw] -z-10">
+            {/* RELATIVE WRAPPER */}
+            <div className="relative">
+              <img src={newMemberLine} alt="" className="w-[70%]" />
+
+              {/* STEP 1 CIRCLE */}
+              <div className="absolute -translate-x-1/2 top-[-10vw]  text-[#FC8E33] text-[18.58px] font-bold font-satoshi leading-[100%] flex justify-center items-center w-[27px] h-[27px] rounded-full border-[1.24px] border-[#FD9F2B] border-dotted md:w-[70px] md:h-[70px] md:border-[3.345x] md:text-[50px] md:top-[-16vw] lg:top-[-11vw]  xl:top-[-20%] 2xl:top-[-4vw]">
+                1
+              </div>
+
+                  {/* <div
+                className="absolute -translate-x-1/2 top-[15.78vw]  text-[#FC8E33] text-[18.58px] font-bold font-satoshi leading-[100%
+         ] flex justify-center items-center w-[27px] h-[27px] rounded-full border-[1.24px] border-[#FD9F2B]  border-dotted md:w-[70px] md:h-[70px] md:border-[3.345x] md:text-[50px] lg:top-[8vw]  2xl:top-[9vw]"
+              >
+                2
+              </div> */}
+
+               <div
+            className="absolute -translate-x-1/2 top-[15.78vw] right-[17vw] text-[#FC8E33] text-[18.58px] font-bold font-satoshi leading-[100%
+         ] flex justify-center items-center w-[27px] h-[27px] rounded-full border-[1.24px] border-[#FD9F2B]  border-dotted md:w-[70px] md:h-[70px] md:border-[3.345x] md:text-[50px] lg:top-[8vw] lg:right-[7.6vw] 2xl:top-[12vw]"
+          >
+            2
+          </div> 
+            </div>
           </div>
-          {/* LINE */}
-          <div className="absolute top-[-6vw] left-[20vw] -z-10 lg:left-[10vw] lg:top-[-4vw]">
-            <img src={newMemberLine} alt="" className="w-[70%]" />
-          </div>
+
           {/* VERTICAL LINE */}
           <div className="absolute top-[88vw] right-[20vw] -z-10 lg:top-[50vw] lg:right-[10vw]">
             <svg
@@ -91,16 +114,16 @@ const CardForm = () => {
               />
             </svg>
           </div>
-          <div className="absolute top-[-13vw] left-[17vw] text-[#FC8E33] text-[18.58px] font-bold font-satoshi leading-[100%] flex justify-center items-center w-[27px] h-[27px] rounded-full border-[1.24px] border-[#FD9F2B]  border-dotted md:w-[70px] md:h-[70px] md:border-[3.345x] md:text-[50px] md:top-[-16vw] md:left-[16.4vw] lg:top-[-11vw] lg:left-[7vw] 2xl:top-[-9vw] 2xl:left-[8vw]">
+          {/* <div className="absolute top-[-13vw]  text-[#FC8E33] text-[18.58px] font-bold font-satoshi leading-[100%] flex justify-center items-center w-[27px] h-[27px] rounded-full border-[1.24px] border-[#FD9F2B] border-dotted md:w-[70px] md:h-[70px] md:border-[3.345x] md:text-[50px] md:top-[-16vw] lg:top-[-11vw]  xl:top-[-20%]   2xl:top-[-9vw]">
             1
-          </div>
-
+          </div> */}
+{/* 
           <div
             className="absolute top-[15.78vw] right-[17vw] text-[#FC8E33] text-[18.58px] font-bold font-satoshi leading-[100%
          ] flex justify-center items-center w-[27px] h-[27px] rounded-full border-[1.24px] border-[#FD9F2B]  border-dotted md:w-[70px] md:h-[70px] md:border-[3.345x] md:text-[50px] lg:top-[8vw] lg:right-[7.6vw] 2xl:top-[9vw] 2xl:right-[9.5vw]"
           >
             2
-          </div>
+          </div> */}
         </section>
       </section>
       <section className="relative mt-[130px] text-white">

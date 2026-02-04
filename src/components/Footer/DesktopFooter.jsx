@@ -66,7 +66,7 @@ const DesktopFooter = () => {
           <div className="w-full absolute bottom-0 overflow-hidden">
             <div className="text-white pb-10 px-10 flex justify-end gap-5  lg:gap-10  translate-y-[20px]">
               <p className="font-inter text-xs lg:text-base ">
-                &copy; 2025 Calvary bible church. All rights reserved
+                &copy; {new Date().getFullYear()} Calvary bible church. All rights reserved
               </p>
               <p className="font-inter text-xs lg:text-base">Terms & conditions</p>
               <p className="font-inter text-xs lg:text-base">Privacy policy</p>

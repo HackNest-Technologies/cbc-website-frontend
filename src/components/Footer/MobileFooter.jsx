@@ -41,7 +41,7 @@ const MobileFooter = () => {
           <div className="px-4 w-full absolute bottom-0  overflow-hidden">
             <div className="text-white pb-10  flex flex-col-reverse items-end  translate-y-[35px]">
               <p className="font-inter text-[8px]">
-                &copy; 2025 Calvary bible church. All rights reserved
+                &copy; {new Date().getFullYear()} Calvary bible church. All rights reserved
               </p>
               <p className="font-inter text-[8px]">Terms & conditions</p>
               <p className="font-inter text-[8px]">Privacy policy</p>

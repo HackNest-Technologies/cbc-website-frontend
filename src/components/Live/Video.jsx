@@ -1,180 +1,76 @@
-// import video from "../../assets/videos/video.mp4";
-// import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { useState } from "react";
-// import GuestLiveActions from "./GuestLiveActions";
-// import LiveChat from "./LiveChat";
-
-// const Video = () => {
-//   // const [selectedVideo, setSelectedVideo] = useState(mockVideos[0]);
-//   const [isPlaying, setIsPlaying] = useState(false);
-
-//   const navigate = useNavigate();
-//   const { user } = useSelector((state) => state.auth);
-
-//   const handleLiveChatClick = () => {
-//       return navigate("/login");
-//   };
-
-//   return (
-//     <section className="container mx-auto pt-[100px] px-6 md:px-0">
-//       {/* Main Content */}
-//       <div className="">
-//         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 lg:gap-6 *******">
-//           {" "}
-//           {/* Main Video Player */}
-//           <div className="md:col-span-6 lg:col-span-7 ********">
-//             <div className="bg-black rounded-xl overflow-hidden shadow-lg">
-//               <div className="relative pt-[56.25%] ">
-//                 {" "}
-//                 {/* 16:9 Aspect Ratio */}
-//                 <video
-//                   className="absolute top-0 left-0 w-full h-full"
-//                   // src={selectedVideo.video_url}
-//                   src={video}
-//                   controls
-//                   autoPlay={isPlaying}
-//                   poster="https://via.placeholder.com/800x450/1f2937/ffffff?text=Video+Preview"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//           {/* Video List */}
-//           <div className="lg:col-span-3">
-          
-//             {!user ? (
-//             <GuestLiveActions onLiveChatClick={handleLiveChatClick} />
-//           ) : (
-//             <LiveChat />
-//           )}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Video;
-
-
-
-// import video from "../../assets/videos/video.mp4";
-// import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { useState } from "react";
-// import GuestLiveActions from "./GuestLiveActions";
-// import LiveChat from "./LiveChat";
-
-// const Video = () => {
-//   const [isPlaying, setIsPlaying] = useState(false);
-//   const navigate = useNavigate();
-//   const { user } = useSelector((state) => state.auth);
-
-//   const handleLiveChatClick = () => {
-//     navigate("/login");
-//   };
-
-//   return (
-//     <section className="container mx-auto pt-[100px] px-6 md:px-0">
-//       {/* Main Content */}
-//       <div className="">
-//         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 lg:gap-6">
-//           {/* Main Video Player */}
-//           <div className="md:col-span-6 lg:col-span-7">
-//             <div className="bg-black rounded-xl overflow-hidden shadow-lg">
-//               <div className="relative pt-[56.25%]">
-//                 {" "}
-//                 {/* 16:9 Aspect Ratio */}
-//                 <video
-//                   className="absolute top-0 left-0 w-full h-full"
-//                   src={video}
-//                   controls
-//                   autoPlay={isPlaying}
-//                   poster="https://via.placeholder.com/800x450/1f2937/ffffff?text=Video+Preview"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-          
-//           {/* Sidebar - Always show LiveChat but with different props */}
-//           <div className="lg:col-span-3">
-//             {!user ? (
-//               // For non-logged-in users: show LiveChat with login prompt
-//               <LiveChat showLoginPrompt={true} />
-//             ) : (
-//               // For logged-in users: show full LiveChat
-//               <LiveChat showLoginPrompt={false} />
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Video;
-
-
-
-import video from "../../assets/videos/video.mp4";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import GuestLiveActions from "./GuestLiveActions";
 import LiveChat from "./LiveChat";
+import GivePopup from "./GivePopup";
+import SharePopup from "./SharePopup";
 
 const Video = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showChat, setShowChat] = useState(false); // NEW: State to control chat visibility
-  const navigate = useNavigate();
+  const [activeSidebar, setActiveSidebar] = useState("actions");
+  const [openShare, setOpenShare] = useState(false);
+
   const { user } = useSelector((state) => state.auth);
 
-  // Function to handle live chat icon click
-  const handleLiveChatClick = () => {
-    setShowChat(true); // Show chat when icon is clicked
+  const handleShareClick = async () => {
+  const shareData = {
+    title: "Truth of Calvary Ministries",
+    text: "Join us live",
+    url: window.location.href,
   };
 
-  // Function to handle closing chat
-  const handleCloseChat = () => {
-    setShowChat(false); // Hide chat and show icons again
-  };
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch {
+      // user cancelled
+    }
+  } else {
+    setActiveSidebar("share");
+  }
+};
+
 
   return (
     <section className="container mx-auto pt-[100px] px-6 md:px-0">
-      {/* Main Content */}
-      <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 lg:gap-6">
-          {/* Main Video Player */}
-          <div className="md:col-span-6 lg:col-span-7">
-            <div className="bg-black rounded-xl overflow-hidden shadow-lg">
-              <div className="relative pt-[56.25%]">
-                {" "}
-                {/* 16:9 Aspect Ratio */}
-                <video
-                  className="absolute top-0 left-0 w-full h-full"
-                  src={video}
-                  controls
-                  autoPlay={isPlaying}
-                  poster="https://via.placeholder.com/800x450/1f2937/ffffff?text=Video+Preview"
-                />
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+        {/* Video */}
+        <div className="md:col-span-6 lg:col-span-7 lg:h-[70vh]">
+          <div className="bg-black rounded-xl overflow-hidden shadow-lg">
+            <div className="relative pt-[56.25%]">
+              <video
+                className="absolute top-0 left-0 w-full h-full"
+                controls
+                autoPlay={isPlaying}
+              />
             </div>
           </div>
-          
-          {/* Sidebar */}
-          <div className="lg:col-span-3">
-            {/* Show icons first, then chat when clicked */}
-            {!showChat ? (
-              // Show action icons (including live chat icon)
-              <GuestLiveActions onLiveChatClick={handleLiveChatClick} />
-            ) : (
-              // Show LiveChat component when icon is clicked
-              <LiveChat 
-                showLoginPrompt={!user} // Show login prompt if user is not logged in
-                onClose={handleCloseChat} // Pass close function to LiveChat
-              />
-            )}
-          </div>
+        </div>
+
+        {/* Sidebar */}
+        <div className="lg:col-span-3 h-auto">
+          {activeSidebar === "actions" && (
+            <GuestLiveActions
+              onLiveChatClick={() => setActiveSidebar("chat")}
+              onGiveClick={() => setActiveSidebar("give")}
+              onShareClick={handleShareClick}
+            />
+          )}
+
+          {activeSidebar === "chat" && (
+            <LiveChat
+              onClose={() => setActiveSidebar("actions")}
+              showLoginPrompt={!user}
+            />
+          )}
+
+          {activeSidebar === "give" && (
+            <GivePopup onClose={() => setActiveSidebar("actions")} />
+          )}
+
+          {activeSidebar === "share" && (
+            <SharePopup onClose={() => setActiveSidebar("actions")} />
+          )}
         </div>
       </div>
     </section>

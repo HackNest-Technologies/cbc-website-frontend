@@ -1,8 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
 import { CiHeart } from "react-icons/ci";
 import { toggleLike } from "../../../redux/bookSlice";
-import { useAddToCartMutation, useCreateCartMutation, useAddLikedStoreItemMutation,useRemoveLikedStoreItemMutation } from "../../../redux/apiSlice";
+import {
+  useAddToCartMutation,
+  useCreateCartMutation,
+  useAddLikedStoreItemMutation,
+  useRemoveLikedStoreItemMutation,
+} from "../../../redux/apiSlice";
 import { useEffect, useState } from "react";
+import { FaHeart } from "react-icons/fa";
 
 const BookCard = ({ book, currentFilter, user, cart, cartID, setCartID }) => {
   const [isInCart, setIsInCart] = useState(false);
@@ -14,15 +20,11 @@ const BookCard = ({ book, currentFilter, user, cart, cartID, setCartID }) => {
   const [createCart] = useCreateCartMutation();
   const [addLikedStoreItem] = useAddLikedStoreItemMutation();
   const [removeLikedStoreItem] = useRemoveLikedStoreItemMutation();
-    const isLiked = liked.includes(book.id);
-
-  
-
-
+  const isLiked = liked.includes(book.id);
 
   const handleAddToCart = async () => {
     let localCartId = cartID;
-    console.log('Local cart ID', localCartId)
+    console.log("Local cart ID", localCartId);
 
     if (!user && !localCartId) {
       localCartId = localStorage.getItem("cart_id");
@@ -31,7 +33,7 @@ const BookCard = ({ book, currentFilter, user, cart, cartID, setCartID }) => {
         const res = await createCart({ user_id: null });
 
         if (!res.error) {
-          localCartId = res.data.id
+          localCartId = res.data.id;
           localStorage.setItem("cart_id", res.data.id);
           setCartID(res.data.id);
         }
@@ -54,71 +56,65 @@ const BookCard = ({ book, currentFilter, user, cart, cartID, setCartID }) => {
     }
   };
 
-  
+  // const handleToggleLike = async () => {
+  //   // GUEST USER → UI ONLY (localStorage)
+  //   if (!user) {
+  //     dispatch(toggleLike(book.id));
+  //     return;
+  //   }
 
-// const handleToggleLike = async () => {
-//   // GUEST USER → UI ONLY (localStorage)
-//   if (!user) {
-//     dispatch(toggleLike(book.id));
-//     return;
-//   }
+  //   try {
+  //     // LOGGED IN USER
+  //     if (isLiked) {
+  //       // Unlike
+  //       await removeLikedStoreItem(book.id).unwrap();
+  //     } else {
+  //       // Like
+  //       await addLikedStoreItem(book.id).unwrap();
+  //     }
 
-//   try {
-//     // LOGGED IN USER
-//     if (isLiked) {
-//       // Unlike
-//       await removeLikedStoreItem(book.id).unwrap();
-//     } else {
-//       // Like
-//       await addLikedStoreItem(book.id).unwrap();
-//     }
+  //     // Sync UI
+  //     dispatch(toggleLike(book.id));
+  //   } catch (error) {
+  //     console.error("Failed to toggle like:", error);
+  //   }
+  // };
 
-//     // Sync UI
-//     dispatch(toggleLike(book.id));
-//   } catch (error) {
-//     console.error("Failed to toggle like:", error);
-//   }
-// };
-
-
-const handleToggleLike = async () => {
-  if (!user) {
-    dispatch(toggleLike(book.id));
-    return;
-  }
-
-  try {
-    if (isLiked) {
-      try {
-        await removeLikedStoreItem(book.id).unwrap();
-      } catch (error) {
-        //  THIS IS THE KEY To CHECK IF NOT FOUND INCASE YOU LIKED WHEN LOGGED OUT
-        if (error?.status !== 404) {
-          throw error;
-        }
-        // 404 means backend never had it → safe to continue
-      }
-    } else {
-      await addLikedStoreItem(book.id).unwrap();
+  const handleToggleLike = async () => {
+    if (!user) {
+      dispatch(toggleLike(book.id));
+      return;
     }
-    // Sync UI
-    dispatch(toggleLike(book.id));
-  } catch (error) {
-    console.error("Failed to toggle like:", error);
-  }
-};
 
-
+    try {
+      if (isLiked) {
+        try {
+          await removeLikedStoreItem(book.id).unwrap();
+        } catch (error) {
+          //  THIS IS THE KEY To CHECK IF NOT FOUND INCASE YOU LIKED WHEN LOGGED OUT
+          if (error?.status !== 404) {
+            throw error;
+          }
+          // 404 means backend never had it → safe to continue
+        }
+      } else {
+        await addLikedStoreItem(book.id).unwrap();
+      }
+      // Sync UI
+      dispatch(toggleLike(book.id));
+    } catch (error) {
+      console.error("Failed to toggle like:", error);
+    }
+  };
 
   useEffect(() => {
     if (cart?.items.find((item) => item.store_item.id == book.id)) {
-      setIsInCart(true)
+      setIsInCart(true);
     }
-  }, [cart])
-
+  }, [cart]);
 
   return (
-     <div className="">
+    <div className="">
       <img
         src={book.cover_image}
         alt={book.title}
@@ -162,11 +158,19 @@ const handleToggleLike = async () => {
             isLiked ? "border-red-500" : "border-[#929292]"
           }`}
         >
-          <CiHeart
-            className={`text-[24px] ${
-              isLiked ? "text-red-500 fill-red-500" : ""
-            }`}
-          />
+          {isLiked ? (
+            <FaHeart
+              className={`text-[24px] ${
+                isLiked ? "text-red-500 fill-red-500" : ""
+              }`}
+            />
+          ) : (
+            <CiHeart
+              className={`text-[24px] ${
+                isLiked ? "text-red-500 fill-red-500" : ""
+              }`}
+            />
+          )}
         </div>
       </div>
 
